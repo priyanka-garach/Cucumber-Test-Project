@@ -148,6 +148,10 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Routine_activities_exercise_PICAT1;
 	public static String Favourite_toys_security_object_hobbies_PICAT1;
 	public static String MAHC_Details_Comments1;
+	public static String Activity_to_be_Instructed1;
+	public static String LearnerName1;
+	public static String LearnerDate1;
+	public static String EducationComment1;
 	public static String MAHC_radio_1;
 	public static String MAHC_radio_2;
 	public static String MAHC_radio_3;
@@ -2163,6 +2167,30 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.MAHC_Details_Comments + ": " + MAHC_Details_Comments1);
 			clear(By.xpath("(//*[@id='age_comments'])"));
 			sendKeys(By.xpath("(//*[@id='age_comments'])"), MAHC_Details_Comments1);
+			break;
+		case PixalereStringPool.Activity_to_be_Instructed:
+			Activity_to_be_Instructed1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Activity_to_be_Instructed+ ": " + Activity_to_be_Instructed1);
+			clear(By.xpath("(//*[@id='activity_comments'])"));
+			sendKeys(By.xpath("(//*[@id='activity_comments'])"), Activity_to_be_Instructed1);
+			break;
+		case PixalereStringPool.LearnerName:
+			LearnerName1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.LearnerName+ ": " + LearnerName1);
+			clear(By.xpath("(//*[@id='learner_name1'])"));
+			sendKeys(By.xpath("(//*[@id='learner_name1'])"), LearnerName1);
+			break;
+		case PixalereStringPool.LearnerDate:
+			LearnerDate1 = "08/03/2022";
+			System.out.println(PixalereStringPool.LearnerDate+ ": " + LearnerDate1);
+			clear(By.xpath("(//*[@id='learner_date1'])"));
+			sendKeys(By.xpath("(//*[@id='learner_date1'])"), LearnerDate1);
+			break;
+		case PixalereStringPool.EducationComment:
+			EducationComment1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.EducationComment+ ": " + EducationComment1);
+			clear(By.xpath("(//*[@id='education_comments'])"));
+			sendKeys(By.xpath("(//*[@id='education_comments'])"), EducationComment1);
 			break;
 
 		}

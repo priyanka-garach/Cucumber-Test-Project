@@ -4,6 +4,28 @@ import org.openqa.selenium.By;
 
 public class LocatorUtils {
 	
+	public static String radioService_Supervisor;
+	public static String radiodemonstrated_understanding;
+	public static String radioPSW_providing;
+	public static String radioalternatives_and_benefits;
+	public static String radioEducation_received;
+	public static String radioservice_provider;
+	public static String radiomodification_plan;
+	public static String radioActivities_Assigned;
+	public static String radioImmunization_up_to_date1;
+	public static String radioAdmission_goals_discharge_planning;
+	public static String radioPacemaker_Present;
+	public static String radioPacemaker_Type;
+	public static String radioExtremities_warm;
+	public static String radioCap_refill;
+	public static String radioCyanosis_Present;
+	public static String radioEdema_noted;
+	public static String radioPresence_of_Central;
+	public static String radioMurmurs;
+	public static String radioIncontinence;
+	public static String radioSkin_Type_Visual_Risk_Area;
+	public static String radioMobility;
+	public static String radioNutrition_Element;
 	public static String radioMedrat1;
 	public static String radioMedrat2;
 	public static String radioMedrat3;
@@ -72,7 +94,68 @@ public class LocatorUtils {
 		public static String search_patient = "//a[normalize-space(text()) = '%s']";
 		public static String select_from_ServiceReferreal = "//*[@id='encounter']//option[contains(text(),'%s')]";
 	}
+	public static class WaterlowLocators{
+//		Special Risks - Tissue Malnutrition
+		public static By chk_Terminal_Cahexia = By.xpath("//*[@id='specialrisk_tissue_list1_label']");
+		public static By chk_Multiple_organ_failure = By.xpath("//*[@id='specialrisk_tissue_list2_label']");
+		public static By chk_Single_organ_failure = By.xpath("//*[@id='specialrisk_tissue_list3_label']");
+		public static By chk_Peripheral_vascular_disease = By.xpath("//*[@id='specialrisk_tissue_list4_label']");
+		public static By chk_Anaemia = By.xpath("//*[@id='specialrisk_tissue_list5_label']");
+		public static By chk_Smoking = By.xpath("//*[@id='specialrisk_tissue_list6_label']");
+//		Special Risks - Neurological Deficit
+		public static By chk_Not_Applicable_Neurological = By.xpath("//*[@id='specialrisk_neuro_list1_label']");
+		public static By chk_Diabetes = By.xpath("//*[@id='specialrisk_neuro_list2_label']");
+		public static By chk_MS = By.xpath("//*[@id='specialrisk_neuro_list3_label']");
+		public static By chk_CVA = By.xpath("//*[@id='specialrisk_neuro_list4_label']");
+		public static By chk_Motor = By.xpath("//*[@id='specialrisk_neuro_list5_label']");
+		public static By chk_Sensory = By.xpath("//*[@id='specialrisk_neuro_list6_label']");
+		public static By chk_Paraplegia = By.xpath("//*[@id='specialrisk_neuro_list7_label']");
+//		Special Risks - Surgery/Trauma
+		public static By chk_Not_Applicable_Surgery = By.xpath("//*[@id='specialrisk_surg_list1_label']");
+		public static By chk_On_table_6_hours = By.xpath("//*[@id='specialrisk_surg_list2_label']");
+		public static By chk_Orthopaedic = By.xpath("//*[@id='specialrisk_surg_list3_label']");
+		public static By chk_On_table_2_hours = By.xpath("//*[@id='specialrisk_surg_list4_label']");
+//		Medication
+		public static By chk_High_Dose_Steroid_Use = By.xpath("//*[@id='medication_list1_label']");
+		public static By chk_Cytotoxic = By.xpath("//*[@id='medication_list2_label']");
+		public static By chk_Anti_inflammatory = By.xpath("//*[@id='medication_list3_label']");
+		public static By chk_Long_term_Steroid_Use = By.xpath("//*[@id='medication_list4_label']");
+		
+	}
+	public static class DischargeClient{
+		public static By drp_reason = By.xpath("//*[@name='inactivate_reason']");
+		public static By drp_day = By.xpath("//*[@id='backdated_day']");
+		public static By drp_month = By.xpath("//*[@id='backdated_month']");
+		public static By drp_year = By.xpath("//*[@id='backdated_year']");
+		public static By button_discharge_client = By.xpath("//*[@id='discharge_submit']");
+	}
+	public static class TeachingAgreementPT{
+		public static By Activity_to_be_Instructed = By.xpath("//a[@class='titl-crt']");
+		public static By chk_Breathing_exercises = By.xpath("//*[@id='checkbox-activities3']");
+		public static By chk_Ambulation = By.xpath("//*[@id='checkbox-activities4']");
+		public static By chk_Stairs = By.xpath("//*[@id='checkbox-activities5']");
+		public static By chk_Bathroom_safety = By.xpath("//*[@id='checkbox-activities6']");
+		public static By chk_Transfers = By.xpath("//*[@id='checkbox-transfers1']");
+		public static By chk_Transfer_board = By.xpath("//*[@id='checkbox-transfers5']");
+		public static By chk_Stair_glide_transfer = By.xpath("//*[@id='checkbox-transfers11']");
+		public static By chk_Sit_to_stand_lift = By.xpath("//*[@id='checkbox-transfers3']");
+		public static By chk_Chair_to_chair = By.xpath("//*[@id='checkbox-transfers9']");
+		public static By chk_Toilet_seat_transfer = By.xpath("//*[@id='checkbox-transfers4']");
+		public static By chk_Bath_tub_transfer = By.xpath("//*[@id='checkbox-transfers10']");
+		public static By chk_Lift_handout_provided = By.xpath("//*[@id='checkbox-resources1']");
+		public static By chk_Exercise_sheets_provided = By.xpath("//*[@id='checkbox-resources3']");
+		
+		public static By Consent_Obtained = By.xpath("//*[@id='consent_arrow']//a[@data-toggle='collapse']");
+		public static By chk_Client = By.xpath("//*[@id='checkbox-sdm_consent_from1']");
+		public static By chk_With_Use_of_Interpreter = By.xpath("//*[@id='checkbox-sdm_consent_from3']");
+		public static By chk_Verbally = By.xpath("//*[@id='checkbox-sdm_consent_from4']");
+		
+		public static By LearnerAcknowledgementofEducation = By.xpath("//a[@href='#dv-clps3']//img[@src='images/arrow-down.png']");
+		public static By drp_learner = By.xpath("//*[@id='learner1']");
+		public static By drp_employee = By.xpath("//*[@id='employed_by1']");
 
+		public static By EducationCompletedbyServiceProvider = By.xpath("//a[@href='#dv-clps5']//img[@src='images/arrow-down.png']");
+	}
 	public static class PatientAccountsPageLocators {
 		public static By tab_ActiveScreen = By.cssSelector("li[role='presentation'][class='active'] a");
 		public static By btn_SearchButton = By.cssSelector("input[value='Search'][type='submit']");
@@ -1844,5 +1927,188 @@ public class LocatorUtils {
 			return By.xpath("//tr//td[normalize-space(text())='" + mapKey.trim()
 					+ "']/following-sibling::td[last()]//del[text()]");
 		}
+		
+		public static By getRadioOptionByService_Supervisor(String section) {
+			radioService_Supervisor = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//div[@id='md-radio-educator_ack_21']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//div[@id='md-radio-educator_ack_22']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBydemonstrated_understanding(String section) {
+			radiodemonstrated_understanding = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-educator_ack_11']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-educator_ack_12']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByPSW_providing(String section) {
+			radioPSW_providing = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-the_inst1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-the_inst2']");
+			else
+				return By.xpath("");
+		}
+				public static By getRadioOptionByActivities_Assigned(String section) {
+			radioActivities_Assigned = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-sdm_for_activities1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-sdm_for_activities2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBymodification_plan(String section) {
+			radiomodification_plan = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-sdm_discussed_client1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-sdm_discussed_client2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByservice_provider(String section) {
+			radioservice_provider = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-sdm_discussed_psw1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-sdm_discussed_psw2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByEducation_received(String section) {
+			radioEducation_received = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-learner_edu_rec1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-learner_edu_rec2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByalternatives_and_benefits(String section) {
+			radioalternatives_and_benefits = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-learner_for_list_act1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-learner_for_list_act2']");
+			else
+				return By.xpath("");
+		}
+				public static By getRadioOptionByImmunization_up_to_date(String section) {
+
+			radioImmunization_up_to_date1 = section;
+			if (section.contains("Yes"))
+				return By.xpath("//*[@id='md-radio-immunization_date1']");
+			else if (section.contains("No"))
+				return By.xpath("//*[@id='md-radio-immunization_date2']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionByAdmission_goals_discharge_planning(String section) {
+
+			radioAdmission_goals_discharge_planning = section;
+			if (section.contains("Yes"))
+				return By.xpath("//*[@id='md-radio-goals_discussed1']");
+			else if (section.contains("No"))
+				return By.xpath("//*[@id='md-radio-goals_discussed2']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionByPacemaker_Present(String section) {
+
+			radioPacemaker_Present = section;
+			if (section.contains("No"))
+				return By.xpath("//*[@id='md-radio-pacemaker_present1']");
+			else if (section.contains("Yes"))
+				return By.xpath("//*[@id='md-radio-pacemaker_present2']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionByPacemaker_Present_Type(String section) {
+
+			radioPacemaker_Type = section;
+			if (section.contains("On-demand"))
+				return By.xpath("//*[@id='md-radio-cardiovascular_type-1']");
+			else if (section.contains("Fixed"))
+				return By.xpath("//*[@id='md-radio-cardiovascular_type-2']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionByExtremities_warm(String section) {
+
+			radioExtremities_warm = section;
+			if (section.contains("Yes"))
+				return By.xpath("//*[@id='md-radio-extremities1']");
+			else if (section.contains("No"))
+				return By.xpath("//*[@id='md-radio-extremities2']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionByCap_refill(String section) {
+
+			radioCap_refill = section;
+			if (section.contains("Less than or equal to 2 seconds"))
+				return By.xpath("//*[@id='md-radio-caprefill-1']");
+			else if (section.contains("Greater than 2 seconds"))
+				return By.xpath("//*[@id='md-radio-caprefill-2']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionByCyanosis_Present(String section) {
+
+			radioCyanosis_Present = section;
+			if (section.contains("No"))
+				return By.xpath("//*[@id='md-radio-cyanosis1']");
+			else if (section.contains("Yes"))
+				return By.xpath("//*[@id='md-radio-cyanosis2']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionByEdema_noted(String section) {
+
+			radioEdema_noted = section;
+			if (section.contains("No"))
+				return By.xpath("//*[@id='md-radio-edema1']");
+			else if (section.contains("Yes"))
+				return By.xpath("//*[@id='md-radio-edema2']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionByPresence_of_Central(String section) {
+
+			radioPresence_of_Central = section;
+			if (section.contains("No"))
+				return By.xpath("//*[@id='md-radio-intravenous_line1']");
+			else if (section.contains("Yes"))
+				return By.xpath("//*[@id='md-radio-intravenous_line2']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionByMurmurs(String section) {
+
+			radioMurmurs = section;
+			if (section.contains("Yes"))
+				return By.xpath("//*[@id='md-radio-murmurs1']");
+			else if (section.contains("No"))
+				return By.xpath("//*[@id='md-radio-murmurs2']");
+			else
+				return By.xpath("");
+		}
 	}
+		
 }

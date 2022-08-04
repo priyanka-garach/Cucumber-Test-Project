@@ -233,6 +233,7 @@ public class SeleniumCommonUtils {
 	 * @param locator
 	 * @param value
 	 */
+	 
 	public void sendKeys(By locator, String value) {
 		waitInterval(3);
 		try {
@@ -2544,77 +2545,92 @@ public class SeleniumCommonUtils {
 	}
 
 	public void verify_TeachingAgreementPT() {
-		// Radio Button verify
+		//		 Radio Button verify
 		WebElement e2 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='For the listed Activities Assigned: Risk, alternatives and benefits discussed. Risks of not performing activities discussed. Questions addressed.']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data2 = e2.getText();
-		if (!(data2.equalsIgnoreCase(""))) {
+		if (!data2.equalsIgnoreCase(LocatorUtils.radioActivities_Assigned)) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e4 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Discussed that any change to the')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data4 = e4.getText();
-		if (!(data4.contains(""))) {
+		if (!data4.equalsIgnoreCase(LocatorUtils.radiomodification_plan)) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e5 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Discussed that the Learner must implement the activities as taught by the service provider.')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data5 = e5.getText();
-		if (!(data5.contains(""))) {
+		if (!data5.equalsIgnoreCase(LocatorUtils.radioservice_provider)) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e6 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Education received on the activities')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data6 = e6.getText();
-		if (!(data6.contains(""))) {
+		if (!data6.equalsIgnoreCase(LocatorUtils.radioEducation_received)) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e7 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'For the listed Activities: Risk, alternatives and benefits discussed. Risks of not performing activities discussed. Questions addressed.')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data7 = e7.getText();
-		if (!(data7.contains(""))) {
+		if (!data7.equalsIgnoreCase(LocatorUtils.radioalternatives_and_benefits)) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e8 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'The instructions of the service provider will be taught by Learner to all other PSW')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data8 = e8.getText();
-		if (!(data8.contains(""))) {
+		if (!data8.equalsIgnoreCase(LocatorUtils.radioPSW_providing)) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e9 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'I acknowledge that the Learner(s) named above have been taught to perform the activities indicated above in a safe manner. The Learner has demonstrated understanding and safe technique during this training session. The risks/benefits associated with performing these activities/procedures have been explained to the Learner(s).')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data9 = e9.getText();
-		if (!(data9.contains(""))) {
+		if (!data9.equalsIgnoreCase(LocatorUtils.radiodemonstrated_understanding)) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e10 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'I acknowledge that the Field Educator/Service Supervisor/Nurse named above has demonstrated knowledge, skill and judgment today, and is capable of teaching these activities to PSWs or other unregulated health professionals providing service to this client.')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data10 = e10.getText();
-		if (!(data10.contains(""))) {
+		if (!data10.equalsIgnoreCase(LocatorUtils.radioService_Supervisor)) {
 			Assert.assertTrue(false);
 		}
-
-		// Radio Button verify
-		WebElement e11 = driver.findElement(By.xpath(
+		
+//		CheckBox Verification
+		WebElement v1 = driver.findElement(
+				By.xpath("(//td[contains(text(),'Activity')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String d1 = v1.getText();
+		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
+			if (!d1.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
+				Assert.assertTrue(false);
+			}}
+		WebElement v2 = driver.findElement(
+				By.xpath("(//td[contains(text(),'Transfers')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String d2 = v2.getText();
+		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
+			if (!d2.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
+				Assert.assertTrue(false);
+			}}
+		WebElement v3 = driver.findElement(
+				By.xpath("(//td[contains(text(),'Resources')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String d3 = v3.getText();
+		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
+			if (!d3.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
+				Assert.assertTrue(false);
+			}}
+		WebElement v4 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Consent Obtained')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data11 = e11.getText();
-		if (!(data11.contains(""))) {
-			Assert.assertTrue(false);
-		}
+		String d4 = v4.getText();
+		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
+			if (!d4.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
+				Assert.assertTrue(false);
+			}}
 
 	}
 
@@ -3676,6 +3692,63 @@ public class SeleniumCommonUtils {
 
 		System.out.println("Advance Lower Limb data verified..................");
 	}
+	public void verifyWaterlowAssessment() {
+		// Radio Button verify
+		WebElement e1 = driver.findElement(
+				By.xpath("//tbody/tr[5]/td[4]"));
+		String data1 = e1.getText();
+		if (!(data1.equalsIgnoreCase(LocatorUtils.radioIncontinence))) {
+			Assert.assertTrue(false);
+		}
+		WebElement e2 = driver.findElement(
+				By.xpath("//tbody/tr[6]/td[4]"));
+		String data2 = e2.getText();
+		if (!(data2.equalsIgnoreCase(LocatorUtils.radioSkin_Type_Visual_Risk_Area))) {
+			Assert.assertTrue(false);
+		}
+		WebElement e3 = driver.findElement(
+				By.xpath("//tbody/tr[7]/td[4]"));
+		String data3 = e3.getText();
+		if (!(data3.equalsIgnoreCase(LocatorUtils.radioMobility))) {
+			Assert.assertTrue(false);
+		}
+		WebElement e4 = driver.findElement(
+				By.xpath("//tbody/tr[8]/td[4]"));
+		String data4 = e4.getText();
+		if (!(data4.equalsIgnoreCase(LocatorUtils.radioNutrition_Element))) {
+			Assert.assertTrue(false);
+		}
+//		CheckBox Verification
+		WebElement e5 = driver.findElement(
+				By.xpath("//tbody/tr[9]/td[4]"));
+		String data5 = e5.getText();
+		for (int i = 0; i < PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.size(); i++) {
+			if (!data5.contains(PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.get(i))) {
+				Assert.assertTrue(false);
+			}}
+		WebElement e6 = driver.findElement(
+				By.xpath("//tbody/tr[10]/td[4]"));
+		String data6 = e6.getText();
+		for (int i = 0; i < PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.size(); i++) {
+			if (!data6.contains(PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.get(i))) {
+				Assert.assertTrue(false);
+			}}
+		WebElement e7 = driver.findElement(
+				By.xpath("//tbody/tr[11]/td[4]"));
+		String data7 = e7.getText();
+		for (int i = 0; i < PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.size(); i++) {
+			if (!data7.contains(PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.get(i))) {
+				Assert.assertTrue(false);
+			}}
+		WebElement e8 = driver.findElement(
+				By.xpath("//tbody/tr[12]/td[4]"));
+		String data8 = e8.getText();
+		for (int i = 0; i < PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.size(); i++) {
+			if (!data8.contains(PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.get(i))) {
+				Assert.assertTrue(false);
+			}}
+	}
+
 
 	public void verify_basic_lower_limb_assessment_page() {
 
@@ -4427,3 +4500,4 @@ public class SeleniumCommonUtils {
 		waitIntervalByHalf(1);
 	}
 }
+

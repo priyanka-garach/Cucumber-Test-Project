@@ -322,6 +322,14 @@ public class PixalereStringPool {
 	public static final String Custodial_Arrangements = "Custodial Arrangements";
 	
 	public static final String Important_Past_Medical_Surgical_History = "Important Past Medical Surgical History";
+	public static final String Activity_to_be_Instructed = "Activity to be Instructed";
+	
+	public static final String LearnerName = "LearnerName";
+
+	public static final String LearnerDate = "LearnerDate";
+
+	public static final String EducationComment = "EducationComment";
+
 	
 	public static final String Daycare_Childcare =  "Daycare Childcare";
 	public static final String Siblings = "Siblings";
