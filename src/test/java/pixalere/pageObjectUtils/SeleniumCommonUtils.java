@@ -43,7 +43,9 @@ import pixalere.scripts.PixalereHomePeritonealScripts;
 import pixalere.scripts.PixalereIntakeOutputScripts;
 import pixalere.scripts.PixalereMedRATScripts;
 import pixalere.scripts.PixalereScripts;
+import pixalere.scripts.PixalereTeachingAgreementScript;
 import pixalere.scripts.PixalereUpperLimbAssessmentScripts;
+import pixalere.scripts.PixalereWaterlawAssessmentScript;
 import pixalere.stepdefinitions.Tests_PixalereEmergencyPlanning;
 
 public class SeleniumCommonUtils {
@@ -2636,7 +2638,13 @@ public class SeleniumCommonUtils {
 
 	public void verify_RecommendationsPAge() {
 		// input text field
-		String s1 = "//div[contains(text(),'%s')]";
+		String s2 = "//div[@class='cus-datepicker col-lg-3 col-md-3 col-sm-3 col-11 xs-mb-10 ']";
+		WebElement e1 = driver.findElement(By.xpath(String.format(s2, PixalereScripts.RecommendationDate1)));
+		String data1 = e1.getText();
+		if (!data1.equalsIgnoreCase(PixalereScripts.RecommendationDate1)) {
+			Assert.assertTrue(false);
+		}
+		String s1 = "//div[@class='mt-15']";
 		WebElement e13 = driver.findElement(By.xpath(String.format(s1, PixalereScripts.RecommendationsDataSPT1)));
 		String data13 = e13.getText();
 		if (!data13.equalsIgnoreCase(PixalereScripts.RecommendationsDataSPT1)) {
@@ -2647,15 +2655,51 @@ public class SeleniumCommonUtils {
 	}
 
 	public void verify_ExcersizeProgramPage() {
-		// input text field
-		WebElement e13 = driver.findElement(By.xpath("(//*[@id='exercise_setup_detail']//tr)[2]//td[2]"));
-		String data13 = e13.getText();
-		if (!data13.equalsIgnoreCase(PixalereScripts.ExcersizeName)) {
+		clickElement(By.xpath("//input[@value='View']"));
+		Wait_p(3);
+//		 input text field
+		WebElement td1 = driver.findElement(By.xpath("//tbody[@id='listEqDiv']//tr[1]//td[5]"));
+		String data1 = td1.getText();
+		if (!data1.equalsIgnoreCase(PixalereScripts.HoldAST1)) {
 			Assert.assertTrue(false);
 		}
-
+		WebElement td2 = driver.findElement(By.xpath("//tbody[@id='listEqDiv']//tr[1]//td[6]"));
+		String data2 = td2.getText();
+		if (!data2.equalsIgnoreCase(PixalereScripts.RepeatAST1)) {
+			Assert.assertTrue(false);
+		}
+		WebElement td3 = driver.findElement(By.xpath("//tbody[@id='listEqDiv']//tr[1]//td[7]"));
+		String data3 = td3.getText();
+		if (!data3.equalsIgnoreCase(PixalereScripts.SideAST1)) {
+			Assert.assertTrue(false);
+		}
+		clickElement(By.xpath("//div[@class='ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable ui-resizable']//button[@type='button']"));
+Wait_p(3);
 		System.out.println("Excersize PT Page verified................");
 
+	}
+//	Record Table Verify
+	public void verify_RecordAfterAdd_ExcersizeProgram() {
+		// input text field
+		WebElement td1 = driver.findElement(By.xpath("//*[@id='exeHold_1']"));
+		String data1 = td1.getAttribute("value");
+		if (!data1.equalsIgnoreCase(PixalereScripts.HoldAST1)) {
+			Assert.assertTrue(false);
+		}		
+		WebElement td2 = driver.findElement(By.xpath("//*[@id='exeRepeat_1']"));
+		String data2 = td2.getAttribute("value");
+		if (!data2.equalsIgnoreCase(PixalereScripts.RepeatAST1)) {
+			Assert.assertTrue(false);
+		}
+		WebElement td3 = driver.findElement(By.xpath("//*[@id='exeSide_1']"));
+		String data3 = td3.getAttribute("value");
+		if (!data3.equalsIgnoreCase(PixalereScripts.SideAST1)) {
+			Assert.assertTrue(false);
+		}
+		
+		
+		System.out.println("After Click on Add Record verified................");
+		
 	}
 
 	public void verify_PTCAMPAge() {

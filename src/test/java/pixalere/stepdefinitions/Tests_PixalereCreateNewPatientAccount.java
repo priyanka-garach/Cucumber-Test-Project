@@ -92,6 +92,10 @@ public class Tests_PixalereCreateNewPatientAccount extends PixalereCreateNewPati
 	public void I_select_PT_from_Service_Referral_PTAssessment_special() {
 		select_ByIndex(By.id("encounter"), 0);
 	}
+	@When("I select PT from Service Referral")
+	public void I_select_PT_from_Service_Referral() {
+		select_ByIndex(By.id("encounter"), 4);
+	}
 	
 	@When("I select current date with {string} year in {string} dropdown")
 	public void i_select_current_date_with_year_in_dropdown(String year, String string2) {

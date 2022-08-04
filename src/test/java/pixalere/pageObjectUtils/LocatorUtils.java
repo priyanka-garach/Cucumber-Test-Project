@@ -2109,6 +2109,87 @@ public class LocatorUtils {
 			else
 				return By.xpath("");
 		}
+		public static By getRadioOptionByIncontinence(String section) {
+			radioIncontinence = section;
+			if (section.equalsIgnoreCase("0 : Complete/ catheterised"))
+				return By.xpath("//*[@id='md-radio-incontinence_list-1']");
+			else if (section.equalsIgnoreCase("1 : Incontinent urine"))
+				return By.xpath("//*[@id='md-radio-incontinence_list-2']");
+			else if (section.equalsIgnoreCase("2 : Incontinent faeces"))
+				return By.xpath("//*[@id='md-radio-incontinence_list-3']");
+			else if (section.equalsIgnoreCase("3 : Doubly incontinent (urine & faeces)"))
+				return By.xpath("//*[@id='md-radio-incontinence_list-4']");
+			else
+				return By.xpath("");
+		}
+
+		public static By getRadioOptionBySkin_Type_Visual_Risk_Area(String section) {
+			radioSkin_Type_Visual_Risk_Area = section;
+			if (section.equalsIgnoreCase("0 : Healthy"))
+				return By.xpath("//*[@id='md-radio-skintype_list-1']");
+			
+			else if (section.equalsIgnoreCase("1 : Tissue paper (thin/fragile)"))
+				return By.xpath("//*[@id='md-radio-skintype_list-2']");
+			
+			else if (section.equalsIgnoreCase("1 : Dry (appears flaky)"))
+				return By.xpath("//*[@id='md-radio-skintype_list-3']");
+			
+			else if (section.equalsIgnoreCase("1 : Oedematous (puffy)"))
+				return By.xpath("//*[@id='md-radio-skintype_list-4']");
+			
+			else if (section.equalsIgnoreCase("1 : Clammy (moist to touch)/pyrexia"))
+				return By.xpath("//*[@id='md-radio-skintype_list-5']");
+			
+			else if (section.equalsIgnoreCase("2 : Discoloured (bruising/mottled)"))
+				return By.xpath("//*[@id='md-radio-skintype_list-6']");
+			else if (section.equalsIgnoreCase("3 : Broken (established ulcer)"))
+				return By.xpath("//*[@id='md-radio-skintype_list-7']");
+			else
+				return By.xpath("");
+		}
+		
+		public static By getRadioOptionByMobility(String section) {
+			radioMobility = section;
+			if (section.equalsIgnoreCase("0 : Fully mobile"))
+				return By.xpath("//*[@id='md-radio-mobility_list-1']");
+			
+			else if (section.equalsIgnoreCase("1 : Restless/fidgety"))
+				return By.xpath("//*[@id='md-radio-mobility_list-2']");
+			
+			else if (section.equalsIgnoreCase("2 : Apathetic (sedated/depressed/reluctant to move)"))
+				return By.xpath("//*[@id='md-radio-mobility_list-3']");
+			
+			else if (section.equalsIgnoreCase("3 : Restricted (restricted by severe pain or disease)"))
+				return By.xpath("//*[@id='md-radio-mobility_list-4']");
+			
+			else if (section.equalsIgnoreCase("4 : Bedbound (unconscious/unable to change position/traction)"))
+				return By.xpath("//*[@id='md-radio-mobility_list-5']");
+			
+			else if (section.equalsIgnoreCase("5 : Chair bound (unable to leave chair without assistance)"))
+				return By.xpath("//*[@id='md-radio-mobility_list-6']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByNutrition_Element(String section) {
+			radioNutrition_Element = section;
+			if (section.equalsIgnoreCase("0 : Unplanned weight loss in past 3-6 months < 5%"))
+				return By.xpath("//*[@id='md-radio-nutrition_list-1']");
+			
+			else if (section.equalsIgnoreCase("1 : Unplanned weight loss in past 3-6 months 5-10%"))
+				return By.xpath("//*[@id='md-radio-nutrition_list-2']");
+			
+			else if (section.equalsIgnoreCase("2 : Unplanned weight loss in past 3-6 months > 10%"))
+				return By.xpath("//*[@id='md-radio-nutrition_list-3']");
+			
+			else if (section.equalsIgnoreCase("99 : BMI"))
+				return By.xpath("//*[@id='md-radio-nutrition_list-4']");
+			
+			else if (section.equalsIgnoreCase("2 : Patient/ client acutely ill or no nutritional intake > 5 days"))
+				return By.xpath("//*[@id='md-radio-nutrition_list-5']");
+
+			else
+				return By.xpath("");
+		}
 	}
 		
 }
