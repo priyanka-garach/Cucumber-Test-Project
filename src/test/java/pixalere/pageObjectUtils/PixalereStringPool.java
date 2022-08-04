@@ -145,13 +145,14 @@ public class PixalereStringPool {
 	
 	public static final String CAMPTCOMMENTS = "CAMPTComment";
 	
+	public static final String RecommendationDate = "RecommendationDate";
 	public static final String RecommendationsDataSPT = "RecommendationsData";
 	
-	public static final String HoldAST1 = "HoldAST1";
+	public static final String HoldAST1 = "Hold";
 	
-	public static final String SideAST1 = "SideAST1";
+	public static final String SideAST1 = "Sides";
 	
-	public static final String SideAST2 = "SideAST2";
+	public static final String RepeatAST1 = "Repeat";
 	
 	public static final String SideAST3 = "SideAST3";
 	

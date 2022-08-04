@@ -5,6 +5,7 @@ import java.io.File;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
 import pixalere.scripts.PixalereScripts;
@@ -82,6 +83,10 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I click on Add More")
 	public void i_click_on_Add_More() {
 		clickElement(By.xpath("//*[@id='addConcernDiv']"));
+	}
+	@When("I click on Add button for Exercise")
+	public void i_click_on_Add_Exercise() {
+		clickElement(By.xpath("//a[@class='delete proClass']"));
 	}
 
 	@When("I click on Save VHA Funding Letter Button")
@@ -315,6 +320,11 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 
 	}
 
+	@Then("I verify record after add button")
+	public void I_verify_record_after_add_button() {
+		verify_RecordAfterAdd_ExcersizeProgram();
+	}
+	
 	@When("I start verifying records in Exercise Program Page")
 	public void I_start_verifying_records_in_Exercise_Program_Page() {
 		verify_ExcersizeProgramPage();

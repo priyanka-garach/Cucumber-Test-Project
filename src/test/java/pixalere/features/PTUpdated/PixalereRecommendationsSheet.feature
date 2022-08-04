@@ -11,8 +11,10 @@ And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "Recommendations Sheet" LH panel option
 Then "Recommendations Sheet" page will open
 ##
-When I enter "RecommendationsData" input field OT
+And I enter "RecommendationDate" input field in script
+And I enter "RecommendationsData" input field in script
 And I click on Save My Work Teaching Agreement Button
+
 #Then Recommendations Sheet should get verified
 And I Navigate to "Viewer -> Recommendations Sheet" LH panel option
 Then "Recommendations Sheet" page will open

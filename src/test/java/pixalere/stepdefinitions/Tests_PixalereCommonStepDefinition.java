@@ -101,6 +101,11 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 		System.out.println("Hello Output");
 
 	}
+	@When("I search created patient with PIXID special")
+	public void i_search_created_patient_pixid_special() {
+		searchPatient_pp();
+		
+	}
 
 	@When("I click on {string} hyper link")
 	public void i_click_on_hyper_link(String hyperLink) {

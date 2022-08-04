@@ -33,8 +33,10 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String FIMData1;
 	public static String CAMPTCOMMENTS1;
 	public static String RecommendationsDataSPT1;
-	public static String HoldAST;
+	public static String RecommendationDate1;
+	public static String HoldAST1;
 	public static String SideAST1;
+	public static String RepeatAST1;
 	public static String SideAST2;
 	public static String SideAST3;
 	public static String SideAST4;
@@ -1212,18 +1214,25 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.id("dataObtained"), CAMPTCOMMENTS1);
 			break;
 
+		case PixalereStringPool.RecommendationDate:
+			RecommendationDate1 = "05/05/2022";
+			System.out.println(PixalereStringPool.RecommendationDate + ": " + RecommendationDate1);
+			clear(By.id("date"));
+			sendKeys_date(By.id("date"), RecommendationDate1);
+			break;
+			
 		case PixalereStringPool.RecommendationsDataSPT:
-			RecommendationsDataSPT1 = JavaUtils.getRandomString(15);
+			RecommendationsDataSPT1 = JavaUtils.getRandomString(500);
 			System.out.println(PixalereStringPool.RecommendationsDataSPT + ": " + RecommendationsDataSPT1);
 			clear(By.id("lettercontentDiv"));
 			sendKeys(By.id("lettercontentDiv"), RecommendationsDataSPT1);
 			break;
 
 		case PixalereStringPool.HoldAST1:
-			HoldAST = "2";
-			System.out.println(PixalereStringPool.HoldAST1 + ": " + HoldAST);
+			HoldAST1 = "2";
+			System.out.println(PixalereStringPool.HoldAST1 + ": " + HoldAST1);
 			clear(By.xpath("//input[@name='qtyHold'][1]"));
-			sendKeys(By.xpath("//input[@name='qtyHold'][1]"), HoldAST);
+			sendKeys(By.xpath("//input[@name='qtyHold'][1]"), HoldAST1);
 			break;
 
 		case PixalereStringPool.SideAST1:
@@ -1234,12 +1243,12 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.xpath("//input[@name='qtySide'][1]"), SideAST1);
 			break;
 
-		case PixalereStringPool.SideAST2:
-			SideAST2 = JavaUtils.getRandomNumber(1);
+		case PixalereStringPool.RepeatAST1:
+			RepeatAST1 = JavaUtils.getRandomNumber(1);
 			;
-			System.out.println(PixalereStringPool.SideAST2 + ": " + SideAST2);
-			clear(By.xpath("(//input[@name='qtySide'])[2]"));
-			sendKeys(By.xpath("(//input[@name='qtySide'])[2]"), SideAST2);
+			System.out.println(PixalereStringPool.RepeatAST1 + ": " + RepeatAST1);
+			clear(By.xpath("//input[@name='qtyRepeat'][1]"));
+			sendKeys(By.xpath("//input[@name='qtyRepeat'][1]"), RepeatAST1);
 			break;
 
 		case PixalereStringPool.SideAST3:
