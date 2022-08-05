@@ -91,8 +91,11 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 	@When("I search created patient with PIXID")
 	public void i_search_created_patient_pixid() {
 		searchPatient_p();
-		System.out.println("Hello Output");
-
+	}
+	
+	@When("I search created patient with PIXID Nursing")
+	public void i_search_created_patient_pixid_nursing() {
+		searchPatient_nursing();
 	}
 	
 	@When("I search created patient with PIXID special for PTAssessement and Teaching")

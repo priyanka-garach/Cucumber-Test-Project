@@ -414,8 +414,8 @@ public class PixalereIntakeOutputScripts extends PixalereCommonUtils {
 		case PixalereStringPool.MedRatDelete:
 			MedRatDeletion = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.MedRatDelete+": "+ MedRatDeletion);
-			clear(MedRatLocators.txt_medrat_delet);
-			sendKeys(MedRatLocators.txt_medrat_delet, MedRatDeletion);
+			clear(MedRatLocators.txt_reason_delete);
+			sendKeys(MedRatLocators.txt_reason_delete, MedRatDeletion);
 			break;
 			
 			

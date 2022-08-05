@@ -17,7 +17,7 @@ import pixalere.pageObjectUtils.SeleniumCommonUtils;
 //		dryRun = false
 //)
 
-@CucumberOptions(features = { "classpath:pixalere/features/PTUpdated/PixalereExerciseProgram.feature" }, glue = {
+@CucumberOptions(features = { "classpath:pixalere/features/NursingForms/PixalereWaterLowAssessment.feature" }, glue = {
 		"classpath:pixalere.stepdefinitions" }, plugin = { "pretty", "json:target/cucumber.json" })
 
 public class TestRunner2 extends AbstractTestNGCucumberTests {
@@ -26,5 +26,6 @@ public class TestRunner2 extends AbstractTestNGCucumberTests {
 	public static void tearDown() {
 		new SeleniumCommonUtils().tearDown();
 		SeleniumCommonUtils.generateReport();
+	
 	}
 }

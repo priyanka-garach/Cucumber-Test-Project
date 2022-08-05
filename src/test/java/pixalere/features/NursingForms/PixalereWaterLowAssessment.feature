@@ -5,7 +5,8 @@ Scenario: Pixalere Care Plan Nursing Adult Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
-When I select client name "TEST-Kirby , Jose" from Dashboard
+When I globally select "Pix ID" from Search Category dropdown
+And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Patient Profile -> Waterlow Assessment" LH panel option
 Then "Waterlow Assessment" page will open
@@ -28,4 +29,8 @@ And I click on Confirm Button
 And I Navigate to "Viewer -> Waterlow Flowchart" LH panel option
 Then "Waterlow Flowchart" page will open
 Then I start verifying records in Waterlow Assessment
+And I press on Delete Button
+And I enter "Reason for deleting record" input field Deletion in scripts
+And I confirm to press Delete Button
+And I check reason after deletion in viewer
 And I Logout from Pixalere

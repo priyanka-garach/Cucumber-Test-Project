@@ -904,10 +904,37 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_start_verifying_records_in_Care_Plan_Nursing_Adult_Page() {
 		verify_Care_Plan_Nursing();
 	}
+	
+	@When("I enter {string} input field Deletion in scripts")
+	public void i_enter_input_field_delete_n_scripts(String inputField) {
+		Wait_p(2);
+		enterInputFieldAsPerKeyfromScripts(inputField);
+		System.out.println();
+	}
 
 	@When("I click on Save Button for page Care Plan Nursing Adult")
 	public void I_click_on_Save_Button_for_page_Care_Plan_Nursing_Adult() {
 		clickElement(By.id("save_careplan"));
 	}
+	
+	@When("I check reason after deletion in viewer")
+	public void I_check_reason_after_deletion_in_viewer() {
+		Wait_p(3);
+		verify_RecordAfterDeletion();
+	}
+	
+	@When("I confirm to press Delete Button")
+	public void i_click_MedRAT_Page_del_button()
+	{
+		Wait_p(3);
+		clickElement(By.xpath("//button[contains(text(),'Delete this charting')]"));
+	}
+	
+	@When("I press on Delete Button")
+	public void i_press_delete_in_MedRAT_Page() {
+		clickElementWithJQuery(By.xpath("((//td[normalize-space()='Data Correction']/following::tbody//tr[1]//td)[last()])//button"));
+	}
+
+	
 
 }

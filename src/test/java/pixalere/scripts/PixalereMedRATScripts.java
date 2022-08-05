@@ -33,7 +33,6 @@ public class PixalereMedRATScripts extends PixalereCommonUtils {
 	}
 	
 	
-	
 	public void selectIntakeOutputCheckobx(String section) {
 					
 			if (section.contains("Impaired cognition")) {

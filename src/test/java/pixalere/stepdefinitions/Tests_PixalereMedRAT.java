@@ -55,15 +55,6 @@ public class Tests_PixalereMedRAT extends PixalereMedRATScripts {
 		verify_MedRatDelete();
 	}
 	
-	@When("I confirm to press Delete Button")
-	public void i_click_MedRAT_Page_del_button()
-	{
-		clickElement(By.xpath("//button[contains(text(),'Delete this charting')]"));
-	}
-		
-	@When("I press on Delete Button")
-	public void i_press_delete_in_MedRAT_Page() {
-		clickElementWithJQuery(By.xpath("((//td[normalize-space()='Data Correction']/following::tbody//tr[1]//td)[last()])//button"));
-	}
 
+	
 }

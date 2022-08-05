@@ -1,9 +1,5 @@
 package pixalere.stepdefinitions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
 import io.cucumber.java.en.When;
 import pixalere.scripts.PixalereIntakeOutputScripts;
 
@@ -39,9 +35,7 @@ public class Tests_PixalereIntakeOutput extends PixalereIntakeOutputScripts {
 	public void i_enter_input_field(String inputField) {
 		Wait_p(2);
 		enterInputFieldAsPerKey(inputField);
-		System.out.println();
 	}
-	
 	
 	@When("I click {string} radio option for Safety Check field")
 	public void i_click_radio_option_for_Safety_Check_field(String string) {

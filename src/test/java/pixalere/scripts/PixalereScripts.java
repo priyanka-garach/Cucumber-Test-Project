@@ -7,6 +7,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 
 import pixalere.pageObjectJavaUtils.JavaUtils;
+import pixalere.pageObjectUtils.LocatorUtils.GlobalPageLocators;
+import pixalere.pageObjectUtils.LocatorUtils.MedRatLocators;
 import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
 import pixalere.pageObjectUtils.PixalereCommonUtils;
 import pixalere.pageObjectUtils.PixalereStringPool;
@@ -242,6 +244,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String radiodependent_rubor_rightfoot;
 	public static String radioerythema_leftfoot;
 	public static String radioerythema_rightfoot;
+	public static String varDelete_inViewer;
 	
 	public static List<String> list_Cardiovascular_ICAN1 = new ArrayList<>();
 	public static List<String> list_Respiratory_ICAN1 = new ArrayList<>();
@@ -2200,6 +2203,13 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.EducationComment+ ": " + EducationComment1);
 			clear(By.xpath("(//*[@id='education_comments'])"));
 			sendKeys(By.xpath("(//*[@id='education_comments'])"), EducationComment1);
+			break;
+			
+		case PixalereStringPool.Reason_of_Delete_in_Viewer:
+			varDelete_inViewer = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Reason_of_Delete_in_Viewer+": "+ varDelete_inViewer);
+			clear(GlobalPageLocators.txt_reason_delete);
+			sendKeys(GlobalPageLocators.txt_reason_delete, varDelete_inViewer);
 			break;
 
 		}

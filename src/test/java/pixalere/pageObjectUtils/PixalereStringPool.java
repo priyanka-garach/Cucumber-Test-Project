@@ -427,6 +427,8 @@ public class PixalereStringPool {
 
 	public static final String MedRatDelete = "Reason for Deletion";
 	
+	public static final String Reason_of_Delete_in_Viewer = "Reason for deleting record";
+	
 	public static final String SLEEP_POSITION = "Sleep Position";
 	
 	public static final String RIGHT_ANKLE_MEASURE_CM = "Ankle Measurement cm Right";

@@ -93,7 +93,9 @@ public class LocatorUtils {
 		public static By pop_PopupLabel = By.cssSelector("div[style*='display: block'] span[class*='dialog-title']");
 		public static String search_patient = "//a[normalize-space(text()) = '%s']";
 		public static String select_from_ServiceReferreal = "//*[@id='encounter']//option[contains(text(),'%s')]";
+		public static By txt_reason_delete = By.xpath("//*[@id='deleted_reason']");
 	}
+	
 	public static class WaterlowLocators{
 //		Special Risks - Tissue Malnutrition
 		public static By chk_Terminal_Cahexia = By.xpath("//*[@id='specialrisk_tissue_list1_label']");
@@ -417,7 +419,7 @@ public class LocatorUtils {
 		public static By chk_lacks_basic = By
 				.xpath("//label[contains(text(),'Lacks basic understanding of medications')]");
 		public static By chk_other = By.xpath("//label[contains(text(),'Other')]");
-		public static By txt_medrat_delet = By.xpath("//*[@id='deleted_reason']");
+		public static By txt_reason_delete = By.xpath("//*[@id='deleted_reason']");
 
 	}
 

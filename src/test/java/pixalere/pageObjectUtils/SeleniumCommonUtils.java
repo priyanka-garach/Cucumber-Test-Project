@@ -235,7 +235,7 @@ public class SeleniumCommonUtils {
 	 * @param locator
 	 * @param value
 	 */
-	 
+
 	public void sendKeys(By locator, String value) {
 		waitInterval(3);
 		try {
@@ -787,6 +787,19 @@ public class SeleniumCommonUtils {
 		if (!result) {
 			Assert.assertTrue(false);
 		}
+	}
+	
+	public void verify_RecordAfterDeletion() {
+		
+		Wait_p(3);
+		String deletion = "//*[contains(text(),'Reason for deletion:%s')]";
+		boolean result = isDisplayed(
+				By.xpath(String.format(deletion, (PixalereScripts.varDelete_inViewer))));
+		if (!result) {
+			Assert.assertTrue(false);
+		}
+		System.out.println("Reason matched");
+		
 	}
 
 	public void verify_IntakeOutput() {
@@ -2404,16 +2417,13 @@ public class SeleniumCommonUtils {
 		if (!(data14.contains(""))) {
 			Assert.assertTrue(false);
 		}
-		
-		
 
-		/*// Radio Button verify
-		WebElement e13 = driver.findElement(By.xpath(
-				"(//td[contains(text(),'Sensation Question Right Foot')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data13 = e13.getText();
-		if (!(data13.contains(""))) {
-			Assert.assertTrue(false);
-		}*/
+		/*
+		 * // Radio Button verify WebElement e13 = driver.findElement(By.xpath(
+		 * "(//td[contains(text(),'Sensation Question Right Foot')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"
+		 * )); String data13 = e13.getText(); if (!(data13.contains(""))) {
+		 * Assert.assertTrue(false); }
+		 */
 
 		System.out.println("60 Second Diabetic Foot Exam Page Verified..............");
 	}
@@ -2547,7 +2557,7 @@ public class SeleniumCommonUtils {
 	}
 
 	public void verify_TeachingAgreementPT() {
-		//		 Radio Button verify
+		// Radio Button verify
 		WebElement e2 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='For the listed Activities Assigned: Risk, alternatives and benefits discussed. Risks of not performing activities discussed. Questions addressed.']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data2 = e2.getText();
@@ -2603,36 +2613,40 @@ public class SeleniumCommonUtils {
 		if (!data10.equalsIgnoreCase(LocatorUtils.radioService_Supervisor)) {
 			Assert.assertTrue(false);
 		}
-		
+
 //		CheckBox Verification
-		WebElement v1 = driver.findElement(
-				By.xpath("(//td[contains(text(),'Activity')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		WebElement v1 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Activity')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String d1 = v1.getText();
 		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
 			if (!d1.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
 				Assert.assertTrue(false);
-			}}
-		WebElement v2 = driver.findElement(
-				By.xpath("(//td[contains(text(),'Transfers')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+			}
+		}
+		WebElement v2 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Transfers')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String d2 = v2.getText();
 		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
 			if (!d2.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
 				Assert.assertTrue(false);
-			}}
-		WebElement v3 = driver.findElement(
-				By.xpath("(//td[contains(text(),'Resources')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+			}
+		}
+		WebElement v3 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Resources')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String d3 = v3.getText();
 		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
 			if (!d3.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
 				Assert.assertTrue(false);
-			}}
+			}
+		}
 		WebElement v4 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Consent Obtained')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String d4 = v4.getText();
 		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
 			if (!d4.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
 				Assert.assertTrue(false);
-			}}
+			}
+		}
 
 	}
 
@@ -2673,11 +2687,13 @@ public class SeleniumCommonUtils {
 		if (!data3.equalsIgnoreCase(PixalereScripts.SideAST1)) {
 			Assert.assertTrue(false);
 		}
-		clickElement(By.xpath("//div[@class='ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable ui-resizable']//button[@type='button']"));
-Wait_p(3);
+		clickElement(By.xpath(
+				"//div[@class='ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable ui-resizable']//button[@type='button']"));
+		Wait_p(3);
 		System.out.println("Excersize PT Page verified................");
 
 	}
+
 //	Record Table Verify
 	public void verify_RecordAfterAdd_ExcersizeProgram() {
 		// input text field
@@ -2685,7 +2701,7 @@ Wait_p(3);
 		String data1 = td1.getAttribute("value");
 		if (!data1.equalsIgnoreCase(PixalereScripts.HoldAST1)) {
 			Assert.assertTrue(false);
-		}		
+		}
 		WebElement td2 = driver.findElement(By.xpath("//*[@id='exeRepeat_1']"));
 		String data2 = td2.getAttribute("value");
 		if (!data2.equalsIgnoreCase(PixalereScripts.RepeatAST1)) {
@@ -2696,10 +2712,9 @@ Wait_p(3);
 		if (!data3.equalsIgnoreCase(PixalereScripts.SideAST1)) {
 			Assert.assertTrue(false);
 		}
-		
-		
+
 		System.out.println("After Click on Add Record verified................");
-		
+
 	}
 
 	public void verify_PTCAMPAge() {
@@ -3736,63 +3751,62 @@ Wait_p(3);
 
 		System.out.println("Advance Lower Limb data verified..................");
 	}
+
 	public void verifyWaterlowAssessment() {
 		// Radio Button verify
-		WebElement e1 = driver.findElement(
-				By.xpath("//tbody/tr[5]/td[4]"));
+		WebElement e1 = driver.findElement(By.xpath("//tbody/tr[5]/td[4]"));
 		String data1 = e1.getText();
 		if (!(data1.equalsIgnoreCase(LocatorUtils.radioIncontinence))) {
 			Assert.assertTrue(false);
 		}
-		WebElement e2 = driver.findElement(
-				By.xpath("//tbody/tr[6]/td[4]"));
+		WebElement e2 = driver.findElement(By.xpath("//tbody/tr[6]/td[4]"));
 		String data2 = e2.getText();
 		if (!(data2.equalsIgnoreCase(LocatorUtils.radioSkin_Type_Visual_Risk_Area))) {
 			Assert.assertTrue(false);
 		}
-		WebElement e3 = driver.findElement(
-				By.xpath("//tbody/tr[7]/td[4]"));
+		WebElement e3 = driver.findElement(By.xpath("//tbody/tr[7]/td[4]"));
 		String data3 = e3.getText();
 		if (!(data3.equalsIgnoreCase(LocatorUtils.radioMobility))) {
 			Assert.assertTrue(false);
 		}
-		WebElement e4 = driver.findElement(
-				By.xpath("//tbody/tr[8]/td[4]"));
+		WebElement e4 = driver.findElement(By.xpath("//tbody/tr[8]/td[4]"));
 		String data4 = e4.getText();
 		if (!(data4.equalsIgnoreCase(LocatorUtils.radioNutrition_Element))) {
 			Assert.assertTrue(false);
 		}
-//		CheckBox Verification
-		WebElement e5 = driver.findElement(
-				By.xpath("//tbody/tr[9]/td[4]"));
+		//	CheckBox Verification
+		/*WebElement e5 = driver.findElement(By.xpath("//tbody/tr[9]/td[4]"));
 		String data5 = e5.getText();
-		for (int i = 0; i < PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.size(); i++) {
-			if (!data5.contains(PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.get(i))) {
+		for (int i = 0; i < PixalereWaterlawAssessmentScript.Tissue_Malnutrition_Checkbox.size(); i++) {
+			if (!data5.contains(PixalereWaterlawAssessmentScript.Tissue_Malnutrition_Checkbox.get(i))) {
 				Assert.assertTrue(false);
-			}}
-		WebElement e6 = driver.findElement(
-				By.xpath("//tbody/tr[10]/td[4]"));
+			}
+		}
+		WebElement e6 = driver.findElement(By.xpath("//tbody/tr[10]/td[4]"));
 		String data6 = e6.getText();
-		for (int i = 0; i < PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.size(); i++) {
-			if (!data6.contains(PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.get(i))) {
+		for (int i = 0; i < PixalereWaterlawAssessmentScript.Neurological_Deficit_Checkbox1.size(); i++) {
+			if (!data6.contains(PixalereWaterlawAssessmentScript.Neurological_Deficit_Checkbox1.get(i))) {
 				Assert.assertTrue(false);
-			}}
-		WebElement e7 = driver.findElement(
-				By.xpath("//tbody/tr[11]/td[4]"));
+			}
+		}
+		WebElement e7 = driver.findElement(By.xpath("//tbody/tr[11]/td[4]"));
 		String data7 = e7.getText();
-		for (int i = 0; i < PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.size(); i++) {
-			if (!data7.contains(PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.get(i))) {
+		for (int i = 0; i < PixalereWaterlawAssessmentScript.Surgery_Trauma_Checkbox1.size(); i++) {
+			if (!data7.contains(PixalereWaterlawAssessmentScript.Surgery_Trauma_Checkbox1.get(i))) {
 				Assert.assertTrue(false);
-			}}
-		WebElement e8 = driver.findElement(
-				By.xpath("//tbody/tr[12]/td[4]"));
+			}
+		}
+		
+		WebElement e8 = driver.findElement(By.xpath("//tbody/tr[12]/td[4]"));
 		String data8 = e8.getText();
 		for (int i = 0; i < PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.size(); i++) {
 			if (!data8.contains(PixalereWaterlawAssessmentScript.WaterAssessment_Checkbox.get(i))) {
 				Assert.assertTrue(false);
-			}}
+			}
+		}*/
+		
+		System.out.println("WaterLow Assese=ment Page Verified.....");
 	}
-
 
 	public void verify_basic_lower_limb_assessment_page() {
 
@@ -4351,7 +4365,7 @@ Wait_p(3);
 	 */
 	public void tearDown() {
 		if ((driver != null) && (getWebDriver() != null)) {
-			driver.close();
+			//driver.close();
 			driver.quit();
 		}
 	}
@@ -4544,4 +4558,3 @@ Wait_p(3);
 		waitIntervalByHalf(1);
 	}
 }
-
