@@ -7,6 +7,7 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pixalere.pageObjectUtils.LocatorUtils.CustomizedLocators;
 import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
 import pixalere.scripts.PixalereScripts;
 
@@ -823,6 +824,14 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_click_checkbox_for(String string) {
 		clickElementWithJQuery(By.xpath(String.format("//label[contains(text(),'%s')]", string)));
 	}
+	@When("I click on checkbox for Client_Substitute Decision Maker has requested and agrees to communication via text")
+	public void I_click_on_checkbox_for_Client_Substitute_Decision_Maker_has_requested_and_agrees_to_communication_via_text() {
+		clickElementWithJQuery(By.xpath("//label[@for='agrees_to_text']"));
+	}
+	@When("I click on Other checkbox for Service Consent Obtained")
+	public void I_click_on_Other_checkbox_for_Service_Consent_Obtained() {
+		clickElementWithJQuery(By.xpath("//*[@id='proposed_health_services_21_other_label']"));
+	}
 
 	@When("I start verifying records in Non-Authorizer Mobility Device Recommendation Page")
 	public void i_start_verifying_records_in_Non_Authorizer_Mobility_Device_Recommendation_Page() {
@@ -860,6 +869,19 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_click_on_Virtual_Care_Consent_to_Open_PopUp() {
 		clickElement(By.xpath("(//div[@class='titl-crt'])[4]"));
 	}
+	@When("I click on Email Use For Communication Requested by Client_SDM to Open PopUp")
+	public void I_click_on_Email_Use_For_Communication_Requested_by_Client_SDM_to_Open_PopUp() {
+		clickElementWithJQuery(By.xpath("//*[@id='ClientConsentForm']/div/div/div[2]/div[4]/div[1]/div[3]/span"));
+	}
+	@When("I click on Text Use For Communication Requested by Client_SDM Open PopUp")
+	public void I_click_on_Text_Use_For_Communication_Requested_by_Client_SDM_to_Open_PopUp() {
+		clickElementWithJQuery(By.xpath("//*[@id='ClientConsentForm']/div/div/div[2]/div[5]/div[1]/div[3]/span"));
+		
+	}
+	@When("I click on Required for video checkbox")
+	public void i_click_on_Required_for_video_checkbox() {
+		clickElement(By.xpath("//*[@for='e_consent']"));
+	}
 
 	@When("I verified data for {string}")
 	public void i_verified_data_for(String string) {
@@ -868,12 +890,25 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 
 	@When("I click on radio button {string} CC")
 	public void i_click_on_radio_button_CC(String string) {
-		clickElement(By.xpath("(//label[contains(@id,'e_consent_tel_label')])[3]"));
+		clickElement(By.xpath("//label[@id='e_consent_tel_label3']//span[contains(@class,'box')]"));
 	}
-
+	
 	@When("I click on radio button two {string} CC")
 	public void i_click_on_radio_button_two_CC(String string) {
-		clickElement(By.xpath("(//label[contains(@id,'e_consent_video_label')])[3]"));
+		clickElement(By.xpath("(//*[@id='md-radio-e_consent_video_1'])"));
+	}
+	@When("I click on radio button {string} for Service Consent Obtained")
+	public void I_click_on_radio_button_Yes_for_Service_Consent_Obtained(String section) {
+		clickElement(CustomizedLocators.getRadioOptionBy_Service_Consent_Obtained(section));
+	}
+	@When("I click on radio button two {string} for Virtual Care Consent PT reviewed")
+	public void I_click_on_radio_button_Yes_for_Virtual_Care_Consent_PT_reviewed(String section) {
+		Wait_p(2);
+		clickElement(CustomizedLocators.getRadioOptionBy_Virtual_Care_Consent_PT_reviewed(section));
+	}
+	@When("I click on radio button {string} for Guidelines and Policies")
+	public void I_click_on_radio_button_Yes_for_Guidelines_and_Policies(String section) {
+		clickElement(CustomizedLocators.getRadioOptionBy_Guidelines_and_Policies(section));
 	}
 
 	@When("I save my work PTClient Consent")

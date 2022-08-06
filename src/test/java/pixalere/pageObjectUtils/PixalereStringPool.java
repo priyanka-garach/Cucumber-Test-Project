@@ -102,8 +102,18 @@ public class PixalereStringPool {
 	public static final String PROBLEM_No_CarePlan = "Problem CP";
 	
 	public static final String Special_Delivery_Instructions = "Special Delivery Instructions";
+	public static final String Alternate_Contact_Name = "Alternate Contact Name";
+	public static final String Backup_Plan = "Backup Plan";
+	public static final String Comments_in_Virtual_Care_Consent = "Comments in Virtual Care Consent";
+	public static final String Email = "Email";
+	public static final String Date_Guidelines = "Date Guidelines";
+	public static final String Date_Guidelines_Alternate = "Date Guidelines Alternate";
+	public static final String Lock_Box_Required = "Lock Box Required";
 			
 	public static final String first_areaofconcern = "1st area of concern";
+	
+	public static final String Other_Service_Consent_Obtained = "Other Service Consent Obtained";
+	public static final String Comments_Service_Consent_Obtained = "Comments Service Consent Obtained";
 	
 	public static final String secondareaof_concern = "2st area of concern";
 	
@@ -306,7 +316,7 @@ public class PixalereStringPool {
 
 	public static final String LSpine_SideFlexion = "LSpine_SideFlexion";
 	
-	public static final String LSpine_Shoulder_Flexion = "LSpine_Shoulder_Flexion";
+	public static final String Other_JointMovement = "Other_JointMovement";
 	
 	public static final String SDM_Name = "SDM Name";
 	

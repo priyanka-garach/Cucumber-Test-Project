@@ -14,30 +14,30 @@ Then "Joint Movement" page will open
 ##
 When I click on Check All Button
 And I click on Add Joint Button
-And I enter "Ankle_Dorsiflexion" input field OT
-And I enter "Ankle_Plantarflexion" input field OT
-And I enter "Knee_Flexion" input field OT
-And I enter "Knee_Extension" input field OT
-And I enter "Hip_Flexion" input field OT
-And I enter "Hip_Abduction" input field OT
-And I enter "Hip_Extension" input field OT
-And I enter "Wrist_Flexion" input field OT
-And I enter "Wrist_Extension" input field OT
-And I enter "Elbow_Flexion" input field OT
-And I enter "Elbow_Extension" input field OT
-And I enter "Elbow_Supination" input field OT
-And I enter "Elbow_Pronation" input field OT
-And I enter "Shoulder_Flexion" input field OT
-And I enter "Shoulder_Abduction" input field OT
-And I enter "Shoulder_External_Rotation" input field OT
-And I enter "Shoulder_Internal_Rotation" input field OT
-And I enter "CSpine_Flexion" input field OT
-And I enter "CSpine_Extension" input field OT
-And I enter "CSpine_SideFlexion" input field OT
-And I enter "CSpine_Rotation" input field OT
-And I enter "LSpine_Flexion" input field OT
-And I enter "LSpine_Extension" input field OT
-And I enter "LSpine_SideFlexion" input field OT
+And I enter "Ankle_Dorsiflexion" input field in script
+And I enter "Ankle_Plantarflexion" input field in script
+And I enter "Knee_Flexion" input field in script
+And I enter "Knee_Extension" input field in script
+And I enter "Hip_Flexion" input field in script
+And I enter "Hip_Abduction" input field in script
+And I enter "Hip_Extension" input field in script
+And I enter "Wrist_Flexion" input field in script
+And I enter "Wrist_Extension" input field in script
+And I enter "Elbow_Flexion" input field in script
+And I enter "Elbow_Extension" input field in script
+And I enter "Elbow_Supination" input field in script
+And I enter "Elbow_Pronation" input field in script
+And I enter "Shoulder_Flexion" input field in script
+And I enter "Shoulder_Abduction" input field in script
+And I enter "Shoulder_External_Rotation" input field in script
+And I enter "Shoulder_Internal_Rotation" input field in script
+And I enter "CSpine_Flexion" input field in script
+And I enter "CSpine_Extension" input field in script
+And I enter "CSpine_SideFlexion" input field in script
+And I enter "CSpine_Rotation" input field in script
+And I enter "LSpine_Flexion" input field in script
+And I enter "LSpine_Extension" input field in script
+And I enter "LSpine_SideFlexion" input field in script
 And I click on Save Button PTJointMovement
 ##
 And I Navigate to "Viewer -> Joint Movement" LH panel option
