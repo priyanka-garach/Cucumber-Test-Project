@@ -3,6 +3,7 @@ package pixalere.stepdefinitions;
 import java.io.File;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
@@ -12,7 +13,7 @@ import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
 import pixalere.scripts.PixalereScripts;
 
 public class Tests_PixalereStefDef extends PixalereScripts {
-
+	
 	@When("I click {string} radio option for {string} field CAM")
 	public void i_click_radio_option_for_field_CAM(String string, String string2) {
 		selectRdioforfieldCAM(string, string2);
@@ -211,6 +212,11 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_click_radio_option_PT(String value1, String value2) {
 		selectRdioforfieldPT(value1, value2);
 	}
+	
+	@When("I get Balance_Gait score")
+	public void I_get_Balance_Gait_score() {
+		getBalance_Gait();
+	}
 
 	@When("I click on Save My Work Berg Balance Scale Button")
 	public void I_click_Save_Berg_Balance_Scale_PT() {
@@ -370,17 +376,6 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_click_on_Save_My_Work_In_Home_Safety_Identification_Tool_Button_HSI() {
 		clickElement(By.xpath("//*[@id='saveEntries']"));
 		clickElement(By.xpath("//*[@id='confirm']"));
-	}
-
-	@When("I click {string} radio option for {string} field T")
-	public void I_click_on_radio_option_for_Humidity_field_T(String string, String string2) {
-		selectRdioforfieldTrachestomy(string, string2);
-	}
-
-	@When("I click {string} radio option for Was suctioning performed field T")
-	public void I_click_on_radio_option_for_Was_suctioning_performed_field_T(String string) {
-		clickElement(By.xpath(
-				"(//label[normalize-space(text())='Was suctioning performed?']//following-sibling::div//div//label)[2]"));
 	}
 
 	@When("I click {string} radio option for Cough Assist field")

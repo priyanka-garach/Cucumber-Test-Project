@@ -32,7 +32,7 @@ And I click "Steps appear continuous" radio option for "Step continuity" field P
 And I click "Marked deviation" radio option for "Path" field PT
 And I click "Marked sway or uses walking aid" radio option for "Trunk" field PT
 And I click "Heels apart" radio option for "Walking Stance" field PT
-#
+And I get Balance_Gait score
 And I click on Save My Work Tinetti Button
 #Then Tinetti should get verified
 And I Navigate to "Viewer -> Tinetti Assessment Tool" LH panel option
