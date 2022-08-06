@@ -209,7 +209,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String cam2;
 	public static String cam3;
 	public static String cam4;
-	
+
 	public static String ICAT_radio_1;
 	public static String ICAT_radio_2;
 	public static String ICAT_radio_3;
@@ -222,7 +222,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String ICAT_radio_10;
 	public static String ICAT_radio_11;
 	public static String ICAT_radio_12;
-	
+
 	public static String radioSkinLeftfoot;
 	public static String radioSkinRightfoot;
 	public static String radioLeftfootnails;
@@ -253,13 +253,15 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Date_Guidelines1;
 	public static String Date_Guidelines_Alternate1;
 	public static String Lock_Box_Required1;
-	
+	public static String pt_teaching_agreement_comment1;
+	public static String pt_teaching_agreement_comment0;
+
 	public static List<String> list_Cardiovascular_ICAN1 = new ArrayList<>();
 	public static List<String> list_Respiratory_ICAN1 = new ArrayList<>();
 	public static List<String> list_RespiratoryAssess_ICAN1 = new ArrayList<>();
 
 	public static List<String> list_Eyes_Ears_Nose_Throat = new ArrayList<>();
-	
+
 	public static List<String> Neurological_Assessment = new ArrayList<>();
 	public static List<String> Endocrine_Assessment = new ArrayList<>();
 	public static List<String> Gastrointestinal_History = new ArrayList<>();
@@ -313,68 +315,70 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public void selectRdioforfieldPT(String value, String section) {
 		if (section.contains("Sitting to standing")) {
 			clickElement(By.xpath("//input[contains(@id,'sitting_to_standing_2')]//following-sibling::label"));
-			berbal1=value;
+			berbal1 = value;
 		}
 
 		if (section.contains("StandingoneUnsupported1")) {
 			clickElement(By.xpath("//input[contains(@id,'standing_unsupported_2')]//following-sibling::label"));
-			berbal2= value;
+			berbal2 = value;
 		}
 
-		 if (section.contains("Sitting with back unsupported but feet supported on floor or on a stool")) {
-		    clickElement(By.xpath("//input[contains(@id,'sitting_with_back_unsupported_2')]//following-sibling::label"));
-		 	berbal14=value;}
+		if (section.contains("Sitting with back unsupported but feet supported on floor or on a stool")) {
+			clickElement(
+					By.xpath("//input[contains(@id,'sitting_with_back_unsupported_2')]//following-sibling::label"));
+			berbal14 = value;
+		}
 
 		if (section.contains("Standing to sitting")) {
 			clickElement(By.xpath("//input[contains(@id,'standing_to_sitting_0')]//following-sibling::label"));
-			berbal3=value;
-			}
-		
+			berbal3 = value;
+		}
+
 		if (section.contains("Transfers")) {
 			clickElement(By.xpath("//input[contains(@id,'transfers_3')]//following-sibling::label"));
-			berbal4=value;
+			berbal4 = value;
 		}
 		if (section.contains("with eyes closed")) {
 			clickElement(By.xpath(
 					"//input[contains(@id,'standing_unsupported_witheyes_closed_3')]//following-sibling::label"));
-			berbal5=value;
+			berbal5 = value;
 		}
 		if (section.contains("Reaching forward with outstretched arm while standing")) {
 			clickElement(By.xpath(
 					"//input[contains(@id,'standing_unsupported_withfeet_together_1')]//following-sibling::label"));
-			berbal6=value;
+			berbal6 = value;
 		}
 		if (section.contains("Pick up object from the floor from a standing position")) {
 			clickElement(By.xpath("//input[contains(@id,'pickup_objectfromthefloor_4')]//following-sibling::label"));
-			berbal7=value;
+			berbal7 = value;
 		}
 		if (section.contains("Turn 360 degrees")) {
 			clickElement(By.xpath("//input[contains(@id,'turn_360_degrees_2')]//following-sibling::label"));
-			berbal8=value;  
+			berbal8 = value;
 		}
 		if (section.contains("one foot in front")) {
 			clickElement(By
 					.xpath("//input[contains(@id,'standing_unsupported_onefootinfront_1')]//following-sibling::label"));
-			berbal9=value;
+			berbal9 = value;
 		}
 		if (section.contains("Standing on one leg")) {
 			clickElement(By.xpath("//input[contains(@id,'standing_on_one_leg_2')]//following-sibling::label"));
-			berbal10=value;
+			berbal10 = value;
 		}
-		
+
 		if (section.contains("with feet together")) {
-			//clickElement(By.xpath("//input[contains(@id,'standing_unsupported_withfeet_together_2')]//following-sibling::label"));
-			berbal11=value;
+			// clickElement(By.xpath("//input[contains(@id,'standing_unsupported_withfeet_together_2')]//following-sibling::label"));
+			berbal11 = value;
 		}
 		if (section.contains("Turning to look behind over left and right shoulders")) {
-			clickElement(By.xpath("//input[contains(@id,'turning_tolookbehindover_shoulders_3')]//following-sibling::label"));
-			berbal12=value;
+			clickElement(By
+					.xpath("//input[contains(@id,'turning_tolookbehindover_shoulders_3')]//following-sibling::label"));
+			berbal12 = value;
 		}
 		if (section.contains("Place alternate foot on step or stool")) {
 			clickElement(By.xpath("//input[contains(@id,'place_alternate_foot_on_1')]//following-sibling::label"));
-			berbal13=value;
+			berbal13 = value;
 		}
-		
 
 		if (section.equalsIgnoreCase("Rises from chair")) {
 			if (value.equalsIgnoreCase("Unable without help"))
@@ -595,33 +599,35 @@ public class PixalereScripts extends PixalereCommonUtils {
 		list_Respiratory_ICAN1.add("Tracheostomy");
 	}
 
-	/*public void var_Respiratory_Assessment_data() {
-		list_RespiratoryAssess_ICAN1.add("Chest Sounds");
-		list_RespiratoryAssess_ICAN1.add("Normal");
-	}
-
-	public void var_Eyes_Ears_Nose_Throat_data() {
-		list_Eyes_Ears_Nose_Throat.add("Vision Aid");
-		list_Eyes_Ears_Nose_Throat.add("Redness/Inflammation");
-		list_Eyes_Ears_Nose_Throat.add("Discharge");
-		list_Eyes_Ears_Nose_Throat.add("Ear Infection");
-		list_Eyes_Ears_Nose_Throat.add("Frequent Sneezing");
-		list_Eyes_Ears_Nose_Throat.add("Frequent Colds");
-		list_Eyes_Ears_Nose_Throat.add("Epistaxis");
-		list_Eyes_Ears_Nose_Throat.add("Hoarseness");
-		list_Eyes_Ears_Nose_Throat.add("Coughing");
-		list_Eyes_Ears_Nose_Throat.add("Swallowing problems");
-		list_Eyes_Ears_Nose_Throat.add("Speech Problems");
-	}*/
+	/*
+	 * public void var_Respiratory_Assessment_data() {
+	 * list_RespiratoryAssess_ICAN1.add("Chest Sounds");
+	 * list_RespiratoryAssess_ICAN1.add("Normal"); }
+	 * 
+	 * public void var_Eyes_Ears_Nose_Throat_data() {
+	 * list_Eyes_Ears_Nose_Throat.add("Vision Aid");
+	 * list_Eyes_Ears_Nose_Throat.add("Redness/Inflammation");
+	 * list_Eyes_Ears_Nose_Throat.add("Discharge");
+	 * list_Eyes_Ears_Nose_Throat.add("Ear Infection");
+	 * list_Eyes_Ears_Nose_Throat.add("Frequent Sneezing");
+	 * list_Eyes_Ears_Nose_Throat.add("Frequent Colds");
+	 * list_Eyes_Ears_Nose_Throat.add("Epistaxis");
+	 * list_Eyes_Ears_Nose_Throat.add("Hoarseness");
+	 * list_Eyes_Ears_Nose_Throat.add("Coughing");
+	 * list_Eyes_Ears_Nose_Throat.add("Swallowing problems");
+	 * list_Eyes_Ears_Nose_Throat.add("Speech Problems"); }
+	 */
 
 	public void var_Neurological_History_data1() {
-		
-		/* Neurological_History_data.add("Gross Motor Deficit");
-		Neurological_History_data.add("Fine Motor Deficit");
-		Neurological_History_data.add("Fainting");
-		Neurological_History_data.add("Tremors");
-		Neurological_History_data.add("Seizures");
-		Neurological_History_data.add("Spasticity"); */
+
+		/*
+		 * Neurological_History_data.add("Gross Motor Deficit");
+		 * Neurological_History_data.add("Fine Motor Deficit");
+		 * Neurological_History_data.add("Fainting");
+		 * Neurological_History_data.add("Tremors");
+		 * Neurological_History_data.add("Seizures");
+		 * Neurological_History_data.add("Spasticity");
+		 */
 	}
 
 	public void var_Neurological_Assessment_data() {
@@ -857,155 +863,177 @@ public class PixalereScripts extends PixalereCommonUtils {
 		clickElementWithJQuery(By.xpath(xpath1));
 		MAHC_Handouts_provided_field.add(string1);
 	}
-	
+
 	// ICAT STARTS//
-		public void selctradioeyesearsthroat_one(String string) {
-			ICAT_radio_1 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(((//label[normalize-space(text())='Problem Identified?'])[1])/following-sibling::div//label)[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(((//label[normalize-space(text())='Problem Identified?'])[1])/following-sibling::div//label)[1]"));
+	public void selctradioeyesearsthroat_one(String string) {
+		ICAT_radio_1 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath(
+					"(((//label[normalize-space(text())='Problem Identified?'])[1])/following-sibling::div//label)[2]"));
 
-		}
-		public void selctradioeyesearsthroat_two(String string) {
-			ICAT_radio_2 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(((//label[normalize-space(text())='Problem Identified?'])[2])/following-sibling::div//label)[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(((//label[normalize-space(text())='Problem Identified?'])[2])/following-sibling::div//label)[1]"));
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath(
+					"(((//label[normalize-space(text())='Problem Identified?'])[1])/following-sibling::div//label)[1]"));
 
-		}
-		public void selctradioeyesearsthroat_three(String string) {
-			ICAT_radio_3 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(((//label[normalize-space(text())='Problem Identified?'])[3])/following-sibling::div//label)[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(((//label[normalize-space(text())='Problem Identified?'])[3])/following-sibling::div//label)[1]"));
+	}
 
-		}
-		public void selctradioeyesearsthroat_four(String string) {
-			ICAT_radio_4 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(((//label[normalize-space(text())='Problem Identified?'])[4])/following-sibling::div//label)[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(((//label[normalize-space(text())='Problem Identified?'])[4])/following-sibling::div//label)[1]"));
+	public void selctradioeyesearsthroat_two(String string) {
+		ICAT_radio_2 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath(
+					"(((//label[normalize-space(text())='Problem Identified?'])[2])/following-sibling::div//label)[2]"));
 
-		}
-		public void selctradioeyesearsthroathd(String string) {
-			ICAT_radio_5 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("((//label[normalize-space(text())='Hearing Device'])/following-sibling::div//label)[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("((//label[normalize-space(text())='Hearing Device'])/following-sibling::div//label)[1]"));
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath(
+					"(((//label[normalize-space(text())='Problem Identified?'])[2])/following-sibling::div//label)[1]"));
 
-		}
-		
-		public void selctradiodepressiontool(String value, String section) {
-			String s1 = "(//tbody//tr//td[normalize-space(text())='%s']//following-sibling::td)[%s]";
-			String xpath1 = String.format(s1,section, Integer.parseInt(value) + 1);
-			clickElement(By.xpath(xpath1));
-			
-		}
-		public void selectradiodepressiontoolone (String string) {
-			ICAT_radio_10 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(//*[contains(@name,'bothered_interest')])[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(//*[contains(@name,'bothered_interest')])[1]"));
-		}
-		
-		public void selectradiodepressiontooltwo (String string) {
-			ICAT_radio_11 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(//*[contains(@name,'feeling_down')])[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(//*[contains(@name,'feeling_down')])[1]"));
-			
-		}
-		public void	selectradiodpain(String string) {
-			ICAT_radio_12 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(//*[contains(@id,'pain1_label')])"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(//*[contains(@name,'pain2')])[1]"));
-			
-		}
-		
-		public void selctradiochronic(String string) {
-			ICAT_radio_6 = string;
-		if(string.equalsIgnoreCase("No"))
+	}
+
+	public void selctradioeyesearsthroat_three(String string) {
+		ICAT_radio_3 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath(
+					"(((//label[normalize-space(text())='Problem Identified?'])[3])/following-sibling::div//label)[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath(
+					"(((//label[normalize-space(text())='Problem Identified?'])[3])/following-sibling::div//label)[1]"));
+
+	}
+
+	public void selctradioeyesearsthroat_four(String string) {
+		ICAT_radio_4 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath(
+					"(((//label[normalize-space(text())='Problem Identified?'])[4])/following-sibling::div//label)[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath(
+					"(((//label[normalize-space(text())='Problem Identified?'])[4])/following-sibling::div//label)[1]"));
+
+	}
+
+	public void selctradioeyesearsthroathd(String string) {
+		ICAT_radio_5 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(
+					By.xpath("((//label[normalize-space(text())='Hearing Device'])/following-sibling::div//label)[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(
+					By.xpath("((//label[normalize-space(text())='Hearing Device'])/following-sibling::div//label)[1]"));
+
+	}
+
+	public void selctradiodepressiontool(String value, String section) {
+		String s1 = "(//tbody//tr//td[normalize-space(text())='%s']//following-sibling::td)[%s]";
+		String xpath1 = String.format(s1, section, Integer.parseInt(value) + 1);
+		clickElement(By.xpath(xpath1));
+
+	}
+
+	public void selectradiodepressiontoolone(String string) {
+		ICAT_radio_10 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'bothered_interest')])[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'bothered_interest')])[1]"));
+	}
+
+	public void selectradiodepressiontooltwo(String string) {
+		ICAT_radio_11 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'feeling_down')])[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'feeling_down')])[1]"));
+
+	}
+
+	public void selectradiodpain(String string) {
+		ICAT_radio_12 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@id,'pain1_label')])"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'pain2')])[1]"));
+
+	}
+
+	public void selctradiochronic(String string) {
+		ICAT_radio_6 = string;
+		if (string.equalsIgnoreCase("No"))
 			clickElementWithJQuery(By.xpath("(//input[@name='chronic_d']/following-sibling::label)[2]"));
-		
-		if(string.equalsIgnoreCase("Yes"))
+
+		if (string.equalsIgnoreCase("Yes"))
 			clickElementWithJQuery(By.xpath("(//input[@name='chronic_d']/following-sibling::label)[1]"));
 
-		}
-		
-		public void selctradiohomeselfmonitoring(String string) {
-			ICAT_radio_7 = string;
-		if(string.equalsIgnoreCase("No"))
-			clickElementWithJQuery(By.xpath("(//*[normalize-space(text())='Is the client home self-monitoring?']/following-sibling::div//label)[2]"));
-		
-		if(string.equalsIgnoreCase("Yes"))
-			clickElementWithJQuery(By.xpath("(//*[normalize-space(text())='Is the client home self-monitoring?']/following-sibling::div//label)[1]"));
-		}
+	}
 
-		public void selectradionotassessedbowlmovementregular(String string) {
-			ICAT_radio_8 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(//*[normalize-space(text())='Bowel Movement Regular?']/following-sibling::div//label)[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(//*[normalize-space(text())='Bowel Movement Regular?']/following-sibling::div//label)[1]"));
-		}
-		
-		/*public void selectradiochangeinbowelpattern1 (String string) {
-			ICAT_radio_9 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(//*[normalize-space(text())='Change in Bowel Pattern?']/following-sibling::div//label)[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(//*[normalize-space(text())='Change in Bowel Pattern?']/following-sibling::div//label)[1]"));
-		}*/
-		public void selectradiochangeinbowelpattern (String string) {
-			ICAT_radio_9 = string;
-			if(string.equalsIgnoreCase("No"))
-				clickElementWithJQuery(By.xpath("(//*[normalize-space(text())='Change in Bowel Pattern?']/following-sibling::div//label)[2]"));
-			
-			if(string.equalsIgnoreCase("Yes"))
-				clickElementWithJQuery(By.xpath("(//*[normalize-space(text())='Change in Bowel Pattern?']/following-sibling::div//label)[1]"));
-		}
-		
-		
-		public void var_Respiratory_Assessment_data() {
-			list_RespiratoryAssess_ICAN1.add("Chest Sounds");
-			list_RespiratoryAssess_ICAN1.add("Normal");
-		}
+	public void selctradiohomeselfmonitoring(String string) {
+		ICAT_radio_7 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath(
+					"(//*[normalize-space(text())='Is the client home self-monitoring?']/following-sibling::div//label)[2]"));
 
-		public void var_Eyes_Ears_Nose_Throat_data() {
-			list_Eyes_Ears_Nose_Throat.add("Vision Aid");
-			list_Eyes_Ears_Nose_Throat.add("Redness/Inflammation");
-			list_Eyes_Ears_Nose_Throat.add("Discharge");
-			list_Eyes_Ears_Nose_Throat.add("Ear Infection");
-			list_Eyes_Ears_Nose_Throat.add("Frequent Sneezing");
-			list_Eyes_Ears_Nose_Throat.add("Frequent Colds");
-			list_Eyes_Ears_Nose_Throat.add("Epistaxis");
-			list_Eyes_Ears_Nose_Throat.add("Hoarseness");
-			list_Eyes_Ears_Nose_Throat.add("Coughing");
-			list_Eyes_Ears_Nose_Throat.add("Swallowing problems");
-			list_Eyes_Ears_Nose_Throat.add("Speech Problems");
-		}
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath(
+					"(//*[normalize-space(text())='Is the client home self-monitoring?']/following-sibling::div//label)[1]"));
+	}
 
-	//ICAT STOP//
+	public void selectradionotassessedbowlmovementregular(String string) {
+		ICAT_radio_8 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath(
+					"(//*[normalize-space(text())='Bowel Movement Regular?']/following-sibling::div//label)[2]"));
 
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath(
+					"(//*[normalize-space(text())='Bowel Movement Regular?']/following-sibling::div//label)[1]"));
+	}
+
+	/*
+	 * public void selectradiochangeinbowelpattern1 (String string) { ICAT_radio_9 =
+	 * string; if(string.equalsIgnoreCase("No")) clickElementWithJQuery(By.
+	 * xpath("(//*[normalize-space(text())='Change in Bowel Pattern?']/following-sibling::div//label)[2]"
+	 * ));
+	 * 
+	 * if(string.equalsIgnoreCase("Yes")) clickElementWithJQuery(By.
+	 * xpath("(//*[normalize-space(text())='Change in Bowel Pattern?']/following-sibling::div//label)[1]"
+	 * )); }
+	 */
+	public void selectradiochangeinbowelpattern(String string) {
+		ICAT_radio_9 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath(
+					"(//*[normalize-space(text())='Change in Bowel Pattern?']/following-sibling::div//label)[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath(
+					"(//*[normalize-space(text())='Change in Bowel Pattern?']/following-sibling::div//label)[1]"));
+	}
+
+	public void var_Respiratory_Assessment_data() {
+		list_RespiratoryAssess_ICAN1.add("Chest Sounds");
+		list_RespiratoryAssess_ICAN1.add("Normal");
+	}
+
+	public void var_Eyes_Ears_Nose_Throat_data() {
+		list_Eyes_Ears_Nose_Throat.add("Vision Aid");
+		list_Eyes_Ears_Nose_Throat.add("Redness/Inflammation");
+		list_Eyes_Ears_Nose_Throat.add("Discharge");
+		list_Eyes_Ears_Nose_Throat.add("Ear Infection");
+		list_Eyes_Ears_Nose_Throat.add("Frequent Sneezing");
+		list_Eyes_Ears_Nose_Throat.add("Frequent Colds");
+		list_Eyes_Ears_Nose_Throat.add("Epistaxis");
+		list_Eyes_Ears_Nose_Throat.add("Hoarseness");
+		list_Eyes_Ears_Nose_Throat.add("Coughing");
+		list_Eyes_Ears_Nose_Throat.add("Swallowing problems");
+		list_Eyes_Ears_Nose_Throat.add("Speech Problems");
+	}
+
+	// ICAT STOP//
 
 	public void selectRdioforfieldMAHC(String string, String section) {
 
@@ -1081,19 +1109,19 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public void selectRdioforfieldCAM(String value, String section) {
 		if (section.contains("Cognitive Changes and Fluctuating Course")) {
 			clickElement(By.xpath("(//label[contains(@id,'cam_tool_')])[1]"));
-			cam1=value;
+			cam1 = value;
 		}
 		if (section.contains("Inattention")) {
 			clickElement(By.xpath("(//label[contains(@id,'cam_tool_')])[2]"));
-			cam2=value;
+			cam2 = value;
 		}
 		if (section.contains("Disorganized Thinking")) {
 			clickElement(By.xpath("(//label[contains(@id,'cam_tool_')])[3]"));
-			cam3=value;
+			cam3 = value;
 		}
 		if (section.contains("Altered Level of Consciousness")) {
 			clickElement(By.xpath("(//label[contains(@id,'cam_tool_')])[4]"));
-			cam4=value;
+			cam4 = value;
 		}
 		if (section.contains("Have you felt depressed or down"))
 			clickElement(By.xpath("(//label[contains(@id,'felt_depressed_yn1')])"));
@@ -1231,7 +1259,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.id("date"));
 			sendKeys_date(By.id("date"), RecommendationDate1);
 			break;
-			
+
 		case PixalereStringPool.RecommendationsDataSPT:
 			RecommendationsDataSPT1 = JavaUtils.getRandomString(500);
 			System.out.println(PixalereStringPool.RecommendationsDataSPT + ": " + RecommendationsDataSPT1);
@@ -2190,89 +2218,109 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 		case PixalereStringPool.Activity_to_be_Instructed:
 			Activity_to_be_Instructed1 = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Activity_to_be_Instructed+ ": " + Activity_to_be_Instructed1);
+			System.out.println(PixalereStringPool.Activity_to_be_Instructed + ": " + Activity_to_be_Instructed1);
 			clear(By.xpath("(//*[@id='activity_comments'])"));
 			sendKeys(By.xpath("(//*[@id='activity_comments'])"), Activity_to_be_Instructed1);
 			break;
 		case PixalereStringPool.LearnerName:
 			LearnerName1 = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.LearnerName+ ": " + LearnerName1);
+			System.out.println(PixalereStringPool.LearnerName + ": " + LearnerName1);
 			clear(By.xpath("(//*[@id='learner_name1'])"));
 			sendKeys(By.xpath("(//*[@id='learner_name1'])"), LearnerName1);
 			break;
 		case PixalereStringPool.LearnerDate:
 			LearnerDate1 = "08/03/2022";
-			System.out.println(PixalereStringPool.LearnerDate+ ": " + LearnerDate1);
+			System.out.println(PixalereStringPool.LearnerDate + ": " + LearnerDate1);
 			clear(By.xpath("(//*[@id='learner_date1'])"));
 			sendKeys(By.xpath("(//*[@id='learner_date1'])"), LearnerDate1);
 			break;
 		case PixalereStringPool.EducationComment:
 			EducationComment1 = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.EducationComment+ ": " + EducationComment1);
+			System.out.println(PixalereStringPool.EducationComment + ": " + EducationComment1);
 			clear(By.xpath("(//*[@id='education_comments'])"));
 			sendKeys(By.xpath("(//*[@id='education_comments'])"), EducationComment1);
 			break;
-			
+
 		case PixalereStringPool.Reason_of_Delete_in_Viewer:
 			varDelete_inViewer = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Reason_of_Delete_in_Viewer+": "+ varDelete_inViewer);
+			System.out.println(PixalereStringPool.Reason_of_Delete_in_Viewer + ": " + varDelete_inViewer);
 			clear(GlobalPageLocators.txt_reason_delete);
 			sendKeys(GlobalPageLocators.txt_reason_delete, varDelete_inViewer);
 			break;
 		case PixalereStringPool.Other_Service_Consent_Obtained:
 			Other_Service_Consent_Obtained1 = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Other_Service_Consent_Obtained+": "+ Other_Service_Consent_Obtained1);
+			System.out.println(
+					PixalereStringPool.Other_Service_Consent_Obtained + ": " + Other_Service_Consent_Obtained1);
 			clear(By.xpath("//*[@id='other19037_2']"));
 			sendKeys(By.xpath("//*[@id='other19037_2']"), Other_Service_Consent_Obtained1);
 			break;
 		case PixalereStringPool.Comments_Service_Consent_Obtained:
 			Comments_Service_Consent_Obtained1 = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Comments_Service_Consent_Obtained+": "+ Comments_Service_Consent_Obtained1);
+			System.out.println(
+					PixalereStringPool.Comments_Service_Consent_Obtained + ": " + Comments_Service_Consent_Obtained1);
 			clear(By.xpath("//*[@id='services_consent_comments2']"));
 			sendKeys(By.xpath("//*[@id='services_consent_comments2']"), Comments_Service_Consent_Obtained1);
 			break;
 		case PixalereStringPool.Alternate_Contact_Name:
 			Alternate_Contact_Name1 = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Alternate_Contact_Name+": "+ Alternate_Contact_Name1);
+			System.out.println(PixalereStringPool.Alternate_Contact_Name + ": " + Alternate_Contact_Name1);
 			clear(By.xpath("//*[@id='virtual_alternate_cntc']"));
 			sendKeys(By.xpath("//*[@id='virtual_alternate_cntc']"), Alternate_Contact_Name1);
 			break;
 		case PixalereStringPool.Backup_Plan:
 			Backup_Plan1 = JavaUtils.getRandomString(50);
-			System.out.println(PixalereStringPool.Backup_Plan+": "+ Backup_Plan1);
+			System.out.println(PixalereStringPool.Backup_Plan + ": " + Backup_Plan1);
 			clear(By.xpath("//*[@id='virtual_backup']"));
 			sendKeys(By.xpath("//*[@id='virtual_backup']"), Backup_Plan1);
 			break;
 		case PixalereStringPool.Comments_in_Virtual_Care_Consent:
 			Comments_in_Virtual_Care_Consent1 = JavaUtils.getRandomString(250);
-			System.out.println(PixalereStringPool.Comments_in_Virtual_Care_Consent+": "+ Comments_in_Virtual_Care_Consent1);
+			System.out.println(
+					PixalereStringPool.Comments_in_Virtual_Care_Consent + ": " + Comments_in_Virtual_Care_Consent1);
 			clear(By.xpath("//*[@id='virtual_service_text']"));
 			sendKeys(By.xpath("//*[@id='virtual_service_text']"), Comments_in_Virtual_Care_Consent1);
 			break;
 		case PixalereStringPool.Email:
 			Email1 = "QA@gmail.com";
-			System.out.println(PixalereStringPool.Email+": "+ Email1);
+			System.out.println(PixalereStringPool.Email + ": " + Email1);
 			clear(By.xpath("//*[@name='add_email_address']"));
 			sendKeys(By.xpath("//*[@name='add_email_address']"), Email1);
 			break;
 		case PixalereStringPool.Date_Guidelines:
 			Date_Guidelines1 = "08/06/2022";
-			System.out.println(PixalereStringPool.Date_Guidelines+": "+ Date_Guidelines1);
+			System.out.println(PixalereStringPool.Date_Guidelines + ": " + Date_Guidelines1);
 			Wait_p(2);
 			clear(By.xpath("//*[@name='visit_date']"));
 			sendKeys(By.xpath("//*[@name='visit_date']"), Date_Guidelines1);
 			break;
 		case PixalereStringPool.Date_Guidelines_Alternate:
 			Date_Guidelines_Alternate1 = "06/08/2022";
-			System.out.println(PixalereStringPool.Date_Guidelines_Alternate+": "+ Date_Guidelines_Alternate1);
+			System.out.println(PixalereStringPool.Date_Guidelines_Alternate + ": " + Date_Guidelines_Alternate1);
 			clear(By.xpath("//*[@id='effective_date']"));
 			sendKeys(By.xpath("//*[@id='effective_date']"), Date_Guidelines_Alternate1);
 			break;
+
 		case PixalereStringPool.Lock_Box_Required:
 			Lock_Box_Required1 = JavaUtils.getRandomString(25);
-			System.out.println(PixalereStringPool.Lock_Box_Required+": "+ Lock_Box_Required1);
+			System.out.println(PixalereStringPool.Lock_Box_Required + ": " + Lock_Box_Required1);
 			clear(By.xpath("//*[@id='lock_box_other']"));
 			sendKeys(By.xpath("//*[@id='lock_box_other']"), Lock_Box_Required1);
+			break;
+
+		case PixalereStringPool.pt_teaching_agreement_comment:
+			pt_teaching_agreement_comment1 = JavaUtils.getRandomString(25);
+			System.out
+					.println(PixalereStringPool.pt_teaching_agreement_comment + ": " + pt_teaching_agreement_comment1);
+			clear(By.xpath("//*[@id='education_comments']"));
+			sendKeys(By.xpath("//*[@id='education_comments']"), pt_teaching_agreement_comment1);
+			break;
+
+		case PixalereStringPool.pt1_ta_comment_activity_to_be_instructed:
+			pt_teaching_agreement_comment0 = JavaUtils.getRandomString(25);
+			System.out.println(PixalereStringPool.pt1_ta_comment_activity_to_be_instructed + ": "
+					+ pt_teaching_agreement_comment0);
+			clear(By.xpath("//*[@id='activity_comments']"));
+			sendKeys(By.xpath("//*[@id='activity_comments']"), pt_teaching_agreement_comment0);
 			break;
 
 		}

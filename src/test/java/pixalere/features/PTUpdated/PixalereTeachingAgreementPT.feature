@@ -1,7 +1,7 @@
 Feature: Pixalere Teaching Agreement PT
 
 @test11
-Scenario: Pixalere Exercise Program Script
+Scenario: Pixalere Teaching Agreement PT Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p

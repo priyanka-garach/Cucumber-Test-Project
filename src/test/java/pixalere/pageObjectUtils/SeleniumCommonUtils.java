@@ -2541,6 +2541,7 @@ public class SeleniumCommonUtils {
 			Assert.assertTrue(false);
 		}
 
+		//*
 		WebElement e4 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Discussed that any change to the')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data4 = e4.getText();
@@ -2590,7 +2591,7 @@ public class SeleniumCommonUtils {
 			Assert.assertTrue(false);
 		}
 
-//		CheckBox Verification
+		//CheckBox Verification
 		WebElement v1 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Activity')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String d1 = v1.getText();
@@ -2623,6 +2624,24 @@ public class SeleniumCommonUtils {
 				Assert.assertTrue(false);
 			}
 		}
+		
+		
+		WebElement v5 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Comments')]//following-sibling::td//td[contains(@class,'flowchart_data')])[2]"));
+		String d5 = v5.getText();
+		if(d5.equalsIgnoreCase(PixalereScripts.pt_teaching_agreement_comment1)) {
+			Assert.assertTrue(false);
+		}
+		
+		WebElement v6 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Comments')]//following-sibling::td//td[contains(@class,'flowchart_data')])[1]"));
+		String d6 = v6.getText();
+		if(d6.equalsIgnoreCase(PixalereScripts.pt_teaching_agreement_comment0)) {
+			Assert.assertTrue(false);
+		}
+		
+		
+		System.out.println("Teaching Agreement PT page verified..........");
 
 	}
 

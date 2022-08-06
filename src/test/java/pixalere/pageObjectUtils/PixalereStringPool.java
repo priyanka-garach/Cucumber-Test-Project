@@ -768,4 +768,8 @@ public class PixalereStringPool {
 	public static final String NPWT_START_DATE = "NPWT Start Date";
 
 	public static final String NPWT_END_DATE = "NPWT End Date";
+	
+	public static final String pt_teaching_agreement_comment = "Education Completed by Service Provider";
+	
+	public static final String pt1_ta_comment_activity_to_be_instructed = "Activity to be Instructed PT";
 }

@@ -147,8 +147,8 @@ public class LocatorUtils {
 		public static By chk_Chair_to_chair = By.xpath("//*[@id='checkbox-transfers9']");
 		public static By chk_Toilet_seat_transfer = By.xpath("//*[@id='checkbox-transfers4']");
 		public static By chk_Bath_tub_transfer = By.xpath("//*[@id='checkbox-transfers10']");
-		public static By chk_Lift_handout_provided = By.xpath("//*[@id='checkbox-resources1']");
-		public static By chk_Exercise_sheets_provided = By.xpath("//*[@id='checkbox-resources3']");
+		public static By chk_Lift_handout_provided = By.xpath("//*[@id='checkbox-resources1']//label");
+		public static By chk_Exercise_sheets_provided = By.xpath("//*[@id='checkbox-resources3']//label");
 		
 		public static By Consent_Obtained = By.xpath("//*[@id='consent_arrow']//a[@data-toggle='collapse']");
 		public static By chk_Client = By.xpath("//*[@id='checkbox-sdm_consent_from1']");
@@ -2008,9 +2008,9 @@ public class LocatorUtils {
 		public static By getRadioOptionByservice_provider(String section) {
 			radioservice_provider = section;
 			if (section.equalsIgnoreCase("Yes"))
-				return By.xpath("//*[@id='md-radio-sdm_discussed_psw1']");
+				return By.xpath("//*[@id='md-radio-sdm_discussed_psw1']//label");
 			else if (section.equalsIgnoreCase("No"))
-				return By.xpath("//*[@id='md-radio-sdm_discussed_psw2']");
+				return By.xpath("//*[@id='md-radio-sdm_discussed_psw2']//label");
 			else
 				return By.xpath("");
 		}

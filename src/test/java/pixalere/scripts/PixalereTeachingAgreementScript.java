@@ -47,7 +47,7 @@ public class PixalereTeachingAgreementScript extends PixalereCommonUtils {
 	}
 	public void selectActivityCheckbox(String section) {
 		if (section.contains("Activity to be Instructed")) {
-			clickElementWithJQuery(TeachingAgreementPT.Activity_to_be_Instructed);
+			clickElement(TeachingAgreementPT.Activity_to_be_Instructed);
 			TeachingAgreement_Checkbox.add(section);
 		}
 		else if(section.contains("Breathing exercises")) {
@@ -83,7 +83,7 @@ public class PixalereTeachingAgreementScript extends PixalereCommonUtils {
 			TeachingAgreement_Checkbox.add(section);
 		}
 		else if(section.contains("Chair to chair")) {
-			clickElement(TeachingAgreementPT.chk_Chair_to_chair);
+			clickElementWithJQuery(TeachingAgreementPT.chk_Chair_to_chair);
 			TeachingAgreement_Checkbox.add(section);
 		}
 		else if(section.contains("Toilet seat transfer")) {
