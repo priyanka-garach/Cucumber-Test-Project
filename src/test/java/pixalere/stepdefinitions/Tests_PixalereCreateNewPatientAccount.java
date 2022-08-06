@@ -94,7 +94,7 @@ public class Tests_PixalereCreateNewPatientAccount extends PixalereCreateNewPati
 	}
 	@When("I select PT from Service Referral")
 	public void I_select_PT_from_Service_Referral() {
-		select_ByIndex(By.id("encounter"), 4);
+		select_ByIndex(By.id("encounter"), 0);
 	}
 	
 	@When("I select current date with {string} year in {string} dropdown")

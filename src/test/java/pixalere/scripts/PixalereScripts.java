@@ -8,7 +8,6 @@ import org.openqa.selenium.By;
 
 import pixalere.pageObjectJavaUtils.JavaUtils;
 import pixalere.pageObjectUtils.LocatorUtils.GlobalPageLocators;
-import pixalere.pageObjectUtils.LocatorUtils.MedRatLocators;
 import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
 import pixalere.pageObjectUtils.PixalereCommonUtils;
 import pixalere.pageObjectUtils.PixalereStringPool;
@@ -120,7 +119,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String LSpine_Flexion1;
 	public static String LSpine_Extension1;
 	public static String LSpine_SideFlexion1;
-	public static String LSpine_Shoulder_Flexion1;
+	public static String Other_JointMovement1;
 	public static String Shoulder_Flexion1;
 	public static String SDM_Name1;
 	public static String FileUploadADP_Funding_Decision1;
@@ -245,6 +244,15 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String radioerythema_leftfoot;
 	public static String radioerythema_rightfoot;
 	public static String varDelete_inViewer;
+	public static String Other_Service_Consent_Obtained1;
+	public static String Comments_Service_Consent_Obtained1;
+	public static String Alternate_Contact_Name1;
+	public static String Backup_Plan1;
+	public static String Comments_in_Virtual_Care_Consent1;
+	public static String Email1;
+	public static String Date_Guidelines1;
+	public static String Date_Guidelines_Alternate1;
+	public static String Lock_Box_Required1;
 	
 	public static List<String> list_Cardiovascular_ICAN1 = new ArrayList<>();
 	public static List<String> list_Respiratory_ICAN1 = new ArrayList<>();
@@ -1741,73 +1749,73 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Shoulder_External_Rotation:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.Shoulder_External_Rotation + ": " + Client_Perspective51);
+			Shoulder_External_Rotation1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Shoulder_External_Rotation + ": " + Shoulder_External_Rotation1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[16])//td[3]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[16])//td[3]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[16])//td[3]//input"), Shoulder_External_Rotation1);
 			break;
 
 		case PixalereStringPool.Shoulder_Internal_Rotation:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.Shoulder_Internal_Rotation + ": " + Client_Perspective51);
+			Shoulder_Internal_Rotation1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Shoulder_Internal_Rotation + ": " + Shoulder_Internal_Rotation1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[17])//td[3]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[17])//td[3]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[17])//td[3]//input"), Shoulder_Internal_Rotation1);
 			break;
 
 		case PixalereStringPool.CSpine_Flexion:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.CSpine_Flexion + ": " + Client_Perspective51);
+			CSpine_Flexion1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.CSpine_Flexion + ": " + CSpine_Flexion1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[18])//td[3]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[18])//td[3]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[18])//td[3]//input"), CSpine_Flexion1);
 			break;
 
 		case PixalereStringPool.CSpine_Extension:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.CSpine_Extension + ": " + Client_Perspective51);
+			CSpine_Extension1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.CSpine_Extension + ": " + CSpine_Extension1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[19])//td[8]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[19])//td[8]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[19])//td[8]//input"), CSpine_Extension1);
 			break;
 
 		case PixalereStringPool.CSpine_SideFlexion:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.CSpine_SideFlexion + ": " + Client_Perspective51);
+			CSpine_SideFlexion1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.CSpine_SideFlexion + ": " + CSpine_SideFlexion1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[20])//td[6]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[20])//td[6]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[20])//td[6]//input"), CSpine_SideFlexion1);
 			break;
 
 		case PixalereStringPool.CSpine_Rotation:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.CSpine_Rotation + ": " + Client_Perspective51);
+			CSpine_Rotation1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.CSpine_Rotation + ": " + CSpine_Rotation1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[21])//td[3]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[21])//td[3]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[21])//td[3]//input"), CSpine_Rotation1);
 			break;
 
 		case PixalereStringPool.LSpine_Flexion:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.LSpine_Flexion + ": " + Client_Perspective51);
+			LSpine_Flexion1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.LSpine_Flexion + ": " + LSpine_Flexion1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[22])//td[5]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[22])//td[5]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[22])//td[5]//input"), LSpine_Flexion1);
 			break;
 
 		case PixalereStringPool.LSpine_Extension:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.LSpine_Extension + ": " + Client_Perspective51);
+			LSpine_Extension1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.LSpine_Extension + ": " + LSpine_Extension1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[23])//td[3]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[23])//td[3]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[23])//td[3]//input"), LSpine_Extension1);
 			break;
 
 		case PixalereStringPool.LSpine_SideFlexion:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.LSpine_SideFlexion + ": " + Client_Perspective51);
+			LSpine_SideFlexion1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.LSpine_SideFlexion + ": " + LSpine_SideFlexion1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[24])//td[3]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[24])//td[3]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[24])//td[3]//input"), LSpine_SideFlexion1);
 			break;
 
-		case PixalereStringPool.LSpine_Shoulder_Flexion:
-			Client_Perspective51 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.LSpine_Shoulder_Flexion + ": " + Client_Perspective51);
+		case PixalereStringPool.Other_JointMovement:
+			Other_JointMovement1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Other_JointMovement + ": " + Other_JointMovement1);
 			clear(By.xpath("((//*[@id='jointMovement']//tr)[25])//td[3]//input"));
-			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[25])//td[3]//input"), Client_Perspective51);
+			sendKeys(By.xpath("((//*[@id='jointMovement']//tr)[25])//td[3]//input"), Other_JointMovement1);
 			break;
 
 		case PixalereStringPool.SDM_Name:
@@ -2210,6 +2218,61 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.Reason_of_Delete_in_Viewer+": "+ varDelete_inViewer);
 			clear(GlobalPageLocators.txt_reason_delete);
 			sendKeys(GlobalPageLocators.txt_reason_delete, varDelete_inViewer);
+			break;
+		case PixalereStringPool.Other_Service_Consent_Obtained:
+			Other_Service_Consent_Obtained1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Other_Service_Consent_Obtained+": "+ Other_Service_Consent_Obtained1);
+			clear(By.xpath("//*[@id='other19037_2']"));
+			sendKeys(By.xpath("//*[@id='other19037_2']"), Other_Service_Consent_Obtained1);
+			break;
+		case PixalereStringPool.Comments_Service_Consent_Obtained:
+			Comments_Service_Consent_Obtained1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Comments_Service_Consent_Obtained+": "+ Comments_Service_Consent_Obtained1);
+			clear(By.xpath("//*[@id='services_consent_comments2']"));
+			sendKeys(By.xpath("//*[@id='services_consent_comments2']"), Comments_Service_Consent_Obtained1);
+			break;
+		case PixalereStringPool.Alternate_Contact_Name:
+			Alternate_Contact_Name1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Alternate_Contact_Name+": "+ Alternate_Contact_Name1);
+			clear(By.xpath("//*[@id='virtual_alternate_cntc']"));
+			sendKeys(By.xpath("//*[@id='virtual_alternate_cntc']"), Alternate_Contact_Name1);
+			break;
+		case PixalereStringPool.Backup_Plan:
+			Backup_Plan1 = JavaUtils.getRandomString(50);
+			System.out.println(PixalereStringPool.Backup_Plan+": "+ Backup_Plan1);
+			clear(By.xpath("//*[@id='virtual_backup']"));
+			sendKeys(By.xpath("//*[@id='virtual_backup']"), Backup_Plan1);
+			break;
+		case PixalereStringPool.Comments_in_Virtual_Care_Consent:
+			Comments_in_Virtual_Care_Consent1 = JavaUtils.getRandomString(250);
+			System.out.println(PixalereStringPool.Comments_in_Virtual_Care_Consent+": "+ Comments_in_Virtual_Care_Consent1);
+			clear(By.xpath("//*[@id='virtual_service_text']"));
+			sendKeys(By.xpath("//*[@id='virtual_service_text']"), Comments_in_Virtual_Care_Consent1);
+			break;
+		case PixalereStringPool.Email:
+			Email1 = "QA@gmail.com";
+			System.out.println(PixalereStringPool.Email+": "+ Email1);
+			clear(By.xpath("//*[@name='add_email_address']"));
+			sendKeys(By.xpath("//*[@name='add_email_address']"), Email1);
+			break;
+		case PixalereStringPool.Date_Guidelines:
+			Date_Guidelines1 = "08/06/2022";
+			System.out.println(PixalereStringPool.Date_Guidelines+": "+ Date_Guidelines1);
+			Wait_p(2);
+			clear(By.xpath("//*[@name='visit_date']"));
+			sendKeys(By.xpath("//*[@name='visit_date']"), Date_Guidelines1);
+			break;
+		case PixalereStringPool.Date_Guidelines_Alternate:
+			Date_Guidelines_Alternate1 = "06/08/2022";
+			System.out.println(PixalereStringPool.Date_Guidelines_Alternate+": "+ Date_Guidelines_Alternate1);
+			clear(By.xpath("//*[@id='effective_date']"));
+			sendKeys(By.xpath("//*[@id='effective_date']"), Date_Guidelines_Alternate1);
+			break;
+		case PixalereStringPool.Lock_Box_Required:
+			Lock_Box_Required1 = JavaUtils.getRandomString(25);
+			System.out.println(PixalereStringPool.Lock_Box_Required+": "+ Lock_Box_Required1);
+			clear(By.xpath("//*[@id='lock_box_other']"));
+			sendKeys(By.xpath("//*[@id='lock_box_other']"), Lock_Box_Required1);
 			break;
 
 		}

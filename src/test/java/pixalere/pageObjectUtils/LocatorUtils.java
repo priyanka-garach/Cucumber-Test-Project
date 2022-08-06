@@ -11,6 +11,9 @@ public class LocatorUtils {
 	public static String radioEducation_received;
 	public static String radioservice_provider;
 	public static String radiomodification_plan;
+	public static String radioGuidelines_and_Policies;
+	public static String radioVirtual_Care_Consent_PT_reviewed;
+	public static String radioService_Consent_Obtained;
 	public static String radioActivities_Assigned;
 	public static String radioImmunization_up_to_date1;
 	public static String radioAdmission_goals_discharge_planning;
@@ -1954,6 +1957,33 @@ public class LocatorUtils {
 				return By.xpath("//*[@id='md-radio-the_inst1']");
 			else if (section.equalsIgnoreCase("No"))
 				return By.xpath("//*[@id='md-radio-the_inst2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBy_Guidelines_and_Policies(String section) {
+			radioGuidelines_and_Policies = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@class='email_verify1_label']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@class='email_verify2_label']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBy_Virtual_Care_Consent_PT_reviewed(String section) {
+			radioVirtual_Care_Consent_PT_reviewed = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-video_consent1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-video_consent2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBy_Service_Consent_Obtained(String section) {
+			radioService_Consent_Obtained = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-questions_addressed_21']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-questions_addressed_22']");
 			else
 				return By.xpath("");
 		}

@@ -34,6 +34,7 @@ import io.cucumber.core.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
+import pixalere.pageObjectUtils.LocatorUtils.CustomizedLocators;
 import pixalere.scripts.PixalereAcuteRespiratoryIllnessScripts;
 import pixalere.scripts.PixalereAdvLowerLimbAssessmentScripts;
 import pixalere.scripts.PixalereBasicLowerLimbAssessmentScripts;
@@ -468,6 +469,8 @@ public class SeleniumCommonUtils {
 		System.out.println("Depression Screening Tool data verified....................................");
 
 	}
+	
+
 
 	public void verify_Emergency_Planning_page() {
 
@@ -1564,73 +1567,46 @@ public class SeleniumCommonUtils {
 
 	public void verify_Client_Consent() {
 
-		WebElement e1 = driver.findElement(By.xpath("//label[contains(text(),'SDM Name')]/following-sibling::div"));
-		String data1 = e1.getText();
-		if (!(data1.contains(""))) {
-			Assert.assertTrue(false);
-		}
+//		WebElement e1 = driver.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[8]/div/div/div/div[10]/div/div/span"));
+//		String data1 = e1.getText();
+//		if (!data1.equalsIgnoreCase(PixalereScripts.Other_Service_Consent_Obtained1)) {
+//			Assert.assertTrue(false);
+//		}
 
-		WebElement e2 = driver.findElement(By.xpath("//label[contains(text(),'Relationship')]/following-sibling::div"));
+		WebElement e2 = driver.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[8]/div/div/div/div[11]/div/div"));
 		String data2 = e2.getText();
-		if (!(data2.contains(""))) {
+		if (!data2.equalsIgnoreCase(PixalereScripts.Comments_Service_Consent_Obtained1)) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e3 = driver
-				.findElement(By.xpath("//label[contains(text(),'Consent obtained from')]/following-sibling::div"));
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[8]/div/div/div/div[12]/div/div"));
 		String data3 = e3.getText();
-		if (!(data3.contains(""))) {
+		if (!data3.equalsIgnoreCase(LocatorUtils.radioService_Consent_Obtained)) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e4 = driver.findElement(
-				By.xpath("//label[contains(text(),'Proposed Health Services Discussed')]/following-sibling::div"));
+				By.xpath("//*[@id=\"container-fluid\"]/div[5]/div/div[8]/div/div/div/div[37]/div/div"));
 		String data4 = e4.getText();
-		if (!(data4.contains(""))) {
+		if (!data4.equalsIgnoreCase(PixalereScripts.Alternate_Contact_Name1)) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e5 = driver.findElement(By.xpath(
-				"//label[contains(text(),'Risks, alternatives and benefits of service discussed')]/following-sibling::div"));
+				"//*[@id=\"container-fluid\"]/div[5]/div/div[8]/div/div/div/div[38]/div/div"));
 		String data5 = e5.getText();
-		if (!(data5.contains(""))) {
+		if (!data5.equalsIgnoreCase(PixalereScripts.Backup_Plan1)) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e7 = driver
-				.findElement(By.xpath("//label[contains(text(),'Your service funder')]/following-sibling::div"));
+				.findElement(By.xpath("//*[@id=\"container-fluid\"]/div[5]/div/div[8]/div/div/div/div[39]/div/div"));
 		String data7 = e7.getText();
-		if (!(data7.contains(""))) {
+		if (!data7.equalsIgnoreCase(PixalereScripts.Comments_in_Virtual_Care_Consent1))  {
 			Assert.assertTrue(false);
 		}
 
-		WebElement e8 = driver.findElement(
-				By.xpath("(//label[contains(text(),'Client is aware of the option of')]/following-sibling::div)[1]"));
-		String data8 = e8.getText();
-		if (!(data8.contains(""))) {
-			Assert.assertTrue(false);
-		}
-
-		WebElement e9 = driver.findElement(
-				By.xpath("(//label[contains(text(),'Client is aware of the option of')]/following-sibling::div)[2]"));
-		String data9 = e9.getText();
-		if (!(data9.contains(""))) {
-			Assert.assertTrue(false);
-		}
-
-		WebElement e10 = driver
-				.findElement(By.xpath("//label[contains(text(),'Your service funder')]/following-sibling::div"));
-		String data10 = e10.getText();
-		if (!(data10.contains(""))) {
-			Assert.assertTrue(false);
-		}
-
-		WebElement e11 = driver.findElement(By.xpath(
-				"//label[contains(text(),'I, the Service Provider, have completed this consent discussion with the client/SDM as per')]/following-sibling::div"));
-		String data11 = e11.getText();
-		if (!(data11.contains(""))) {
-			Assert.assertTrue(false);
-		}
 		System.out.println("Client Consent Page verified................");
 	}
 
@@ -1638,138 +1614,138 @@ public class SeleniumCommonUtils {
 
 		selectByVisibleText(By.xpath("//select[@name='joint_movement_data_length']"), "50");
 
-		WebElement e1 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[1]//td[3]"));
+		WebElement e1 = driver.findElement(By.xpath("//*[@id='tr_1']/td[3]"));
 		String data1 = e1.getText();
 		if (!(data1.equalsIgnoreCase(PixalereScripts.Ankle_Dorsiflexion1))) {
-			// Assert.assertTrue(false);
+//			 Assert.assertTrue(false);
 		}
 
-		WebElement e2 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[2]//td[3]"));
+		WebElement e2 = driver.findElement(By.xpath("//*[@id='tr_2']/td[3]"));
 		String data2 = e2.getText();
 		if (!(data2.equalsIgnoreCase(PixalereScripts.Ankle_Plantarflexion1))) {
-			// Assert.assertTrue(false);
+//			 Assert.assertTrue(false);
 		}
 
-		WebElement e3 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[23]//td[3]"));
+		WebElement e3 = driver.findElement(By.xpath("//*[@id='tr_3']/td[3]"));
 		String data3 = e3.getText();
 		if (!(data3.equalsIgnoreCase(PixalereScripts.Knee_Flexion1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e4 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[24]//td[3]"));
+		WebElement e4 = driver.findElement(By.xpath("//*[@id='tr_4']/td[4]"));
 		String data4 = e4.getText();
 		if (!(data4.equalsIgnoreCase(PixalereScripts.Knee_Extension1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e5 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[18]//td[3]"));
+		WebElement e5 = driver.findElement(By.xpath("//*[@id='tr_5']/td[5]"));
 		String data5 = e5.getText();
 		if (!(data5.equalsIgnoreCase(PixalereScripts.Hip_Flexion1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e7 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[19]//td[3]"));
+		WebElement e7 = driver.findElement(By.xpath("//*[@id='tr_6']/td[6]"));
 		String data7 = e7.getText();
 		if (!(data7.equalsIgnoreCase(PixalereScripts.Hip_Abduction1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e8 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[20]//td[3]"));
+		WebElement e8 = driver.findElement(By.xpath("//*[@id='tr_7']/td[7]"));
 		String data8 = e8.getText();
 		if (!(data8.equalsIgnoreCase(PixalereScripts.Hip_Extension1))) {/// data8.equalsignorecase(script.variable
 																		/// name)
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e9 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[32]//td[3]"));
+		WebElement e9 = driver.findElement(By.xpath("//*[@id='tr_8']/td[8]"));
 		String data9 = e9.getText();
 		if (!(data9.equalsIgnoreCase(PixalereScripts.Wrist_Flexion1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e10 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[33]//td[3]"));
+		WebElement e10 = driver.findElement(By.xpath("//*[@id='tr_9']/td[9]"));
 		String data10 = e10.getText();
 		if (!(data10.equalsIgnoreCase(PixalereScripts.Wrist_Extension1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e11 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[11]//td[3]"));
+		WebElement e11 = driver.findElement(By.xpath("//*[@id='tr_10']/td[10]"));
 		String data11 = e11.getText();
 		if (!(data11.equalsIgnoreCase(PixalereScripts.Elbow_Flexion1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e12 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[12]//td[3]"));
+		WebElement e12 = driver.findElement(By.xpath("//*[@id='tr_11']/td[3]"));
 		String data12 = e12.getText();
 		if (!(data12.equalsIgnoreCase(PixalereScripts.Elbow_Extension1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e13 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[13]//td[3]"));
+		WebElement e13 = driver.findElement(By.xpath("//*[@id='tr_12']/td[3]"));
 		String data13 = e13.getText();
 		if (!(data13.equalsIgnoreCase(PixalereScripts.Elbow_Supination1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e14 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[14]//td[3]"));
+		WebElement e14 = driver.findElement(By.xpath("//*[@id='tr_13']/td[3]"));
 		String data14 = e14.getText();
 		if (!(data14.equalsIgnoreCase(PixalereScripts.Elbow_Pronation1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e15 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[28]//td[3]"));
+		WebElement e15 = driver.findElement(By.xpath("//*[@id='tr_14']/td[3]"));
 		String data15 = e15.getText();
 		if (!(data15.equalsIgnoreCase(PixalereScripts.Shoulder_Flexion1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e16 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[29]//td[3]"));
+		WebElement e16 = driver.findElement(By.xpath("//*[@id='tr_15']/td[3]"));
 		String data16 = e16.getText();
 		if (!(data16.equalsIgnoreCase(PixalereScripts.Shoulder_Abduction1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e17 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[30]//td[3]"));
+		WebElement e17 = driver.findElement(By.xpath("//*[@id='tr_16']/td[3]"));
 		String data17 = e17.getText();
-		if (!(data17.equalsIgnoreCase(PixalereScripts.Client_Perspective51))) {
+		if (!(data17.equalsIgnoreCase(PixalereScripts.Shoulder_External_Rotation1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e18 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[31]//td[3]"));
+		WebElement e18 = driver.findElement(By.xpath("//*[@id='tr_17']/td[3]"));
 		String data18 = e18.getText();
-		if (!(data18.equalsIgnoreCase(PixalereScripts.Client_Perspective51))) {
+		if (!(data18.equalsIgnoreCase(PixalereScripts.Shoulder_Internal_Rotation1))) {
 			// Assert.assertTrue(false);
 		}
 
-		WebElement e19 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[7]//td[3]"));
+		WebElement e19 = driver.findElement(By.xpath("//*[@id='tr_22']/td[5]"));
 		String data19 = e19.getText();
-		if (!(data19.equalsIgnoreCase(PixalereScripts.Client_Perspective51))) {
+		if (!(data19.equalsIgnoreCase(PixalereScripts.LSpine_Flexion1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e20 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[8]//td[3]"));
+		WebElement e20 = driver.findElement(By.xpath("//*[@id='tr_23']/td[3]"));
 		String data20 = e20.getText();
-		if (!(data20.equalsIgnoreCase(PixalereScripts.Client_Perspective51))) {
+		if (!(data20.equalsIgnoreCase(PixalereScripts.LSpine_Extension1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e21 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[9]//td[3]"));
+		WebElement e21 = driver.findElement(By.xpath("//*[@id='tr_24']/td[3]"));
 		String data21 = e21.getText();
-		if (!(data21.equalsIgnoreCase(PixalereScripts.Client_Perspective51))) {
+		if (!(data21.equalsIgnoreCase(PixalereScripts.LSpine_SideFlexion1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e22 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[10]//td[3]"));
+		WebElement e22 = driver.findElement(By.xpath("//*[@id='tr_18']/td[3]"));
 		String data22 = e22.getText();
-		if (!(data22.equalsIgnoreCase(PixalereScripts.Client_Perspective51))) {
+		if (!(data22.equalsIgnoreCase(PixalereScripts.CSpine_Flexion1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e23 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[25]//td[3]"));
+		WebElement e23 = driver.findElement(By.xpath("//*[@id='tr_19']/td[8]"));
 		String data23 = e23.getText();
-		if (!(data23.equalsIgnoreCase(PixalereScripts.Client_Perspective51))) {
+		if (!(data23.equalsIgnoreCase(PixalereScripts.CSpine_Extension1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e24 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[26]//td[3]"));
+		WebElement e24 = driver.findElement(By.xpath("//*[@id='tr_20']/td[6]"));
 		String data24 = e24.getText();
-		if (!(data24.equalsIgnoreCase(PixalereScripts.Client_Perspective51))) {
+		if (!(data24.equalsIgnoreCase(PixalereScripts.CSpine_SideFlexion1))) {
 			// Assert.assertTrue(false);
 		}
-		WebElement e25 = driver.findElement(By.xpath("//table[@id='joint_movement_data']//tbody//tr[27]//td[3]"));
+		WebElement e25 = driver.findElement(By.xpath("//*[@id='tr_21']/td[3]"));
 		String data25 = e25.getText();
-		if (!(data25.equalsIgnoreCase(PixalereScripts.Client_Perspective51))) {
+		if (!(data25.equalsIgnoreCase(PixalereScripts.CSpine_Rotation1))) {
 			// Assert.assertTrue(false);
 		}
 		System.out.println("Joint Movement Page verified................");

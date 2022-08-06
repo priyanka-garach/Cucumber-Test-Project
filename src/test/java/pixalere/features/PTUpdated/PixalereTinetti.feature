@@ -5,11 +5,13 @@ Scenario: Pixalere Tinetti Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
-When I select client name "Data_PT" from Dashboard
-And I select "PT" from Service Referral PT
+When I globally select "Pix ID" from Search Category dropdown
+And I search created patient with PIXID special for PTAssessement and Teaching
+And I select PT from Service Referral PTAssessment for Teaching and PTAssessment special
 And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "Outcome Measures -> Tinetti" LH panel option
 Then "Tinetti Assessment Tool" page will open
+
 ##
 When I click "Leans or slides in chair" radio option for "Sitting Balance" field PT
 And I click "Unable without help" radio option for "Rises from chair" field PT 
