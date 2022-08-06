@@ -11,20 +11,20 @@ And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Flow Sheets -> Tracheostomy and Ventilator" LH panel option
 Then "Tracheostomy" page will open
 ##
-When I click "Humidified Air" radio option for "Humidity" field T
-And I click "Yes" radio option for "Suction System Checks" field T
-And I click "Yes" radio option for "Trach Set Change" field T
-And I click "Yes" radio option for "Spare Trach Set Available" field T
-And I click "Yes" radio option for "Stoma Care Provided?" field T
-And I click "Yes" radio option for Was suctioning performed field T
-And I click "Yes" radio option for "Does your client have a ventilator?" field T
+When I click "Humidified Air" radio option for Humidity field
+And I click "Yes" radio option for Suction System Checks
+And I click "No" radio option for Trach Set Change field
+And I click "Yes" radio option for Spare Trach Set Available field
+And I click "No" radio option for Stoma Care Provided field
+And I click "No" radio option for suctioning performed field
+And I click "Yes" radio option for client ventilator field
 And I enter "Type Of Ventilator" input field
 And I enter "Leak (litres/minute)" input field
 And I enter "Minute Ventilation" input field
 And I enter "Pressure" input field
 And I enter "Volume Tidal Exhaled" input field
-And I click "Yes" radio option for "Water Level Checked" field T
-And I click "Yes" radio option for "Humidifier ON Checked" field T
+And I click "Yes" radio option for Water Level Checked field
+And I click "Yes" radio option for Humidifier ON Checked field
 And I click on Save My Work In-Home Safety Identification Tool Button HSI
 #ThenTracheostomy details should get verified
 And I Navigate to "Viewer -> Tracheostomy and Ventilator Flowchart" LH panel option
