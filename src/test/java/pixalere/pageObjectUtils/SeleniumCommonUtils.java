@@ -333,98 +333,66 @@ public class SeleniumCommonUtils {
 		WebElement e2 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='MD/NP name and contact info']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data2 = e2.getText();
-		if (!(data2.contains(""))) {
+		if (!(data2.equalsIgnoreCase(PixalereScripts.MD_NP_contact_info1))) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e3 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Caregiver Requests']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data3 = e3.getText();
-		if (!(data3.contains(""))) {
+		if (!(data3.equalsIgnoreCase(PixalereScripts.Client_Caregiver_Requests1))) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
-		WebElement e4 = driver.findElement(By.xpath(
-				"(//td[normalize-space()='Equipment Source']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data4 = e4.getText();
-		if (!(data4.contains(""))) {
-			Assert.assertTrue(false);
-		}
-
-		// Radio Button verify
 		WebElement e5 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Caseload/ District']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data5 = e5.getText();
-		if (!(data5.contains(""))) {
+		if (!(data5.equalsIgnoreCase(PixalereScripts.Caseload_District1))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e6 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Secondary nurse(s) name and contact info']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data6 = e6.getText();
-		if (!(data6.contains(""))) {
+		if (!(data6.equalsIgnoreCase(PixalereScripts.Secondary_nurse_contact_info1))) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e7 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Last enteral tube change']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data7 = e7.getText();
-		if (!(data7.contains(""))) {
+		if (!(data7.equalsIgnoreCase(PixalereScripts.Last_enteral_tube_change1))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e8 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Day of MicKEY balloon re-inflation']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data8 = e8.getText();
-		if (!(data8.contains(""))) {
-			Assert.assertTrue(false);
-		}
-
-		// Radio Button verify
-		WebElement e9 = driver.findElement(By.xpath(
-				"(//td[normalize-space()='Last enteral tube change']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data9 = e9.getText();
-		if (!(data9.contains(""))) {
-			Assert.assertTrue(false);
-		}
-
-		WebElement e10 = driver.findElement(By.xpath(
-				"(//td[normalize-space()='Day of MicKEY balloon re-inflation']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data10 = e10.getText();
-		if (!(data10.contains(""))) {
-			Assert.assertTrue(false);
-		}
-
-		WebElement e11 = driver.findElement(By.xpath(
-				"(//td[normalize-space()='Day of MicKEY balloon re-inflation']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data11 = e11.getText();
-		if (!(data11.contains(""))) {
+		if (!(data8.equalsIgnoreCase(PixalereScripts.Day_MicKEY_balloon_reinflation1))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e12 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Care of site']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data12 = e12.getText();
-		if (!(data12.contains(""))) {
+		if (!(data12.equalsIgnoreCase(PixalereScripts.Careofsite1))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e13 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Times of feeds']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data13 = e13.getText();
-		if (!(data13.contains(""))) {
+		if (!(data13.equalsIgnoreCase(PixalereScripts.Times_of_feeds1))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e14 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Special precautions']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data14 = e14.getText();
-		if (!(data14.contains(""))) {
+		if (!(data14.equalsIgnoreCase(PixalereScripts.Special_precautions1))) {
 			Assert.assertTrue(false);
 		}
+		System.out.println("Client Care Summery data verified....................................");
 	}
 
 	public void verify_DepressionScreening() {
@@ -2442,10 +2410,9 @@ public class SeleniumCommonUtils {
 
 	public void verify_Tracheostomy_and_Ventilator_Record_Page() {
 		// Radio Button verify
-		WebElement e2 = driver.findElement(By.xpath(
-				"(//td[normalize-space()='Humidity']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		WebElement e2 = driver.findElement(By.xpath("(//td[normalize-space()='Humidity']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data2 = e2.getText();
-		if (!(data2.contains(""))) {
+		if (!(data2.equalsIgnoreCase(LocatorUtils.radioTrachestomy))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2453,7 +2420,7 @@ public class SeleniumCommonUtils {
 		WebElement e4 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Suction System Checks')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data4 = e4.getText();
-		if (!(data4.contains(""))) {
+		if (!(data4.equalsIgnoreCase(LocatorUtils.radioSuction_System_Checks))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2461,7 +2428,7 @@ public class SeleniumCommonUtils {
 		WebElement e5 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Trach Set Change')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data5 = e5.getText();
-		if (!(data5.contains(""))) {
+		if (!(data5.equalsIgnoreCase(LocatorUtils.radioTrach_Set_Change_field))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2469,7 +2436,7 @@ public class SeleniumCommonUtils {
 		WebElement e6 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Spare Trach Set Available')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data6 = e6.getText();
-		if (!(data6.contains(""))) {
+		if (!(data6.equalsIgnoreCase(LocatorUtils.radioSpare_Trach_Set_Available))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2477,33 +2444,33 @@ public class SeleniumCommonUtils {
 		WebElement e7 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Stoma Care Provided?')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data7 = e7.getText();
-		if (!(data7.contains(""))) {
+		if (!(data7.equalsIgnoreCase(LocatorUtils.radioStoma_Care_Provided))) {
 			Assert.assertTrue(false);
 		}
 
 		// Radio Button verify
-		WebElement e8 = driver.findElement(By.xpath(
-				"(//td[contains(text(),'Was suctioning performed?')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data8 = e8.getText();
-		if (!(data8.contains(""))) {
-			Assert.assertTrue(false);
-		}
+//		WebElement e8 = driver.findElement(By.xpath(
+//				"(//td[contains(text(),'Was suctioning performed?')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+//		String data8 = e8.getText();
+//		if (!(data8.equalsIgnoreCase(LocatorUtils.radiosuctioning_performed))) {
+//			Assert.assertTrue(false);
+//		}
 
 		// Radio Button verify
 		WebElement e9 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Water Level Checked')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data9 = e9.getText();
-		if (!(data9.contains(""))) {
+		if (!(data9.equalsIgnoreCase(LocatorUtils.radioWater_Level_Checked))) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
-		WebElement e10 = driver.findElement(By.xpath(
-				"(//td[contains(text(),'Humidifier ON Checked')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data10 = e10.getText();
-		if (!(data10.contains(""))) {
-			Assert.assertTrue(false);
-		}
+		// Radio Button verify 
+//		WebElement e10 = driver.findElement(By.xpath(
+//				"(//td[contains(text(),'Humidifier ON Checked')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+//		String data10 = e10.getText();
+//		if (!(data10.equalsIgnoreCase(LocatorUtils.radioHumidifier_ON_Checked))) {
+//			Assert.assertTrue(false);
+//		}
 
 		// input text field
 		WebElement e20 = driver.findElement(By.xpath(
@@ -2747,21 +2714,23 @@ public class SeleniumCommonUtils {
 
 		System.out.println("CAM_PT Page verified................");
 	}
+	
 
 	public void verify_Tinetti_page() {
+		
+		
 		// Radio Button verify
 		WebElement e2 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Sitting Balance']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data2 = e2.getText();
-		if (!(data2.contains(""))) {
+		if (!(data2.contains(PixalereScripts.sitting1))) {
 			Assert.assertTrue(false);
 		}
 
-		// Radio Button verify
 		WebElement e4 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Rises from chair')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data4 = e4.getText();
-		if (!(data4.contains(""))) {
+		if (!(data4.contains(PixalereScripts.sitting2))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2769,7 +2738,7 @@ public class SeleniumCommonUtils {
 		WebElement e5 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Attempts to rise')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data5 = e5.getText();
-		if (!(data5.contains(""))) {
+		if (!(data5.contains(PixalereScripts.sitting3))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2777,7 +2746,7 @@ public class SeleniumCommonUtils {
 		WebElement e6 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Immediate standing balance (first 5 seconds)')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data6 = e6.getText();
-		if (!(data6.contains(""))) {
+		if (!(data6.contains(PixalereScripts.sitting4))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2785,7 +2754,14 @@ public class SeleniumCommonUtils {
 		WebElement e7 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Standing balance')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data7 = e7.getText();
-		if (!(data7.contains(""))) {
+		if (!(data7.contains(PixalereScripts.sitting5))) {
+			Assert.assertTrue(false);
+		}
+		// Radio Button verify
+		WebElement e70 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Nudged (subject at max position with feet as close together as possible, examiner pushes lightly on subject’s sternum with palm of hand 3 times.')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data70 = e70.getText();
+		if (!(data70.contains(PixalereScripts.sitting6))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2793,7 +2769,7 @@ public class SeleniumCommonUtils {
 		WebElement e8 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Eyes closed (at maximum position #6)')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data8 = e8.getText();
-		if (!(data8.contains(""))) {
+		if (!(data8.contains(PixalereScripts.sitting7))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2801,88 +2777,85 @@ public class SeleniumCommonUtils {
 		WebElement e9 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Turning 360 degrees')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data9 = e9.getText();
-		if (!(data9.contains(""))) {
+		if (!(data9.contains(PixalereScripts.sitting8))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e10 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Sitting down')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data10 = e10.getText();
-		if (!(data10.contains(""))) {
-			Assert.assertTrue(false);
-		}
-
-		WebElement e11 = driver.findElement(By.xpath(
-				"(//td[contains(text(),'Initiation of gait (immediately after told to “go”)')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data11 = e11.getText();
-		if (!(data11.contains(""))) {
+		if (!(data10.contains(PixalereScripts.sitting9))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e12 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Step length (right)')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data12 = e12.getText();
-		if (!(data12.contains(""))) {
+		if (!(data12.contains(PixalereScripts.sitting10))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e13 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Step height (right)')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data13 = e13.getText();
-		if (!(data13.contains(""))) {
+		if (!(data13.contains(PixalereScripts.sitting11))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e14 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Step length (left)')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data14 = e14.getText();
-		if (!(data14.contains(""))) {
+		if (!(data14.contains(PixalereScripts.sitting12))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e15 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Step height (left)')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data15 = e15.getText();
-		if (!(data15.contains(""))) {
+		if (!(data15.contains(PixalereScripts.sitting13))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e16 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Step symmetry')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data16 = e16.getText();
-		if (!(data16.contains(""))) {
+		if (!(data16.contains(PixalereScripts.sitting14))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e17 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Step continuity')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data17 = e17.getText();
-		if (!(data17.contains(""))) {
+		if (!(data17.contains(PixalereScripts.sitting15))) {
+			Assert.assertTrue(false);
+		}
+		WebElement e170 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Path (estimated in relation to floor tiles, 12-inch diameter; observe excursion of 1 foot over about 10 feet of the course)')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data170 = e170.getText();
+		if (!(data170.contains(PixalereScripts.sitting16))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e18 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Trunk')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data18 = e18.getText();
-		if (!(data18.contains(""))) {
+		if (!(data18.contains(PixalereScripts.sitting17))) {
 			Assert.assertTrue(false);
 		}
 		WebElement e19 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Walking Stance')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data19 = e19.getText();
-		if (!(data19.contains(""))) {
-			Assert.assertTrue(false);
-		}
-
-		WebElement e20 = driver.findElement(By.xpath(
-				"(//td[contains(text(),'Client Risk of Fall')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		String data20 = e20.getText();
-		if (!(data20.contains(""))) {
+		if (!(data19.contains(PixalereScripts.sitting18))) {
 			Assert.assertTrue(false);
 		}
 
 		System.out.println("Tinetti_page Page verified................");
-
+		
+		String verify_Balance_Gait = getElementText(By.xpath("(//td[normalize-space()='Balance+Gait Score']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		if(!(PixalereScripts.Balance_Gait.equalsIgnoreCase(verify_Balance_Gait))) {
+			Assert.assertTrue(false);
+			System.out.println("Balance Gait Score verified........................");
+		}
 	}
 
 	public void verify_Berg_Balance() {

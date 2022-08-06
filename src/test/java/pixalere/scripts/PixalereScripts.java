@@ -205,6 +205,25 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String berbal12;
 	public static String berbal13;
 	public static String berbal14;
+	public static String sitting1;
+	public static String sitting2;
+	public static String sitting3;
+	public static String sitting4;
+	public static String sitting5;
+	public static String sitting6;
+	public static String sitting7;
+	public static String sitting8;
+	public static String sitting9;
+	public static String sitting10;
+	public static String sitting11;
+	public static String sitting12;
+	public static String sitting13;
+	public static String sitting14;
+	public static String sitting15;
+	public static String sitting16;
+	public static String sitting17;
+	public static String sitting18;
+	public static String sitting19;
 	public static String cam1;
 	public static String cam2;
 	public static String cam3;
@@ -256,6 +275,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String pt_teaching_agreement_comment1;
 	public static String pt_teaching_agreement_comment0;
 
+	public static String Balance_Gait;
 	public static List<String> list_Cardiovascular_ICAN1 = new ArrayList<>();
 	public static List<String> list_Respiratory_ICAN1 = new ArrayList<>();
 	public static List<String> list_RespiratoryAssess_ICAN1 = new ArrayList<>();
@@ -275,6 +295,10 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public void chk_instruct_client_field(String value) {
 		clickElement(By.xpath("//input[@id='modified_exercise']//following-sibling::label"));
 		pt_modified_exercise = "Yes";
+	}
+
+	public void getBalance_Gait() {
+		Balance_Gait = getElementText(By.xpath("//*[@id='balancegaitScore']"));
 	}
 
 	public void selectRdioforfieldPTCAM(String value, String section) {
@@ -380,6 +404,17 @@ public class PixalereScripts extends PixalereCommonUtils {
 			berbal13 = value;
 		}
 
+		if (section.equalsIgnoreCase("Sitting Balance")) {
+			if (value.equalsIgnoreCase("Leans or slides in chair"))
+				clickElement(By.xpath(String.format(
+						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][1]",
+						section)));
+			else
+				clickElement(By.xpath(String.format(
+						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][3]",
+						section)));
+			sitting1 = value;
+		}
 		if (section.equalsIgnoreCase("Rises from chair")) {
 			if (value.equalsIgnoreCase("Unable without help"))
 				clickElement(By.xpath(String.format(
@@ -389,6 +424,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][3]",
 						section)));
+			sitting2 = value;
 		}
 
 		if (section.equalsIgnoreCase("Attempts to rise")) {
@@ -400,6 +436,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][3]",
 						section)));
+			sitting3 = value;
 		}
 
 		if (section.equalsIgnoreCase("Immediate standing")) {
@@ -411,6 +448,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='Immediate standing balance (first 5 seconds)']//following::label[normalize-space(text())=''][3]",
 						section)));
+			sitting4 = value;
 		}
 
 		if (section.equalsIgnoreCase("Standing balance")) {
@@ -422,6 +460,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][3]",
 						section)));
+			sitting5 = value;
 		}
 
 		if (section.equalsIgnoreCase("Nudged")) {
@@ -433,6 +472,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='Nudged (subject at max position with feet as close together as possible, examiner pushes lightly on subject’s sternum with palm of hand 3 times.']//following::label[normalize-space(text())=''][3]",
 						section)));
+			sitting6 = value;
 		}
 
 		if (section.equalsIgnoreCase("Eyes closed")) {
@@ -444,6 +484,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='Eyes closed (at maximum position #6)']//following::label[normalize-space(text())=''][2]",
 						section)));
+			sitting7 = value;
 		}
 
 		if (section.equalsIgnoreCase("Turning 360 degrees")) {
@@ -455,6 +496,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][2]",
 						section)));
+			sitting8 = value;
 		}
 
 		if (section.equalsIgnoreCase("Sitting down")) {
@@ -467,6 +509,19 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][3]",
 						section)));
+			sitting9 = value;
+		}
+		if (section.equalsIgnoreCase("Initiation of gait (immediately after told to “go”)")) {
+			if (value.equalsIgnoreCase("No hesitancy")) {
+				clickElement(By.xpath(String.format(
+						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][2]",
+						section)));
+				System.out.println();
+			} else
+				clickElement(By.xpath(String.format(
+						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][3]",
+						section)));
+			sitting19 = value;
 		}
 
 		if (section.equalsIgnoreCase("Step length (right)")) {
@@ -478,6 +533,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][1]",
 						section)));
+			sitting10 = value;
 		}
 
 		if (section.equalsIgnoreCase("Step height (right)")) {
@@ -489,6 +545,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][1]",
 						section)));
+			sitting11 = value;
 		}
 
 		if (section.equalsIgnoreCase("Step length (left)")) {
@@ -500,6 +557,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][1]",
 						section)));
+			sitting12 = value;
 		}
 
 		if (section.equalsIgnoreCase("Step height (left)")) {
@@ -511,6 +569,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][1]",
 						section)));
+			sitting13 = value;
 		}
 
 		if (section.equalsIgnoreCase("Step symmetry")) {
@@ -522,6 +581,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][1]",
 						section)));
+			sitting14 = value;
 		}
 		if (section.equalsIgnoreCase("Step continuity")) {
 			if (value.equalsIgnoreCase("Steps appear continuous"))
@@ -532,6 +592,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][1]",
 						section)));
+			sitting15 = value;
 		}
 
 		if (section.equalsIgnoreCase("Path")) {
@@ -543,6 +604,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='Path (estimated in relation to floor tiles, 12-inch diameter; observe excursion of 1 foot over about 10 feet of the course)']//following::label[normalize-space(text())=''][3]",
 						section)));
+			sitting16 = value;
 		}
 
 		if (section.equalsIgnoreCase("Trunk")) {
@@ -554,6 +616,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][2]",
 						section)));
+			sitting17 = value;
 		}
 
 		if (section.equalsIgnoreCase("Walking Stance")) {
@@ -566,6 +629,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 				clickElement(By.xpath(String.format(
 						"//label[normalize-space(text())='%s']//following::label[normalize-space(text())=''][2]",
 						section)));
+			sitting18 = value;
 		}
 	}
 

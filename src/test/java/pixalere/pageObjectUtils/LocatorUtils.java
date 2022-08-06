@@ -25,6 +25,15 @@ public class LocatorUtils {
 	public static String radioEdema_noted;
 	public static String radioPresence_of_Central;
 	public static String radioMurmurs;
+	public static String radioHumidifier_ON_Checked;
+	public static String radioWater_Level_Checked;
+	public static String radioclient_ventilator;
+	public static String radiosuctioning_performed;
+	public static String radioStoma_Care_Provided;
+	public static String radioSpare_Trach_Set_Available;
+	public static String radioTrach_Set_Change_field;
+	public static String radioSuction_System_Checks;
+	public static String radioTrachestomy;
 	public static String radioIncontinence;
 	public static String radioSkin_Type_Visual_Risk_Area;
 	public static String radioMobility;
@@ -2138,6 +2147,87 @@ public class LocatorUtils {
 				return By.xpath("//*[@id='md-radio-murmurs1']");
 			else if (section.contains("No"))
 				return By.xpath("//*[@id='md-radio-murmurs2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByHumidifier_ON_Checked_field(String section) {
+			radioHumidifier_ON_Checked = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-humid_on1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-humid_on2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByWater_Level_Checked_field(String section) {
+			radioWater_Level_Checked = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-water_checked1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-water_checked2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByclient_ventilator_field(String section) {
+			radioclient_ventilator = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-ventilaton1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-ventilaton2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBysuctioning_performed_field(String section) {
+			radiosuctioning_performed = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-suction_question1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-suction_question2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByStoma_Care_Provided_field(String section) {
+			radioStoma_Care_Provided = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-stoma_care1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-stoma_care2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBySpare_Trach_Set_Available(String section) {
+			radioSpare_Trach_Set_Available = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-spare_trach_set1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-spare_trach_set2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByTrach_Set_Change_field(String section) {
+			radioTrach_Set_Change_field = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-trach_set_change1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-trach_set_change2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBySuction_System_Checks(String section) {
+			radioSuction_System_Checks = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-suction_system_checks1']");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-suction_system_checks2']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByTrachestomy(String section) {
+			radioTrachestomy = section;
+			if (section.equalsIgnoreCase("Humidified Air"))
+				return By.xpath("//*[@id='md-radio-humidity-1']");
+			else if (section.equalsIgnoreCase("HME"))
+				return By.xpath("//*[@id='md-radio-humidity-2']");
 			else
 				return By.xpath("");
 		}

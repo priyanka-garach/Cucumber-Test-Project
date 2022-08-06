@@ -192,7 +192,7 @@ public class PixalereStringPool {
 	
 	public static final String Day_MicKEY_balloon_reinflation = "Day of MicKEY balloon re-inflation";
 	
-	public static final String Care_of_site = "Careofsite1";
+	public static final String Care_of_site = "Care of site";
 	
 	public static final String Times_of_feeds = "Times of feeds";
 	
