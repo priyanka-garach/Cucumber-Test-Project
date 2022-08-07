@@ -107,6 +107,11 @@ public class PixalereStringPool {
 
 	public static final String PROBLEM_No_CarePlan = "Problem CP";
 
+	public static final String Cough_Assist_Year = "Cough Assist Year";
+	public static final String invasive_ventilation_Year = "invasive ventilation Year";
+	public static final String Suctioning_Year = "Suctioning Year";
+	public static final String Suctioning_comment = "Suctioning comment";
+
 	public static final String Special_Delivery_Instructions = "Special Delivery Instructions";
 	public static final String Alternate_Contact_Name = "Alternate Contact Name";
 	public static final String Backup_Plan = "Backup Plan";
