@@ -13,7 +13,8 @@ And I Navigate to "Outcome Measures -> Tinetti" LH panel option
 Then "Tinetti Assessment Tool" page will open
 
 ##
-When I click "Leans or slides in chair" radio option for "Sitting Balance" field PT
+When I enter "Date of Visit Tinneti" input field in script
+And I click "Leans or slides in chair" radio option for "Sitting Balance" field PT
 And I click "Unable without help" radio option for "Rises from chair" field PT 
 And I click "Unable without help" radio option for "Attempts to rise" field PT   
 And I click "Steady but uses walker or other support" radio option for "Immediate standing" field PT  
@@ -33,6 +34,7 @@ And I click "Marked deviation" radio option for "Path" field PT
 And I click "Marked sway or uses walking aid" radio option for "Trunk" field PT
 And I click "Heels apart" radio option for "Walking Stance" field PT
 And I get Balance_Gait score
+And I enter "Comments Tinneti" input field in script
 And I click on Save My Work Tinetti Button
 #Then Tinetti should get verified
 And I Navigate to "Viewer -> Tinetti Assessment Tool" LH panel option

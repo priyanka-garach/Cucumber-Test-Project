@@ -86,9 +86,29 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_click_on_Add_More() {
 		clickElement(By.xpath("//*[@id='addConcernDiv']"));
 	}
-	@When("I click on Add button for Exercise")
+	@When("I click on Add button for Exercise one")
 	public void i_click_on_Add_Exercise() {
 		clickElement(By.xpath("//a[@class='delete proClass']"));
+	}
+	
+	@When("I click on Add button for Exercise two")
+	public void i_click_on_Add_Exercise_two() {
+		clickElement(By.xpath("(//a[@class='delete proClass'])[2]"));
+	}
+	
+	@When("I click on Add button for Exercise three")
+	public void i_click_on_Add_Exercise_three() {
+		clickElement(By.xpath("(//a[@class='delete proClass'])[3]"));
+	}
+	
+	@When("I click on Add button for Exercise four")
+	public void i_click_on_Add_Exercise_four() {
+		clickElement(By.xpath("(//a[@class='delete proClass'])[4]"));
+	}
+	
+	@When("I click on Add button for Exercise five")
+	public void i_click_on_Add_Exercise_five() {
+		clickElement(By.xpath("(//a[@class='delete proClass'])[5]"));
 	}
 
 	@When("I click on Save VHA Funding Letter Button")

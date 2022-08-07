@@ -6,8 +6,8 @@ Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
 When I globally select "Pix ID" from Search Category dropdown
-And I search created patient with PIXID special for PTAssessement and Teaching
-And I select PT from Service Referral
+And I search created patient with PIXID PT
+And I select "PT" from Service Referral PT
 And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "Outcome Measures -> Confusion Assessment Method" LH panel option
 Then "CAM Tool" page will open
@@ -21,4 +21,8 @@ And I click on Save Confusion Assessment Method Button
 And I Navigate to "Viewer -> Confusion Assessment Method" LH panel option
 Then "CAM Tool Flowchart" page will open
 When I start verifying records in Confusion Assessment Method Page
+And I press on Delete Button
+And I enter "Reason for deleting record" input field Deletion in scripts
+And I confirm to press Delete Button
+And I check reason after deletion in viewer
 Then I Logout from Pixalere

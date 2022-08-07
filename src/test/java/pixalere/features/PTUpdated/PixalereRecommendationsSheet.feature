@@ -5,7 +5,8 @@ Scenario: Pixalere Recommendations Sheet Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
-When I select client name "Data_PT" from Dashboard
+When I globally select "Pix ID" from Search Category dropdown
+And I search created patient with PIXID PT
 And I select "PT" from Service Referral PT
 And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "Recommendations Sheet" LH panel option

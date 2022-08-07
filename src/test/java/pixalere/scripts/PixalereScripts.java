@@ -43,9 +43,20 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String SideAST4;
 	public static String SideAST5;
 	public static String SideAST6;
+	public static String HoldAST2;
+	public static String HoldAST3;
+	public static String HoldAST4;
+	public static String HoldAST5;
+	public static String RepeatAST2;
+	public static String RepeatAST3;
+	public static String RepeatAST4;
+	public static String RepeatAST5;
 	public static String ExcersizeName;
 	public static String ExcersizeComments;
+	public static String ExcersizeHandoutDate1;
 	public static String Client_SDM_Goal;
+	public static String Comments_Tinneti1;
+	public static String cam_tool_comment1;
 
 	public static String MD_NP_contact_info1;
 	public static String Client_Caregiver_Requests1;
@@ -167,6 +178,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String MAHC_radio_10;
 	public static String MAHC_radio_11;
 	public static String MAHC_radio_12;
+	public static String Date_of_Visit_Tinneti1;
 
 	// *D*////////////////////////
 	public static String Year_Date_ALLA1;
@@ -1340,7 +1352,6 @@ public class PixalereScripts extends PixalereCommonUtils {
 
 		case PixalereStringPool.SideAST1:
 			SideAST1 = JavaUtils.getRandomNumber(1);
-			;
 			System.out.println(PixalereStringPool.SideAST1 + ": " + SideAST1);
 			clear(By.xpath("//input[@name='qtySide'][1]"));
 			sendKeys(By.xpath("//input[@name='qtySide'][1]"), SideAST1);
@@ -1348,15 +1359,107 @@ public class PixalereScripts extends PixalereCommonUtils {
 
 		case PixalereStringPool.RepeatAST1:
 			RepeatAST1 = JavaUtils.getRandomNumber(1);
-			;
 			System.out.println(PixalereStringPool.RepeatAST1 + ": " + RepeatAST1);
 			clear(By.xpath("//input[@name='qtyRepeat'][1]"));
 			sendKeys(By.xpath("//input[@name='qtyRepeat'][1]"), RepeatAST1);
 			break;
+			
+		/////////////////
+			
+		case PixalereStringPool.HoldAST2:
+			HoldAST2 = "2";
+			System.out.println(PixalereStringPool.HoldAST2 + ": " + HoldAST2);
+			clear(By.xpath("(//input[@name='qtyHold'])[2]"));
+			sendKeys(By.xpath("(//input[@name='qtyHold'])[2]"), HoldAST2);
+			break;
+
+		case PixalereStringPool.SideAST2:
+			SideAST2 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.SideAST2 + ": " + SideAST2);
+			clear(By.xpath("(//input[@name='qtySide'])[2]"));
+			sendKeys(By.xpath("(//input[@name='qtySide'])[2]"), SideAST2);
+			break;
+
+		case PixalereStringPool.RepeatAST2:
+			RepeatAST2 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.RepeatAST2 + ": " + RepeatAST2);
+			clear(By.xpath("(//input[@name='qtyRepeat'])[2]"));
+			sendKeys(By.xpath("(//input[@name='qtyRepeat'])[2]"), RepeatAST2);
+			break;
+			
+		/////////////////
+			
+		case PixalereStringPool.HoldAST3:
+			HoldAST3 = "2";
+			System.out.println(PixalereStringPool.HoldAST3 + ": " + HoldAST3);
+			clear(By.xpath("(//input[@name='qtyHold'])[3]"));
+			sendKeys(By.xpath("(//input[@name='qtyHold'])[3]"), HoldAST3);
+			break;
 
 		case PixalereStringPool.SideAST3:
 			SideAST3 = JavaUtils.getRandomNumber(1);
-			;
+			System.out.println(PixalereStringPool.SideAST3 + ": " + SideAST3);
+			clear(By.xpath("(//input[@name='qtySide'])[3]"));
+			sendKeys(By.xpath("(//input[@name='qtySide'])[3]"), SideAST3);
+			break;
+
+		case PixalereStringPool.RepeatAST3:
+			RepeatAST3 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.RepeatAST3 + ": " + RepeatAST3);
+			clear(By.xpath("(//input[@name='qtyRepeat'])[3]"));
+			sendKeys(By.xpath("(//input[@name='qtyRepeat'])[3]"), RepeatAST3);
+			break;
+			
+		////////////////
+			
+		case PixalereStringPool.HoldAST4:
+			HoldAST4 = "2";
+			System.out.println(PixalereStringPool.HoldAST4 + ": " + HoldAST4);
+			clear(By.xpath("(//input[@name='qtyHold'])[4]"));
+			sendKeys(By.xpath("(//input[@name='qtyHold'])[4]"), HoldAST4);
+			break;
+
+		case PixalereStringPool.SideAST4:
+			SideAST4 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.SideAST4 + ": " + SideAST4);
+			clear(By.xpath("(//input[@name='qtySide'])[4]"));
+			sendKeys(By.xpath("(//input[@name='qtySide'])[4]"), SideAST4);
+			break;
+
+		case PixalereStringPool.RepeatAST4:
+			RepeatAST4 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.RepeatAST4 + ": " + RepeatAST4);
+			clear(By.xpath("(//input[@name='qtyRepeat'])[4]"));
+			sendKeys(By.xpath("(//input[@name='qtyRepeat'])[4]"), RepeatAST4);
+			break;
+			
+		//////////////////////
+			
+		case PixalereStringPool.HoldAST5:
+			HoldAST5 = "2";
+			System.out.println(PixalereStringPool.HoldAST5 + ": " + HoldAST5);
+			clear(By.xpath("(//input[@name='qtyHold'])[5]"));
+			sendKeys(By.xpath("(//input[@name='qtyHold'])[5]"), HoldAST5);
+			break;
+
+		case PixalereStringPool.SideAST5:
+			SideAST5 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.SideAST5 + ": " + SideAST5);
+			clear(By.xpath("(//input[@name='qtySide'])[5]"));
+			sendKeys(By.xpath("(//input[@name='qtySide'])[5]"), SideAST5);
+			break;
+
+		case PixalereStringPool.RepeatAST5:
+			RepeatAST5 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.RepeatAST5 + ": " + RepeatAST5);
+			clear(By.xpath("(//input[@name='qtyRepeat'])[5]"));
+			sendKeys(By.xpath("(//input[@name='qtyRepeat'])[5]"), RepeatAST5);
+			break;
+			
+		/////////////////////////////
+
+		/* case PixalereStringPool.SideAST3:
+			SideAST3 = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.SideAST3 + ": " + SideAST3);
 			clear(By.xpath("(//input[@name='qtySide'])[3]"));
 			sendKeys(By.xpath("(//input[@name='qtySide'])[3]"), SideAST3);
@@ -1374,13 +1477,20 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.SideAST5 + ": " + SideAST5);
 			clear(By.xpath("(//input[@name='qtySide'])[5]"));
 			sendKeys(By.xpath("(//input[@name='qtySide'])[5]"), SideAST5);
-			break;
+			break; */
 
-		case PixalereStringPool.SideAST6:
+		/*case PixalereStringPool.SideAST6:
 			SideAST6 = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.SideAST6 + ": " + SideAST6);
 			clear(By.xpath("(//input[@name='qtySide'])[6]"));
 			sendKeys(By.xpath("(//input[@name='qtySide'])[6]"), SideAST6);
+			break; */
+			
+		case PixalereStringPool.ExcersizeHandoutDate:
+			ExcersizeHandoutDate1 = "05/05/2022";
+			System.out.println(PixalereStringPool.ExcersizeHandoutDate + ": " + ExcersizeHandoutDate1);
+			clear(By.id("visit_date"));
+			sendKeys_date(By.id("visit_date"), ExcersizeHandoutDate1);
 			break;
 
 		case PixalereStringPool.ExcersizeProgName:
@@ -2373,8 +2483,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 
 		case PixalereStringPool.pt_teaching_agreement_comment:
 			pt_teaching_agreement_comment1 = JavaUtils.getRandomString(25);
-			System.out
-					.println(PixalereStringPool.pt_teaching_agreement_comment + ": " + pt_teaching_agreement_comment1);
+			System.out.println(PixalereStringPool.pt_teaching_agreement_comment + ": " + pt_teaching_agreement_comment1);
 			clear(By.xpath("//*[@id='education_comments']"));
 			sendKeys(By.xpath("//*[@id='education_comments']"), pt_teaching_agreement_comment1);
 			break;
@@ -2386,7 +2495,30 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("//*[@id='activity_comments']"));
 			sendKeys(By.xpath("//*[@id='activity_comments']"), pt_teaching_agreement_comment0);
 			break;
+			
+		case PixalereStringPool.Date_of_Visit_Tinneti:
+			Date_of_Visit_Tinneti1 = "08/06/2022";
+			System.out.println(PixalereStringPool.Date_of_Visit_Tinneti + ": " + Date_of_Visit_Tinneti1);
+			Wait_p(2);
+			clear(By.xpath("//*[@name='visit_date']"));
+			sendKeys(By.xpath("//*[@name='visit_date']"), Date_of_Visit_Tinneti1);
+			break;
+			
+		case PixalereStringPool.Comments_Tinneti:
+			Comments_Tinneti1 = JavaUtils.getRandomString(10);
+			System.out.println(PixalereStringPool.Comments_Tinneti + ": " + Comments_Tinneti1);
+			clear(By.xpath("//*[@name='otherComments']"));
+			sendKeys(By.xpath("//*[@name='otherComments']"), Comments_Tinneti1);
+			break;
+			
+		case PixalereStringPool.cam_tool_comment:
+			cam_tool_comment1 = JavaUtils.getRandomString(10);
+			System.out.println(PixalereStringPool.cam_tool_comment + ": " + cam_tool_comment1);
+			clear(By.xpath("//*[@id='cam_tool_comment']"));
+			sendKeys(By.xpath("//*[@id='cam_tool_comment']"), cam_tool_comment1);
+			break;
 
+			
 		}
 	}
 }

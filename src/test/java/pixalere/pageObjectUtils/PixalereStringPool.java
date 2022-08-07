@@ -12,15 +12,21 @@ public class PixalereStringPool {
 	public static final String MY_CONSULTS = "My Consults";
 
 	public static final String LAST_NAME = "Last Name";
-	
+
 	public static final String CareGIVER_MEDICATION_ONE = "Medication Name1";
-	
+
 	public static final String CareGIVER_MEDICATION_two = "Medication Name2";
 
 	public static final String TEMP = "Tempearture";
 
 	public static final String BP = "Blood Pressure";
+	
+	public static final String Date_of_Visit_Tinneti = "Date of Visit Tinneti";
 
+	public static final String Comments_Tinneti = "Comments Tinneti";
+	
+	public static final String cam_tool_comment = "cam_tool_comment";
+	
 	public static final String HeartRate = "Heart Rate";
 
 	public static final String RespiRate = "Respiratory Rate";
@@ -34,15 +40,15 @@ public class PixalereStringPool {
 	public static final String HEADCIRCUM_VITAL = "Head Circumference";
 
 	public static final String ABDOMNLGIRTH_VITAL = "Abdominal Girth";
-	
+
 	public static final String Type_Of_Ventilator = "Type Of Ventilator";
-	
+
 	public static final String LEAK_HOME = "Leak (litres/minute)";
-	
-	public static final String Minute_Ventilation =  "Minute Ventilation";
-	
+
+	public static final String Minute_Ventilation = "Minute Ventilation";
+
 	public static final String PRESSURE_HOME = "Pressure";
-	
+
 	public static final String Volume_Tidal_Exhaled = "Volume Tidal Exhaled";
 
 	public static final String SOLUTION_NAME_PCAPAINPUMP = "SolutionNamePCAPainPump";
@@ -100,7 +106,7 @@ public class PixalereStringPool {
 	public static final String INSULIN_HOME = "Insulin";
 
 	public static final String PROBLEM_No_CarePlan = "Problem CP";
-	
+
 	public static final String Special_Delivery_Instructions = "Special Delivery Instructions";
 	public static final String Alternate_Contact_Name = "Alternate Contact Name";
 	public static final String Backup_Plan = "Backup Plan";
@@ -109,30 +115,30 @@ public class PixalereStringPool {
 	public static final String Date_Guidelines = "Date Guidelines";
 	public static final String Date_Guidelines_Alternate = "Date Guidelines Alternate";
 	public static final String Lock_Box_Required = "Lock Box Required";
-			
+
 	public static final String first_areaofconcern = "1st area of concern";
-	
+
 	public static final String Other_Service_Consent_Obtained = "Other Service Consent Obtained";
 	public static final String Comments_Service_Consent_Obtained = "Comments Service Consent Obtained";
-	
+
 	public static final String secondareaof_concern = "2st area of concern";
-	
+
 	public static final String PixalereTestsAdmin = "Pixalere Tests – Admin";
-	
+
 	public static final String VarFP1001 = "FP1001";
-	
+
 	public static final String VarMP1549 = "MP1549";
-	
+
 	public static final String VarCCN = "Clinicians Contact Number";
 
 	public static final String YearLHIN = "YearLHIN";
-	
+
 	public static final String addinfoLHIN1 = "AdditionalInfo1";
-	
+
 	public static final String addinfoLHIN2 = "AdditionalInfo2";
-	
+
 	public static final String CLIENT_SUMMARY_Special_Instructions = "Special Instructions";
-	
+
 	public static final String NURSING_DIAGNOSIS_CarePlan = "Client Problem Nursing Diagnosis";
 
 	public static final String INTERVENTIONS_ROUTINE_CarePlan = "Interventions Routine Care";
@@ -146,203 +152,222 @@ public class PixalereStringPool {
 	public static final String Edit_EXPECTED_OUTCOMES_REEVALUATION_DATE_CarePlan = "Edit Expected Outcomes ReEvaluation Date";
 
 	public static final String TIME_PT = "TimeTUG";
-	
+
 	public static final String AID_USED_TUG = "Aid UsedTUG";
-	
+
 	public static final String MAHC_Details_Comments = "Details Comments Comment MAHC";
-	
+
 	public static final String FIMData = "FIMData";
-	
+
 	public static final String CAMPTCOMMENTS = "CAMPTComment";
-	
+
 	public static final String RecommendationDate = "RecommendationDate";
 	public static final String RecommendationsDataSPT = "RecommendationsData";
-	
+
 	public static final String HoldAST1 = "Hold";
-	
+
 	public static final String SideAST1 = "Sides";
-	
+
 	public static final String RepeatAST1 = "Repeat";
+
+	public static final String HoldAST2 = "Hold2";
 	
+	public static final String SideAST2 = "Sides2";
+
+	public static final String RepeatAST2 = "Repeat2";
+
+	public static final String HoldAST3 = "Hold3";
+
+	public static final String RepeatAST3 = "Repeat3";
+
+	public static final String HoldAST4 = "Hold4";
+
+	public static final String RepeatAST4 = "Repeat4";
+
+	public static final String HoldAST5 = "Hold5";
+
+	public static final String RepeatAST5 = "Repeat5";
+
 	public static final String SideAST3 = "SideAST3";
-	
+
 	public static final String SideAST4 = "SideAST4";
-	
+
 	public static final String SideAST5 = "SideAST5";
-	
+
 	public static final String SideAST6 = "SideAST6";
-	
+
 	public static final String ExcersizeProgName = "Exercise program name";
-	
+
 	public static final String ExcersizeComments = "Additional Excersize comments";
-	
+
+	public static final String ExcersizeHandoutDate = "Excersize Visit Date";
+
 	public static final String Client_SDM_GOAL_PTAssessment = "Client/SDM Stated Goal";
-	
+
 	public static final String MD_NP_contact_info = "MD/NP contact info";
-	
+
 	public static final String Client_Caregiver_Requests = "Client Caregiver Requests";
-	
+
 	public static final String Caseload_District = "Caseload/ District";
-	
+
 	public static final String Special_precautions = "Special precautions";
-	
+
 	public static final String Secondary_nurse_contact_info = "Secondary nurse(s) contact info";
-	
+
 	public static final String Last_enteral_tube_change = "Last enteral tube change";
-	
+
 	public static final String Day_MicKEY_balloon_reinflation = "Day of MicKEY balloon re-inflation";
-	
+
 	public static final String Care_of_site = "Care of site";
-	
+
 	public static final String Times_of_feeds = "Times of feeds";
-	
+
 	public static final String Number_of_treatment = "Number of treatment";
-	
+
 	public static final String Therapy_hours = "Therapy hours";
-	
+
 	public static final String Information_for_scale_provided = "Information for scale provided by";
-	
+
 	public static final String Worst_Possible_Pain_10 = "Worst Possible Pain 10";
-	
+
 	public static final String Moderate_Pain_5 = "Moderate Pain 5";
-	
+
 	public static final String Words_used_for_pain = "Words used for pain";
-	
+
 	public static final String discomfortpain_triggers_for_your_child = "discomfort/pain triggers for your child";
-	
+
 	public static final String initial_interventions_in_the_past = "initial interventions in the past";
-	
+
 	public static final String the_child_doing_when_you_noticed_the_pain = "the child doing when you noticed the pain";
-	
+
 	public static final String Medications_for_Pain_Pharmacological = "Medications for Pain Pharmacological";
-	
+
 	public static final String Cooling_spray_Physical_Environmental = "Cooling spray Physical & Environmental";
-	
+
 	public static final String Distraction_Psychological_Behavioral = "Distraction Psychological & Behavioral";
-	
+
 	public static final String Medical_Devices_Intervention = "Medical Devices Intervention";
-	
+
 	public static final String Medical_Devices = "Medical Devices";
-	
+
 	public static final String Client_Specific_Intervention_Other = "Client Specific Intervention Other";
-	
+
 	public static final String Please_document_MRP_recommendations = "Please document MRP recommendations";
-	
+
 	public static final String Aggravating_Factors = "Aggravating Factors";
-	
+
 	public static final String Comments_Pain_Profile = "Comments Pain Profile";
-	
+
 	public static final String Adjuvant_Pain_Medication = "Adjuvant Pain Medication";
 
 	public static final String Palliating_Factors = "Palliating Factors";
-	
+
 	public static final String Aggravating_Factors_PPA = "Aggravating Factors PPA";
-	
+
 	public static final String Intensity = "Intensity";
-	
+
 	public static final String Pharmacological_Intervention = "Pharmacological Intervention";
-	
+
 	public static final String OtherICAone = "OtherICAone";
-	
+
 	public static final String OtherICA2 = "OtherICA2";
-	
+
 	public static final String Symptom_Management = "Symptom Management";
-	 
+
 	public static final String OtherICA3 = "OtherICA3";
-	
+
 	public static final String Cardiovascular_History_Comments = "Cardiovascular History Comments";
-	
+
 	public static final String Respiratory_History_Comments = "Respiratory History Comments";
-	
+
 	public static final String Respiratory_Assessment_Comments = "Respiratory Assessment Comments";
-	
+
 	public static final String Eyes_Ears_Nose_Throat_History_Comments = "Eyes Ears Nose Throat History Comments";
-	
+
 	public static final String Client_Perspective1 = "Client Perspective1";
-	
+
 	public static final String Client_Perspective2 = "Client Perspective2";
-	
+
 	public static final String Client_Perspective3 = "Client Perspective3";
-	
+
 	public static final String Client_Perspective4 = "Client Perspective4";
-	
+
 	public static final String Client_Perspective5 = "Client Perspective5";
-	
+
 	public static final String Ankle_Dorsiflexion = "Ankle_Dorsiflexion";
-	
+
 	public static final String Ankle_Plantarflexion = "Ankle_Plantarflexion";
-	
+
 	public static final String Knee_Flexion = "Knee_Flexion";
-	
+
 	public static final String Knee_Extension = "Knee_Extension";
-	
+
 	public static final String Hip_Flexion = "Hip_Flexion";
-	
+
 	public static final String Hip_Abduction = "Hip_Abduction";
-	
+
 	public static final String Hip_Extension = "Hip_Extension";
-	 
+
 	public static final String Wrist_Flexion = "Wrist_Flexion";
-	
+
 	public static final String Wrist_Extension = "Wrist_Extension";
-	
+
 	public static final String Elbow_Flexion = "Elbow_Flexion";
-	
-	public static final String Elbow_Extension  = "Elbow_Extension";
-	
+
+	public static final String Elbow_Extension = "Elbow_Extension";
+
 	public static final String Elbow_Supination = "Elbow_Supination";
-	
+
 	public static final String Elbow_Pronation = "Elbow_Pronation";
-	
+
 	public static final String Shoulder_Flexion = "Shoulder_Flexion";
-	
+
 	public static final String Shoulder_Abduction = "Shoulder_Abduction";
-	
+
 	public static final String Shoulder_External_Rotation = "Shoulder_External_Rotation";
-	
+
 	public static final String Shoulder_Internal_Rotation = "Shoulder_Internal_Rotation";
-	
+
 	public static final String CSpine_Flexion = "CSpine_Flexion";
-	
+
 	public static final String CSpine_Extension = "CSpine_Extension";
-	
+
 	public static final String CSpine_SideFlexion = "CSpine_SideFlexion";
-	
+
 	public static final String CSpine_Rotation = "CSpine_Rotation";
-	
+
 	public static final String LSpine_Flexion = "LSpine_Flexion";
-	
+
 	public static final String LSpine_Extension = "LSpine_Extension";
 
 	public static final String LSpine_SideFlexion = "LSpine_SideFlexion";
-	
+
 	public static final String Other_JointMovement = "Other_JointMovement";
-	
+
 	public static final String SDM_Name = "SDM Name";
-	
+
 	public static final String FileUploadADP_Funding_Decision = "Document_Upload";
-	
+
 	public static final String ADP_Authorizer_Name = "ADP Authorizer Name";
-	
+
 	public static final String Date_ADP = "Date_ADP";
-	
+
 	public static final String Document_Name_for_Filter = "Document_Name_for_Filter";
-	
+
 	public static final String Source_of_Info = "Source of Info";
-	
+
 	public static final String Custodial_Arrangements = "Custodial Arrangements";
-	
+
 	public static final String Important_Past_Medical_Surgical_History = "Important Past Medical Surgical History";
 	public static final String Activity_to_be_Instructed = "Activity to be Instructed";
-	
+
 	public static final String LearnerName = "LearnerName";
 
 	public static final String LearnerDate = "LearnerDate";
 
 	public static final String EducationComment = "EducationComment";
 
-	
-	public static final String Daycare_Childcare =  "Daycare Childcare";
+	public static final String Daycare_Childcare = "Daycare Childcare";
 	public static final String Siblings = "Siblings";
 	public static final String Significant_Other_Relationships_Pets = "Significant Other Relationships Pets";
 	public static final String Respiratory_History_Comments_PICAT = "Respiratory History Comments PICAT";
@@ -362,32 +387,31 @@ public class PixalereStringPool {
 	public static final String Social_interactions_PICAT = "Social interactions PICAT";
 	public static final String Routine_activities_exercise_PICAT = "Routine activities exercise PICAT";
 	public static final String Favourite_toys_security_object_hobbies_PICAT = "Favourite toys security object hobbies PICAT";
-	
-	
+
 	public static final String Year_Date_ALLA = "Year Date ALLA";
-	public static final String Dorsalis_Pedis_mmHg_Right="Dorsalis Pedis mmHg Right";
-	public static final String Dorsalis_Pedis_mmHg_Left="Dorsalis Pedis mmHg Left";
-	public static final String Posterior_Tibial_mmHg_Right="Posterior Tibial mmHg Right";
-	public static final String Posterior_Tibial_mmHg_Left="Posterior Tibial mmHg Left";
-	public static final String Ankle_Brachial_Pressure_mmHg_Right="Ankle Brachial Pressure mmHg Right";
-	public static final String Ankle_Brachial_Pressure_mmHg_Left="Ankle Brachial Pressure mmHg Left";
-	public static final String Toe_Pressure_mmHg_Right="Toe Pressure mmHg Right";
-	public static final String Toe_Pressure_mmHg_Left ="Toe Pressure mmHg Left";
-	public static final String Brachial_Pressure_mmHg_Right="Brachial Pressure mmHg Right";
-	public static final String Brachial_Pressure_mmHg_Left="Brachial Pressure mmHg Left";
-	public static final String Year_Date_TBI="Year Date TBI";
-	public static final String Score_Right="Score Right";
-	public static final String Score_Left="Score Left";
-	public static final String Wrist_Measurement_cm_Left ="Wrist Measurement cm Left";
-	public static final String Forearm_Measurement_cm_Left ="Forearm Measurement cm Left";
-	public static final String Client_Needs_Goals_One ="Client Needs Goals One";
-	public static final String Client_Needs_Goals_Two ="Client Needs Goals Two";
-	public static final String Client_Needs_Goals_Three ="Client Needs Goals Three";
-	public static final String Service_Teaching_Plan_One ="Service Teaching Plan One";
-	public static final String Service_Teaching_Plan_Two ="Service Teaching Plan Two";
-	public static final String Service_Teaching_Plan_Three ="Service Teaching Plan Three";
-	
-	public static final String EMESIS = "Emesis"; 
+	public static final String Dorsalis_Pedis_mmHg_Right = "Dorsalis Pedis mmHg Right";
+	public static final String Dorsalis_Pedis_mmHg_Left = "Dorsalis Pedis mmHg Left";
+	public static final String Posterior_Tibial_mmHg_Right = "Posterior Tibial mmHg Right";
+	public static final String Posterior_Tibial_mmHg_Left = "Posterior Tibial mmHg Left";
+	public static final String Ankle_Brachial_Pressure_mmHg_Right = "Ankle Brachial Pressure mmHg Right";
+	public static final String Ankle_Brachial_Pressure_mmHg_Left = "Ankle Brachial Pressure mmHg Left";
+	public static final String Toe_Pressure_mmHg_Right = "Toe Pressure mmHg Right";
+	public static final String Toe_Pressure_mmHg_Left = "Toe Pressure mmHg Left";
+	public static final String Brachial_Pressure_mmHg_Right = "Brachial Pressure mmHg Right";
+	public static final String Brachial_Pressure_mmHg_Left = "Brachial Pressure mmHg Left";
+	public static final String Year_Date_TBI = "Year Date TBI";
+	public static final String Score_Right = "Score Right";
+	public static final String Score_Left = "Score Left";
+	public static final String Wrist_Measurement_cm_Left = "Wrist Measurement cm Left";
+	public static final String Forearm_Measurement_cm_Left = "Forearm Measurement cm Left";
+	public static final String Client_Needs_Goals_One = "Client Needs Goals One";
+	public static final String Client_Needs_Goals_Two = "Client Needs Goals Two";
+	public static final String Client_Needs_Goals_Three = "Client Needs Goals Three";
+	public static final String Service_Teaching_Plan_One = "Service Teaching Plan One";
+	public static final String Service_Teaching_Plan_Two = "Service Teaching Plan Two";
+	public static final String Service_Teaching_Plan_Three = "Service Teaching Plan Three";
+
+	public static final String EMESIS = "Emesis";
 
 	public static final String FLUID = "Fluid";
 
@@ -436,37 +460,37 @@ public class PixalereStringPool {
 	public static final String IO_Number_of_Stool = "Number of Stools in the Past 24 Hours";
 
 	public static final String MedRatDelete = "Reason for Deletion";
-	
+
 	public static final String Reason_of_Delete_in_Viewer = "Reason for deleting record";
-	
+
 	public static final String SLEEP_POSITION = "Sleep Position";
-	
+
 	public static final String RIGHT_ANKLE_MEASURE_CM = "Ankle Measurement cm Right";
-	
+
 	public static final String RIGHT_ANKLE_MEASURE_MM = "Ankle Measurement mm Right";
-	
+
 	public static final String RIGHT_MIDCALF_MEASURE_CM = "Mid-Calf Measurement cm Right";
-	
+
 	public static final String RIGHT_MIDCALF_MEASURE_MM = "Mid-Calf Measurement mm Right";
-	
+
 	public static final String BASIC_LL_COMMENTS = "Basic LL Comments";
-	
+
 	public static final String BASIC_UL_COMMENTS = "Comments Upper Limb";
-	
+
 	public static final String ForeARM_MIDCALF_MEASURE_CM = "Forearm Measurement cm Right";
-	
+
 	public static final String LEFT_WRIST_MEASURE_CM = "Wrist Measurement cm Right";
-	
+
 	public static final String DORSALIS_RIGHT_ADV_LIMB = "Dorsalis Pedis mm/Hg Right";
-	
+
 	public static final String Posterior_Tibial_Right_ADV_LIMB = "Posterior Tibial mm/Hg Right";
-	
+
 	public static final String Brachial_Pressure_Ankle_ADV_LIMB_Right = "public static String Adv_Lower_Limb_var2;";
-	
+
 	public static final String Toe_Pressure_Right_ADV_LIMB = "Toe Pressure mm/Hg Right";
-	
+
 	public static final String Brachial_Pressure_Toe_Right_ADV_LIMB = "Brachial Pressure mm/Hg Right";
-	
+
 	public static final String PT_number = "NumberPT";
 
 	public static final String FIRST_NAME = "First Name";
@@ -492,7 +516,7 @@ public class PixalereStringPool {
 	public static final String PRIMARY_INSURANCE_POLICY = "Primary Insurance Policy #";
 
 	public static final String PRIMARY_INSURANCE_GROUP = "Primary Insurance Group #";
-	
+
 	public static final String HomeComments = "Comments HSI";
 
 	public static final String NAME = "Name";
@@ -768,8 +792,8 @@ public class PixalereStringPool {
 	public static final String NPWT_START_DATE = "NPWT Start Date";
 
 	public static final String NPWT_END_DATE = "NPWT End Date";
-	
+
 	public static final String pt_teaching_agreement_comment = "Education Completed by Service Provider";
-	
+
 	public static final String pt1_ta_comment_activity_to_be_instructed = "Activity to be Instructed PT";
 }

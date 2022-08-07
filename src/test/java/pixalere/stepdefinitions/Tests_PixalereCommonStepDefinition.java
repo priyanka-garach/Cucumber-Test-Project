@@ -98,6 +98,11 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 		searchPatient_nursing();
 	}
 	
+	@When("I search created patient with PIXID PT")
+	public void i_search_created_patient_pixid_pt() {
+		searchPatient_pt();
+	}
+	
 	@When("I search created patient with PIXID special for PTAssessement and Teaching")
 	public void i_search_created_patient_pixid_for_PTAssessement_and_Teaching() {
 		searchPatient_pp();
