@@ -274,6 +274,10 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Lock_Box_Required1;
 	public static String pt_teaching_agreement_comment1;
 	public static String pt_teaching_agreement_comment0;
+	public static String Suctioning_comment1;
+	public static String Suctioning_Year1;
+	public static String invasive_ventilation_Year1;
+	public static String Cough_Assist_Year1;
 
 	public static String Balance_Gait;
 	public static List<String> list_Cardiovascular_ICAN1 = new ArrayList<>();
@@ -2385,6 +2389,30 @@ public class PixalereScripts extends PixalereCommonUtils {
 					+ pt_teaching_agreement_comment0);
 			clear(By.xpath("//*[@id='activity_comments']"));
 			sendKeys(By.xpath("//*[@id='activity_comments']"), pt_teaching_agreement_comment0);
+			break;
+		case PixalereStringPool.Suctioning_comment:
+			Suctioning_comment1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Suctioning_comment + ": " + Suctioning_comment1);
+			clear(By.xpath("//*[@id='suction_comment']"));
+			sendKeys(By.xpath("//*[@id='suction_comment']"), Suctioning_comment1);
+			break;
+		case PixalereStringPool.Suctioning_Year:
+			Suctioning_Year1 = "2019";
+			System.out.println(PixalereStringPool.Suctioning_Year + ": " + Suctioning_Year1);
+			clear(By.xpath("//div[@class='col-lg-3 col-md-5 col-sm-6 col-12']//input[@id='backdated_year']"));
+			sendKeys(By.xpath("//div[@class='col-lg-3 col-md-5 col-sm-6 col-12']//input[@id='backdated_year']"), Suctioning_Year1);
+			break;
+		case PixalereStringPool.invasive_ventilation_Year:
+			invasive_ventilation_Year1 = "2018";
+			System.out.println(PixalereStringPool.invasive_ventilation_Year + ": " + invasive_ventilation_Year1);
+			clear(By.xpath("//form[@id='form_vent']//input[@id='backdated_year']"));
+			sendKeys(By.xpath("//form[@id='form_vent']//input[@id='backdated_year']"), invasive_ventilation_Year1);
+			break;
+		case PixalereStringPool.Cough_Assist_Year:
+			Cough_Assist_Year1 = "2017";
+			System.out.println(PixalereStringPool.Cough_Assist_Year + ": " + Cough_Assist_Year1);
+			clear(By.xpath("//form[@id='form_cough']//input[@id='backdated_year']"));
+			sendKeys(By.xpath("//form[@id='form_cough']//input[@id='backdated_year']"), Cough_Assist_Year1);
 			break;
 
 		}

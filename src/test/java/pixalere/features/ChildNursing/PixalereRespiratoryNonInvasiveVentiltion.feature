@@ -11,14 +11,18 @@ And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Flow Sheets -> Respiratory Flow Sheet" LH panel option
 Then "Respiratory Flow Sheet" page will open
 ##
-When I click "CPAP" radio option for Non-invasive ventilation field
-And I click "Yes" radio option for "Oxygen in situ" field IV field
-And I click "Yes" radio option for "Humidifier Check" field IV field
-And I enter "Therapy hours" input field OT
-And I click "Yes" radio option for "Air filter cleaned" Non-invasive ventilation field
-And I click "Yes" radio option for "Mask/tubing cleaned" Non-invasive ventilation field
+And I click "CPAP" radio option for Non invasive ventilation
+And I click "Yes" radio option for Oxygen in situ
+And I click "No" radio option for Humidifier Check
+And I enter "Therapy hours" input field in script
+And I click "Yes" radio option for Air filter cleaned
+And I click "No" radio option for Mask_tubing cleaned
+And I select "3" from Non invasive ventilation Date
+And I select "Jan" from Non invasive ventilation Month
+And I enter "invasive ventilation Year" input field in script
 And I click on Save My Work Non-invasive ventilation Button
 #Then Respiratory Flowcharts details should get verified
+
 And I Navigate to "Viewer -> Respiratory Flowcharts" LH panel option
 When I start verifying records in Respiratory Flowcharts Page non-invasive ventiltion
 Then I Logout from Pixalere

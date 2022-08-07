@@ -2502,7 +2502,7 @@ public class SeleniumCommonUtils {
 	public void verify_TeachingAgreementPT() {
 		// Radio Button verify
 		WebElement e2 = driver.findElement(By.xpath(
-				"(//td[normalize-space()='For the listed Activities Assigned: Risk, alternatives and benefits discussed. Risks of not performing activities discussed. Questions addressed.']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+				"(//td[contains(text(),'For the listed Activities Assigned')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data2 = e2.getText();
 		if (!data2.equalsIgnoreCase(LocatorUtils.radioActivities_Assigned)) {
 			Assert.assertTrue(false);
@@ -2517,7 +2517,7 @@ public class SeleniumCommonUtils {
 		}
 
 		WebElement e5 = driver.findElement(By.xpath(
-				"(//td[contains(text(),'Discussed that the Learner must implement the activities as taught by the service provider.')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+				"(//td[contains(text(),'Discussed that the Learner must')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data5 = e5.getText();
 		if (!data5.equalsIgnoreCase(LocatorUtils.radioservice_provider)) {
 			Assert.assertTrue(false);
@@ -2531,7 +2531,7 @@ public class SeleniumCommonUtils {
 		}
 
 		WebElement e7 = driver.findElement(By.xpath(
-				"(//td[contains(text(),'For the listed Activities: Risk, alternatives and benefits discussed. Risks of not performing activities discussed. Questions addressed.')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+				"(//td[contains(text(),'Risks of not performing activities discussed')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data7 = e7.getText();
 		if (!data7.equalsIgnoreCase(LocatorUtils.radioalternatives_and_benefits)) {
 			Assert.assertTrue(false);
@@ -2545,14 +2545,14 @@ public class SeleniumCommonUtils {
 		}
 
 		WebElement e9 = driver.findElement(By.xpath(
-				"(//td[contains(text(),'I acknowledge that the Learner(s) named above have been taught to perform the activities indicated above in a safe manner. The Learner has demonstrated understanding and safe technique during this training session. The risks/benefits associated with performing these activities/procedures have been explained to the Learner(s).')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+				"(//td[contains(text(),'I acknowledge that the Learner')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data9 = e9.getText();
 		if (!data9.equalsIgnoreCase(LocatorUtils.radiodemonstrated_understanding)) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e10 = driver.findElement(By.xpath(
-				"(//td[contains(text(),'I acknowledge that the Field Educator/Service Supervisor/Nurse named above has demonstrated knowledge, skill and judgment today, and is capable of teaching these activities to PSWs or other unregulated health professionals providing service to this client.')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+				"(//td[contains(text(),'I acknowledge that the Field Educator')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data10 = e10.getText();
 		if (!data10.equalsIgnoreCase(LocatorUtils.radioService_Supervisor)) {
 			Assert.assertTrue(false);
@@ -2971,7 +2971,7 @@ public class SeleniumCommonUtils {
 		WebElement e6 = driver.findElement(
 				By.xpath("(//td[normalize-space()='Suction machine working']//following-sibling::td)[last()]"));
 		String data6 = e6.getText();
-		if (!(data6.contains(""))) {
+		if (!(data6.equalsIgnoreCase(LocatorUtils.radioSuction_machine_working))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2979,7 +2979,7 @@ public class SeleniumCommonUtils {
 		WebElement e7 = driver
 				.findElement(By.xpath("(//td[normalize-space()='Battery charged']//following-sibling::td)[last()]"));
 		String data7 = e7.getText();
-		if (!(data7.contains(""))) {
+		if (!(data7.equalsIgnoreCase(LocatorUtils.radioBattery_charged))) {
 			Assert.assertTrue(false);
 		}
 
@@ -2987,21 +2987,45 @@ public class SeleniumCommonUtils {
 		WebElement e8 = driver
 				.findElement(By.xpath("(//td[normalize-space()='Type of suctioning']//following-sibling::td)[last()]"));
 		String data8 = e8.getText();
-		if (!(data8.contains(""))) {
+		if (!(data8.equalsIgnoreCase(LocatorUtils.radioType_of_suctioning))) {
+			Assert.assertTrue(false);
+		}
+		WebElement e80 = driver
+				.findElement(By.xpath("(//td[normalize-space()='Comment']//following-sibling::td)[last()]"));
+		String data80 = e80.getText();
+		if (!(data80.equalsIgnoreCase(PixalereScripts.Suctioning_comment1))) {
 			Assert.assertTrue(false);
 		}
 
+		WebElement e50 = driver
+				.findElement(By.xpath("(//td[normalize-space()='Amount']//following-sibling::td)[last()]"));
+		String data50 = e50.getText();
+		if (!(data50.equalsIgnoreCase(LocatorUtils.radioAmount))) {
+			Assert.assertTrue(false);
+		}
 		WebElement e5 = driver
 				.findElement(By.xpath("(//td[normalize-space()='Color']//following-sibling::td)[last()]"));
 		String data5 = e5.getText();
-		if (!(data5.contains(""))) {
+		if (!(data5.equalsIgnoreCase(LocatorUtils.radioColor))) {
 			Assert.assertTrue(false);
 		}
 
+		WebElement e10 = driver.findElement(
+				By.xpath("(//td[normalize-space()='Consistency']//following-sibling::td)[last()]"));
+		String data10 = e10.getText();
+		if (!(data10.equalsIgnoreCase(LocatorUtils.radioConsistency))) {
+			Assert.assertTrue(false);
+		}
+		WebElement e11 = driver.findElement(
+				By.xpath("(//td[normalize-space()='Odour']//following-sibling::td)[last()]"));
+		String data11 = e11.getText();
+		if (!(data11.equalsIgnoreCase(LocatorUtils.radioOdour))) {
+			Assert.assertTrue(false);
+		}
 		WebElement e1 = driver.findElement(
 				By.xpath("(//td[normalize-space()='Suctioning container cleaned']//following-sibling::td)[last()]"));
 		String data1 = e1.getText();
-		if (!(data1.contains(""))) {
+		if (!(data1.equalsIgnoreCase(LocatorUtils.radioSuctioning_container))) {
 			Assert.assertTrue(false);
 		}
 
@@ -3013,10 +3037,8 @@ public class SeleniumCommonUtils {
 		// Radio Button verify
 		WebElement e6 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Cough Assist']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		// highLightElement(By.xpath("//td[normalize-space()='Cough
-		// Assist']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data6 = e6.getText();
-		if (!(data6.contains(""))) {
+		if (!(data6.equalsIgnoreCase(LocatorUtils.radioCough_Assist))) {
 			Assert.assertTrue(false);
 		}
 
@@ -3024,9 +3046,7 @@ public class SeleniumCommonUtils {
 		WebElement e7 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Air filter cleaned']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data7 = e7.getText();
-		// highLightElement(By.xpath("(//td[normalize-space()='Air filter
-		// cleaned']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		if (!(data7.contains(""))) {
+		if (!(data7.equalsIgnoreCase(LocatorUtils.radioAir_filter_cleaned_Cough_Assist))) {
 			Assert.assertTrue(false);
 		}
 
@@ -3034,9 +3054,7 @@ public class SeleniumCommonUtils {
 		WebElement e8 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'tubing cleaned')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data8 = e8.getText();
-		// highLightElement(By.xpath("(//td[contains(text(),'tubing
-		// cleaned')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		if (!(data8.contains(""))) {
+		if (!(data8.equalsIgnoreCase(LocatorUtils.radioMask_tubing_cleaned_Cough_Assist))) {
 			Assert.assertTrue(false);
 		}
 
@@ -3044,8 +3062,6 @@ public class SeleniumCommonUtils {
 		WebElement e1 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Number of treatment')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data1 = e1.getText();
-		// highLightElement(By.xpath("(//td[contains(text(),'Number of
-		// treatment')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		if (!data1.equalsIgnoreCase(PixalereScripts.Number_of_treatment1)) {
 			Assert.assertTrue(false);
 		}
@@ -3057,10 +3073,8 @@ public class SeleniumCommonUtils {
 		// Radio Button verify
 		WebElement e6 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Non-invasive ventilation']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		// highLightElement(By.xpath("//td[normalize-space()='Cough
-		// Assist']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data6 = e6.getText();
-		if (!(data6.contains(""))) {
+		if (!(data6.equalsIgnoreCase(LocatorUtils.radioNon_invasive_ventilation))) {
 			Assert.assertTrue(false);
 		}
 
@@ -3068,9 +3082,7 @@ public class SeleniumCommonUtils {
 		WebElement e7 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Oxygen in situ']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data7 = e7.getText();
-		// highLightElement(By.xpath("(//td[normalize-space()='Air filter
-		// cleaned']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		if (!(data7.contains(""))) {
+		if (!(data7.equalsIgnoreCase(LocatorUtils.radioOxygen_in_situ))) {
 			Assert.assertTrue(false);
 		}
 
@@ -3078,9 +3090,19 @@ public class SeleniumCommonUtils {
 		WebElement e8 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Humidifier Check')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data8 = e8.getText();
-		// highLightElement(By.xpath("(//td[contains(text(),'tubing
-		// cleaned')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-		if (!(data8.contains(""))) {
+		if (!(data8.equalsIgnoreCase(LocatorUtils.radioHumidifier_Check))) {
+			Assert.assertTrue(false);
+		}
+		// Radio Button verify
+		WebElement e80 = driver.findElement(By.xpath("//*[@id='1215'][last()]"));
+		String data80 = e80.getText();
+		if (!(data80.equalsIgnoreCase(LocatorUtils.radioAir_filter_cleaned))) {
+			Assert.assertTrue(false);
+		}
+		// Radio Button verify
+		WebElement e81 = driver.findElement(By.xpath("//*[@id='1216'][last()]"));
+		String data81 = e81.getText();
+		if (!(data81.equalsIgnoreCase(LocatorUtils.radioMask_tubing_cleaned))) {
 			Assert.assertTrue(false);
 		}
 
@@ -3088,8 +3110,6 @@ public class SeleniumCommonUtils {
 		WebElement e1 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Therapy hours')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data1 = e1.getText();
-		// highLightElement(By.xpath("(//td[contains(text(),'Number of
-		// treatment')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		if (!data1.equalsIgnoreCase(PixalereScripts.Therapy_hours1)) {
 			Assert.assertTrue(false);
 		}

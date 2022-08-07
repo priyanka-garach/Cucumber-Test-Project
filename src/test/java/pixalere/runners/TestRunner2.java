@@ -17,7 +17,7 @@ import pixalere.pageObjectUtils.SeleniumCommonUtils;
 //		dryRun = false
 //)
 
-@CucumberOptions(features = { "classpath:pixalere/features/PTUpdated/PixalereTinetti.feature" }, glue = {
+@CucumberOptions(features = { "classpath:pixalere/features/ChildNursing/PixalereRespiratoryCoughAssist.feature" }, glue = {
 		"classpath:pixalere.stepdefinitions" }, plugin = { "pretty", "json:target/cucumber.json" })
 
 public class TestRunner2 extends AbstractTestNGCucumberTests {
