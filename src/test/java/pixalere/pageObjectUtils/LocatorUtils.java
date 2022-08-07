@@ -38,6 +38,22 @@ public class LocatorUtils {
 	public static String radioSkin_Type_Visual_Risk_Area;
 	public static String radioMobility;
 	public static String radioNutrition_Element;
+	public static String radioSuction_machine_working;
+	public static String radioBattery_charged;
+	public static String radioType_of_suctioning;
+	public static String radioAmount;
+	public static String radioColor;
+	public static String radioConsistency;
+	public static String radioOdour;
+	public static String radioSuctioning_container;
+	public static String radioNon_invasive_ventilation;
+	public static String radioOxygen_in_situ;
+	public static String radioHumidifier_Check;
+	public static String radioAir_filter_cleaned;
+	public static String radioMask_tubing_cleaned;
+	public static String radioCough_Assist;
+	public static String radioAir_filter_cleaned_Cough_Assist;
+	public static String radioMask_tubing_cleaned_Cough_Assist;
 	public static String radioMedrat1;
 	public static String radioMedrat2;
 	public static String radioMedrat3;
@@ -2309,6 +2325,164 @@ public class LocatorUtils {
 			else if (section.equalsIgnoreCase("2 : Patient/ client acutely ill or no nutritional intake > 5 days"))
 				return By.xpath("//*[@id='md-radio-nutrition_list-5']");
 
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBySuction_machine_working(String section) {
+			radioSuction_machine_working = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-pressure_checked1']//label");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-pressure_checked2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByBattery_charged(String section) {
+			radioBattery_charged = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-battery1']//label");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-battery2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByType_of_suctioning(String section) {
+			radioType_of_suctioning = section;
+			if (section.equalsIgnoreCase("Oral suctioning"))
+				return By.xpath("//*[@id='suction_type1']");
+			else if (section.equalsIgnoreCase("Oropharyngeal suctioning"))
+				return By.xpath("//*[@id='suction_type2']");
+			else if (section.equalsIgnoreCase("Nasopharyngeal suctioning"))
+				return By.xpath("//*[@id='suction_type3']");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByAmount(String section) {
+			radioAmount = section;
+			if (section.equalsIgnoreCase("Scant"))
+				return By.xpath("//*[@id='md-radio-amount5505-1']//label");
+			else if (section.equalsIgnoreCase("Moderate"))
+				return By.xpath("//*[@id='md-radio-amount5505-2']//label");
+			else if (section.equalsIgnoreCase("Copious"))
+				return By.xpath("//*[@id='md-radio-amount5505-3']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByColor(String section) {
+			radioColor = section;
+			if (section.equalsIgnoreCase("Clear"))
+				return By.xpath("//*[@id='md-radio-color5505-1']//label");
+			else if (section.equalsIgnoreCase("White"))
+				return By.xpath("//*[@id='md-radio-color5505-2']//label");
+			else if (section.equalsIgnoreCase("Yellow"))
+				return By.xpath("//*[@id='md-radio-color5505-3']//label");
+			else if (section.equalsIgnoreCase("Green"))
+				return By.xpath("//*[@id='md-radio-color5505-4']//label");
+			else if (section.equalsIgnoreCase("Rust/Brown"))
+				return By.xpath("//*[@id='md-radio-color5505-5']//label");
+			else if (section.equalsIgnoreCase("Blood-tinged"))
+				return By.xpath("//*[@id='md-radio-color5505-6']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByConsistency(String section) {
+			radioConsistency = section;
+			if (section.equalsIgnoreCase("Thin"))
+				return By.xpath("//*[@id='md-radio-consistency5505-1']//label");
+			else if (section.equalsIgnoreCase("Frothy"))
+				return By.xpath("//*[@id='md-radio-consistency5505-2']//label");
+			else if (section.equalsIgnoreCase("Thick"))
+				return By.xpath("//*[@id='md-radio-consistency5505-3']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByOdour(String section) {
+			radioOdour = section;
+			if (section.equalsIgnoreCase("None"))
+				return By.xpath("//*[@id='md-radio-odour5505-1']//label");
+			else if (section.equalsIgnoreCase("Foul"))
+				return By.xpath("//*[@id='md-radio-odour5505-2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBySuctioning_container_cleaned(String section) {
+			radioSuctioning_container = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-container_clean1']//label");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-container_clean2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByNon_invasive_ventilation(String section) {
+			radioNon_invasive_ventilation = section;
+			if (section.equalsIgnoreCase("CPAP"))
+				return By.xpath("//div[@id='md-radio-ventilation-1']//label");
+			else if (section.equalsIgnoreCase("BiPAP"))
+				return By.xpath("//div[@id='md-radio-ventilation-2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByOxygen_in_situ(String section) {
+			radioOxygen_in_situ = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//div[@id='md-radio-oxygen1']//label");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//div[@id='md-radio-oxygen1']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByHumidifier_Check(String section) {
+			radioHumidifier_Check = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//div[@id='md-radio-humidifier1']//label");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//div[@id='md-radio-humidifier2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByAir_filter_cleaned(String section) {
+			radioAir_filter_cleaned = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//div[@id='md-radio-air_filter1']//label");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//div[@id='md-radio-air_filter2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByMask_tubing_cleaned(String section) {
+			radioMask_tubing_cleaned = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//div[@id='md-radio-mask_cleaned1']//label");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//div[@id='md-radio-mask_cleaned2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByCough_Assist(String section) {
+			radioCough_Assist = section;
+			if (section.equalsIgnoreCase("Manual"))
+				return By.xpath("//*[@id='md-radio-cough_assist-1']//label");
+			else if (section.equalsIgnoreCase("Automatic"))
+				return By.xpath("//*[@id='md-radio-cough_assist-2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByAir_filter_cleaned_Cough_Assist(String section) {
+			radioAir_filter_cleaned_Cough_Assist = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-cough_air_filter1']//label");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-cough_air_filter2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByMask_tubing_cleaned_Cough_Assist(String section) {
+			radioMask_tubing_cleaned_Cough_Assist = section;
+			if (section.equalsIgnoreCase("Yes"))
+				return By.xpath("//*[@id='md-radio-cough_mask_cleaned1']//label");
+			else if (section.equalsIgnoreCase("No"))
+				return By.xpath("//*[@id='md-radio-cough_mask_cleaned2']//label");
 			else
 				return By.xpath("");
 		}

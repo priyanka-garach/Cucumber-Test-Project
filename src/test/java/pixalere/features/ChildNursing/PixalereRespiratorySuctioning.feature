@@ -1,4 +1,4 @@
-Feature: Pixalere Respiratory - Suctioning
+Feature: Pixalere Respiratory Suctioning
 
 @test11
 Scenario: Pixalere Respiratory - Suctioning Script
@@ -11,17 +11,21 @@ And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Flow Sheets -> Respiratory Flow Sheet" LH panel option
 Then "Respiratory Flow Sheet" page will open
 ##
-When I click "Yes" radio option for "Suction machine working" field IV field
-And I click "No" radio option for "Battery charged" field IV field
-And I click "Oral suctioning" radio option for "Type of suctioning" field IV field
-And I click "Moderate" radio option for "Amount" field IV field
-And I click "Clear" radio option for "Color" field IV field
-And I click "Thin" radio option for "Consistency" field IV field 
-And I click "None" radio option for "Odour" field IV field 
-And I click "Yes" radio option for "Suctioning container cleaned" field IV field 
+When I click "Yes" radio option for Suction machine working
+And I click "No" radio option for Battery charged
+And I click "Oral suctioning" radio option for Type of suctioning
+And I click "Moderate" radio option for Amount
+And I click "Clear" radio option for Color
+And I click "Thin" radio option for Consistency 
+And I click "None" radio option for Odour
+And I click "Yes" radio option for Suctioning container cleaned
+And I enter "Suctioning comment" input field in script
+And I select "13" from Suctioning Date
+And I select "Dec" from Suctioning Month
+And I enter "Suctioning Year" input field in script
 And I click on Save My Work Suctioning Button
+
 #Then Respiratory Flowcharts details should get verified
 And I Navigate to "Viewer -> Respiratory Flowcharts" LH panel option
-#Then "Respiratory Flowcharts" page will open
 When I start verifying records in Respiratory Flowcharts Page Suctioning
 Then I Logout from Pixalere
