@@ -19,9 +19,11 @@ And I select "7" from Cough Assist Date
 And I select "Mar" from Cough Assist Month
 And I enter "Cough Assist Year" input field in script
 And I click on Save My Work for cough assist Button
-
-#Then Respiratory Flowcharts details should get verified
 And I Navigate to "Viewer -> Respiratory Flowcharts" LH panel option
-#Then "Respiratory Flowcharts" page will open
 When I start verifying records in Respiratory Flowcharts Page
+And I Navigate to "Flow Sheets -> Respiratory Flow Sheet" LH panel option
+And I press on Delete Button
+And I enter "Reason for deleting record" input field Deletion in scripts
+And I confirm to press Delete Button
+And I check reason after deletion in viewer
 Then I Logout from Pixalere

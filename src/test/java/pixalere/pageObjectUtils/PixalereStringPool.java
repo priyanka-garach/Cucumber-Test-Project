@@ -48,6 +48,8 @@ public class PixalereStringPool {
 	public static final String Minute_Ventilation = "Minute Ventilation";
 
 	public static final String PRESSURE_HOME = "Pressure";
+	
+	public static final String PRESSURE_Tracheostomy = "Pressure Tracheostomy";
 
 	public static final String Volume_Tidal_Exhaled = "Volume Tidal Exhaled";
 
@@ -801,4 +803,11 @@ public class PixalereStringPool {
 	public static final String pt_teaching_agreement_comment = "Education Completed by Service Provider";
 
 	public static final String pt1_ta_comment_activity_to_be_instructed = "Activity to be Instructed PT";
+	
+	public static final String Equipment_Source = "Equipment Source";
+	
+	public static final String Case_Coordinator = "Case Coordinator";
+	
+	public static final String Primary_nurse_contact_info = "Primary nurse contact info";
+	
 }

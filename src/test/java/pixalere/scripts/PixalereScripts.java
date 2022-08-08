@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import pixalere.pageObjectJavaUtils.JavaUtils;
 import pixalere.pageObjectUtils.LocatorUtils.GlobalPageLocators;
 import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
+import pixalere.pageObjectUtils.LocatorUtils.TracheostomyLocators;
 import pixalere.pageObjectUtils.PixalereCommonUtils;
 import pixalere.pageObjectUtils.PixalereStringPool;
 
@@ -18,6 +19,10 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String first_areaofconcern;
 	public static String secondareaof_concern;
 	public static String PixalereTestsAdmin;
+	
+	public static String Minute_Ventilation1;
+	public static String PRESSURE_Tracheostomy1;
+	public static String Volume_Tidal_Exhaled1;
 
 	public static String VarFP1001;
 	public static String VarMP1549;
@@ -25,6 +30,9 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String YearLHIN;
 	public static String addinfoLHIN1;
 	public static String addinfoLHIN2;
+	public static String Equipment_Source;
+	public static String Case_Coordinator;
+	public static String Primary_nurse_contact_info;
 
 	public static String CLIENT_SUMMARY_Special_Instructions;
 	public static String pt_modified_exercise;
@@ -2544,6 +2552,47 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.Cough_Assist_Year + ": " + Cough_Assist_Year1);
 			clear(By.xpath("//form[@id='form_cough']//input[@id='backdated_year']"));
 			sendKeys(By.xpath("//form[@id='form_cough']//input[@id='backdated_year']"), Cough_Assist_Year1);
+			break;
+		case PixalereStringPool.Minute_Ventilation:
+			Minute_Ventilation1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Minute_Ventilation + ": " + Minute_Ventilation1);
+			clear(TracheostomyLocators.txt_ventiltion);
+			sendKeys(TracheostomyLocators.txt_ventiltion, Minute_Ventilation1);
+			break;
+
+		case PixalereStringPool.PRESSURE_Tracheostomy:
+			PRESSURE_Tracheostomy1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.PRESSURE_Tracheostomy + ": " + PRESSURE_Tracheostomy1);
+			clear(TracheostomyLocators.txt_pressure);
+			sendKeys(TracheostomyLocators.txt_pressure, PRESSURE_Tracheostomy1);
+			break;
+
+		case PixalereStringPool.Volume_Tidal_Exhaled:
+			Volume_Tidal_Exhaled1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Volume_Tidal_Exhaled + ": " + Volume_Tidal_Exhaled1);
+			clear(TracheostomyLocators.txt_tidal_exhaled);
+			sendKeys(TracheostomyLocators.txt_tidal_exhaled, Volume_Tidal_Exhaled1);
+			break;
+			
+		case PixalereStringPool.Equipment_Source:
+			Equipment_Source = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Equipment_Source + ": " + Equipment_Source);
+			clear(By.xpath("//*[@id='equipment_source']"));
+			sendKeys(By.xpath("//*[@id='equipment_source']"), Equipment_Source);
+			break;
+			
+		case PixalereStringPool.Case_Coordinator:
+			Case_Coordinator = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Case_Coordinator + ": " + Case_Coordinator);
+			clear(By.xpath("//*[@id='case_coordinator']"));
+			sendKeys(By.xpath("//*[@id='case_coordinator']"), Case_Coordinator);
+			break;
+			
+		case PixalereStringPool.Primary_nurse_contact_info:
+			Primary_nurse_contact_info = "Elim2@vha.ca";
+			System.out.println(PixalereStringPool.Primary_nurse_contact_info + ": " + Primary_nurse_contact_info);
+			clear(By.xpath("//*[@id='primary_nurse']"));
+			sendKeys(By.xpath("//*[@id='primary_nurse']"), Primary_nurse_contact_info);
 			break;
 
 			

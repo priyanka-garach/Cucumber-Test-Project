@@ -123,9 +123,7 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 
 	public static String Type_Of_Ventilator1;
 	public static String LEAK_HOME1;
-	public static String Minute_Ventilation1;
-	public static String PRESSURE_HOME1;
-	public static String Volume_Tidal_Exhaled1;
+	
 	
 	public static String vital_signs_drop_down;
 
@@ -234,27 +232,7 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 			sendKeys(TracheostomyLocators.txt_leak, LEAK_HOME1);
 			break;
 
-		case PixalereStringPool.Minute_Ventilation:
-			Minute_Ventilation1 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.Minute_Ventilation + ": " + Minute_Ventilation1);
-			clear(TracheostomyLocators.txt_ventiltion);
-			sendKeys(TracheostomyLocators.txt_ventiltion, Minute_Ventilation1);
-			break;
-
-		case PixalereStringPool.PRESSURE_HOME:
-			PRESSURE_HOME1 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.PRESSURE_HOME + ": " + PRESSURE_HOME1);
-			clear(TracheostomyLocators.txt_pressure);
-			sendKeys(TracheostomyLocators.txt_pressure, PRESSURE_HOME1);
-			break;
-
-		case PixalereStringPool.Volume_Tidal_Exhaled:
-			Volume_Tidal_Exhaled1 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.Volume_Tidal_Exhaled + ": " + Volume_Tidal_Exhaled1);
-			clear(TracheostomyLocators.txt_tidal_exhaled);
-			sendKeys(TracheostomyLocators.txt_tidal_exhaled, Volume_Tidal_Exhaled1);
-			break;
-
+		
 		// PCAPAin Pump
 
 		case PixalereStringPool.SOLUTION_NAME_PCAPAINPUMP:

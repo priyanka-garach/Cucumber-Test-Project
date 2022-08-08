@@ -21,8 +21,12 @@ And I select "3" from Non invasive ventilation Date
 And I select "Jan" from Non invasive ventilation Month
 And I enter "invasive ventilation Year" input field in script
 And I click on Save My Work Non-invasive ventilation Button
-#Then Respiratory Flowcharts details should get verified
-
+#
 And I Navigate to "Viewer -> Respiratory Flowcharts" LH panel option
 When I start verifying records in Respiratory Flowcharts Page non-invasive ventiltion
+And I Navigate to "Flow Sheets -> Respiratory Flow Sheet" LH panel option
+And I press on Delete Button
+And I enter "Reason for deleting record" input field Deletion in scripts
+And I confirm to press Delete Button
+And I check reason after deletion in viewer
 Then I Logout from Pixalere

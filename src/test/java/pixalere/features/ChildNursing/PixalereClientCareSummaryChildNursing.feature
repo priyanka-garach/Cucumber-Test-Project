@@ -13,16 +13,18 @@ Then "Client Care Summary" page will open
 ##
 When I enter "MD/NP contact info" input field in script
 And I enter "Client Caregiver Requests" input field in script
+And I enter "Equipment Source" input field in script
+And I enter "Case Coordinator" input field in script
 And I enter "Caseload/ District" input field in script
 And I enter "Special precautions" input field in script
+And I enter "Primary nurse contact info" input field in script
 And I enter "Secondary nurse(s) contact info" input field in script
 And I enter "Last enteral tube change" input field in script
 And I enter "Day of MicKEY balloon re-inflation" input field in script
 And I enter "Care of site" input field in script
 And I enter "Times of feeds" input field in script
 And I click on Save My Work Client Care Summary Button
-#Then Client Care Summary should get verified
 And I Navigate to "Viewer -> Client Care Summary Flowchart" LH panel option
-#Then "Client Care Summary" page will open
+Then "Client Care Summary Flowchart" page will open
 When I start verifying records in Client Care Summary Page 
 Then I Logout from Pixalere

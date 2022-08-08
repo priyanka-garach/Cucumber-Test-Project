@@ -24,8 +24,12 @@ And I select "13" from Suctioning Date
 And I select "Dec" from Suctioning Month
 And I enter "Suctioning Year" input field in script
 And I click on Save My Work Suctioning Button
-
-#Then Respiratory Flowcharts details should get verified
+#
 And I Navigate to "Viewer -> Respiratory Flowcharts" LH panel option
 When I start verifying records in Respiratory Flowcharts Page Suctioning
+And I Navigate to "Flow Sheets -> Respiratory Flow Sheet" LH panel option
+And I press on Delete Button
+And I enter "Reason for deleting record" input field Deletion in scripts
+And I confirm to press Delete Button
+And I check reason after deletion in viewer
 Then I Logout from Pixalere

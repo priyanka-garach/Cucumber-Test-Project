@@ -392,6 +392,28 @@ public class SeleniumCommonUtils {
 		if (!(data14.equalsIgnoreCase(PixalereScripts.Special_precautions1))) {
 			Assert.assertTrue(false);
 		}
+
+		WebElement e1 = driver.findElement(By.xpath(
+				"(//td[normalize-space()='Equipment Source']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data1 = e1.getText();
+		if (!(data1.equalsIgnoreCase(PixalereScripts.Equipment_Source))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e4 = driver.findElement(By.xpath(
+				"(//td[normalize-space()='Case Coordinator']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data4 = e4.getText();
+		if (!(data4.equalsIgnoreCase(PixalereScripts.Case_Coordinator))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e10 = driver.findElement(By.xpath(
+				"(//td[normalize-space()='Primary nurse contact info']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data10 = e10.getText();
+		if (!(data10.equalsIgnoreCase(PixalereScripts.Primary_nurse_contact_info))) {
+			Assert.assertTrue(false);
+		}
+
 		System.out.println("Client Care Summery data verified....................................");
 	}
 
@@ -2456,12 +2478,12 @@ public class SeleniumCommonUtils {
 		}
 
 		// Radio Button verify
-//		WebElement e8 = driver.findElement(By.xpath(
-//				"(//td[contains(text(),'Was suctioning performed?')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-//		String data8 = e8.getText();
-//		if (!(data8.equalsIgnoreCase(LocatorUtils.radiosuctioning_performed))) {
-//			Assert.assertTrue(false);
-//		}
+		WebElement e8 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Was suctioning performed')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data8 = e8.getText();
+		if (!(data8.equalsIgnoreCase(LocatorUtils.radiosuctioning_performed))) {
+			Assert.assertTrue(false);
+		}
 
 		// Radio Button verify
 		WebElement e9 = driver.findElement(By.xpath(
@@ -2470,14 +2492,6 @@ public class SeleniumCommonUtils {
 		if (!(data9.equalsIgnoreCase(LocatorUtils.radioWater_Level_Checked))) {
 			Assert.assertTrue(false);
 		}
-
-		// Radio Button verify
-//		WebElement e10 = driver.findElement(By.xpath(
-//				"(//td[contains(text(),'Humidifier ON Checked')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
-//		String data10 = e10.getText();
-//		if (!(data10.equalsIgnoreCase(LocatorUtils.radioHumidifier_ON_Checked))) {
-//			Assert.assertTrue(false);
-//		}
 
 		// input text field
 		WebElement e20 = driver.findElement(By.xpath(
@@ -2499,7 +2513,31 @@ public class SeleniumCommonUtils {
 		WebElement e22 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Minute Ventiltion')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data22 = e22.getText();
-		if (!data22.equalsIgnoreCase(PixalereCreateNewPatientAccountScripts.Minute_Ventilation1)) {
+		if (!data22.equalsIgnoreCase(PixalereScripts.Minute_Ventilation1)) {
+			Assert.assertTrue(false);
+		}
+
+		// input text field
+		WebElement e23 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Pressure')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data23 = e23.getText();
+		if (!data23.equalsIgnoreCase(PixalereScripts.PRESSURE_Tracheostomy1)) {
+			Assert.assertTrue(false);
+		}
+
+		// input text field
+		WebElement e24 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Volume Tidal Exhaled')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data24 = e24.getText();
+		if (!data24.equalsIgnoreCase(PixalereScripts.Volume_Tidal_Exhaled1)) {
+			Assert.assertTrue(false);
+		}
+
+		// Radio Button verify
+		WebElement e10 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Humidifier ON Checked')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data10 = e10.getText();
+		if (!(data10.equalsIgnoreCase(LocatorUtils.radioHumidifier_ON_Checked))) {
 			Assert.assertTrue(false);
 		}
 
@@ -3122,14 +3160,14 @@ public class SeleniumCommonUtils {
 			Assert.assertTrue(false);
 		}
 
-		WebElement e10 = driver.findElement(
-				By.xpath("(//td[normalize-space()='Consistency']//following-sibling::td)[last()]"));
+		WebElement e10 = driver
+				.findElement(By.xpath("(//td[normalize-space()='Consistency']//following-sibling::td)[last()]"));
 		String data10 = e10.getText();
 		if (!(data10.equalsIgnoreCase(LocatorUtils.radioConsistency))) {
 			Assert.assertTrue(false);
 		}
-		WebElement e11 = driver.findElement(
-				By.xpath("(//td[normalize-space()='Odour']//following-sibling::td)[last()]"));
+		WebElement e11 = driver
+				.findElement(By.xpath("(//td[normalize-space()='Odour']//following-sibling::td)[last()]"));
 		String data11 = e11.getText();
 		if (!(data11.equalsIgnoreCase(LocatorUtils.radioOdour))) {
 			Assert.assertTrue(false);
@@ -3178,7 +3216,7 @@ public class SeleniumCommonUtils {
 			Assert.assertTrue(false);
 		}
 
-		System.out.println("verify_Respiratory_flowchart_page verified................");
+		System.out.println("Respiratory Cough Assist page verified................");
 	}
 
 	public void verify_Respiratory_flowchart_page_non_invasive_ventiltion() {
@@ -3205,24 +3243,27 @@ public class SeleniumCommonUtils {
 		if (!(data8.equalsIgnoreCase(LocatorUtils.radioHumidifier_Check))) {
 			Assert.assertTrue(false);
 		}
-		// Radio Button verify
-		WebElement e80 = driver.findElement(By.xpath("//*[@id='1215'][last()]"));
-		String data80 = e80.getText();
-		if (!(data80.equalsIgnoreCase(LocatorUtils.radioAir_filter_cleaned))) {
-			Assert.assertTrue(false);
-		}
-		// Radio Button verify
-		WebElement e81 = driver.findElement(By.xpath("//*[@id='1216'][last()]"));
-		String data81 = e81.getText();
-		if (!(data81.equalsIgnoreCase(LocatorUtils.radioMask_tubing_cleaned))) {
-			Assert.assertTrue(false);
-		}
 
 		// input text field
 		WebElement e1 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Therapy hours')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data1 = e1.getText();
 		if (!data1.equalsIgnoreCase(PixalereScripts.Therapy_hours1)) {
+			Assert.assertTrue(false);
+		}
+
+		// Radio Button verify
+		WebElement e80 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Air filter cleaned')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data80 = e80.getText();
+		if (!(data80.equalsIgnoreCase(LocatorUtils.radioAir_filter_cleaned))) {
+			Assert.assertTrue(false);
+		}
+		// Radio Button verify
+		WebElement e81 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'tubing cleaned')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data81 = e81.getText();
+		if (!(data81.equalsIgnoreCase(LocatorUtils.radioMask_tubing_cleaned))) {
 			Assert.assertTrue(false);
 		}
 
