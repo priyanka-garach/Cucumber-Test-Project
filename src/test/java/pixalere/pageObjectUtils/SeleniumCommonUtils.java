@@ -2553,7 +2553,6 @@ public class SeleniumCommonUtils {
 			Assert.assertTrue(false);
 		}
 
-		// *
 		WebElement e4 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Discussed that any change to the')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data4 = e4.getText();
