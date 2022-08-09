@@ -80,13 +80,19 @@ public class PixalereScripts extends PixalereCommonUtils {
 
 	public static String Information_for_scale_provided1;
 	public static String Worst_Possible_Pain_101;
+	public static String Worst_Possible_Pain_9;
+	public static String Worst_Possible_Pain_8;
 	public static String Moderate_Pain_51;
+	public static String Moderate_Pain_4;
+	public static String Moderate_Pain_3;
 	public static String Words_used_for_pain1;
 	public static String discomfortpain_triggers_for_your_child1;
 	public static String initial_interventions_in_the_past1;
 	public static String the_child_doing_when_you_noticed_the_pain1;
 	public static String Medications_for_Pain_Pharmacological1;
 	public static String Cooling_spray_Physical_Environmental1;
+	public static String Massage_for_Physical_Environmental;
+	public static String Repositioning_for_Physical_Environmental;
 	public static String Distraction_Psychological_Behavioral1;
 	public static String Medical_Devices_Intervention1;
 	public static String Medical_Devices1;
@@ -149,6 +155,11 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Source_of_Info1;
 	public static String Custodial_Arrangements1;
 	public static String Important_Past_Medical_Surgical_History1;
+	public static String nursing_service1;
+	public static String most_important1;
+	public static String health_teaching1;
+	public static String values_and_beliefs1;
+	public static String concerns_or_issues1;
 	public static String Daycare_Childcare1;
 	public static String Siblings1;
 	public static String Significant_Other_Relationships_Pets1;
@@ -248,6 +259,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String cam2;
 	public static String cam3;
 	public static String cam4;
+	public static String val;
 
 	public static String ICAT_radio_1;
 	public static String ICAT_radio_2;
@@ -298,6 +310,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Suctioning_Year1;
 	public static String invasive_ventilation_Year1;
 	public static String Cough_Assist_Year1;
+	public static String score;
 
 	public static String Balance_Gait;
 	public static List<String> list_Cardiovascular_ICAN1 = new ArrayList<>();
@@ -315,6 +328,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static List<String> MAHC_ConsultsReferrals = new ArrayList<>();
 	public static List<String> MAHC_prior_history_falls_MAHC = new ArrayList<>();
 	public static List<String> MAHC_footwear__handsout_provided = new ArrayList<>();
+	public static List<String> Type_Of_Assessment = new ArrayList<>();
 
 	public void chk_instruct_client_field(String value) {
 		clickElement(By.xpath("//input[@id='modified_exercise']//following-sibling::label"));
@@ -656,10 +670,20 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sitting18 = value;
 		}
 	}
+	public void selectCheckboxForTypeOfAssessment(String section) {
+		if(section.contains("Initial")) {
+			clickElementWithJQuery(By.xpath("//label[@id='assess_type1_label' and contains(text(),'Initial')]"));
+			Type_Of_Assessment.add(section);
+		}
+		else if(section.contains("Reassessment")) {
+			clickElementWithJQuery(By.xpath("//label[@id='assess_type2_label' and contains(text(),'Reassessment')]"));
+			Type_Of_Assessment.add(section);
+		}
+	}
 
 	public void selectdropdownforINRS(String value) {
-		String xpath1 = "//select[@id='pain_score']";
-		select_ByIndex(By.xpath(xpath1), Integer.parseInt(value));
+		selectByVisibleText(By.xpath("//select[@id='pain_score']"), value);
+		score = value;
 	}
 
 	public void selectdropdownforFIM(String value, String section) {
@@ -1182,6 +1206,11 @@ public class PixalereScripts extends PixalereCommonUtils {
 			MAHC_radio_12 = string;
 		}
 	}
+	public void selectRelation(String section) {
+		
+		selectByVisibleText(By.xpath("//select[@id='relationship']"), section);
+		val = section;
+	}
 
 	public void selectRdioforfieldPainAssessment(String value, String section) {
 		if (section.contains("Acceptable"))
@@ -1618,12 +1647,36 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("//*[@id='pain_10']"));
 			sendKeys(By.xpath("//*[@id='pain_10']"), Worst_Possible_Pain_101);
 			break;
+		case PixalereStringPool.Worst_Possible_Pain_9:
+			Worst_Possible_Pain_9 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Worst_Possible_Pain_9 + ": " + Worst_Possible_Pain_9);
+			clear(By.xpath("//*[@id='pain_9']"));
+			sendKeys(By.xpath("//*[@id='pain_9']"), Worst_Possible_Pain_9);
+			break;
+		case PixalereStringPool.Worst_Possible_Pain_8:
+			Worst_Possible_Pain_8 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Worst_Possible_Pain_8 + ": " + Worst_Possible_Pain_8);
+			clear(By.xpath("//*[@id='pain_8']"));
+			sendKeys(By.xpath("//*[@id='pain_8']"), Worst_Possible_Pain_8);
+			break;
 
 		case PixalereStringPool.Moderate_Pain_5:
 			Moderate_Pain_51 = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.Moderate_Pain_5 + ": " + Moderate_Pain_51);
 			clear(By.xpath("//*[@id='pain_5']"));
 			sendKeys(By.xpath("//*[@id='pain_5']"), Moderate_Pain_51);
+			break;
+		case PixalereStringPool.Moderate_Pain_4:
+			Moderate_Pain_4 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Moderate_Pain_4 + ": " + Moderate_Pain_4);
+			clear(By.xpath("//*[@id='pain_4']"));
+			sendKeys(By.xpath("//*[@id='pain_4']"), Moderate_Pain_4);
+			break;
+		case PixalereStringPool.Moderate_Pain_3:
+			Moderate_Pain_3 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Moderate_Pain_3 + ": " + Moderate_Pain_3);
+			clear(By.xpath("//*[@id='pain_3']"));
+			sendKeys(By.xpath("//*[@id='pain_3']"), Moderate_Pain_3);
 			break;
 
 		case PixalereStringPool.Words_used_for_pain:
@@ -1672,11 +1725,20 @@ public class PixalereScripts extends PixalereCommonUtils {
 			Cooling_spray_Physical_Environmental1 = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.Cooling_spray_Physical_Environmental + ": "
 					+ Cooling_spray_Physical_Environmental1);
-			clear(By.xpath(
-					"//*[contains(text(),'Cooling spray')]/following-sibling::td//input[contains(@id,'family')]"));
-			sendKeys(By.xpath(
-					"//*[contains(text(),'Cooling spray')]/following-sibling::td//input[contains(@id,'family')]"),
-					Cooling_spray_Physical_Environmental1);
+			clear(By.xpath("//input[@id='family_20398']"));
+			sendKeys(By.xpath("//input[@id='family_20398']"),Cooling_spray_Physical_Environmental1);
+			break;
+		case PixalereStringPool.Massage_for_Physical_Environmental:
+			Massage_for_Physical_Environmental = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Massage_for_Physical_Environmental + ": "	+ Massage_for_Physical_Environmental);
+			clear(By.xpath("//input[@id='family_20401']"));
+			sendKeys(By.xpath("//input[@id='family_20401']"),Massage_for_Physical_Environmental);
+			break;
+		case PixalereStringPool.Repositioning_for_Physical_Environmental:	
+			Repositioning_for_Physical_Environmental = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Repositioning_for_Physical_Environmental + ": "+ Repositioning_for_Physical_Environmental);
+			clear(By.xpath("//input[@id='family_20404']"));
+			sendKeys(By.xpath("//input[@id='family_20404']"),Repositioning_for_Physical_Environmental);
 			break;
 
 		case PixalereStringPool.Distraction_Psychological_Behavioral:
@@ -2071,6 +2133,36 @@ public class PixalereScripts extends PixalereCommonUtils {
 
 		////////// PICAT child nursing ////////////////
 
+		case PixalereStringPool.concerns_or_issues:
+			concerns_or_issues1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.concerns_or_issues + ": " + concerns_or_issues1);
+			clear(By.xpath("//textarea[@id='concerns']"));
+			sendKeys(By.xpath("//textarea[@id='concerns']"), concerns_or_issues1);
+			break;
+		case PixalereStringPool.values_and_beliefs:
+			values_and_beliefs1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.values_and_beliefs + ": " + values_and_beliefs1);
+			clear(By.xpath("//textarea[@id='values']"));
+			sendKeys(By.xpath("//textarea[@id='values']"), values_and_beliefs1);
+			break;
+		case PixalereStringPool.health_teaching:
+			health_teaching1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.health_teaching + ": " + health_teaching1);
+			clear(By.xpath("//textarea[@id='health_teaching']"));
+			sendKeys(By.xpath("//textarea[@id='health_teaching']"), health_teaching1);
+			break;
+		case PixalereStringPool.most_important:
+			most_important1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.most_important + ": " + most_important1);
+			clear(By.xpath("//textarea[@id='imp_child_health']"));
+			sendKeys(By.xpath("//textarea[@id='imp_child_health']"), most_important1);
+			break;
+		case PixalereStringPool.nursing_service:
+			nursing_service1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.nursing_service + ": " + nursing_service1);
+			clear(By.xpath("//*[@id='nursing_reason']"));
+			sendKeys(By.xpath("//*[@id='nursing_reason']"), nursing_service1);
+			break;
 		case PixalereStringPool.Source_of_Info:
 			Source_of_Info1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Source_of_Info + ": " + Source_of_Info1);

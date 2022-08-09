@@ -123,7 +123,132 @@ public class LocatorUtils {
 		public static String select_from_ServiceReferreal = "//*[@id='encounter']//option[contains(text(),'%s')]";
 		public static By txt_reason_delete = By.xpath("//*[@id='deleted_reason']");
 	}
-	
+	public static class PICATLocators {
+		// Respiratory
+		public static By chk_noreportedconcern_Respiratory = By.id("checkbox-resp_history1");
+		public static By chk_Cough = By.id("checkbox-resp_history2");
+		public static By chk_respiratory_distress = By.id("checkbox-resp_history3");
+		public static By chk_snoring = By.id("checkbox-resp_history4");
+		public static By chk_smoking = By.id("checkbox-resp_history5");
+		public static By chk_O2Therapy = By.id("checkbox-resp_history9");
+		public static By chk_Ventillation = By.id("checkbox-resp_history19");
+		public static By chk_Tracheostomy = By.id("checkbox-resp_history23");
+		public static By chk_Suctioning = By.id("checkbox-resp_history26");
+		public static By chk_chest_physiotherapy = By.id("checkbox-resp_history31");
+		public static By chk_Amount = By.id("checkbox-resp_history10");
+		public static By chk_Delivery = By.id("checkbox-resp_history11");
+		public static By chk_BIPAP = By.id("checkbox-resp_history20");
+		public static By chk_CPAP = By.id("checkbox-resp_history21");
+		public static By chk_vantilator = By.id("checkbox-resp_history22");
+		public static By chk_size = By.id("checkbox-resp_history24");
+		public static By chk_type = By.id("checkbox-resp_history25");
+		public static By chk_oralfrequency = By.id("checkbox-resp_history27");
+		public static By chk_Oralpharyngeal = By.id("checkbox-resp_history28");
+		public static By chk_nasopharyngeal = By.id("checkbox-resp_history29");
+		public static By chk_Tracheal = By.id("checkbox-resp_history30");
+		public static By chk_Percussion = By.id("checkbox-resp_history32");
+		public static By chk_Cough_assist = By.id("checkbox-resp_history33");
+		public static By chk_PEP = By.id("checkbox-resp_history34");
+		public static By chk_OTHER = By.id("checkbox-resp_history35");
+		public static By chk_Nasal_Cannula = By.id("checkbox-resp_history12");
+		public static By chk_Nasal_Prongs = By.id("checkbox-resp_history13");
+		public static By chk_mask = By.id("checkbox-resp_history14");
+		public static By chk_Continuuous = By.id("checkbox-resp_history15");
+		public static By chk_Intermittent = By.id("checkbox-resp_history16");
+		public static By chk_Low_Flow = By.id("checkbox-resp_history17");
+		public static By chk_Blow_By = By.id("checkbox-resp_history18");
+		// assessment
+		public static By chk_Not_Assessed = By.xpath("//label[@id='resp_assess1_label']");
+		public static By chk_Inspection = By.id("checkbox-resp_assess2");
+		public static By chk_respiratory_stress = By.id("checkbox-resp_assess3");
+		public static By chk_Nasal_Flaring = By.id("checkbox-resp_assess4");
+		public static By chk_grunting = By.id("checkbox-resp_assess5");
+		public static By chk_cyanosis = By.id("checkbox-resp_assess6");
+		public static By chk_Clubbing = By.id("checkbox-resp_assess7");
+		public static By chk_Strider = By.id("checkbox-resp_assess8");
+		public static By chk_Retractions = By.id("checkbox-resp_assess9");
+		public static By chk_Suprasternal = By.id("checkbox-resp_assess10");
+		public static By chk_Substernal = By.id("checkbox-resp_assess11");
+		public static By chk_Intercostal = By.id("checkbox-resp_assess12");
+		public static By chk_Auscultation = By.id("checkbox-resp_assess13");
+		public static By chk_Air_entry = By.id("checkbox-resp_assess14");
+		public static By chk_Satisfactory = By.id("checkbox-resp_assess15");
+		public static By chk_Reduced = By.id("checkbox-resp_assess16");
+		public static By chk_Breath_Sounds = By.id("checkbox-resp_assess17");
+		public static By chk_Clear = By.id("checkbox-resp_assess18");
+		public static By chk_Adventitious = By.id("checkbox-resp_assess19");
+		public static By chk_Crackle_fine = By.id("checkbox-resp_assess20");
+		public static By chk_Crackle_course = By.id("checkbox-resp_assess21");
+		public static By chk_high_pitched = By.id("checkbox-resp_assess22");
+		public static By chk_low_pitched = By.id("checkbox-resp_assess23");
+		public static By chk_airways_sounds = By.id("checkbox-resp_assess24");
+
+		// Cardiovascular
+		public static By chk_No_Reported_Concerns_Cardiovascular = By.id("checkbox-cardiovascular_history1");
+		public static By chk_Fatigue = By.id("checkbox-cardiovascular_history2_other");
+		public static By chk_Murmurs = By.id("checkbox-cardiovascular_history3_other");
+		public static By chk_Arrhythmias = By.id("checkbox-cardiovascular_history4_other");
+		public static By chk_Cardiac_Surgery = By.id("checkbox-cardiovascular_history5_other");
+		public static By chk_Thrombus = By.id("checkbox-cardiovascular_history6_other");
+		public static By chk_Stroke = By.id("checkbox-cardiovascular_history7_other");
+
+//		Gastrointestinal
+		public static By chk_No_Reported_Concern_gastrointestinal = By.xpath("//label[@for='gastro_hist_na1']");
+		public static By chk_Pain_Management = By.xpath("//label[@id='gasto_history1_label']");
+		public static By chk_Nutrition_and_Patient = By.xpath("//label[@id='gasto_history2_label']");
+		public static By chk_Nausea = By.xpath("//label[@id='gasto_history3_other_label']");
+		public static By chk_Vomiting = By.xpath("//label[@id='gasto_history4_other_label']");
+		public static By chk_Toilet_trained = By.xpath("//label[@id='bowel_habits1_label']");
+		public static By chk_yes = By.xpath("//label[@id='bowel_habits2_label']");
+		public static By chk_no = By.xpath("//label[@id='bowel_habits3_label']");
+		public static By chk_diaper = By.xpath("//label[@id='bowel_habits4_label']");
+		public static By chk_words_for_stool = By.xpath("//label[@id='bowel_habits5_other_label']");
+		public static By chk_Bowel_movement = By.xpath("//label[@id='bowel_habits6_other_label']");
+		public static By chk_Constipation = By.xpath("//label[@id='bowel_habits7_label']");
+		public static By chk_Diarrhea = By.xpath("//label[@id='bowel_habits8_label']");
+		public static By chk_Incontinent_Stool = By.xpath("//label[@id='bowel_habits9_label']");
+		public static By chk_Bowel_aids = By.xpath("//label[@id='bowel_habits10_other_label']");
+		
+
+	}
+	public static class InHomeSafetyIdentificationTool{
+		public static By chk_Client_safety_assessment = By.xpath("//label[contains(text(),'Client did not consent to home safety assessment')]");
+		public static By chk_School_Client = By.xpath("//label[contains(text(),'School Client')]");
+		public static By chk_Clutter = By.xpath("//label[contains(text(),'Clutter')]");
+		public static By chk_Cords = By.xpath("//label[contains(text(),'Cords')]");
+		public static By chk_Unsafe_disposal_of_sharps = By.xpath("//label[contains(text(),'Unsafe disposal of sharps')]");
+		public static By chk_Improper_storage_of_meds = By.xpath("//label[contains(text(),'Improper storage of meds')]");
+		public static By chk_Absence_of_food_in_home = By.xpath("//label[contains(text(),'Absence of food in home')]");
+		public static By chk_Issue_with_medical_equipment = By.xpath("//label[contains(text(),'Issue with medical equipment')]");
+		public static By chk_No_phone = By.xpath("//label[contains(text(),'No phone')]");
+		public static By chk_Frayed_cords = By.xpath("//label[contains(text(),'Frayed cords')]");
+		public static By chk_Oxygen_present = By.xpath("//label[contains(text(),'Oxygen present')]");
+		public static By chk_Lack_of_smoke_detector = By.xpath("//label[contains(text(),'Lack of smoke detector')]");
+		public static By chk_No_safety_issues_identified = By.xpath("//label[contains(text(),'No safety issues identified')]");
+		public static By chk_Client_chooses_to_live_at_risk = By.xpath("//label[contains(text(),'Client chooses to live at risk')]");
+		public static By chk_Safety_issues_addressed = By.xpath("//label[contains(text(),'Safety issues addressed')]");
+		public static By chk_Non_adherence = By.xpath("//label[contains(text(),'adherence to RNAO')]");
+		public static By chk_Bunk_beds_in_children = By.xpath("//label[contains(text(),'Bunk beds in children')]");
+		public static By chk_Lack_of_safety_belts_on_equipment = By.xpath("//label[contains(text(),'Lack of safety belts on equipment')]");
+		public static By chk_Risk_for_falls_from_windows = By.xpath("//label[contains(text(),'Risk for falls from windows')]");
+		public static By chk_Lack_of_mechanical_aids = By.xpath("//label[contains(text(),'Lack of mechanical aids')]");
+		public static By chk_Developmentally_unsafe_food = By.xpath("//label[contains(text(),'Developmentally unsafe food')]");
+		public static By chk_Unsafe_storage_of_hazardous_material = By.xpath("//label[contains(text(),'Unsafe storage')]");
+		
+		public static By chk_Kichen = By.xpath("//div[@class='checkbox']//label[@for='room_4203']");
+		public static By chk_family_room = By.xpath("//div[@class='checkbox']//label[@for='room_4204']");
+		public static By chk_Bathroom = By.xpath("//div[@class='checkbox']//label[@for='room_4205']");
+		public static By chk_Bedroom = By.xpath("//div[@class='checkbox']//label[@for='room_4206']");
+		public static By chk_Hallway = By.xpath("//div[@class='checkbox']//label[@for='room_4207']");
+		public static By chk_Stairs = By.xpath("//div[@class='checkbox']//label[@for='room_4208']");
+		public static By chk_Outdoors = By.xpath("//div[@class='checkbox']//label[@for='room_4209']");
+		public static By chk_Other = By.xpath("//div[@class='checkbox']//label[@for='room_4210']");
+		
+		
+		
+		
+		
+	}
 	public static class WaterlowLocators{
 //		Special Risks - Tissue Malnutrition
 		public static By chk_Terminal_Cahexia = By.xpath("//*[@id='specialrisk_tissue_list1_label']");
