@@ -673,7 +673,7 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 		/// home child nursing
 
 		case PixalereStringPool.HomeComments:
-			HomeComments1 = JavaUtils.getRandomString(10);
+			HomeComments1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.HomeComments + ": " + HomeComments1);
 			clear(AdvLimbLocator.txt_comment_hsi);
 			sendKeys(AdvLimbLocator.txt_comment_hsi, HomeComments1);

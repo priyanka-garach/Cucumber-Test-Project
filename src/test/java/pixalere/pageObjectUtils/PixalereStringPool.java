@@ -1,7 +1,5 @@
 package pixalere.pageObjectUtils;
 
-import io.cucumber.java.en.When;
-
 //import pixalere.scripts.Reservoir;
 //import pixalere.scripts.bag;
 
@@ -114,6 +112,11 @@ public class PixalereStringPool {
 	public static final String Suctioning_Year = "Suctioning Year";
 	public static final String Suctioning_comment = "Suctioning comment";
 
+	public static final String concerns_or_issues = "concerns or issues";
+	public static final String values_and_beliefs = "values and beliefs";
+	public static final String health_teaching = "health teaching";
+	public static final String most_important = "most important";
+	public static final String nursing_service = "nursing service";
 	public static final String Special_Delivery_Instructions = "Special Delivery Instructions";
 	public static final String Alternate_Contact_Name = "Alternate Contact Name";
 	public static final String Backup_Plan = "Backup Plan";
@@ -236,8 +239,12 @@ public class PixalereStringPool {
 	public static final String Information_for_scale_provided = "Information for scale provided by";
 
 	public static final String Worst_Possible_Pain_10 = "Worst Possible Pain 10";
+	public static final String Worst_Possible_Pain_9 = "Worst Possible Pain 9";
+	public static final String Worst_Possible_Pain_8 = "Worst Possible Pain 8";
 
 	public static final String Moderate_Pain_5 = "Moderate Pain 5";
+	public static final String Moderate_Pain_4 = "Moderate Pain 4";
+	public static final String Moderate_Pain_3 = "Moderate Pain 3";
 
 	public static final String Words_used_for_pain = "Words used for pain";
 
@@ -250,6 +257,8 @@ public class PixalereStringPool {
 	public static final String Medications_for_Pain_Pharmacological = "Medications for Pain Pharmacological";
 
 	public static final String Cooling_spray_Physical_Environmental = "Cooling spray Physical & Environmental";
+	public static final String Massage_for_Physical_Environmental = "Massage for Physical & Environmental";
+	public static final String Repositioning_for_Physical_Environmental = "Repositioning for Physical & Environmental";
 
 	public static final String Distraction_Psychological_Behavioral = "Distraction Psychological & Behavioral";
 

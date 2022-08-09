@@ -41,6 +41,7 @@ import pixalere.scripts.PixalereBasicLowerLimbAssessmentScripts;
 import pixalere.scripts.PixalereCarePlanScripts;
 import pixalere.scripts.PixalereCreateNewPatientAccountScripts;
 import pixalere.scripts.PixalereHomePeritonealScripts;
+import pixalere.scripts.PixalereInHomeSafetyIdentificationToolScripts;
 import pixalere.scripts.PixalereIntakeOutputScripts;
 import pixalere.scripts.PixalereMedRATScripts;
 import pixalere.scripts.PixalereScripts;
@@ -2425,15 +2426,102 @@ public class SeleniumCommonUtils {
 			Assert.assertTrue(false);
 		}
 
-		// input text field
-		WebElement e4 = driver.findElement(By.xpath(
-				"(//td[normalize-space()='Pain Scale Rating']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		// DropDown field
+		WebElement e4 = driver.findElement(By.xpath("(//td[normalize-space()='Pain Scale Rating']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data4 = e4.getText();
-		if (!data4.equalsIgnoreCase("")) {
-			// Assert.assertTrue(false);
+		if (!data4.equalsIgnoreCase(PixalereScripts.score)) {
+			 Assert.assertTrue(false);
 		}
+		
+		// input text field
+		WebElement e5 = driver.findElement(By.xpath("(//td[normalize-space()='Type of Assessment']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data5 = e5.getText();
+		if (!data5.equalsIgnoreCase((PixalereScripts.Type_Of_Assessment.get(0)))) {
+			Assert.assertTrue(false);
+		}
+		
+		// input text field
+				WebElement e6 = driver.findElement(By.xpath("(//td[normalize-space()='Activity']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+				String data6 = e6.getText();
+				if (!data6.equalsIgnoreCase((PixalereScripts.the_child_doing_when_you_noticed_the_pain1))) {
+					Assert.assertTrue(false);
+				}
 
 		System.out.println("INRSP Child Nursing Page verified........");
+	}
+	public void verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page() {
+//		Chekbox verification
+		
+		String s = "//label[contains(text(),'%s')]//img";
+		String s1 = "//label[@for='%s']//img";
+		for(int i=0; i< PixalereInHomeSafetyIdentificationToolScripts.HomeSafetyAssessment_Checkbox.size(); i++)
+		{
+			WebElement b1 = driver.findElement(By.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.HomeSafetyAssessment_Checkbox.get(i))));
+			if(!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+		for(int i=0; i< PixalereInHomeSafetyIdentificationToolScripts.TrippingFallingfieldHSI_Checkbox.size(); i++)
+		{
+			WebElement b1 = driver.findElement(By.xpath(String.format(s1, PixalereInHomeSafetyIdentificationToolScripts.TrippingFallingfieldHSI_Checkbox.get(i))));
+			if(!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+		for(int i=0; i< PixalereInHomeSafetyIdentificationToolScripts.FallsPrevention_Checkbox.size(); i++)
+		{
+			WebElement b1 = driver.findElement(By.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.FallsPrevention_Checkbox.get(i))));
+			if(!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+		for(int i=0; i< PixalereInHomeSafetyIdentificationToolScripts.Fire_Checkbox.size(); i++)
+		{
+			WebElement b1 = driver.findElement(By.xpath(String.format(s1, PixalereInHomeSafetyIdentificationToolScripts.Fire_Checkbox.get(i))));
+			if(!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+		for(int i=0; i< PixalereInHomeSafetyIdentificationToolScripts.FollowupPlan_Checkbox.size(); i++)
+		{
+			WebElement b1 = driver.findElement(By.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.FollowupPlan_Checkbox.get(i))));
+			if(!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+		for(int i=0; i< PixalereInHomeSafetyIdentificationToolScripts.Medication_Checkbox.size(); i++)
+		{
+			WebElement b1 = driver.findElement(By.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.Medication_Checkbox.get(i))));
+			if(!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+		for(int i=0; i< PixalereInHomeSafetyIdentificationToolScripts.Other_Checkbox.size(); i++)
+		{
+			WebElement b1 = driver.findElement(By.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.Other_Checkbox.get(i))));
+			if(!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+		for(int i=0; i< PixalereInHomeSafetyIdentificationToolScripts.PoisonChoking_Checkbox.size(); i++)
+		{
+			WebElement b1 = driver.findElement(By.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.PoisonChoking_Checkbox.get(i))));
+			if(!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+		for(int i=0; i< PixalereInHomeSafetyIdentificationToolScripts.SafeSleep_Checkbox.size(); i++)
+		{
+			WebElement b1 = driver.findElement(By.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.SafeSleep_Checkbox.get(i))));
+			if(!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+//		Input field
+		String t1 = driver.findElement(By.xpath("//p[@class='pad5']")).getText().toString();
+		if(!(t1.equalsIgnoreCase(PixalereCreateNewPatientAccountScripts.HomeComments1))) {
+			Assert.assertTrue(false);
+		}
 	}
 
 	public void verify_Tracheostomy_and_Ventilator_Record_Page() {

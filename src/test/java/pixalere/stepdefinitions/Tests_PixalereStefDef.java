@@ -3,7 +3,6 @@ package pixalere.stepdefinitions;
 import java.io.File;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
@@ -48,6 +47,10 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I start verifying records in Depression Screening Page")
 	public void i_start_verifying_records_in_Depression_Screening_Page() {
 		verify_DepressionScreening();
+	}
+	@When("I select {string} from Relationship dropdown")
+	public void I_select_Parents_from_Relationship_dropdown(String string) {
+		selectRelation(string);
 	}
 
 	@When("I enter {string} input field in script")
@@ -378,26 +381,16 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		verify_Tracheostomy_and_Ventilator_Record_Page();
 	}
 
-	@When("I select {string} checkbox for HSA Not Compelted field HSI")
-	public void I_select_checkbox_for_HSA_Not_Compelted_field_HSI(String string) {
-		String xpath1 = String.format("//label[contains(text(),'%s')]", string);
-		clickElement(By.xpath(xpath1));
-	}
-
-	@When("I select {string} checkbox for TrippingFalling field HSI")
-	public void I_select_checkbox_for_HSA_Tripping_Falling_field_HSI(String string) {
-		String xpath1 = String.format("//label[contains(text(),'%s')]", string);
-		clickElement(By.xpath(xpath1));
-		clickElement(
-				By.xpath("(//div[@id='roomDialog']/following-sibling::div)//div//button[contains(text(),'Cancel')]"));
-	}
 
 	@When("I click on Save My Work In-Home Safety Identification Tool Button HSI")
 	public void I_click_on_Save_My_Work_In_Home_Safety_Identification_Tool_Button_HSI() {
 		clickElement(By.xpath("//*[@id='saveEntries']"));
 		clickElement(By.xpath("//*[@id='confirm']"));
 	}
-
+	@When("I start verifying records in In-Home Safety Identification Tool Flowchart Record Page")
+	public void i_start_verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page() {
+		verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page();
+	}
 	@When("I click {string} radio option for Cough Assist field")
 	public void I_click_radio_option_for_Cough_Assist_field(String string) {
 		clickElement(By.xpath("(//input[contains(@id,'cough_assist')]//following-sibling::label)[1]"));
@@ -456,6 +449,14 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I select {string} from childs current pain score field dropdown OT")
 	public void I_select_from_childs_current_pain_score_field_dropdown_OT(String s) {
 		selectdropdownforINRS(s);
+	}
+	@When("I select {string} from childs current pain score")
+	public void I_select_from_childs_current_pain_score(String s) {
+		selectdropdownforINRS(s);
+	}
+	@When("I select {string} from Type of Assessment")
+	public void I_select_Initial_from_Type_of_Assessment(String string) {
+		selectCheckboxForTypeOfAssessment(string);
 	}
 
 	@When("I start verifying records in Individualized Numeric Rating Scale Page")
