@@ -27,7 +27,6 @@ public class Tests_PixalereCreateNewPatientAccount extends PixalereCreateNewPati
 	
 	@When("I enter {string} input field")
 	public void i_enter_input_field(String inputField) {
-		Wait_p(1);
 		enterInputFieldAsPerKey(inputField);
 		System.out.println();
 	}
