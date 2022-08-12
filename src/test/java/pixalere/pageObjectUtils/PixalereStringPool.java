@@ -112,11 +112,7 @@ public class PixalereStringPool {
 	public static final String Suctioning_Year = "Suctioning Year";
 	public static final String Suctioning_comment = "Suctioning comment";
 
-	public static final String concerns_or_issues = "concerns or issues";
-	public static final String values_and_beliefs = "values and beliefs";
-	public static final String health_teaching = "health teaching";
-	public static final String most_important = "most important";
-	public static final String nursing_service = "nursing service";
+
 	public static final String Special_Delivery_Instructions = "Special Delivery Instructions";
 	public static final String Alternate_Contact_Name = "Alternate Contact Name";
 	public static final String Backup_Plan = "Backup Plan";
@@ -382,22 +378,42 @@ public class PixalereStringPool {
 	public static final String LearnerDate = "LearnerDate";
 
 	public static final String EducationComment = "EducationComment";
-
+	
+	public static final String concerns_or_issues = "concerns or issues";
+	public static final String values_and_beliefs = "values and beliefs";
+	public static final String health_teaching = "health teaching";
+	public static final String most_important = "most important";
+	public static final String nursing_service = "nursing service";
 	public static final String Daycare_Childcare = "Daycare Childcare";
 	public static final String Siblings = "Siblings";
 	public static final String Significant_Other_Relationships_Pets = "Significant Other Relationships Pets";
 	public static final String Respiratory_History_Comments_PICAT = "Respiratory History Comments PICAT";
 	public static final String Respiratory_Assessment_Comments_PICAT = "Respiratory Assessment Comments PICAT";
+	public static final String Weight_10 = "Weight_10";
+	public static final String Catheter_Size = "Catheter Size";
+	public static final String Care_Instructions = "Care Instructions";
 	public static final String Cardiovascular_History_Comments_PICAT = "Cardiovascular History Comments PICAT";
 	public static final String Cardiovascular_Assessment_Comments_PICAT = "Cardiovascular Assessment Comments PICAT";
 	public static final String Gastrointestinal_Assessment_Comments_PICAT = "Gastrointestinal Assessment Comments PICAT";
 	public static final String Skin_History_Comments_PICAT = "Skin History Comments PICAT";
 	public static final String Skin_Assessment_Comments_PICAT = "Skin Assessment Comments PICAT";
 	public static final String Genito_Urinary_Assessment_Comments_PICAT = "Genito Urinary Assessment Comments PICAT";
+	public static final String Mental_Health_Concerns = "Mental Health Concerns";
 	public static final String Neurological_Assessment_Comments_PICAT = "Neurological Assessment Comments PICAT";
 	public static final String Neuromuscular_History_Comments_PICAT = "Neuromuscular History Comments PICAT";
 	public static final String Neuromuscular_Assessment_Comments_PICAT = "Neuromuscular Assessment Comments PICAT";
+	public static final String Last_dental_appointment = "Last dental appointment";
+	public static final String Oral_hygiene_practices = "Oral hygiene practices";
+	public static final String Head_Eyes_Ears_Nose_Mouth_Throat = "Head Eyes Ears Nose Mouth & Throat history";
+	public static final String Child_Behaviour = "Child Behaviour";
+	public static final String Distractibility_Attention_span = "Distractibility Attention span";
 	public static final String Behavioural_Safety_Comments_PICAT = "Behavioural & Safety Comments PICAT";
+	public static final String Nutrition_Likes = "Nutrition Likes";
+	public static final String Nutrition_Dislikes = "Nutrition Dislikes";
+	public static final String Nutrition_Sensitivies = "Nutrition Sensitivies";
+	public static final String Client_Care_Summary = "Client Care Summary";
+	public static final String Bedtime_routine = "Bedtime routine";
+	public static final String medical_devices = "medical devices";
 	public static final String Sleep_Rest_Comments_PICAT = "Sleep Rest Comments PICAT";
 	public static final String School_participation_PICAT = "School participation PICAT";
 	public static final String Social_interactions_PICAT = "Social interactions PICAT";
