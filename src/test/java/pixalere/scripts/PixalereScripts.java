@@ -33,6 +33,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Equipment_Source;
 	public static String Case_Coordinator;
 	public static String Primary_nurse_contact_info;
+	
+	public static String Weight_10;
 
 	public static String CLIENT_SUMMARY_Special_Instructions;
 	public static String pt_modified_exercise;
@@ -170,11 +172,25 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Gastrointestinal_Assessment_Comments_PICAT1;
 	public static String Skin_History_Comments_PICAT1;
 	public static String Skin_Assessment_Comments_PICAT1;
+	public static String Catheter_Size;
+	public static String Care_Instructions;
+	public static String Mental_Health_Concerns;
 	public static String Genito_Urinary_Assessment_Comments_PICAT1;
 	public static String Neurological_Assessment_Comments_PICAT1;
 	public static String Neuromuscular_History_Comments_PICAT1;
 	public static String Neuromuscular_Assessment_Comments_PICAT1;
+	public static String Last_dental_appointment;
+	public static String Oral_hygiene_practices;
+	public static String Head_Eyes_Ears_Nose_Mouth_Throat;
+	public static String Child_Behaviour;
+	public static String Distractibility_Attention_span;
 	public static String Behavioural_Safety_Comments_PICAT1;
+	public static String Nutrition_Likes;
+	public static String Nutrition_Dislikes;
+	public static String Nutrition_Sensitivies;
+	public static String Client_Care_Summary;
+	public static String Bedtime_routine;
+	public static String medical_devices;
 	public static String Sleep_Rest_Comments_PICAT1;
 	public static String School_participation_PICAT1;
 	public static String Social_interactions_PICAT1;
@@ -2186,21 +2202,21 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Daycare_Childcare:
-			Daycare_Childcare1 = "JavaUtils.getRandomString(5)";
+			Daycare_Childcare1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Daycare_Childcare + ": " + Daycare_Childcare1);
 			clear(By.xpath("(//*[@id='daycare'])"));
 			sendKeys(By.xpath("(//*[@id='daycare'])"), Daycare_Childcare1);
 			break;
 
 		case PixalereStringPool.Siblings:
-			Siblings1 = "JavaUtils.getRandomString(5)";
+			Siblings1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Siblings + ": " + Siblings1);
 			clear(By.xpath("(//*[@id='siblings'])"));
 			sendKeys(By.xpath("(//*[@id='siblings'])"), Siblings1);
 			break;
 
 		case PixalereStringPool.Significant_Other_Relationships_Pets:
-			Significant_Other_Relationships_Pets1 = "JavaUtils.getRandomString(5)";
+			Significant_Other_Relationships_Pets1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Significant_Other_Relationships_Pets + ": "
 					+ Significant_Other_Relationships_Pets1);
 			clear(By.xpath("(//*[@id='pets'])"));
@@ -2208,7 +2224,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Respiratory_History_Comments_PICAT:
-			Respiratory_History_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Respiratory_History_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(
 					PixalereStringPool.Respiratory_History_Comments_PICAT + ": " + Respiratory_History_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='resp_history_comment'])"));
@@ -2216,7 +2232,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Respiratory_Assessment_Comments_PICAT:
-			Respiratory_Assessment_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Respiratory_Assessment_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Respiratory_Assessment_Comments_PICAT + ": "
 					+ Respiratory_Assessment_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='resp_assess_comment'])"));
@@ -2224,7 +2240,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Cardiovascular_History_Comments_PICAT:
-			Cardiovascular_History_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Cardiovascular_History_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Cardiovascular_History_Comments_PICAT + ": "
 					+ Cardiovascular_History_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='cardiovascular_history_comment'])"));
@@ -2232,7 +2248,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Cardiovascular_Assessment_Comments_PICAT:
-			Cardiovascular_Assessment_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Cardiovascular_Assessment_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Cardiovascular_Assessment_Comments_PICAT + ": "
 					+ Cardiovascular_Assessment_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='cardiovascular_assess_comment'])"));
@@ -2240,7 +2256,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Gastrointestinal_Assessment_Comments_PICAT:
-			Gastrointestinal_Assessment_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Gastrointestinal_Assessment_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Gastrointestinal_Assessment_Comments_PICAT + ": "
 					+ Gastrointestinal_Assessment_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='gastro_assess_comment'])"));
@@ -2248,30 +2264,48 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Skin_History_Comments_PICAT:
-			Skin_History_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Skin_History_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Skin_History_Comments_PICAT + ": " + Skin_History_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='skin_history_comment'])"));
 			sendKeys(By.xpath("(//*[@id='skin_history_comment'])"), Skin_History_Comments_PICAT1);
 			break;
 
 		case PixalereStringPool.Skin_Assessment_Comments_PICAT:
-			Skin_Assessment_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Skin_Assessment_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(
 					PixalereStringPool.Skin_Assessment_Comments_PICAT + ": " + Skin_Assessment_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='skin_assess_comment'])"));
 			sendKeys(By.xpath("(//*[@id='skin_assess_comment'])"), Skin_Assessment_Comments_PICAT1);
 			break;
 
+		case PixalereStringPool.Catheter_Size:
+			Catheter_Size = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Catheter_Size + ": "+ Catheter_Size);
+			clear(By.xpath("//*[@name='genito_catheter_size']"));
+			sendKeys(By.xpath("//*[@name='genito_catheter_size']"), Catheter_Size);
+			break;
+		case PixalereStringPool.Care_Instructions:
+			Care_Instructions = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Care_Instructions + ": "+ Care_Instructions);
+			clear(By.xpath("//textarea[@id='care_instructions']"));
+			sendKeys(By.xpath("//textarea[@id='care_instructions']"), Care_Instructions);
+			break;
 		case PixalereStringPool.Genito_Urinary_Assessment_Comments_PICAT:
-			Genito_Urinary_Assessment_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Genito_Urinary_Assessment_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Genito_Urinary_Assessment_Comments_PICAT + ": "
 					+ Genito_Urinary_Assessment_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='genito_assess_comment'])"));
 			sendKeys(By.xpath("(//*[@id='genito_assess_comment'])"), Genito_Urinary_Assessment_Comments_PICAT1);
 			break;
+		case PixalereStringPool.Mental_Health_Concerns:
+			Mental_Health_Concerns = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Mental_Health_Concerns + ": "+ Mental_Health_Concerns);
+			clear(By.xpath("//textarea[@id='mental_health_concerns']"));
+			sendKeys(By.xpath("//textarea[@id='mental_health_concerns']"), Mental_Health_Concerns);
+			break;
 
 		case PixalereStringPool.Neurological_Assessment_Comments_PICAT:
-			Neurological_Assessment_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Neurological_Assessment_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Neurological_Assessment_Comments_PICAT + ": "
 					+ Neurological_Assessment_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='nuerological_assess_comment'])"));
@@ -2279,7 +2313,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Neuromuscular_History_Comments_PICAT:
-			Neuromuscular_History_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Neuromuscular_History_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Neuromuscular_History_Comments_PICAT + ": "
 					+ Neuromuscular_History_Comments_PICAT1);
 			clear(By.xpath("(//*[@id='nueromuscular_history_comment'])"));
@@ -2287,58 +2321,135 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Neuromuscular_Assessment_Comments_PICAT:
-			Neuromuscular_Assessment_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Neuromuscular_Assessment_Comments_PICAT1 =JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Neuromuscular_Assessment_Comments_PICAT + ": "
 					+ Neuromuscular_Assessment_Comments_PICAT1);
-			clear(By.xpath("(//*[@id='document'])"));
-			sendKeys(By.xpath("(//*[@id='document'])"), Neuromuscular_Assessment_Comments_PICAT1);
+			clear(By.xpath("//textarea[@id='nueromuscular_assess_comment']"));
+			sendKeys(By.xpath("//textarea[@id='nueromuscular_assess_comment']"), Neuromuscular_Assessment_Comments_PICAT1);
+			break;
+		case PixalereStringPool.Last_dental_appointment:
+			Last_dental_appointment =JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Last_dental_appointment + ": "
+					+ Last_dental_appointment);
+			clear(By.xpath("//textarea[@name='last_dental_appointment']"));
+			sendKeys(By.xpath("//textarea[@name='last_dental_appointment']"), Last_dental_appointment);
+			break;
+		case PixalereStringPool.Oral_hygiene_practices:
+			Oral_hygiene_practices =JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Oral_hygiene_practices + ": "
+					+ Oral_hygiene_practices);
+			clear(By.xpath("//textarea[@id='oral_hygeine']"));
+			sendKeys(By.xpath("//textarea[@id='oral_hygeine']"), Oral_hygiene_practices);
+			break;
+		case PixalereStringPool.Head_Eyes_Ears_Nose_Mouth_Throat:
+			Head_Eyes_Ears_Nose_Mouth_Throat =JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Head_Eyes_Ears_Nose_Mouth_Throat + ": "
+					+ Head_Eyes_Ears_Nose_Mouth_Throat);
+			clear(By.xpath("//textarea[@id='head_history_comment']"));
+			sendKeys(By.xpath("//textarea[@id='head_history_comment']"), Head_Eyes_Ears_Nose_Mouth_Throat);
+			break;
+		case PixalereStringPool.Child_Behaviour:
+			Child_Behaviour =JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Child_Behaviour + ": "
+					+ Child_Behaviour);
+			clear(By.xpath("//textarea[@id='child_behaviour']"));
+			sendKeys(By.xpath("//textarea[@id='child_behaviour']"), Child_Behaviour);
+			break;
+		case PixalereStringPool.Distractibility_Attention_span:
+			Distractibility_Attention_span =JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Distractibility_Attention_span + ": "
+					+ Distractibility_Attention_span);
+			clear(By.xpath("//textarea[@id='child_behaviour']"));
+			sendKeys(By.xpath("//textarea[@id='child_behaviour']"), Distractibility_Attention_span);
 			break;
 
 		case PixalereStringPool.Behavioural_Safety_Comments_PICAT:
-			Behavioural_Safety_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Behavioural_Safety_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(
 					PixalereStringPool.Behavioural_Safety_Comments_PICAT + ": " + Behavioural_Safety_Comments_PICAT1);
-			clear(By.xpath("(//*[@id='document'])"));
-			sendKeys(By.xpath("(//*[@id='document'])"), Behavioural_Safety_Comments_PICAT1);
+			clear(By.xpath("//textarea[@id='behaviour_comment']"));
+			sendKeys(By.xpath("//textarea[@id='behaviour_comment']"), Behavioural_Safety_Comments_PICAT1);
+			break;
+		case PixalereStringPool.Nutrition_Likes:
+			Nutrition_Likes = JavaUtils.getRandomString(5);
+			System.out.println(
+					PixalereStringPool.Nutrition_Likes + ": " + Nutrition_Likes);
+			clear(By.xpath("//textarea[@id='likes']"));
+			sendKeys(By.xpath("//textarea[@id='likes']"), Nutrition_Likes);
+			break;
+		case PixalereStringPool.Nutrition_Dislikes:
+			Nutrition_Dislikes = JavaUtils.getRandomString(5);
+			System.out.println(
+					PixalereStringPool.Nutrition_Dislikes + ": " + Nutrition_Dislikes);
+			clear(By.xpath("//textarea[@id='dislikes']"));
+			sendKeys(By.xpath("//textarea[@id='dislikes']"), Nutrition_Dislikes);
+			break;
+		case PixalereStringPool.Nutrition_Sensitivies:
+			Nutrition_Sensitivies = JavaUtils.getRandomString(5);
+			System.out.println(
+					PixalereStringPool.Nutrition_Sensitivies + ": " + Nutrition_Sensitivies);
+			clear(By.xpath("//textarea[@id='intolerances']"));
+			sendKeys(By.xpath("//textarea[@id='intolerances']"), Nutrition_Sensitivies);
+			break;
+		case PixalereStringPool.Client_Care_Summary:
+			Client_Care_Summary = JavaUtils.getRandomString(5);
+			System.out.println(
+					PixalereStringPool.Client_Care_Summary + ": " + Client_Care_Summary);
+			clear(By.xpath("//textarea[@id='restrictions']"));
+			sendKeys(By.xpath("//textarea[@id='restrictions']"), Client_Care_Summary);
+			break;
+		case PixalereStringPool.Bedtime_routine:
+			Bedtime_routine = JavaUtils.getRandomString(5);
+			System.out.println(
+					PixalereStringPool.Bedtime_routine + ": " + Bedtime_routine);
+			clear(By.xpath("//textarea[@id='bedtime_routine']"));
+			sendKeys(By.xpath("//textarea[@id='bedtime_routine']"), Bedtime_routine);
+			break;
+		case PixalereStringPool.medical_devices:
+			medical_devices = JavaUtils.getRandomString(5);
+			System.out.println(
+					PixalereStringPool.medical_devices + ": " + medical_devices);
+			clear(By.xpath("//textarea[@id='sleeping_aid']"));
+			sendKeys(By.xpath("//textarea[@id='sleeping_aid']"), medical_devices);
 			break;
 
 		case PixalereStringPool.Sleep_Rest_Comments_PICAT:
-			Sleep_Rest_Comments_PICAT1 = "JavaUtils.getRandomString(5)";
+			Sleep_Rest_Comments_PICAT1 =JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Sleep_Rest_Comments_PICAT + ": " + Sleep_Rest_Comments_PICAT1);
-			clear(By.xpath("(//*[@id='document'])"));
-			sendKeys(By.xpath("(//*[@id='document'])"), Sleep_Rest_Comments_PICAT1);
+			clear(By.xpath("//textarea[@id='rest_comment']"));
+			sendKeys(By.xpath("//textarea[@id='rest_comment']"), Sleep_Rest_Comments_PICAT1);
 			break;
 
 		case PixalereStringPool.School_participation_PICAT:
-			School_participation_PICAT1 = "JavaUtils.getRandomString(5)";
+			School_participation_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.School_participation_PICAT + ": " + School_participation_PICAT1);
-			clear(By.xpath("(//*[@id='document'])"));
-			sendKeys(By.xpath("(//*[@id='document'])"), School_participation_PICAT1);
+			clear(By.xpath("//textarea[@id='school_participation']"));
+			sendKeys(By.xpath("//textarea[@id='school_participation']"), School_participation_PICAT1);
 			break;
 
 		case PixalereStringPool.Social_interactions_PICAT:
-			Social_interactions_PICAT1 = "JavaUtils.getRandomString(5)";
+			Social_interactions_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Social_interactions_PICAT + ": " + Social_interactions_PICAT1);
-			clear(By.xpath("(//*[@id='document'])"));
-			sendKeys(By.xpath("(//*[@id='document'])"), Social_interactions_PICAT1);
+			clear(By.xpath("//textarea[@id='social_interactions']"));
+			sendKeys(By.xpath("//textarea[@id='social_interactions']"), Social_interactions_PICAT1);
 			break;
 
 		case PixalereStringPool.Routine_activities_exercise_PICAT:
-			Routine_activities_exercise_PICAT1 = "JavaUtils.getRandomString(5)";
+			Routine_activities_exercise_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(
 					PixalereStringPool.Routine_activities_exercise_PICAT + ": " + Routine_activities_exercise_PICAT1);
-			clear(By.xpath("(//*[@id='document'])"));
-			sendKeys(By.xpath("(//*[@id='document'])"), Routine_activities_exercise_PICAT1);
+			clear(By.xpath("//textarea[@id='routine_activities']"));
+			sendKeys(By.xpath("//textarea[@id='routine_activities']"), Routine_activities_exercise_PICAT1);
 			break;
 
 		case PixalereStringPool.Favourite_toys_security_object_hobbies_PICAT:
-			Favourite_toys_security_object_hobbies_PICAT1 = "JavaUtils.getRandomString(5)";
+			Favourite_toys_security_object_hobbies_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Favourite_toys_security_object_hobbies_PICAT + ": "
 					+ Favourite_toys_security_object_hobbies_PICAT1);
-			clear(By.xpath("(//*[@id='document'])"));
-			sendKeys(By.xpath("(//*[@id='document'])"), Favourite_toys_security_object_hobbies_PICAT1);
+			clear(By.xpath("//textarea[@id='favourite_toys']"));
+			sendKeys(By.xpath("//textarea[@id='favourite_toys']"), Favourite_toys_security_object_hobbies_PICAT1);
 			break;
-
+//		PICAT END
 		case PixalereStringPool.Year_Date_ALLA:
 			Year_Date_ALLA1 = "2022";
 			System.out.println(PixalereStringPool.Year_Date_ALLA + ": " + Year_Date_ALLA1);
@@ -2685,6 +2796,12 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.Primary_nurse_contact_info + ": " + Primary_nurse_contact_info);
 			clear(By.xpath("//*[@id='primary_nurse']"));
 			sendKeys(By.xpath("//*[@id='primary_nurse']"), Primary_nurse_contact_info);
+			break;
+		case PixalereStringPool.Weight_10:
+			Weight_10 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Weight_10 + ": " + Weight_10);
+			clear(By.xpath("//*[@id='primary_nurse']"));
+			sendKeys(By.xpath("//*[@id='primary_nurse']"), Weight_10);
 			break;
 
 			
