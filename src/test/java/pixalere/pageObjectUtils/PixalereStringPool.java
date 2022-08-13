@@ -112,6 +112,7 @@ public class PixalereStringPool {
 	public static final String Suctioning_Year = "Suctioning Year";
 	public static final String Suctioning_comment = "Suctioning comment";
 
+	
 
 	public static final String Special_Delivery_Instructions = "Special Delivery Instructions";
 	public static final String Alternate_Contact_Name = "Alternate Contact Name";
@@ -367,6 +368,8 @@ public class PixalereStringPool {
 	public static final String Document_Name_for_Filter = "Document_Name_for_Filter";
 
 	public static final String Source_of_Info = "Source of Info";
+	public static final String Primary_Diagnosis = "Primary Diagnosis";
+	public static final String Allergies_and_Reactions = "Allergies and Reactions";
 
 	public static final String Custodial_Arrangements = "Custodial Arrangements";
 
@@ -835,4 +838,23 @@ public class PixalereStringPool {
 	
 	public static final String Primary_nurse_contact_info = "Primary nurse contact info";
 	
+	public static final String Visit_Date = "Visit Date";
+	public static final String Assessment_Initiated_Comments = "Assessment Initiated Comments";
+	public static final String Diagnosis_History_of_Presenting_Concern = "Diagnosis History of Presenting Concern";
+	public static final String Client_SDM_Stated_Goal = "Client SDM Stated Goal";
+	public static final String Past_Medical_History = "Past Medical History";
+	public static final String Investigations_followup_clinically_relevant = "Investigations followup clinically relevant";
+	public static final String Investigations_Date = "Investigations Date";
+	public static final String Difficulties_report = "Difficulties report";
+	public static final String PT_scope_of_practice = "PT scope of practice";
+	public static final String Posture_Assessed_comment = "Posture Assessed comment";
+	public static final String Edema_Location = "Edema Location";
+	public static final String Pain_Date = "Pain Date";
+	public static final String Palliating_Factors_List = "Palliating Factors List";
+	public static final String Aggravating_Factors_List = "Aggravating Factors List";
+	public static final String Date_of_MSK_Assessment = "Date of MSK Assessment";
+	public static final String Musculoskeletal_Status_comments = "Musculoskeletal Status comments";
+	public static final String Respiratory_comments = "Respiratory comments";
+	public static final String Neurological_comments = "Neurological comments";
+	public static final String Cognition_comments = "Cognition comments";
 }
