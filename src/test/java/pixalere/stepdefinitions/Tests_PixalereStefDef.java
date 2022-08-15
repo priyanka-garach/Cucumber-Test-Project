@@ -535,20 +535,45 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 
 	@When("I select {string} checkbox for Quality of Pain field")
 	public void I_select_checkbox_for_Quality_of_Pain_field(String string1) {
-		String xpath1 = String.format("//label[contains(@id,'qop') and contains(text(),'%s')]", string1);
-		clickElement(By.xpath(xpath1));
+			
+		chk_quality_of_pain_ass(string1);
+	}
+	
+	@When("I select {string} from Dropdown Frequency field")
+	public void Drp_ferquency(String s1) {
+		drp_frequency_pain_ass(s1);
+	}
+	
+	
+	@When("I select Day as {string} from calendar Pain Assesment")
+	public void Day_one(String s1) {
+		day_one_pain_ass(s1);
+	}
+
+	@When("I select Month as {string} from calendar Pain Assesment")
+	public void Month_one(String s1) {
+		month_one_pain_ass(s1);
+	}
+	
+	@When("I select Day as {string} from calendar Pain Assesment last BM")
+	public void Day_one_last_BM(String s1) {
+		day_one_pain_ass_last_BM(s1);
+	}
+
+	@When("I select Month as {string} from calendar Pain Assesment last BM")
+	public void Month_one_last_BM(String s1) {
+		month_one_pain_ass_last_BM(s1);
 	}
 
 	@When("I select {string} checkbox for Accompanying Symptom field")
 	public void I_select_checkbox_for_Accompanying_Symptom_field(String string1) {
-		String xpath1 = String.format("//label[contains(@id,'acc_symptoms') and contains(text(),'%s')]", string1);
-		clickElementWithJQuery(By.xpath(xpath1));
+		chk_Accompanying_Symptom_pain_ass(string1);
 	}
 
 	@When("I select {string} checkbox for Non-Pharmacological Intervention field")
 	public void I_select_checkbox_for_NonPharmacological_Intervention_field(String string1) {
-		String xpath1 = String.format("//label[contains(@id,'non_pharma_inter') and contains(text(),'%s')]", string1);
-		clickElement(By.xpath(xpath1));
+		chk_onPharmacological_Intervention_pain_ass(string1);
+		
 	}
 
 	@When("I select {string} from Dropdown Frequency field OT")

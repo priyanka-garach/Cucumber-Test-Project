@@ -130,6 +130,14 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Aggravating_Factors_PPA1;
 	public static String Intensity1;
 	public static String Pharmacological_Intervention1;
+	
+	// Pain Assessment
+	public static String day_onset;
+	public static String month_onset;
+	public static String day_last_BM;
+	public static String month_last_BM;
+	public static String drp_frequency;
+	
 
 	public static String OtherICAone1;
 	public static String OtherICA21;
@@ -350,6 +358,12 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String invasive_ventilation_Year1;
 	public static String Cough_Assist_Year1;
 	public static String score;
+	public static String Year_Calender_Pain_Assessment;
+	public static String date_of_Last_BM;
+	public static String Intensity_Pain_Assessment;
+	public static String acceptable_pain_Ass;
+	public static String Chronic_Pain_Parameters_pain_Ass;
+	public static String See_Progress_Notes;
 
 	public static String Balance_Gait;
 	public static List<String> list_Cardiovascular_ICAN1 = new ArrayList<>();
@@ -371,6 +385,9 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static List<String> MAHC_pain_affecting_level_function_MAHC = new ArrayList<>();
 	public static List<String> Type_Of_Assessment = new ArrayList<>();
 	public static List<String> MAHC_Gait_Aid_Use_MAHC = new ArrayList<>();
+	public static List<String> chk_quality_of_pain_ass = new ArrayList<>();
+	public static List<String> chk_Accompanying_Symptom_pain_ass  = new ArrayList<>();
+	public static List<String> chk_Pharmacological_Intervention_pain  = new ArrayList<>();
 
 	public void chk_instruct_client_field(String value) {
 		clickElement(By.xpath("//input[@id='modified_exercise']//following-sibling::label"));
@@ -727,7 +744,51 @@ public class PixalereScripts extends PixalereCommonUtils {
 		selectByVisibleText(By.xpath("//select[@id='pain_score']"), value);
 		score = value;
 	}
+	
+	public void chk_quality_of_pain_ass(String value) {
+		String xpath1 = String.format("//label[contains(@id,'qop') and contains(text(),'%s')]", value);
+		clickElement(By.xpath(xpath1));
+		chk_quality_of_pain_ass.add(value);
+	}
+	
+	public void chk_Accompanying_Symptom_pain_ass(String value) {
+		String xpath1 = String.format("//label[contains(@id,'acc_symptoms') and contains(text(),'%s')]", value);
+		clickElementWithJQuery(By.xpath(xpath1));
+		chk_Accompanying_Symptom_pain_ass.add(value);
+	}
+	
+	public void chk_onPharmacological_Intervention_pain_ass(String value) {
+		String xpath1 = String.format("//label[contains(@id,'non_pharma_inter') and contains(text(),'%s')]", value);
+		clickElement(By.xpath(xpath1));
+		chk_Pharmacological_Intervention_pain.add(value);
+	}
+	
+	
+	public void drp_frequency_pain_ass(String s) {
+		drp_frequency = s;
+		selectByVisibleText(By.id("frequency"), s);
+	}
 
+	public void day_one_pain_ass(String s) {
+		day_onset = "0" + s;
+		selectByVisibleText(By.id("onset_date_day"), s);
+	}
+	
+	public void month_one_pain_ass(String s) {
+		month_onset = s;
+		selectByVisibleText(By.id("onset_date_month"), s);
+	}
+	
+	public void day_one_pain_ass_last_BM(String s) {
+		day_last_BM = "0" + s;
+		selectByVisibleText(By.id("date_last_bm_day"), s);
+	}
+	
+	public void month_one_pain_ass_last_BM(String s) {
+		month_last_BM = s;
+		selectByVisibleText(By.id("date_last_bm_month"), s);
+	}
+	
 	public void selectdropdownforFIM(String value, String section) {
 		String xpath1 = "//td[normalize-space(text())='%s']//following-sibling::td//select[@id='initials']";
 		select_ByIndex(By.xpath(String.format(xpath1, section)), Integer.parseInt(value));
@@ -1283,14 +1344,21 @@ public class PixalereScripts extends PixalereCommonUtils {
 	}
 
 	public void selectRdioforfieldPainAssessment(String value, String section) {
-		if (section.contains("Acceptable"))
+		if (section.contains("Acceptable")) {
+			acceptable_pain_Ass = value;
 			clickElement(By.xpath("(//label[contains(@id,'acceptable')])[1]"));
+		}
 
-		if (section.contains("Chronic Pain Parameters Unchanged"))
+		if (section.contains("Chronic Pain Parameters Unchanged")) {
+			Chronic_Pain_Parameters_pain_Ass = value;
 			clickElement(By.xpath("(//label[contains(@id,'chronic_unchanged')])[1]"));
+		}
 
-		if (section.contains("See Progress Notes"))
+		if (section.contains("See Progress Notes")) {
+			See_Progress_Notes = value;
 			clickElement(By.xpath("(//label[contains(@id,'see_progress')])[1]"));
+		}
+			
 	}
 
 	public void selectRdioforfieldCAM(String value, String section) {
@@ -1566,32 +1634,6 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("(//input[@name='qtyRepeat'])[5]"));
 			sendKeys(By.xpath("(//input[@name='qtyRepeat'])[5]"), RepeatAST5);
 			break;
-
-		/////////////////////////////
-
-		/*
-		 * case PixalereStringPool.SideAST3: SideAST3 = JavaUtils.getRandomNumber(1);
-		 * System.out.println(PixalereStringPool.SideAST3 + ": " + SideAST3);
-		 * clear(By.xpath("(//input[@name='qtySide'])[3]"));
-		 * sendKeys(By.xpath("(//input[@name='qtySide'])[3]"), SideAST3); break;
-		 * 
-		 * case PixalereStringPool.SideAST4: SideAST4 = "2";
-		 * System.out.println(PixalereStringPool.SideAST4 + ": " + SideAST4);
-		 * clear(By.xpath("(//input[@name='qtySide'])[4]"));
-		 * sendKeys(By.xpath("(//input[@name='qtySide'])[4]"), SideAST4); break;
-		 * 
-		 * case PixalereStringPool.SideAST5: SideAST5 = JavaUtils.getRandomNumber(1);
-		 * System.out.println(PixalereStringPool.SideAST5 + ": " + SideAST5);
-		 * clear(By.xpath("(//input[@name='qtySide'])[5]"));
-		 * sendKeys(By.xpath("(//input[@name='qtySide'])[5]"), SideAST5); break;
-		 */
-
-		/*
-		 * case PixalereStringPool.SideAST6: SideAST6 = JavaUtils.getRandomNumber(1);
-		 * System.out.println(PixalereStringPool.SideAST6 + ": " + SideAST6);
-		 * clear(By.xpath("(//input[@name='qtySide'])[6]"));
-		 * sendKeys(By.xpath("(//input[@name='qtySide'])[6]"), SideAST6); break;
-		 */
 
 		case PixalereStringPool.ExcersizeHandoutDate:
 			ExcersizeHandoutDate1 = "05/05/2022";
@@ -2988,6 +3030,27 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.xpath("//textarea[@id='cog_function_additional']"), Cognition_comments);
 			break;
 
+		case PixalereStringPool.Year_Calender_Pain_Assessment:
+			Year_Calender_Pain_Assessment = "2022";
+			System.out.println(PixalereStringPool.Year_Calender_Pain_Assessment + ": " + Year_Calender_Pain_Assessment);
+			clear(By.xpath("//*[@id='onset_date_year']"));
+			sendKeys(By.xpath("//*[@id='onset_date_year']"), Year_Calender_Pain_Assessment);
+			break;
+			
+		case PixalereStringPool.date_of_Last_BM:
+			date_of_Last_BM = "2022";
+			System.out.println(PixalereStringPool.date_of_Last_BM + ": " + date_of_Last_BM);
+			clear(By.xpath("//*[@id='date_last_bm_year']"));
+			sendKeys(By.xpath("//*[@id='date_last_bm_year']"), date_of_Last_BM);
+			break;
+			
+		case PixalereStringPool.Intensity_Pain_Assessment:
+			Intensity_Pain_Assessment = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Intensity_Pain_Assessment + ": " + Intensity_Pain_Assessment);
+			clear(By.xpath("//*[@id='date_last_bm_year']"));
+			sendKeys(By.xpath("//*[@id='date_last_bm_year']"), Intensity_Pain_Assessment);
+			break;	
+			
 		}
 	}
 }

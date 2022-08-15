@@ -5,25 +5,32 @@ Scenario: Pixalere Pain Assessment Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
-When I select client name "TEST-Kirby , Jose" from Dashboard
+When I globally select "Pix ID" from Search Category dropdown
+And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Flow Sheets -> Pain Assessment" LH panel option
 Then "Pain Assessment" page will open
 ##
-When I verify Date of Onset from calendar
-And I enter "Adjuvant Pain Medication" input field OT
-And I enter "Palliating Factors" input field OT
-And I enter "Aggravating Factors PPA" input field OT
+When I select Day as "5" from calendar Pain Assesment
+And I select Month as "Mar" from calendar Pain Assesment
+And I enter "Year Calender Pain Assessment" input field in script
+And I enter "Adjuvant Pain Medication" input field in script
+And I enter "Palliating Factors" input field in script
+And I enter "Aggravating Factors PPA" input field in script
 And I select "Deep" checkbox for Quality of Pain field
 And I select "Penetrating" checkbox for Quality of Pain field
 And I select "Stabbing" checkbox for Quality of Pain field
 And I select "Tingling" checkbox for Quality of Pain field
-And I select "Rarely" from Dropdown Frequency field OT
+And I select "Rarely" from Dropdown Frequency field
+And I enter "Intensity Pain Assessment" input field in script
 And I select "Constipation" checkbox for Accompanying Symptom field
 And I select "Depression" checkbox for Accompanying Symptom field
 And I select "Nausea" checkbox for Accompanying Symptom field
 And I select "Sore Mouth" checkbox for Accompanying Symptom field
-And I enter "Pharmacological Intervention" input field OT
+When I select Day as "5" from calendar Pain Assesment last BM
+And I select Month as "Mar" from calendar Pain Assesment last BM
+And I enter "Year Calender Pain Assessment Last BM" input field in script
+And I enter "Pharmacological Intervention" input field in script
 And I select "Cold" checkbox for Non-Pharmacological Intervention field
 And I select "Assistive Devices" checkbox for Non-Pharmacological Intervention field
 And I select "Massage" checkbox for Non-Pharmacological Intervention field

@@ -106,7 +106,13 @@ public class PixalereStringPool {
 	public static final String INSULIN_HOME = "Insulin";
 
 	public static final String PROBLEM_No_CarePlan = "Problem CP";
-
+	
+	public static final String Details_for_History_of_Fall = "Details for History of Fall";
+	
+	public static final String Details_for_Cogntive_impairment = "Details for Cogntive impairment";
+	
+	public static final String Details_for_Taking_4_or_more_medications = "Details for Taking 4 or more medications";
+	
 	public static final String Cough_Assist_Year = "Cough Assist Year";
 	public static final String invasive_ventilation_Year = "invasive ventilation Year";
 	public static final String Suctioning_Year = "Suctioning Year";
@@ -119,7 +125,9 @@ public class PixalereStringPool {
 	public static final String Date_Guidelines = "Date Guidelines";
 	public static final String Date_Guidelines_Alternate = "Date Guidelines Alternate";
 	public static final String Lock_Box_Required = "Lock Box Required";
-
+	public static final String Year_Calender_Pain_Assessment = "Year Calender Pain Assessment";
+	public static final String date_of_Last_BM = "Year Calender Pain Assessment Last BM";
+	public static final String Intensity_Pain_Assessment = "Intensity Pain Assessment";
 	public static final String first_areaofconcern = "1st area of concern";
 
 	public static final String Other_Service_Consent_Obtained = "Other Service Consent Obtained";

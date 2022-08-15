@@ -5,10 +5,11 @@ Scenario: Pixalere In-Home Safety Identification Tool Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
-When I select client name "TEST-Kirby , Jose" from Dashboard
+When I globally select "Pix ID" from Search Category dropdown
+And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
-And I Navigate to "Patient Profile -> In-Home Safety Identification Tool (Visiting & Shift)" LH panel option
-Then "In-Home Safety Identification Tool (Visiting & Shift)" page will open
+And I Navigate to "Patient Profile -> In Home Safety Checklist" LH panel option
+Then "In Home Safety Checklist" page will open
 ##
 When I select "School Client" checkbox for HSA Not Compelted field HSI
 And I select "Clutter" checkbox for TrippingFalling field HSI
