@@ -39,7 +39,7 @@ And I verify radio button for "Vendor list provided, options discussed and clien
 And I verify radio button for "Role/activities for vendor in relation to OT services"
 And I save my work for above SM
 And I click on "Authorizer Involved in Service" checkbox Button SM
-And I enter "Name of authorizer" input field OT
+And I enter "Name of authorizer" input field in script
 And I saveAsDraft for Authorizer Involved in Service
 And I click on "Authorizer Services Concluded" checkbox Button SM
 And I click checkbox for "Assessment results/application status reviewed and considered in"
