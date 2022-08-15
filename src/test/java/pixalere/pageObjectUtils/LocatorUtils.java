@@ -131,6 +131,14 @@ public class LocatorUtils {
 	public static String radioConversationcompleted;
 	public static String radioWelcomeBrochure;
 	public static String radioClientEmergency;
+	public static String radioBedMobility;
+	public static String radioChairRipositioning;
+	public static String radioTransfers;
+	public static String radioAmbulation;
+	public static String radioWeightBearingStatus;
+	public static String radioStairUseAssessed;
+	public static String radioSittingBalance;
+	public static String radioStandingBalance;
 	public static String radioMedrat1;
 	public static String radioMedrat2;
 	public static String radioMedrat3;
@@ -638,6 +646,23 @@ public class LocatorUtils {
 		public static By chk_Client = By.xpath("//*[@id='checkbox-analysis_list2']//label");
 		public static By chk_MAHC_factors = By.xpath("//div[@class='checkbox']//*[@for='one_moremahc']");
 		public static By chk_HEP_provided = By.xpath("//*[@id='checkbox-other_list1_other']//label");
+		
+//		Mobility
+		public static By chk_TUG = By.xpath("//*[@class='checkbox pull-left ']//label[contains(text(),'TUG (Time Up and Go)')]");
+		public static By chk_U_Rollator = By.xpath("//*[@id='mobility_equip_nurd-div']/div[3]/div[2]");
+		public static By chk_R_Single_point_cane = By.xpath("//*[@id='mobility_equip_nurd-div']/div[4]/div[3]");
+		public static By chk_D_Quad_cane = By.xpath("//*[@id='mobility_equip_nurd-div']/div[5]/div[4]");
+		public static By chk_U_Bed_Rails = By.xpath("//*[@id='mobility_equip_nurd-div']/div[8]/div[2]");
+		public static By chk_R_Transfer_Board = By.xpath("//*[@id='mobility_equip_nurd-div']/div[11]/div[3]");
+		public static By chk_D_Furniture_Risers = By.xpath("//*[@id='mobility_equip_nurd-div']/div[13]/div[4]");
+		public static By chk_D_Toilet_safety_arms = By.xpath("//*[@id='mobility_equip_nurd-div']/div[15]/div[4]");
+		public static By chk_U_Grab_bars = By.xpath("//*[@id='mobility_equip_nurd-div']/div[18]/div[2]");
+		public static By chk_R_Tub_rail = By.xpath("//*[@id='mobility_equip_nurd-div']/div[20]/div[3]");
+		public static By chk_D_Stairglide = By.xpath("//*[@id='dv-su']/div/div[9]/div[5]/div[4]");
+		public static By chk_R_Supervision_on_stairs = By.xpath("//*[@id='dv-su']/div/div[9]/div[6]/div[3]");
+		public static By chk_U_Assistance_on_stairs_x1 = By.xpath("//*[@id='dv-su']/div/div[9]/div[7]/div[2]");
+		public static By chk_30_seconds_Sit_stand = By.xpath("//*[@class='checkbox pull-left ']//label[contains(text(),'30 seconds Sit-stand')]");
+		public static By chk_30_second_sit_stand_Test = By.xpath("//*[@id='checkbox-balance_sitstand_list1_other']//label");
 	}
 
 	public static class ConsultsPageLocators {
@@ -3431,7 +3456,7 @@ public class LocatorUtils {
 		}
 		public static By getRadioOptionByMSK(String section) {
 			radioMSK = section;
-			if (section.equalsIgnoreCase("WFL- sufficient for function"))
+			if (section.equalsIgnoreCase("WFL - sufficient for function"))
 				return By.xpath("//*[@id='md-radio-msk_wfl_1']//label");
 			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
 				return By.xpath("//*[@id='md-radio-msk_wfl_2']//label");
@@ -3533,6 +3558,82 @@ public class LocatorUtils {
 				return By.xpath("//*[@id='md-radio-client_emergency1']//label");
 			else if (section.equalsIgnoreCase("No"))
 				return By.xpath("//*[@id='md-radio-client_emergency2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByBedMobility(String section) {
+			radioBedMobility = section;
+			if (section.equalsIgnoreCase("WFL – independent or managing with current supports"))
+				return By.xpath("//*[@id='md-radio-mobility_bed_1']//label");
+			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
+				return By.xpath("//*[@id='md-radio-mobility_bed_2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByChairRipositioning(String section) {
+			radioChairRipositioning = section;
+			if (section.equalsIgnoreCase("WFL – independent or managing with current supports"))
+				return By.xpath("//*[@id='md-radio-mobility_chair_1']//label");
+			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
+				return By.xpath("//*[@id='md-radio-mobility_chair_2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByTransfers(String section) {
+			radioTransfers = section;
+			if (section.equalsIgnoreCase("WFL – independent or managing with current supports"))
+				return By.xpath("//*[@id='md-radio-mobility_transfer_1']//label");
+			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
+				return By.xpath("//*[@id='md-radio-mobility_transfer_2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByAmbulation(String section) {
+			radioAmbulation = section;
+			if (section.equalsIgnoreCase("WFL –sufficient for function, or client managing with current supports"))
+				return By.xpath("//*[@id='md-radio-mobility_ambulation_1']//label");
+			else if (section.equalsIgnoreCase("Non-ambulatory"))
+				return By.xpath("//*[@id='md-radio-mobility_ambulation_2']//label");
+			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
+				return By.xpath("//*[@id='md-radio-mobility_ambulation_3']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByWeightBearingStatus(String section) {
+			radioWeightBearingStatus = section;
+			if (section.equalsIgnoreCase("WFL –weight bearing is not impacting function"))
+				return By.xpath("//*[@id='md-radio-mobility_weight_bear_1']//label");
+			else if (section.equalsIgnoreCase("Restricted weight bearing status"))
+				return By.xpath("//*[@id='md-radio-mobility_weight_bear_2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByStairUseAssessed(String section) {
+			radioStairUseAssessed = section;
+			if (section.equalsIgnoreCase("WFL – independent or managing with current supports"))
+				return By.xpath("//*[@id='md-radio-stair_wfl-1']//label");
+			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
+				return By.xpath("//*[@id='md-radio-stair_wfl-2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionBySittingBalance(String section) {
+			radioSittingBalance = section;
+			if (section.equalsIgnoreCase("WFL - sufficient for function"))
+				return By.xpath("//*[@id='md-radio-balance_sitting_wfl-1']//label");
+			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
+				return By.xpath("//*[@id='md-radio-balance_sitting_wfl-2']//label");
+			else
+				return By.xpath("");
+		}
+		public static By getRadioOptionByStandingBalance(String section) {
+			radioStandingBalance = section;
+			if (section.equalsIgnoreCase("WFL - sufficient for function"))
+				return By.xpath("//*[@id='md-radio-balance_standing_wfl-1']//label");
+			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
+				return By.xpath("//*[@id='md-radio-balance_standing_wfl-2']//label");
+			else if (section.equalsIgnoreCase("Not Applicable"))
+				return By.xpath("//*[@id='md-radio-balance_standing_wfl-3']//label");
 			else
 				return By.xpath("");
 		}
