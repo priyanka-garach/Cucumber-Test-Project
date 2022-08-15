@@ -469,6 +469,10 @@ public class SeleniumCommonUtils {
 		System.out.println("Depression Screening Tool data verified....................................");
 
 	}
+	
+	public void verify_PICAT_Pediatric_Flowchart() {
+		
+	}
 
 	public void verify_Emergency_Planning_page() {
 
@@ -2916,6 +2920,9 @@ public class SeleniumCommonUtils {
 		System.out.println("Recommendations Page verified................");
 	}
 
+	public void verify_PT_Assessment_Page() {
+		
+	}
 	public void verify_ExcersizeProgramPage() {
 		clickElement(By.xpath("//input[@value='View']"));
 		Wait_p(3);

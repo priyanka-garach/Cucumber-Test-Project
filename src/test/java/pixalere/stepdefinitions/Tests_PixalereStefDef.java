@@ -74,6 +74,11 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_start_verifying_records_in_Client_Care_Summary_Page() {
 		verify_client_care_cn();
 	}
+	
+	@When("I start verifying records in PICAT Pediatric Flowchart Page")
+	public void I_start_verifying_records_in_PICAT_Pediatric_Flowchart_Page() {
+		verify_PICAT_Pediatric_Flowchart();
+	}
 
 	@When("I click on Save Client Summary Button")
 	public void i_click_on_save_client_summary_button() {
@@ -218,7 +223,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I click on Save As Draft PTAssessment")
 	public void i_click_on_Save_As_Draft_PT_Assessment() {
 		System.out.println();
-		clickElement(By.xpath("//*[@id='saveAsDraft']"));
+		clickElement(By.xpath("//*[@id='sendRequisition']"));
 	}
 
 	@When("I start verifying records in 30 Second Sit-Stand Page")
@@ -353,6 +358,11 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@Then("I verify record after add button")
 	public void I_verify_record_after_add_button() {
 		verify_RecordAfterAdd_ExcersizeProgram();
+	}
+	
+	@When("I start verifying records in PT Assessment Page")
+	public void I_start_verifying_records_in_PT_Assessment_Page() {
+		verify_PT_Assessment_Page();
 	}
 	
 	@When("I start verifying records in Exercise Program Page")
