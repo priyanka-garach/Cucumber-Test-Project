@@ -35,6 +35,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Primary_nurse_contact_info;
 	
 	public static String Weight_10;
+
 	public static String Visit_Date;
 	public static String Assessment_Initiated_Comments;
 	public static String Diagnosis_History_of_Presenting_Concern;
@@ -54,6 +55,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Respiratory_comments;
 	public static String Neurological_comments;
 	public static String Cognition_comments;
+
 
 	public static String CLIENT_SUMMARY_Special_Instructions;
 	public static String pt_modified_exercise;
@@ -2833,6 +2835,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 		case PixalereStringPool.Weight_10:
 			Weight_10 = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.Weight_10 + ": " + Weight_10);
+
 			clear(By.xpath("//textarea[@id='weight_gain']"));
 			sendKeys(By.xpath("//textarea[@id='weight_gain']"), Weight_10);
 			break;
@@ -2952,8 +2955,6 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("//textarea[@id='cog_function_additional']"));
 			sendKeys(By.xpath("//textarea[@id='cog_function_additional']"), Cognition_comments);
 			break;
-			
-			
 			
 		}
 	}

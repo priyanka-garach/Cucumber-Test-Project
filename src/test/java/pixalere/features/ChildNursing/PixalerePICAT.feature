@@ -62,7 +62,10 @@ And I select "Pain Management" checkbox option for Gastrointestinal History fiel
 And I select "Nutrition and Patient Education" checkbox option for Gastrointestinal History field
 And I select "Nausea" checkbox option for Gastrointestinal History field
 And I select "Vomiting" checkbox option for Gastrointestinal History field
+
 And I select "Yes" radio option for Recent weight changes field
+
+
 And I enter "Weight_10" input field in script
 And I select "Flat" radio option for Inspection field
 And I select "Firm" radio option for Palpation field
@@ -101,12 +104,16 @@ And I select "Yes" checkbox for Toilet trained field
 And I select "No" radio option for Genital urinary malformations field
 And I select "No" radio option for Neurogenic Bladder field
 And I select "No" radio option for Stoma present field
+
 And I select "Yes" radio option for Catherization required field
+
 And I select "Clean Intermittent Catheterization" checkbox for Catherization Type field
 And I select "Indwelling" checkbox for Catherization Type field
 And I enter "Catheter Size" input field in script
 And I enter "Care Instructions" input field in script
-#And I select "Yes" radio option for Discharge present field
+
+And I select "Yes" radio option for Discharge present field
+
 And I select "No" radio option for Foul odor in urine present field
 And I select "Intact" radio option for Skin integrity of perineal area field
 And I select "No" radio option for Sexual Development Reported Concerns field
@@ -211,5 +218,7 @@ And I enter "Favourite toys security object hobbies PICAT" input field in script
 #
 And I Navigate to "Viewer -> ICAT Pediatric Flowchart" LH panel option
 Then "ICAT Pediatric Flowchart" page will open
+
 Then I start verifying records in PICAT Pediatric Flowchart Page
+
 Then I Logout from Pixalere

@@ -2487,7 +2487,9 @@ public class LocatorUtils {
 			else
 				return By.xpath("");
 		}
+
 		public static By getRadioOptionByWeight_Changes(String section) {			
+
 			radioWeight_Changes = section;
 			if (section.contains("Yes"))
 				return By.xpath("//*[@id='md-radio-weightChange2']//label");
@@ -2591,9 +2593,11 @@ public class LocatorUtils {
 		public static By getRadioOptionByDiaperdermatitis(String section) {
 			radioDiaperdermatitis = section;
 			if (section.equalsIgnoreCase("No"))
+
 				return By.xpath("//*[@id='md-radio-diaper_dermetitis_present1']//label");
 			else if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-diaper_dermetitis_present2']//label");
+
 			else
 				return By.xpath("");
 		}
@@ -2601,72 +2605,88 @@ public class LocatorUtils {
 		public static By getRadioOptionByErythema(String section) {
 			radioErythema = section;
 			if (section.equalsIgnoreCase("No"))
+
 				return By.xpath("//*[@id='md-radio-erythema_present1']//label");
 			else if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-erythema_present2']//label");
+
 			else
 				return By.xpath("");
 		}
 		public static By getRadioOptionByLesions(String section) {
 			radioLesions = section;
 			if (section.equalsIgnoreCase("No"))
+
 				return By.xpath("//*[@id='md-radio-lesions_present1']//label");
 			else if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-lesions_present2']//label");
+
 			else
 				return By.xpath("");
 		}
 		public static By getRadioOptionByBruises(String section) {
 			radioBruises = section;
 			if (section.equalsIgnoreCase("No"))
+
 				return By.xpath("//*[@id='md-radio-bruises_present1']//label");
 			else if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-bruises_present2']//label");
+
 			else
 				return By.xpath("");
 		}
 		public static By getRadioOptionByLacerations(String section) {
 			radioLacerations = section;
 			if (section.equalsIgnoreCase("No"))
+
 				return By.xpath("//*[@id='md-radio-lacreations_present1']//label");
 			else if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-lacreations_present2']//label");
+
 			else
 				return By.xpath("");
 		}
 		public static By getRadioOptionByPetechiae(String section) {
 			radioPetechiae = section;
 			if (section.equalsIgnoreCase("No"))
+
 				return By.xpath("//*[@id='md-radio-petechiae_present1']//label");
 			else if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-petechiae_present2']//label");
+
 			else
 				return By.xpath("");
 		}
 		public static By getRadioOptionByScars(String section) {
 			radioScars = section;
 			if (section.equalsIgnoreCase("No"))
+
 				return By.xpath("//*[@id='md-radio-scars_present1']//label");
 			else if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-scars_present2']//label");
+
 			else
 				return By.xpath("");
 		}
 		public static By getRadioOptionByBurns(String section) {
 			radioBurns = section;
 			if (section.equalsIgnoreCase("No"))
+
 				return By.xpath("//*[@id='md-radio-burns_present1']//label");
 			else if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-burns_present2']//label");
+
 			else
 				return By.xpath("");
 		}
 		public static By getRadioOptionByPressureinjuries(String section) {
 			radioPressureinjuries = section;
 			if (section.equalsIgnoreCase("No"))
+
 				return By.xpath("//*[@id='md-radio-pressure_injuries_present1']//label");
 			else if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-pressure_injuries_present2']//label");
+
 			else
 				return By.xpath("");
 		}
@@ -2717,10 +2737,12 @@ public class LocatorUtils {
 		}
 		public static By getRadioOptionByDischargepresent(String section) {
 			radioDischargepresent= section;
+
 			if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-discharge_present2']//label");
 			else if (section.equalsIgnoreCase("No"))
 				return By.xpath("//*[@id='md-radio-discharge_present1']//label");
+
 			else
 				return By.xpath("");
 		}
