@@ -12,8 +12,8 @@ And I Navigate to "Outcome Measures -> TUG" LH panel option
 Then "Time up and Go" page will open
 ##
 When Date of Visit gets inputed 
-And I enter "TimeTUG" input field OT
-And I enter "Aid UsedTUG" input field OT
+And I enter "TimeTUG" input field in script
+And I enter "Aid UsedTUG" input field in script
 And I click on Save My Work Time up and Go Button
 And I Navigate to "Viewer -> Time up and Go" LH panel option
 Then "Time up and Go" page will open
