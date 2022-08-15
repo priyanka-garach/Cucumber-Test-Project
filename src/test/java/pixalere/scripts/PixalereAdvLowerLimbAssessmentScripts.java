@@ -25,6 +25,7 @@ public class PixalereAdvLowerLimbAssessmentScripts extends PixalereCommonUtils {
 	public static String AdvlimbLeft_Diminished=null;
 	public static String AdvlimbLeft_Present=null;
 	public static String AdvlimbLeft_Non_palpable=null;
+	 
 	
 
 	
@@ -150,6 +151,7 @@ public class PixalereAdvLowerLimbAssessmentScripts extends PixalereCommonUtils {
 	public static String month1_ALB;
 	public static String day2_ALB;
 	public static String month2_ALB;
+	public static String Advance_LL111;
 
 		
 	public void selectRadioOptionForAnkle_Vascular_Assessment_Initiated_ABI_Score_AdvLimb(String value) {
@@ -166,7 +168,7 @@ public class PixalereAdvLowerLimbAssessmentScripts extends PixalereCommonUtils {
 		
 	}
 	public void selectRadioOptionFor_Vascular_Assessment_Initiated_ABI_Score_field(String value) {
-		Advance_LL3=value;
+		Advance_LL3="";
 		String xpath1 = null;
 		if (value.equalsIgnoreCase("Yes")) {
 			xpath1 = String.format(AdvLimbLocator.radio_Vascular_Assessment_Initiated_index1 , value);
@@ -179,7 +181,7 @@ public class PixalereAdvLowerLimbAssessmentScripts extends PixalereCommonUtils {
 	}
 	
 	public void selectRadioOptionForAnkle_Brachial_Index_field_AdvLimb(String value) {
-		Advance_LL1 = value;
+		Advance_LL1 = "Done by WCC/designate";
 		String xpath1 = null;
 		if (value.equalsIgnoreCase("Done in Vascular Lab")) {
 			xpath1 = String.format(AdvLimbLocator.radio_ankle_brachial_index2 , value);
@@ -191,6 +193,22 @@ public class PixalereAdvLowerLimbAssessmentScripts extends PixalereCommonUtils {
 		} 
 		
 	}
+	
+	public void selectRadioOptionForVascular_Assessment_Initiated_ABI_Score_field_AdvLimb(String value) {
+		Advance_LL111 = value ;
+		String xpath1 = null;
+		if (value.equalsIgnoreCase("Yes")) {
+			xpath1 = String.format(AdvLimbLocator.referral_vascular_assessment1 , value);
+			clickElement(By.xpath(xpath1));
+		} 
+		else {
+			xpath1 = String.format(AdvLimbLocator.referral_vascular_assessment2 , value);
+			clickElement(By.xpath(xpath1));
+		} 
+		
+	}
+	
+	
 	
 	public void selectRadioOptionForRight_Stemmer_s_Sign_field_field_AdvLimb(String value) {
 		

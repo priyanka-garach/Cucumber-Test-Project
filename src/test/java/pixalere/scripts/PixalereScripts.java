@@ -19,7 +19,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String first_areaofconcern;
 	public static String secondareaof_concern;
 	public static String PixalereTestsAdmin;
-	
+
 	public static String Minute_Ventilation1;
 	public static String PRESSURE_Tracheostomy1;
 	public static String Volume_Tidal_Exhaled1;
@@ -328,7 +328,10 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static List<String> MAHC_ConsultsReferrals = new ArrayList<>();
 	public static List<String> MAHC_prior_history_falls_MAHC = new ArrayList<>();
 	public static List<String> MAHC_footwear__handsout_provided = new ArrayList<>();
+	public static List<String> MAHC_Functional_Mobility_MAHC = new ArrayList<>();
+	public static List<String> MAHC_pain_affecting_level_function_MAHC = new ArrayList<>();
 	public static List<String> Type_Of_Assessment = new ArrayList<>();
+	public static List<String> MAHC_Gait_Aid_Use_MAHC = new ArrayList<>();
 
 	public void chk_instruct_client_field(String value) {
 		clickElement(By.xpath("//input[@id='modified_exercise']//following-sibling::label"));
@@ -670,12 +673,12 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sitting18 = value;
 		}
 	}
+
 	public void selectCheckboxForTypeOfAssessment(String section) {
-		if(section.contains("Initial")) {
+		if (section.contains("Initial")) {
 			clickElementWithJQuery(By.xpath("//label[@id='assess_type1_label' and contains(text(),'Initial')]"));
 			Type_Of_Assessment.add(section);
-		}
-		else if(section.contains("Reassessment")) {
+		} else if (section.contains("Reassessment")) {
 			clickElementWithJQuery(By.xpath("//label[@id='assess_type2_label' and contains(text(),'Reassessment')]"));
 			Type_Of_Assessment.add(section);
 		}
@@ -832,75 +835,77 @@ public class PixalereScripts extends PixalereCommonUtils {
 	}
 
 	public void selectradiofor60(String value, String section) {
+		int ans = Integer.parseInt(value) + 1;
 		if (section.contains("Left foot Derm")) {
 			radioSkinLeftfoot = value;
+
 			String xpath1 = "(//label[contains(@id,'skin_leftfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Right foot Derm")) {
 			radioSkinRightfoot = value;
 			String xpath1 = "(//label[contains(@id,'skin_rightfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Left foot Nails")) {
 			radioLeftfootnails = value;
 			String xpath1 = "(//label[contains(@id,'nails_leftfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Right foot Nails")) {
 			radioRightfootnails = value;
 			String xpath1 = "(//label[contains(@id,'nails_rightfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Left foot Deformity")) {
 			radiodeformity_leftfoot = value;
 			String xpath1 = "(//label[contains(@id,'deformity_leftfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Right foot Deformity")) {
 			radiodeformity_rightfoot = value;
 			String xpath1 = "(//label[contains(@id,'deformity_rightfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Left foot Footwear")) {
 			radiofootwear_leftfoot = value;
 			String xpath1 = "(//label[contains(@id,'footwear_leftfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Right foot Footwear")) {
 			radiofootwear_rightfoot = value;
 			String xpath1 = "(//label[contains(@id,'footwear_rightfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Left foot Temperature")) {
 			radiotempcold_leftfoot = value;
 			String xpath1 = "(//label[contains(@id,'tempcold_leftfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Right foot Temperature")) {
 			radiotempcold_rightfoot = value;
 			String xpath1 = "(//label[contains(@id,'tempcold_rightfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 		if (section.contains("Left foot Range of Motion")) {
 			radiorangeofmotion_leftfoot = value;
 			String xpath1 = "(//label[contains(@id,'rangeofmotion_leftfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 		if (section.contains("Right foot Range of Motion")) {
 			radiorangeofmotion_rightfoot = value;
 			String xpath1 = "(//label[contains(@id,'rangeofmotion_rightfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 		if (section.contains("Left foot Ask 4 questions")) {
 			radiosensation_question_leftfoot = value;
@@ -915,32 +920,32 @@ public class PixalereScripts extends PixalereCommonUtils {
 		if (section.contains("Left foot Pedal Pulses")) {
 			radiopedal_pulse_leftfoot = value;
 			String xpath1 = "(//label[contains(@id,'pedal_pulse_leftfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 		if (section.contains("Right foot Pedal Pulses")) {
 			radiopedal_pulse_rightfoot = value;
 			String xpath1 = "(//label[contains(@id,'pedal_pulse_rightfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 		if (section.contains("Left foot Dependent Rubor")) {
 			radiodependent_rubor_leftfoot = value;
 			String xpath1 = "(//label[contains(@id,'dependent_rubor_leftfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 		if (section.contains("Right foot Dependent Rubor")) {
 			radiodependent_rubor_rightfoot = value;
 			String xpath1 = "(//label[contains(@id,'dependent_rubor_rightfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 		if (section.contains("Left foot Erythema")) {
 			radioerythema_leftfoot = value;
 			String xpath1 = "(//label[contains(@id,'erythema_leftfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 		if (section.contains("Right foot Erythema")) {
 			radioerythema_rightfoot = value;
 			String xpath1 = "(//label[contains(@id,'erythema_rightfoot')])[%s]";
-			clickElement(By.xpath(String.format(xpath1, value)));
+			clickElement(By.xpath(String.format(xpath1, ans)));
 		}
 
 	}
@@ -961,6 +966,31 @@ public class PixalereScripts extends PixalereCommonUtils {
 				string);
 		clickElementWithJQuery(By.xpath(xpath1));
 		MAHC_footwear__handsout_provided.add(string);
+	}
+	
+	public void get_MAHC_10_Fall_Risk_Score() {
+		get_MAHC_10_Fall_Risk_Score_sel();
+	}
+
+	public void chk_Impaired_Functional_Mobility_handOuts(String string1) {
+		String xpath1 = String.format("//label[contains(@id,'mobility_education') and normalize-space(text())='%s']",
+				string1);
+		clickElementWithJQuery(By.xpath(xpath1));
+		MAHC_Functional_Mobility_MAHC.add(string1);
+	}
+
+	public void chk_Pain_affecting_level_of_function_handOuts(String string) {
+		String xpath1 = String.format("//label[contains(@id,'pain_affect_education') and normalize-space(text())='%s']",
+				string);
+		clickElementWithJQuery(By.xpath(xpath1));
+		MAHC_pain_affecting_level_function_MAHC.add(string);
+	}
+
+	public void chk_Gait_Aid_Use_field_handOuts(String string) {
+		String xpath1 = String.format("//label[contains(@id,'gait_education') and normalize-space(text())='%s']",
+				string);
+		clickElementWithJQuery(By.xpath(xpath1));
+		MAHC_Gait_Aid_Use_MAHC.add(string);
 	}
 
 	public void selectchk_Prior_history_of_falls_within_three_months_field_MACH(String string1) {
@@ -1206,8 +1236,9 @@ public class PixalereScripts extends PixalereCommonUtils {
 			MAHC_radio_12 = string;
 		}
 	}
+
 	public void selectRelation(String section) {
-		
+
 		selectByVisibleText(By.xpath("//select[@id='relationship']"), section);
 		val = section;
 	}
@@ -1404,9 +1435,9 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("//input[@name='qtyRepeat'][1]"));
 			sendKeys(By.xpath("//input[@name='qtyRepeat'][1]"), RepeatAST1);
 			break;
-			
+
 		/////////////////
-			
+
 		case PixalereStringPool.HoldAST2:
 			HoldAST2 = "2";
 			System.out.println(PixalereStringPool.HoldAST2 + ": " + HoldAST2);
@@ -1427,9 +1458,9 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("(//input[@name='qtyRepeat'])[2]"));
 			sendKeys(By.xpath("(//input[@name='qtyRepeat'])[2]"), RepeatAST2);
 			break;
-			
+
 		/////////////////
-			
+
 		case PixalereStringPool.HoldAST3:
 			HoldAST3 = "2";
 			System.out.println(PixalereStringPool.HoldAST3 + ": " + HoldAST3);
@@ -1450,9 +1481,9 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("(//input[@name='qtyRepeat'])[3]"));
 			sendKeys(By.xpath("(//input[@name='qtyRepeat'])[3]"), RepeatAST3);
 			break;
-			
+
 		////////////////
-			
+
 		case PixalereStringPool.HoldAST4:
 			HoldAST4 = "2";
 			System.out.println(PixalereStringPool.HoldAST4 + ": " + HoldAST4);
@@ -1473,9 +1504,9 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("(//input[@name='qtyRepeat'])[4]"));
 			sendKeys(By.xpath("(//input[@name='qtyRepeat'])[4]"), RepeatAST4);
 			break;
-			
+
 		//////////////////////
-			
+
 		case PixalereStringPool.HoldAST5:
 			HoldAST5 = "2";
 			System.out.println(PixalereStringPool.HoldAST5 + ": " + HoldAST5);
@@ -1496,37 +1527,33 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("(//input[@name='qtyRepeat'])[5]"));
 			sendKeys(By.xpath("(//input[@name='qtyRepeat'])[5]"), RepeatAST5);
 			break;
-			
+
 		/////////////////////////////
 
-		/* case PixalereStringPool.SideAST3:
-			SideAST3 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.SideAST3 + ": " + SideAST3);
-			clear(By.xpath("(//input[@name='qtySide'])[3]"));
-			sendKeys(By.xpath("(//input[@name='qtySide'])[3]"), SideAST3);
-			break;
+		/*
+		 * case PixalereStringPool.SideAST3: SideAST3 = JavaUtils.getRandomNumber(1);
+		 * System.out.println(PixalereStringPool.SideAST3 + ": " + SideAST3);
+		 * clear(By.xpath("(//input[@name='qtySide'])[3]"));
+		 * sendKeys(By.xpath("(//input[@name='qtySide'])[3]"), SideAST3); break;
+		 * 
+		 * case PixalereStringPool.SideAST4: SideAST4 = "2";
+		 * System.out.println(PixalereStringPool.SideAST4 + ": " + SideAST4);
+		 * clear(By.xpath("(//input[@name='qtySide'])[4]"));
+		 * sendKeys(By.xpath("(//input[@name='qtySide'])[4]"), SideAST4); break;
+		 * 
+		 * case PixalereStringPool.SideAST5: SideAST5 = JavaUtils.getRandomNumber(1);
+		 * System.out.println(PixalereStringPool.SideAST5 + ": " + SideAST5);
+		 * clear(By.xpath("(//input[@name='qtySide'])[5]"));
+		 * sendKeys(By.xpath("(//input[@name='qtySide'])[5]"), SideAST5); break;
+		 */
 
-		case PixalereStringPool.SideAST4:
-			SideAST4 = "2";
-			System.out.println(PixalereStringPool.SideAST4 + ": " + SideAST4);
-			clear(By.xpath("(//input[@name='qtySide'])[4]"));
-			sendKeys(By.xpath("(//input[@name='qtySide'])[4]"), SideAST4);
-			break;
+		/*
+		 * case PixalereStringPool.SideAST6: SideAST6 = JavaUtils.getRandomNumber(1);
+		 * System.out.println(PixalereStringPool.SideAST6 + ": " + SideAST6);
+		 * clear(By.xpath("(//input[@name='qtySide'])[6]"));
+		 * sendKeys(By.xpath("(//input[@name='qtySide'])[6]"), SideAST6); break;
+		 */
 
-		case PixalereStringPool.SideAST5:
-			SideAST5 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.SideAST5 + ": " + SideAST5);
-			clear(By.xpath("(//input[@name='qtySide'])[5]"));
-			sendKeys(By.xpath("(//input[@name='qtySide'])[5]"), SideAST5);
-			break; */
-
-		/*case PixalereStringPool.SideAST6:
-			SideAST6 = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.SideAST6 + ": " + SideAST6);
-			clear(By.xpath("(//input[@name='qtySide'])[6]"));
-			sendKeys(By.xpath("(//input[@name='qtySide'])[6]"), SideAST6);
-			break; */
-			
 		case PixalereStringPool.ExcersizeHandoutDate:
 			ExcersizeHandoutDate1 = "05/05/2022";
 			System.out.println(PixalereStringPool.ExcersizeHandoutDate + ": " + ExcersizeHandoutDate1);
@@ -1726,19 +1753,21 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.Cooling_spray_Physical_Environmental + ": "
 					+ Cooling_spray_Physical_Environmental1);
 			clear(By.xpath("//input[@id='family_20398']"));
-			sendKeys(By.xpath("//input[@id='family_20398']"),Cooling_spray_Physical_Environmental1);
+			sendKeys(By.xpath("//input[@id='family_20398']"), Cooling_spray_Physical_Environmental1);
 			break;
 		case PixalereStringPool.Massage_for_Physical_Environmental:
 			Massage_for_Physical_Environmental = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.Massage_for_Physical_Environmental + ": "	+ Massage_for_Physical_Environmental);
+			System.out.println(
+					PixalereStringPool.Massage_for_Physical_Environmental + ": " + Massage_for_Physical_Environmental);
 			clear(By.xpath("//input[@id='family_20401']"));
-			sendKeys(By.xpath("//input[@id='family_20401']"),Massage_for_Physical_Environmental);
+			sendKeys(By.xpath("//input[@id='family_20401']"), Massage_for_Physical_Environmental);
 			break;
-		case PixalereStringPool.Repositioning_for_Physical_Environmental:	
+		case PixalereStringPool.Repositioning_for_Physical_Environmental:
 			Repositioning_for_Physical_Environmental = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.Repositioning_for_Physical_Environmental + ": "+ Repositioning_for_Physical_Environmental);
+			System.out.println(PixalereStringPool.Repositioning_for_Physical_Environmental + ": "
+					+ Repositioning_for_Physical_Environmental);
 			clear(By.xpath("//input[@id='family_20404']"));
-			sendKeys(By.xpath("//input[@id='family_20404']"),Repositioning_for_Physical_Environmental);
+			sendKeys(By.xpath("//input[@id='family_20404']"), Repositioning_for_Physical_Environmental);
 			break;
 
 		case PixalereStringPool.Distraction_Psychological_Behavioral:
@@ -2587,7 +2616,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 
 		case PixalereStringPool.pt_teaching_agreement_comment:
 			pt_teaching_agreement_comment1 = JavaUtils.getRandomString(25);
-			System.out.println(PixalereStringPool.pt_teaching_agreement_comment + ": " + pt_teaching_agreement_comment1);
+			System.out
+					.println(PixalereStringPool.pt_teaching_agreement_comment + ": " + pt_teaching_agreement_comment1);
 			clear(By.xpath("//*[@id='education_comments']"));
 			sendKeys(By.xpath("//*[@id='education_comments']"), pt_teaching_agreement_comment1);
 			break;
@@ -2599,7 +2629,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("//*[@id='activity_comments']"));
 			sendKeys(By.xpath("//*[@id='activity_comments']"), pt_teaching_agreement_comment0);
 			break;
-			
+
 		case PixalereStringPool.Date_of_Visit_Tinneti:
 			Date_of_Visit_Tinneti1 = "08/06/2022";
 			System.out.println(PixalereStringPool.Date_of_Visit_Tinneti + ": " + Date_of_Visit_Tinneti1);
@@ -2607,14 +2637,14 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("//*[@name='visit_date']"));
 			sendKeys(By.xpath("//*[@name='visit_date']"), Date_of_Visit_Tinneti1);
 			break;
-			
+
 		case PixalereStringPool.Comments_Tinneti:
 			Comments_Tinneti1 = JavaUtils.getRandomString(10);
 			System.out.println(PixalereStringPool.Comments_Tinneti + ": " + Comments_Tinneti1);
 			clear(By.xpath("//*[@name='otherComments']"));
 			sendKeys(By.xpath("//*[@name='otherComments']"), Comments_Tinneti1);
 			break;
-			
+
 		case PixalereStringPool.cam_tool_comment:
 			cam_tool_comment1 = JavaUtils.getRandomString(10);
 			System.out.println(PixalereStringPool.cam_tool_comment + ": " + cam_tool_comment1);
@@ -2631,7 +2661,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 			Suctioning_Year1 = "2019";
 			System.out.println(PixalereStringPool.Suctioning_Year + ": " + Suctioning_Year1);
 			clear(By.xpath("//div[@class='col-lg-3 col-md-5 col-sm-6 col-12']//input[@id='backdated_year']"));
-			sendKeys(By.xpath("//div[@class='col-lg-3 col-md-5 col-sm-6 col-12']//input[@id='backdated_year']"), Suctioning_Year1);
+			sendKeys(By.xpath("//div[@class='col-lg-3 col-md-5 col-sm-6 col-12']//input[@id='backdated_year']"),
+					Suctioning_Year1);
 			break;
 		case PixalereStringPool.invasive_ventilation_Year:
 			invasive_ventilation_Year1 = "2018";
@@ -2665,21 +2696,21 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(TracheostomyLocators.txt_tidal_exhaled);
 			sendKeys(TracheostomyLocators.txt_tidal_exhaled, Volume_Tidal_Exhaled1);
 			break;
-			
+
 		case PixalereStringPool.Equipment_Source:
 			Equipment_Source = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.Equipment_Source + ": " + Equipment_Source);
 			clear(By.xpath("//*[@id='equipment_source']"));
 			sendKeys(By.xpath("//*[@id='equipment_source']"), Equipment_Source);
 			break;
-			
+
 		case PixalereStringPool.Case_Coordinator:
 			Case_Coordinator = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Case_Coordinator + ": " + Case_Coordinator);
 			clear(By.xpath("//*[@id='case_coordinator']"));
 			sendKeys(By.xpath("//*[@id='case_coordinator']"), Case_Coordinator);
 			break;
-			
+
 		case PixalereStringPool.Primary_nurse_contact_info:
 			Primary_nurse_contact_info = "Elim2@vha.ca";
 			System.out.println(PixalereStringPool.Primary_nurse_contact_info + ": " + Primary_nurse_contact_info);
@@ -2687,7 +2718,6 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.xpath("//*[@id='primary_nurse']"), Primary_nurse_contact_info);
 			break;
 
-			
 		}
 	}
 }

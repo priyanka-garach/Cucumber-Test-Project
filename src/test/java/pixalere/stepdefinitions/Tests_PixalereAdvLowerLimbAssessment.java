@@ -23,8 +23,8 @@ public class Tests_PixalereAdvLowerLimbAssessment extends PixalereAdvLowerLimbAs
 	}
 
 	@When("I click {string} radio option for Referral For Vascular Assessment Initiated ABI Score field")
-	public void i_click_radio_option_for_Referral_For_Vascular_Assessment_Initiated_ABI_Score_field(String string) {
-		
+	public void i_click_radio_option_for_Referral_For_Vascular_Assessment_Initiated_ABI_Score_field(String value) {
+		selectRadioOptionForVascular_Assessment_Initiated_ABI_Score_field_AdvLimb(value);
 	}
 
 	@When("I click {string} radio option for Toe Brachial Index field")

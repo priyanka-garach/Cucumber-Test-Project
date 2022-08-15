@@ -431,12 +431,12 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		clickElement(By.xpath(xpath1));
 	}
 
-	@When("I click on Save My Work Non-Verbal Pediatric Pain Button one")
+	@When("I click on Save My Work Non-Verbal Pediatric Pain Button")
 	public void I_click_on_Save_My_Work_Non_Verbal_Pediatric_Pain_Button() {
 		clickElement(By.xpath("(//*[@id='saveEntries'])[1]"));
 	}
 
-	@When("I click on Save My Work Pain Considerations Pain Button two")
+	@When("I click on Save My Work Pain Considerations Pain Button")
 	public void I_click_on_Save_My_Work_PainConsiderations_Pain_Button_two() {
 		clickElement(By.xpath("(//*[@id='saveEntries'])[2]"));
 	}
@@ -482,7 +482,27 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		clickElementWithJQuery(By.xpath("//div[@id='right_2']"));
 		clickElementWithJQuery(By.xpath("//div[@id='right_10']"));
 	}
+	
+	@When("I read left foot score")
+	public void I_read_left_foot_score() {
+		readingscore();
+	}
 
+	@When("I read right foot score")
+	public void I_read_right_foot_score() {
+		readingscore();
+	}
+	
+	@When("I read Left Foot Image Score")
+	public void I_read_Left_Foot_Image_Score() {
+		readingscore();
+	}
+	
+	@When("I read Right Foot Image Score")
+	public void I_read_Right_Foot_Image_Score() {
+		readingscore();
+	}
+	
 	@When("I start verifying records in Sensory Assessment Flowchart Page")
 	public void I_start_verifying_records_in_Sensory_Assessment_Flowchart_Page() {
 		verify_Sensory_assess_flowchart();
@@ -567,28 +587,28 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 
 	@When("I select {string} checkbox for Impaired Functional Mobility field MACH")
 	public void i_select_checkbox_for_Impaired_Functional_Mobility_field_MACH(String string) {
-		String xpath1 = String.format("//label[contains(@id,'mobility_education') and normalize-space(text())='%s']",
-				string);
-		clickElementWithJQuery(By.xpath(xpath1));
+		chk_Impaired_Functional_Mobility_handOuts(string);	
 	}
 
 	@When("I select {string} checkbox for Pain affecting level of function field MACH")
 	public void i_select_checkbox_for_Pain_affecting_level_of_function_field_MACH(String string) {
-		String xpath1 = String.format("//label[contains(@id,'pain_affect_education') and normalize-space(text())='%s']",
-				string);
-		clickElementWithJQuery(By.xpath(xpath1));
+		chk_Pain_affecting_level_of_function_handOuts(string);
 	}
 
 	@When("I select {string} checkbox for Gait Aid Use field MACH")
 	public void i_select_checkbox_for_Gait_Aid_Use_field_MACH(String string) {
-		String xpath1 = String.format("//label[contains(@id,'gait_education') and normalize-space(text())='%s']",
-				string);
-		clickElementWithJQuery(By.xpath(xpath1));
+		chk_Gait_Aid_Use_field_handOuts(string);
+		
 	}
 
 	@When("I select {string} checkbox for FootFootwear Concerns field MACH")
 	public void i_select_checkbox_for_FootFootwear_Concerns_field_MACH(String string) {
 		chk_FootFootwear_Concerns_field_MACH(string);
+	}
+	
+	@When("I get MAHC-10 Fall Risk Score")
+	public void I_get_MAHC_10_Fall_Risk_Score() {
+		get_MAHC_10_Fall_Risk_Score();
 	}
 
 	@When("I click on Save My MAHC Fall Risk Assessment Button")
@@ -839,6 +859,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I click checkbox for {string}")
 	public void i_click_checkbox_for(String string) {
 		clickElementWithJQuery(By.xpath(String.format("//label[contains(text(),'%s')]", string)));
+	
 	}
 	@When("I click on checkbox for Client_Substitute Decision Maker has requested and agrees to communication via text")
 	public void I_click_on_checkbox_for_Client_Substitute_Decision_Maker_has_requested_and_agrees_to_communication_via_text() {

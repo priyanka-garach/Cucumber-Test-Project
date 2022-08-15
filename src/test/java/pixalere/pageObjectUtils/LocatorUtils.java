@@ -525,6 +525,8 @@ public class LocatorUtils {
 		public static By txt_drain_location2 = By.id("drain2_location");
 		public static By txt_drain_location3 = By.id("drain3_location");
 		public static By txt_stool_num = By.id("stool_num");
+		
+		
 
 	}
 
@@ -621,12 +623,15 @@ public class LocatorUtils {
 		public static String chk_left_dorsalis_pedis = "//label[normalize-space(text())='%s' and contains(@id,'left_dorsalis_pedis_doppler')]";
 		public static String radio_ankle_brachial_index1 = "(//label[contains(@id,'ankle_brachial_lab')])[1]";
 		public static String radio_ankle_brachial_index2 = "(//label[contains(@id,'ankle_brachial_lab')])[2]";
+		public static String referral_vascular_assessment1 = "(//label[contains(@id,'referral_vascular_assessment')])[1]";
+		public static String referral_vascular_assessment2 = "(//label[contains(@id,'referral_vascular_assessment')])[2]";
+		
 		public static String radio_toe_brachial_index1 = "(//label[contains(@id,'toe_brachial_lab')])[1]";
 		public static String radio_toe_brachial_index2 = "(//label[contains(@id,'toe_brachial_lab')])[2]";
 		public static String radio_Stemmer_Sign_Right_yes = "(//input[contains(@id,'right_stemmers')]//following-sibling::label)[1]";
 		public static String radio_Stemmer_Sign_Right_no = "(//input[contains(@id,'right_stemmers')]//following-sibling::label)[2]";
-		public static String radio_Stemmer_Sign_Left_yes = "(//input[contains(@id,'right_stemmers')]//following-sibling::label)[1]";
-		public static String radio_Stemmer_Sign_Left_no = "(//input[contains(@id,'right_stemmers')]//following-sibling::label)[2]";
+		public static String radio_Stemmer_Sign_Left_yes = "(//input[contains(@id,'left_stemmers')]//following-sibling::label)[1]";
+		public static String radio_Stemmer_Sign_Left_no = "(//input[contains(@id,'left_stemmers')]//following-sibling::label)[2]";
 		public static String chk_monofilament_testing_right = "//input[contains(@add,'%s') and contains(@id,'right_sensation')]//following-sibling::label";
 		public static String chk_monofilament_testing_left = "//input[contains(@add,'%s') and contains(@id,'left_sensation')]//following-sibling::label";
 		public static String chk_foot_concerns_ri8 = "//label[normalize-space(text())='%s' and contains(@id,'right_foot_deformities')]";
@@ -1656,7 +1661,7 @@ public class LocatorUtils {
 				xpath1 = String.format(UpperLimbLocator.radio_fingers_skincolor_right, value);
 			} else {
 				upperlimb_radio_6 = value;
-				xpath1 = String.format(UpperLimbLocator.radio_fingers_skincolor_right, value);
+				xpath1 = String.format(UpperLimbLocator.radio_fingers_skincolor_left, value);
 			}
 			return By.xpath(xpath1);
 		}
@@ -1876,24 +1881,27 @@ public class LocatorUtils {
 
 		public static By getRadioOptionByLess_than_equaltoThreesecsCapillaryRefillfield(String value) {
 			String xpath1 = null;
-			upperlimb_radio_17 = value;
+			
 			if (value.equalsIgnoreCase("Right")) {
-				
 				xpath1 = String.format(BasicLowerLimbLocator.radio_circulation_capillary_refill_right1, value);
+				upperlimb_radio_17 = "No";
 			} else {
 		
 				xpath1 = String.format(BasicLowerLimbLocator.radio_circulation_capillary_refill_left1, value);
+				upperlimb_radio_17 = "Yes";
 			}
 			return By.xpath(xpath1);
 		}
 
 		public static By getRadioOptionByLess_than_equaltoThreesecsCapillaryRefillfield_Two(String value) {
-			upperlimb_radio_18 = value;
+			
 			String xpath1 = null;
 			if (value.equalsIgnoreCase("Right")) {
 				xpath1 = String.format(BasicLowerLimbLocator.radio_circulation_capillary_refill_right2, value);
+				upperlimb_radio_18 = "No";
 			} else {
 				xpath1 = String.format(BasicLowerLimbLocator.radio_circulation_capillary_refill_left2, value);
+				upperlimb_radio_18 = "Yes";
 			}
 			return By.xpath(xpath1);
 		}

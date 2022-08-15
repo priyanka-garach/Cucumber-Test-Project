@@ -36,8 +36,13 @@ public class PixalereInHomeSafetyIdentificationToolScripts extends PixalereCommo
 			TrippingFallingfieldHSI_Checkbox.add(section);
 		}
 		else if(section.contains("Cords")) {
+			try {
 			clickElementWithJQuery(InHomeSafetyIdentificationTool.chk_Cords);
 			TrippingFallingfieldHSI_Checkbox.add(section);
+			}catch(Exception e) {
+				clickElementWithJQuery(InHomeSafetyIdentificationTool.chk_Cords);
+				TrippingFallingfieldHSI_Checkbox.add(section);
+			}
 		}
 	}
 	public void selectCheckboxForMedication(String section) {

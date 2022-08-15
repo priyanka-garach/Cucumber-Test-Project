@@ -428,6 +428,20 @@ public class PixalereStringPool {
 	public static final String Service_Teaching_Plan_Three = "Service Teaching Plan Three";
 
 	public static final String EMESIS = "Emesis";
+	
+	public static final String PO = "PO";
+	
+	public static final String ENTERAL = "Enteral";
+	
+	public static final String VOID = "Void";
+	
+	public static final String Drain1_Location = "Drain1_Location";
+	
+	public static final String Drain2_Location = "Drain2_Location";
+	
+	public static final String Drain3_Location = "Drain3_Location";
+	
+	public static final String no_of_stool = "no_of_stool";
 
 	public static final String FLUID = "Fluid";
 

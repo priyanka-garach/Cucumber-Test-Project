@@ -19,11 +19,11 @@ And I enter "Worst Possible Pain 8" input field in script
 And I enter "Moderate Pain 5" input field in script
 And I enter "Moderate Pain 4" input field in script
 And I enter "Moderate Pain 3" input field in script
-And I click on Save My Work Non-Verbal Pediatric Pain Button one
+And I click on Save My Work Non-Verbal Pediatric Pain Button
 And I enter "Words used for pain" input field in script
 And I enter "discomfort/pain triggers for your child" input field in script
 And I enter "initial interventions in the past" input field in script
-And I click on Save My Work Pain Considerations Pain Button two
+And I click on Save My Work Pain Considerations Pain Button
 
 And I select "2" from childs current pain score
 And I select "Initial" from Type of Assessment

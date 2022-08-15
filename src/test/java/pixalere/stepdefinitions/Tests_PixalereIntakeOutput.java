@@ -4,9 +4,6 @@ import io.cucumber.java.en.When;
 import pixalere.scripts.PixalereIntakeOutputScripts;
 
 public class Tests_PixalereIntakeOutput extends PixalereIntakeOutputScripts {
-
-
-	
 	
 	@When("I select {string} checkbox IntakeOutput")
 	public void i_select_checkbox(String field) {

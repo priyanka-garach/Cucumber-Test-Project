@@ -5,7 +5,8 @@ Scenario: Pixalere MAHC-10 Fall Risk Assessment Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
-When I select client name "TEST-Kirby , Jose" from Dashboard
+When I globally select "Pix ID" from Search Category dropdown
+And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Patient Profile -> MAHC-10 Fall Risk Assessment" LH panel option
 Then "Missouri Alliance for Home Care (MAHC-10) Fall Risk Assessment Tool" page will open
@@ -15,7 +16,7 @@ And I select "Start Walking" checkbox for Handouts provided field MACH
 #
 And I select "MD" checkbox for ConsultsReferrals made to field MACH
 #
-And I enter "Details Comments Comment MAHC" input field OT
+And I enter "Details Comments Comment MAHC" input field in script
 #
 And I click "Yes" radio option for "Prior history of falls within 3 months" field MAHC
 #
@@ -70,9 +71,15 @@ And I click "Yes" radio option for "Foot/Footwear Concerns" field MAHC
 And I select "Healthy and Happy Feet" checkbox for FootFootwear Concerns field MACH
 And I select "Footwear" checkbox for FootFootwear Concerns field MACH
 #
+And I get MAHC-10 Fall Risk Score
 And I click on Save My MAHC Fall Risk Assessment Button
 #Then MAHC-10 Fall Risk Assessment details should get verified
 And I Navigate to "Viewer -> MAHC-10 Fall Risk Assessment" LH panel option
 Then "Missouri Alliance for Home Care (MAHC-10) Fall Risk Assessment Tool" page will open
 When I start verifying records in MAHC Fall Risk Assessment Page
+And I press on Delete Button
+And I enter "Reason for deleting record" input field Deletion in scripts
+And I confirm to press Delete Button
+And I confirm to press Delete Button
+And I check reason after deletion in viewer
 Then I Logout from Pixalere
