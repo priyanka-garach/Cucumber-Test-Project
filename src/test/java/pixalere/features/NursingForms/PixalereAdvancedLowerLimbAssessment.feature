@@ -5,7 +5,8 @@ Scenario: Pixalere Advanced Lower Limb Assessment Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
-When I select client name "TEST-Kirby , Jose" from Dashboard
+When I globally select "Pix ID" from Search Category dropdown
+And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Assessment -> Advanced Lower Limb Assessment" LH panel option
 Then "Advanced Lower Limb Assessment" page will open
@@ -42,30 +43,27 @@ And I click "Done by WCC/designate" radio option for Ankle Brachial Index field
 #
 And I select "5" for day in Date_AB dropdown
 And I select "Jun" for month in Date_AB dropdown
-And I enter "Year Date ALLA" input field OT
+And I enter "Year Date ALLA" input field in script
 #
-
-
-#
-#And I click "Done by WCCdesignate" radio option for Ankle Brachial Index field
+And I click "Done by WCCdesignate" radio option for Ankle Brachial Index field
 #
 And I select "5" for day in Date dropdown
 And I select "Jun" for month in Date dropdown
-And I enter "Year Date TBI" input field OT
-And I enter "Dorsalis Pedis mmHg Right" input field OT
-And I enter "Dorsalis Pedis mmHg Left" input field OT
-And I enter "Posterior Tibial mmHg Right" input field OT
-And I enter "Posterior Tibial mmHg Left" input field OT
-And I enter "Ankle Brachial Pressure mmHg Right" input field OT
-And I enter "Ankle Brachial Pressure mmHg Left" input field OT
+And I enter "Year Date TBI" input field in script
+And I enter "Dorsalis Pedis mmHg Right" input field in script
+And I enter "Dorsalis Pedis mmHg Left" input field in script
+And I enter "Posterior Tibial mmHg Right" input field in script
+And I enter "Posterior Tibial mmHg Left" input field in script
+And I enter "Ankle Brachial Pressure mmHg Right" input field in script
+And I enter "Ankle Brachial Pressure mmHg Left" input field in script
 #
 And I click "Yes" radio option for Referral For Vascular Assessment Initiated ABI Score field
 #
 And I click "Done by WCC/designate" radio option for Toe Brachial Index field
-And I enter "Toe Pressure mmHg Right" input field OT
-And I enter "Toe Pressure mmHg Left" input field OT
-And I enter "Brachial Pressure mmHg Right" input field OT
-And I enter "Brachial Pressure mmHg Left" input field OT
+And I enter "Toe Pressure mmHg Right" input field in script
+And I enter "Toe Pressure mmHg Left" input field in script
+And I enter "Brachial Pressure mmHg Right" input field in script
+And I enter "Brachial Pressure mmHg Left" input field in script
 #
 And I select "Lateral" checkbox for Right Monofilament Testing field ALB
 And I select "3rd digit" checkbox for Right Monofilament Testing field ALB
@@ -89,8 +87,8 @@ And I select "3rd MTH" checkbox for Left Monofilament Testing field ALB
 And I select "Medial" checkbox for Left Monofilament Testing field ALB
 And I select "Dorsum" checkbox for Left Monofilament Testing field ALB
 ###
-And I enter "Score Right" input field OT
-And I enter "Score Left" input field OT
+And I enter "Score Right" input field in script
+And I enter "Score Left" input field in script
 ####
 
 And I click "Yes" radio option for Right Stemmer's Sign field

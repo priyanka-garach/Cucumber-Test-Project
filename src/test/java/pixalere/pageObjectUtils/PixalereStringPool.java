@@ -111,9 +111,6 @@ public class PixalereStringPool {
 	public static final String invasive_ventilation_Year = "invasive ventilation Year";
 	public static final String Suctioning_Year = "Suctioning Year";
 	public static final String Suctioning_comment = "Suctioning comment";
-
-	
-
 	public static final String Special_Delivery_Instructions = "Special Delivery Instructions";
 	public static final String Alternate_Contact_Name = "Alternate Contact Name";
 	public static final String Backup_Plan = "Backup Plan";
@@ -447,6 +444,20 @@ public class PixalereStringPool {
 	public static final String Service_Teaching_Plan_Three = "Service Teaching Plan Three";
 
 	public static final String EMESIS = "Emesis";
+	
+	public static final String PO = "PO";
+	
+	public static final String ENTERAL = "Enteral";
+	
+	public static final String VOID = "Void";
+	
+	public static final String Drain1_Location = "Drain1_Location";
+	
+	public static final String Drain2_Location = "Drain2_Location";
+	
+	public static final String Drain3_Location = "Drain3_Location";
+	
+	public static final String no_of_stool = "no_of_stool";
 
 	public static final String FLUID = "Fluid";
 

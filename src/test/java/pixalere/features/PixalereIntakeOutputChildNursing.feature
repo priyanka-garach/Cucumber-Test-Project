@@ -6,12 +6,11 @@ Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
 When I globally select "Pix ID" from Search Category dropdown
-And I search created patient with PIXID
+And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Flow Sheets -> Intake/Output" LH panel option
 Then "Intake/Output" page will open
 ##
-
 When I select "Fluid" checkbox IntakeOutput
 And I enter "Fluid" input field IO
 And I select "Solid" checkbox IntakeOutput
