@@ -876,4 +876,13 @@ public class PixalereStringPool {
 	public static final String Respiratory_comments = "Respiratory comments";
 	public static final String Neurological_comments = "Neurological comments";
 	public static final String Cognition_comments = "Cognition comments";
+	public static final String Bed_Mobility_comment = "Bed Mobility comment";
+	public static final String Chair_Repositioning_comment = "Chair Repositioning comment";
+	public static final String Transfers_comment = "Transfers comment";
+	public static final String Weight_Bearing_Status_comment = "Weight Bearing Status comment";
+	public static final String Ambulation_comment = "Ambulation comment";
+	public static final String TUG_Time = "TUG Time";
+	public static final String Aid_used = "Aid used";
+	public static final String second_sit_stand_Test = "30 second sit-stand Test";
+	public static final String Balance_Assessed_comments = "Balance Assessed comments";
 }

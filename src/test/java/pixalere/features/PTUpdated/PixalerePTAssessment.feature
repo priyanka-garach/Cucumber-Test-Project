@@ -104,10 +104,10 @@ And I click on "WFL – independent or managing with current supports" radio opt
 And I enter "Chair Repositioning comment" input field in script
 And I click on "WFL – independent or managing with current supports" radio option for Transfers
 And I enter "Transfers comment" input field in script
-And I click on "WFL – independent or managing with current supports" radio option for Ambulation
-And I enter "Ambulation comment" input field in script
-And I click on "Non-ambulatory" radio option for Weight Bearing Status
+And I click on "WFL –weight bearing is not impacting function" radio option for Weight Bearing Status
 And I enter "Weight Bearing Status comment" input field in script
+And I click on "Non-ambulatory" radio option for Ambulation
+And I enter "Ambulation comment" input field in script
 And I select "TUG (Time Up and Go)" checkbox for Mobility
 And I enter "TUG Time" input field in script
 And I enter "Aid used" input field in script
@@ -129,6 +129,7 @@ And I click on "Balance Assessed" Assessment
 And I click on "WFL - sufficient for function" radio option for Sitting balance
 And I click on "Not Applicable" radio option for Standing balance
 And I select "30 seconds Sit-stand" checkbox for Mobility
+And I select "30 second sit-stand Test" checkbox for Mobility
 And I enter "30 second sit-stand Test" input field in script
 And I enter "Balance Assessed comments" input field in script
 And I click on "Save as Draft and Continue" Button

@@ -56,6 +56,19 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Neurological_comments;
 	public static String Cognition_comments;
 
+	public static String Bed_Mobility_comment;
+	public static String Chair_Repositioning_comment;
+	public static String Transfers_comment;
+	public static String Weight_Bearing_Status_comment;
+	public static String Ambulation_comment;
+	public static String TUG_Time;
+	public static String Aid_used;
+	public static String second_sit_stand_Test;
+	public static String Balance_Assessed_comments;
+	
+
+
+
 
 	public static String CLIENT_SUMMARY_Special_Instructions;
 	public static String pt_modified_exercise;
@@ -3000,7 +3013,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.xpath("//textarea[@id='aggravating_other_p11']"), Aggravating_Factors_List);
 			break;
 		case PixalereStringPool.Date_of_MSK_Assessment:
-			Date_of_MSK_Assessment = "15/05/2021";
+			Date_of_MSK_Assessment = "08/15/2022";
 			System.out.println(PixalereStringPool.Date_of_MSK_Assessment + ": " + Date_of_MSK_Assessment);
 			clear(By.xpath("//input[@id='visit_date']"));
 			sendKeys(By.xpath("//input[@id='visit_date']"), Date_of_MSK_Assessment);
@@ -3030,6 +3043,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.xpath("//textarea[@id='cog_function_additional']"), Cognition_comments);
 			break;
 
+
 		case PixalereStringPool.Year_Calender_Pain_Assessment:
 			Year_Calender_Pain_Assessment = "2022";
 			System.out.println(PixalereStringPool.Year_Calender_Pain_Assessment + ": " + Year_Calender_Pain_Assessment);
@@ -3050,6 +3064,62 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("//*[@id='date_last_bm_year']"));
 			sendKeys(By.xpath("//*[@id='date_last_bm_year']"), Intensity_Pain_Assessment);
 			break;	
+		case PixalereStringPool.Bed_Mobility_comment:
+			Bed_Mobility_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Bed_Mobility_comment + ": " + Bed_Mobility_comment);
+			clear(By.xpath("//textarea[@id='bed_additional_comments']"));
+			sendKeys(By.xpath("//textarea[@id='bed_additional_comments']"), Bed_Mobility_comment);
+			break;
+		case PixalereStringPool.Chair_Repositioning_comment:
+			Chair_Repositioning_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Chair_Repositioning_comment + ": " + Chair_Repositioning_comment);
+			clear(By.xpath("//textarea[@id='chair_additional_comments']"));
+			sendKeys(By.xpath("//textarea[@id='chair_additional_comments']"), Chair_Repositioning_comment);
+			break;
+		case PixalereStringPool.Transfers_comment:
+			Transfers_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Transfers_comment + ": " + Transfers_comment);
+			clear(By.xpath("//textarea[@id='transfer_additional_comments']"));
+			sendKeys(By.xpath("//textarea[@id='transfer_additional_comments']"), Transfers_comment);
+			break;
+		case PixalereStringPool.Weight_Bearing_Status_comment:
+			Weight_Bearing_Status_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Weight_Bearing_Status_comment + ": " + Weight_Bearing_Status_comment);
+			clear(By.xpath("//textarea[@id='weight_bear_additional_comments']"));
+			sendKeys(By.xpath("//textarea[@id='weight_bear_additional_comments']"), Weight_Bearing_Status_comment);
+			break;
+		case PixalereStringPool.Ambulation_comment:
+			Ambulation_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Ambulation_comment + ": " + Ambulation_comment);
+			clear(By.xpath("//textarea[@id='ambulation_additional_comments']"));
+			sendKeys(By.xpath("//textarea[@id='ambulation_additional_comments']"), Ambulation_comment);
+			break;
+		case PixalereStringPool.TUG_Time:
+			TUG_Time = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.TUG_Time + ": " + TUG_Time);
+			clear(By.xpath("//input[@id='tug_score']"));
+			sendKeys(By.xpath("//input[@id='tug_score']"), TUG_Time);
+			break;
+		case PixalereStringPool.Aid_used:
+			Aid_used = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Aid_used + ": " + Aid_used);
+			clear(By.xpath("//textarea[@id='aid_used']"));
+			sendKeys(By.xpath("//textarea[@id='aid_used']"), Aid_used);
+			break;
+		
+		case PixalereStringPool.second_sit_stand_Test:
+			second_sit_stand_Test = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.second_sit_stand_Test + ": " + second_sit_stand_Test);
+			clear(By.xpath("//input[@id='other21376']"));
+			sendKeys(By.xpath("//input[@id='other21376']"), second_sit_stand_Test);
+			break;
+		case PixalereStringPool.Balance_Assessed_comments:
+			Balance_Assessed_comments = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.second_sit_stand_Test + ": " + Balance_Assessed_comments);
+			clear(By.xpath("//textarea[@id='balance_additional_comments2']"));
+			sendKeys(By.xpath("//textarea[@id='balance_additional_comments2']"), Balance_Assessed_comments);
+			break;
+			
 			
 		}
 	}

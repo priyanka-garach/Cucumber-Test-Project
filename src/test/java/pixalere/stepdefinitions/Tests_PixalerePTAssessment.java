@@ -133,38 +133,47 @@ public class Tests_PixalerePTAssessment extends PixalerePTAssessmentScripts {
 
 	@When("I click on {string} radio option for Bed Mobility")
 	public void i_click_on_radio_option_for_Bed_Mobility(String string) {
+		selectRadioOptionForBedMobility(string);
 	}
 
 	@When("I click on {string} radio option for Chair Repositioning")
 	public void i_click_on_radio_option_for_Chair_Repositioning(String string) {
+		selectRadioOptionForChairRipositioning(string);
 	}
 
 	@When("I click on {string} radio option for Transfers")
 	public void i_click_on_radio_option_for_Transfers(String string) {
+		selectRadioOptionForTransfers(string);
 	}
 
 	@When("I click on {string} radio option for Ambulation")
 	public void i_click_on_radio_option_for_Ambulation(String string) {
+		selectRadioOptionForAmbulation(string);
 	}
 
 	@When("I click on {string} radio option for Weight Bearing Status")
 	public void i_click_on_radio_option_for_Weight_Bearing_Status(String string) {
+		selectRadioOptionForWeightBearingStatus(string);
 	}
 
 	@When("I select {string} checkbox for Mobility")
 	public void i_select_checkbox_for_Mobility(String string) {
+		selectMobilityFromCheckbox(string);
 	}
 
 	@When("I click on {string} radio option for Stair use Assessed")
 	public void i_click_on_radio_option_for_Stair_use_Assessed(String string) {
+		selectRadioOptionForStairUseAssessed(string);
 	}
 
 	@When("I click on {string} radio option for Sitting balance")
 	public void i_click_on_radio_option_for_Sitting_balance(String string) {
+		selectRadioOptionForSittingBalance(string);
 	}
 
 	@When("I click on {string} radio option for Standing balance")
 	public void i_click_on_radio_option_for_Standing_balance(String string) {
+		selectRadioOptionForStandingBalance(string);
 	}
 
 	@When("I click on {string} radio option for MSK")

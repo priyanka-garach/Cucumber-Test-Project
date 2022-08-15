@@ -19,6 +19,7 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 	public static List<String> Quality = new ArrayList<>();
 	public static List<String> PainFactors = new ArrayList<>();
 	public static List<String> AssessmentInformation = new ArrayList<>();
+	public static List<String> Mobility = new ArrayList<>();
 	
 	public void clickOnAssessmentTabs(String section) {
 		if(section.contains("Assessment Initiated")) {
@@ -148,6 +149,30 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 	public void selectRadioOptionForClientEmergency(String section) {
 		clickElementWithJQuery(CustomizedLocators.getRadioOptionByClientEmergency(section));
 	}
+	public void selectRadioOptionForBedMobility(String section) {
+		clickElementWithJQuery(CustomizedLocators.getRadioOptionByBedMobility(section));
+	}
+	public void selectRadioOptionForChairRipositioning(String section) {
+		clickElementWithJQuery(CustomizedLocators.getRadioOptionByChairRipositioning(section));
+	}
+	public void selectRadioOptionForTransfers(String section) {
+		clickElementWithJQuery(CustomizedLocators.getRadioOptionByTransfers(section));
+	}
+	public void selectRadioOptionForAmbulation(String section) {
+		clickElementWithJQuery(CustomizedLocators.getRadioOptionByAmbulation(section));
+	}
+	public void selectRadioOptionForWeightBearingStatus(String section) {
+		clickElementWithJQuery(CustomizedLocators.getRadioOptionByWeightBearingStatus(section));
+	}
+	public void selectRadioOptionForStairUseAssessed(String section) {
+		clickElementWithJQuery(CustomizedLocators.getRadioOptionByStairUseAssessed(section));
+	}
+	public void selectRadioOptionForSittingBalance(String section) {
+		clickElementWithJQuery(CustomizedLocators.getRadioOptionBySittingBalance(section));
+	}
+	public void selectRadioOptionForStandingBalance(String section) {
+		clickElementWithJQuery(CustomizedLocators.getRadioOptionByStandingBalance(section));
+	}
 	
 	public void selectAssessmentInitiatedCheckbox(String section) {
 		if(section.contains("Investigations/follow-up clinically relevant")) {
@@ -216,11 +241,11 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 	}
 	public void selectEdemaCheckbox(String section) {
 			if(section.contains("Moderate")) {
-				clickElementWithJQuery(PTAssessment.chk_Scoliosis);
+				clickElementWithJQuery(PTAssessment.chk_Moderate);
 				Edema.add(section);
 			}
 			else if(section.contains("Pitting")) {
-				clickElementWithJQuery(PTAssessment.chk_Scoliosis);
+				clickElementWithJQuery(PTAssessment.chk_Pitting);
 				Edema.add(section);
 			}
 	}
@@ -260,27 +285,27 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 	}
 	public void selectQualityCheckbox(String section) {
 		if(section.contains("Aching")) {
-			clickElementWithJQuery(PTAssessment.chk_Immobility);
+			clickElementWithJQuery(PTAssessment.chk_Aching);
 			Quality.add(section);
 		}
 		else if(section.contains("Sharp")) {
-			clickElementWithJQuery(PTAssessment.chk_Immobility);
+			clickElementWithJQuery(PTAssessment.chk_Sharp);
 			Quality.add(section);
 		}
 		else if(section.contains("Burning")) {
-			clickElementWithJQuery(PTAssessment.chk_Immobility);
+			clickElementWithJQuery(PTAssessment.chk_Burning);
 			Quality.add(section);
 		}
 		else if(section.contains("Pressure")) {
-			clickElementWithJQuery(PTAssessment.chk_Immobility);
+			clickElementWithJQuery(PTAssessment.chk_Pressure);
 			Quality.add(section);
 		}
 		else if(section.contains("Radiating")) {
-			clickElementWithJQuery(PTAssessment.chk_Immobility);
+			clickElementWithJQuery(PTAssessment.chk_Radiating);
 			Quality.add(section);
 		}
 		else if(section.contains("Shooting")) {
-			clickElementWithJQuery(PTAssessment.chk_Immobility);
+			clickElementWithJQuery(PTAssessment.chk_Shooting);
 			Quality.add(section);
 		}
 	}
@@ -342,6 +367,68 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 		else if(section.contains("HEP provided")) {
 			clickElementWithJQuery(PTAssessment.chk_HEP_provided);
 			AssessmentInformation.add(section);
+		}
+	}
+	public void selectMobilityFromCheckbox(String section) {
+		if(section.contains("TUG (Time Up and Go)")) {
+			clickElementWithJQuery(PTAssessment.chk_TUG);
+			Mobility.add(section);
+		}
+		else if(section.contains("U_Rollator")) {
+			clickElementWithJQuery(PTAssessment.chk_U_Rollator);
+			Mobility.add(section);
+		}
+		else if(section.contains("R_Single point cane")) {
+			clickElementWithJQuery(PTAssessment.chk_R_Single_point_cane);
+			Mobility.add(section);
+		}
+		else if(section.contains("D_Quad cane")) {
+			clickElementWithJQuery(PTAssessment.chk_D_Quad_cane);
+			Mobility.add(section);
+		}
+		else if(section.contains("U_Bed Rails")) {
+			clickElementWithJQuery(PTAssessment.chk_U_Bed_Rails);
+			Mobility.add(section);
+		}
+		else if(section.contains("R_Transfer Board")) {
+			clickElementWithJQuery(PTAssessment.chk_R_Transfer_Board);
+			Mobility.add(section);
+		}
+		else if(section.contains("D_Furniture Risers")) {
+			clickElementWithJQuery(PTAssessment.chk_D_Furniture_Risers);
+			Mobility.add(section);
+		}
+		else if(section.contains("D_Toilet safety arms")) {
+			clickElementWithJQuery(PTAssessment.chk_D_Toilet_safety_arms);
+			Mobility.add(section);
+		}
+		else if(section.contains("U_Grab bars")) {
+			clickElementWithJQuery(PTAssessment.chk_U_Grab_bars);
+			Mobility.add(section);
+		}
+		else if(section.contains("R_Tub rail")) {
+			clickElementWithJQuery(PTAssessment.chk_R_Tub_rail);
+			Mobility.add(section);
+		}
+		else if(section.contains("D_Stairglide")) {
+			clickElementWithJQuery(PTAssessment.chk_D_Stairglide);
+			Mobility.add(section);
+		}
+		else if(section.contains("R_Supervision on stairs")) {
+			clickElementWithJQuery(PTAssessment.chk_R_Supervision_on_stairs);
+			Mobility.add(section);
+		}
+		else if(section.contains("U_Assistance on stairs x1")) {
+			clickElementWithJQuery(PTAssessment.chk_U_Assistance_on_stairs_x1);
+			Mobility.add(section);
+		}
+		else if(section.contains("30 seconds Sit-stand")) {
+			clickElementWithJQuery(PTAssessment.chk_30_seconds_Sit_stand);
+			Mobility.add(section);
+		}
+		else if(section.contains("30 second sit-stand Test")) {
+			clickElementWithJQuery(PTAssessment.chk_30_second_sit_stand_Test);
+			Mobility.add(section);
 		}
 	}
 }
