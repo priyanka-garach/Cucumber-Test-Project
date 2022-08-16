@@ -19,6 +19,7 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 	public static String PIXID_PT_Teaching;
 	public static String PixID_Nursing;
 	public static String PIXID_PT;
+	public static String PIXID_OT;
 	public static String Data_PT = ConfigFileReader.getProperties("user.Data_PT");
 	public static boolean isNewUser = false;
 	public static String focusChar;
@@ -254,6 +255,20 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 		}
 		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, PIXID_PT)));
 
+	}
+	public void searchPatient_ot() {
+		PIXID_OT = PIXID_OT.replaceAll("\\s", "");
+		sendKeys(GlobalPageLocators.txt_SearchPatientInput, PIXID_OT);
+		
+		clickElement(GlobalPageLocators.btn_SearchBuutton);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, PIXID_OT)));
+		
 	}
 
 	public void searchPatient_p() {

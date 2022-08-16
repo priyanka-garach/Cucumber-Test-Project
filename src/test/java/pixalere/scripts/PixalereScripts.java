@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 
+import cucumber.api.Format;
 import pixalere.pageObjectJavaUtils.JavaUtils;
 import pixalere.pageObjectUtils.LocatorUtils.GlobalPageLocators;
 import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
@@ -15,6 +16,8 @@ import pixalere.pageObjectUtils.PixalereStringPool;
 
 public class PixalereScripts extends PixalereCommonUtils {
 
+	public static List<String> SeatingAndMobility_Radio = new ArrayList<>();
+	
 	public static String Special_Delivery_Instructions;
 	public static String first_areaofconcern;
 	public static String secondareaof_concern;
@@ -65,6 +68,13 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Aid_used;
 	public static String second_sit_stand_Test;
 	public static String Balance_Assessed_comments;
+	public static String Analysis_Comments;
+	public static String Previous_Funding_Comments;
+	public static String client_Weight;
+	public static String Hip_width;
+	public static String Popliteal_fossa_heal;
+	public static String Rationale;
+	public static String Handle_height;
 	
 
 
@@ -1339,8 +1349,48 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clickElement(By.xpath("//label[contains(@id,'increase_alcohol_yn1_label')]"));
 	}
 
-	public void selectRadioButtonverifySM(String s) {
-		System.out.println(s + "data verified");
+	public void selectRadioButton_SeatingAndMobility(String s) {
+		if(s.contains("Assessment results shared with client")) {
+			clickElementWithJQuery(By.xpath("//*[@id='md-radio-results_shared1']//label"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		else if(s.contains("Mobility device goal")) {
+			clickElementWithJQuery(By.xpath("//*[@id='md-radio-goal_established1']//label"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		else if(s.contains("Student participation in service")) {
+			clickElementWithJQuery(By.xpath("//*[@id='md-radio-student_participation2']//label"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		else if(s.contains("Assistive Devices Program")) {
+			clickElementWithJQuery(By.xpath("//div[@id='md-radio-discussed_assistive_devices_program1']//label"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		else if(s.contains("Screen for ADP")) {
+			clickElementWithJQuery(By.xpath("//div[@id='md-radio-eligibility_screen_completed1']//label"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		else if(s.contains("Client appears to meet ADP eligibility")) {
+			clickElementWithJQuery(By.xpath("//div[@id='md-radio-client_adp_eligible1']//label"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		else if(s.contains("Confirmed the status")) {
+			clickElementWithJQuery(By.xpath("//div[@id='md-radio-prior_funding1']//label"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		else if(s.contains("None")) {
+			clickElementWithJQuery(By.xpath("//div[@id='md-radio-prior_funding_which_1']//label"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		else if(s.contains("Skin Integrity")) {
+			clickElementWithJQuery(By.xpath("//div[@id='md-radio-skin_integrity_assessed-1']//label"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		else if(s.contains("Walker type")) {
+			clickElementWithJQuery(By.xpath("//div[@class='md-radio']//label[@for='walker_type1']"));
+			SeatingAndMobility_Radio.add(s);
+		}
+		
 	}
 
 	public void enterInputFieldAsPerKeyfromScripts(String inputField) {
@@ -3055,6 +3105,48 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.second_sit_stand_Test + ": " + Balance_Assessed_comments);
 			clear(By.xpath("//textarea[@id='balance_additional_comments2']"));
 			sendKeys(By.xpath("//textarea[@id='balance_additional_comments2']"), Balance_Assessed_comments);
+			break;
+		case PixalereStringPool.Analysis_Comments:
+			Analysis_Comments = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Analysis_Comments + ": " + Analysis_Comments);
+			clear(By.xpath("//textarea[@id='analysis_comment']"));
+			sendKeys(By.xpath("//textarea[@id='analysis_comment']"), Analysis_Comments);
+			break;
+		case PixalereStringPool.Previous_Funding_Comments:
+			Previous_Funding_Comments = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Previous_Funding_Comments + ": " + Previous_Funding_Comments);
+			clear(By.xpath("//textarea[@id='prior_funding_section_comments']"));
+			sendKeys(By.xpath("//textarea[@id='prior_funding_section_comments']"), Previous_Funding_Comments);
+			break;
+		case PixalereStringPool.client_Weight:
+			client_Weight = JavaUtils.getRandomNumber(2);
+			System.out.println(PixalereStringPool.client_Weight + ": " + client_Weight);
+			clear(By.xpath("//input[@name='weight']"));
+			sendKeys(By.xpath("//input[@name='weight']"), client_Weight);
+			break;
+		case PixalereStringPool.Hip_width:
+			Hip_width = JavaUtils.getRandomNumber(3);
+			System.out.println(PixalereStringPool.Hip_width + ": " + Hip_width);
+			clear(By.xpath("//input[@name='hip']"));
+			sendKeys(By.xpath("//input[@name='hip']"), Hip_width);
+			break;
+		case PixalereStringPool.Popliteal_fossa_heal:
+			Popliteal_fossa_heal = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Popliteal_fossa_heal + ": " + Popliteal_fossa_heal);
+			clear(By.xpath("//input[@name='popliteal']"));
+			sendKeys(By.xpath("//input[@name='popliteal']"), Popliteal_fossa_heal);
+			break;
+		case PixalereStringPool.Rationale:
+			Rationale = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Rationale + ": " + Rationale);
+			clear(By.xpath("//textarea[@id='walker_rationale_for_type']"));
+			sendKeys(By.xpath("//textarea[@id='walker_rationale_for_type']"), Rationale);
+			break;
+		case PixalereStringPool.Handle_height:
+			Handle_height = JavaUtils.getRandomNumber(2);
+			System.out.println(PixalereStringPool.Handle_height + ": " + Handle_height);
+			clear(By.xpath("//input[@id='walker_handle_height']"));
+			sendKeys(By.xpath("//input[@id='walker_handle_height']"), Handle_height);
 			break;
 			
 			
