@@ -895,4 +895,14 @@ public class PixalereStringPool {
 	public static final String Aid_used = "Aid used";
 	public static final String second_sit_stand_Test = "30 second sit-stand Test";
 	public static final String Balance_Assessed_comments = "Balance Assessed comments";
+
+	
+	
+	public static final String Analysis_Comments = "Analysis Comments";
+	public static final String Previous_Funding_Comments = "Previous Funding Comments";
+	public static final String client_Weight = "client Weight";
+	public static final String Hip_width = "Hip width";
+	public static final String Popliteal_fossa_heal = "Popliteal fossa-heal";
+	public static final String Rationale = "Rationale";
+	public static final String Handle_height = "Handle height";
 }

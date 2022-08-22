@@ -733,7 +733,7 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 		// String xpath1 =
 		// String.format(GlobalPageLocators.select_from_ServiceReferreal, value);
 		// clickElementWithJQuery(By.xpath(xpath1));
-		select_ByIndex(By.id("encounter"), 3);
+		select_ByIndex(By.id("encounter"), 2);
 		// selectByVisibleText(By.xpath(String.format(GlobalPageLocators.select_from_ServiceReferreal,
 		// value)), value);
 		System.out.println();

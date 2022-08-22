@@ -1,6 +1,9 @@
 package pixalere.stepdefinitions;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -12,11 +15,12 @@ import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
 import pixalere.scripts.PixalereScripts;
 
 public class Tests_PixalereStefDef extends PixalereScripts {
+	public static List<String> SeatingAndMobility_Checkbox = new ArrayList<>();
 	
 	@When("I click {string} radio option for {string} field CAM")
 	public void i_click_radio_option_for_field_CAM(String string, String string2) {
 		selectRdioforfieldCAM(string, string2);
-	}
+	}	
 
 	@When("I click {string} radio option for {string} field Pain Assessment")
 	public void I_click_radio_option_for_field_OT(String string, String string2) {
@@ -904,13 +908,14 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		clickElement(By.xpath(String.format("//label[normalize-space(text())='%s']", string)));
 	}
 
-	@When("I verify radio button for {string}")
-	public void i_verify_radio_button_for(String string) {
-		selectRadioButtonverifySM(string);
+	@When("I click on {string} Radio Button")
+	public void I_click_on_SeatingAndMobility_Radio_Button(String string) {
+		selectRadioButton_SeatingAndMobility(string);
 	}
 
 	@When("I save my work for above SM")
 	public void i_save_my_work_for_above_SM() {
+		clickElementWithJQuery(By.xpath("//button[contains(text(),'Add My Electronic Signature and Save My Work')]"));
 		System.out.println("Work Saved");
 	}
 
@@ -927,7 +932,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I click checkbox for {string}")
 	public void i_click_checkbox_for(String string) {
 		clickElementWithJQuery(By.xpath(String.format("//label[contains(text(),'%s')]", string)));
-	
+		SeatingAndMobility_Checkbox.add(string);	
 	}
 	@When("I click on checkbox for Client_Substitute Decision Maker has requested and agrees to communication via text")
 	public void I_click_on_checkbox_for_Client_Substitute_Decision_Maker_has_requested_and_agrees_to_communication_via_text() {
