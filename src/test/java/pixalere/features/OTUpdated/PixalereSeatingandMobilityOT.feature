@@ -1,26 +1,31 @@
-Feature: Pixalere Fall Risk Assessment
+Feature: Pixalere Seating and MobilityOT
 
 @test11
-Scenario: Pixalere Fall Risk Assessment Script
+Scenario: Pixalere Seating and MobilityOT Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
-When I select client name "TEST-Acosta , Sandra" from Dashboard
+When I globally select "Pix ID" from Search Category dropdown
+And I search created patient with PIXID OT
 And I select "OT" from Service Referral 
 And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate-NAMD to "Non-Authorizer Mobility Device Recommendation" LH panel option Non-Authorizer Mobility Device Recommendation
 Then "Non-Authorizer Mobility Device Recommendation" page will open
+
 ##
 When I click on "Analysis: Device Recommended" checkbox Button SM 
-And I verify radio button for "Assistive Devices"
-And I verify radio button for "Assessment results shared with client"
-And I verify radio button for "Mobility device goal"
-And I verify radio button for "Student participation in service."
+And I click checkbox for "Walker"
+And I click checkbox for "Manual wheelchair"
+And I click checkbox for "Seating only"
+And I click on "Assessment results shared with client" Radio Button
+And I click on "Mobility device goal" Radio Button
+And I click on "Student participation in service" Radio Button
+And I enter "Analysis Comments" input field in script
 And I save my work for above SM
 And I click on "ADP Eligibility Screened" checkbox Button SM
-And I verify radio button for "Assistive Devices"
-And I verify radio button for "Screen for ADP"
-And I click on radio button for "Client appears to meet ADP eligibility"
+And I click on "Assistive Devices Program" Radio Button
+And I click on "Screen for ADP" Radio Button
+And I click on "Client appears to meet ADP eligibility" Radio Button
 And I click checkbox for "Device(s) needed for ongoing"
 And I click checkbox for "Client unable to access the front door without the recommended device."
 And I click checkbox for "The recommended device is the most basic device to meet the"
@@ -29,14 +34,39 @@ And I click checkbox for "Client is a permanent resident of Ontario."
 And I click checkbox for "Client is expected to use the recommended device for 6 months or greater."
 And I save my work for above SM
 And I click on "Previous Funding by ADP Confirmed" checkbox Button SM
-And I verify radio button for "Confirmed the status of any prior funding access to ADP"
+And I click on "Confirmed the status" Radio Button
+And I click on "None" Radio Button
+And I click checkbox for "Client circumstances supports"
+And I click checkbox for "Change of status"
+And I click checkbox for "Special circumstances"
+And I enter "Previous Funding Comments" input field in script
 And I save my work for above SM
 And I click on "Mobility Device Specifications Recommended" checkbox Button SM
 And I click checkbox for "situation requires device to be put in place by non-authorizer prior to"
+And I click on "Skin Integrity" Radio Button
+And I click checkbox for "Pressure surface"
+And I click checkbox for "Kyphosis"
+And I click checkbox for "Lordosis"
+And I click checkbox for "Anterior tilt"
+And I click checkbox for "Obliquity"
+And I click checkbox for "Abduction"
+And I click checkbox for "External rotation"
+And I click checkbox for "↑ Tone"
+And I click checkbox for "Windswept knees"
+And I enter "client Weight" input field in script
+And I enter "Hip width" input field in script
+And I enter "Popliteal fossa-heal" input field in script
+And I click on "Walker type" Radio Button
+And I enter "Rationale" input field in script
+And I enter "Handle height" input field in script
+And I click checkbox for "4 point"
+And I click checkbox for "Bariatric"
+And I click checkbox for "Forearm support(s)"
+
 And I save my work for above SM
 And I click on "Equipment Trial Arranged" checkbox Button SM
-And I verify radio button for "Vendor list provided, options discussed and client/SDM freely selected their preferred vendor."
-And I verify radio button for "Role/activities for vendor in relation to OT services"
+And I click on "Vendor list provided, options discussed and client/SDM freely selected their preferred vendor" Radio Button
+And I click on "Role/activities for vendor in relation to OT services" Radio Button
 And I save my work for above SM
 And I click on "Authorizer Involved in Service" checkbox Button SM
 And I enter "Name of authorizer" input field in script
