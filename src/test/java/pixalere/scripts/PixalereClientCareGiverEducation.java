@@ -1,17 +1,42 @@
 package pixalere.scripts;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 
 import pixalere.pageObjectJavaUtils.JavaUtils;
+import pixalere.pageObjectUtils.LocatorUtils.CarePlanLocators;
 import pixalere.pageObjectUtils.PixalereCommonUtils;
 import pixalere.pageObjectUtils.PixalereStringPool;
-import pixalere.pageObjectUtils.LocatorUtils.CarePlanLocators;
-import pixalere.pageObjectUtils.LocatorUtils.IntakeOutputLocators;
 
 public class PixalereClientCareGiverEducation extends PixalereCommonUtils {
 
 	public static String CarePlan_problem_num;
 	
+	public static List<String> CareGiverInitiatedList  = new ArrayList<>();
+	public static List<String> CareGiverCompleteList = new ArrayList<>();
 	
+	
+	public void initiated_button_click2(String pattern) {
+
+		String s1 = "((//*[@id='form']//div//div[contains(text(),'%s')]//following-sibling::div//div//button)[1])[contains(@onclick,'initiated')]";
+		String xpath1 = String.format(s1, pattern);
+		waitInterval(3);
+		clickElement(By.xpath(xpath1));
+		waitInterval(3);
+		CareGiverInitiatedList.add(pattern);
+
+	}
+	
+	public void completed_button_click2(String pattern) {
+
+		String s1 = "((//*[@id='form']//div//div[contains(text(),'%s')]//following-sibling::div//div//button)[2])[contains(@onclick,'completed')]";
+		String xpath1 = String.format(s1, pattern);
+		waitInterval(3);
+		clickElement(By.xpath(xpath1));
+		waitInterval(3);
+		CareGiverCompleteList.add(pattern);
+	}
 	
 	public void enterInputFieldAsPerKey(String inputField) {
 		switch (inputField)

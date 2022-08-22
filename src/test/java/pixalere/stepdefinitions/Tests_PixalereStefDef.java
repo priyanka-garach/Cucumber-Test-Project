@@ -58,6 +58,17 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		enterInputFieldAsPerKeyfromScripts(string);
 		System.out.println();
 	}
+	
+	@When("I select {string} from dropdown of Document Type")
+	public void I_select_from_dropdown_of_Document_Type(String value) {
+		drp_of_Document_Type(value);
+	}
+	
+	@When("I verify Document Upload Details")
+	public void I_verify_Document_Upload_Details() {
+		verify_Document_Upload_Details();
+		clickElementWithJQuery(By.xpath("(//td[contains(text(),'Document Name')]//following::tr//td)[5]//a//img"));
+	}
 
 	@When("Date of Visit gets inputed")
 	public void Date_of_Visit_gets_verified() {
@@ -401,6 +412,12 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_start_verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page() {
 		verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page();
 	}
+	
+	@When("I start verifying records in In-Home Safety Identification Tool Flowchart Record Page Nursing")
+	public void i_start_verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page_Nursing() {
+		verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page_Nursing();
+	}
+	
 	@When("I click {string} radio option for Cough Assist field")
 	public void I_click_radio_option_for_Cough_Assist_field(String string) {
 		clickElement(By.xpath("(//input[contains(@id,'cough_assist')]//following-sibling::label)[1]"));
@@ -796,6 +813,22 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_verified_Neurological_Assessment() {
 		var_Neurological_Assessment_data();
 	}
+	
+	@When("I verify checkboxe data for Effects of Pain on Activities of Daily Living")
+	public void i_verified_Effects_of_Pain_on_Activities_of_Daily_Living() {
+		var_Pain_on_Activities_of_Daily_Living_data();
+	}
+	
+	@When("I verify click on blueman image left")
+	public void I_click_on_blueman_image_left() {
+		verify_image_left();
+		
+	}
+	
+	@When("I verify click on blueman image right")
+	public void I_click_on_blueman_image_right() {
+		verify_image_right();
+	}
 
 	@When("I verified Endocrine Assessment")
 	public void i_verified_Endocrine_Assessment() {
@@ -1030,16 +1063,46 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		verify_RecordAfterDeletion();
 	}
 	
+	@When("I check reason after deletion in viewer for respiratory")
+	public void I_check_reason_after_deletion_in_viewer_for_respiratory() {
+		Wait_p(3);
+		verify_RecordAfterDeletion_respiratory();
+	}
+	
 	@When("I confirm to press Delete Button")
 	public void i_click_MedRAT_Page_del_button()
 	{
 		Wait_p(3);
-		clickElement(By.xpath("//button[contains(text(),'Delete this charting')]"));
+		clickElementWithJQuery(By.xpath("//button[contains(text(),'Delete this charting')]"));
 	}
 	
 	@When("I press on Delete Button")
 	public void i_press_delete_in_MedRAT_Page() {
 		clickElementWithJQuery(By.xpath("((//td[normalize-space()='Data Correction']/following::tbody//tr[1]//td)[last()])//button"));
+	}
+	
+	@When("I press on Delete Button for respiratory suctioning")
+	public void i_press_delete_in_delete_suctioning_Page() {
+		Wait_p(2);
+		clickElementWithJQuery(By.xpath("(//td[contains(text(),'Data Correction')])[1]//following::td[3]//button"));
+	}
+	
+	@When("I press on Delete Button for respiratory Non-invasive ventilation")
+	public void i_press_delete_in_delete_Non_invasive_ventilation_Page() {
+		Wait_p(2);
+		clickElement(By.xpath("(//td[contains(text(),'Data Correction')])[2]//following::td[6]//button"));
+	}
+	
+	@When("I press on Delete Button for respiratory Cough Assist")
+	public void i_press_delete_in_delete_Cough_Assist_Page() {
+		Wait_p(2);
+		clickElementWithJQuery(By.xpath("(//td[contains(text(),'Data Correction')])[3]//following::td[6]//button"));
+	}
+	
+	
+	@When("I press on Delete Button for Document Upload")
+	public void i_press_delete_for_Document_Upload() {
+		clickElementWithJQuery(By.xpath("(//td[contains(text(),'Document Name')]//following::tr//td)[6]//a[@value='Delete']"));
 	}
 
 	

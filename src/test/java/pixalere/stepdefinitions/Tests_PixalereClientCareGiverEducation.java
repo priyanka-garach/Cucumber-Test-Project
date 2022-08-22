@@ -10,38 +10,36 @@ import pixalere.scripts.PixalereClientCareGiverEducation;
 
 public class Tests_PixalereClientCareGiverEducation extends PixalereClientCareGiverEducation {
 
-	public static List<String> CareGiverInitiatedList = new ArrayList<>();
-	public static List<String> CareGiverCompleteList = new ArrayList<>();
-
-	@When("I click on {string} for Review of Client Bill of RightsResponsibilities")
-	public void i_click_on_for_Review_of_Client_Bill_of_Rights_Responsibilities(String string) {
-		if(string.equalsIgnoreCase("Initiated"))
-		{
-			clickElementWithJQuery(By.xpath("(//div[normalize-space(text()) = 'Review of Client Bill of Rights/Responsibilities']//following-sibling::div)//button[contains(@id,'initiated_btn')]"));
-			CareGiverInitiatedList.add("Review of Client Bill of RightsResponsibilities");
-		}
-		if(string.equalsIgnoreCase("Completed")) {
-			clickElementWithJQuery(By.xpath("(//div[normalize-space(text()) = 'Review of Client Bill of Rights/Responsibilities']//following-sibling::div)//button[contains(@id,'completed_btn')]"));
-			CareGiverCompleteList.add("Review of Client Bill of RightsResponsibilities");
-		}
-		System.out.println();
-	}
-
 	@When("I click on {string} for {string}")
 	public void i_click_on_for_Wounds(String string, String section) {
 		if(string.equalsIgnoreCase("Initiated"))
 		{
-			String s = "(//div[normalize-space(text()) = '%s']//following-sibling::div)//button[contains(@id,'initiated_btn')]";
-			clickElementWithJQuery(By.xpath(String.format(s,section)));
-			CareGiverInitiatedList.add(section);
-		}
-		if(string.equalsIgnoreCase("Completed")) {
-			String s = "(//div[normalize-space(text()) = '%s']//following-sibling::div)//button[contains(@id,'completed_btn')]";
-			clickElementWithJQuery(By.xpath(String.format(s,section)));
-			CareGiverCompleteList.add(section);
+			call_client_caregiver_education_checklist(section);
+			initiated_button_click2(section);
 			
 		}
+		if(string.equalsIgnoreCase("Completed")) {
+			call_client_caregiver_education_checklist_for_completed_button(section);
+			completed_button_click2(section);
+		}
 		System.out.println();
+	}
+	
+	@When("I click on Add Other Teaching Button")
+	public void I_click_on_Add_Other_Teaching_Button() {
+		clickElementWithJQuery(By.id("addOther"));
+	}
+	
+	@When("I click on Save Other Teaching Button")
+	public void I_click_on_Save_Other_Teaching_Button() {
+		clickElementWithJQuery(By.xpath("//button[normalize-space(text())='Save Other Teaching']"));
+	}
+	
+	@When("I click on other intiated and completed button")
+	public void I_click_on_other_intiated_and_completed_button() {
+		clickElementWithJQuery(By.id("initiated_btn_other1"));
+		Wait_p(1);
+		clickElementWithJQuery(By.id("completed_btn_other1"));
 	}
 
 	@When("I click on Save My Work for Client Care Giver")
@@ -51,8 +49,6 @@ public class Tests_PixalereClientCareGiverEducation extends PixalereClientCareGi
 
 	@When("I start verifying records for ClientCaregiver Education Checklist")
 	public void i_start_verifying_records_for_ClientCaregiver_Education_Checklist() {
-		/*void verifycareGiver(){
-			System.out.println();
-		}*/
+		verify_ClientCaregiver_Education_Checklist();
 	}
 }

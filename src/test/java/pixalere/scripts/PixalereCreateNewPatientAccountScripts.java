@@ -110,6 +110,7 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 
 	public static String CareGiverMed1;
 	public static String CareGiverMed2;
+	public static String HomeCommentsNursing1;
 
 	public static String Adv_Lower_Limb_var1;
 	public static String Adv_Lower_Limb_var2;
@@ -123,8 +124,7 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 
 	public static String Type_Of_Ventilator1;
 	public static String LEAK_HOME1;
-	
-	
+
 	public static String vital_signs_drop_down;
 
 	private List<String> bradenScoreList = new ArrayList<String>();
@@ -232,7 +232,6 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 			sendKeys(TracheostomyLocators.txt_leak, LEAK_HOME1);
 			break;
 
-		
 		// PCAPAin Pump
 
 		case PixalereStringPool.SOLUTION_NAME_PCAPAINPUMP:
@@ -518,7 +517,7 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 			clear(UpperLimbLocator.txt_forearm_cm_right1);
 			sendKeys(UpperLimbLocator.txt_forearm_cm_right1, ForeARM_MIDCALF_MEASURE_CM_upper);
 			break;
-			
+
 		case PixalereStringPool.Wrist_Measurement_cm_Left:
 			Wrist_Measurement_cm_Left1 = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.Wrist_Measurement_cm_Left + ": " + Wrist_Measurement_cm_Left1);
@@ -527,7 +526,7 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 			clear(UpperLimbLocator.txt_wrist_cm_left1);
 			sendKeys(UpperLimbLocator.txt_wrist_cm_left1, Wrist_Measurement_cm_Left1);
 			break;
-			
+
 		case PixalereStringPool.Forearm_Measurement_cm_Left:
 			Forearm_Measurement_cm_Left1 = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.Forearm_Measurement_cm_Left + ": " + Forearm_Measurement_cm_Left1);
@@ -679,6 +678,8 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 			sendKeys(AdvLimbLocator.txt_comment_hsi, HomeComments1);
 			break;
 
+		
+
 		}
 		if (!isWait)
 			waitInterval(1);
@@ -694,10 +695,10 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 	}
 
 	public void selectDropdownValue_p(String dropdown, String value) {
-		
+
 		if (dropdown.equalsIgnoreCase("Site Appearance")) {
 			selectByVisibleText(PCAPainPumpLocators.drp_siteAppearance, value);
-			
+
 		} else if (dropdown.equalsIgnoreCase("Lock Level")) {
 			selectByVisibleText(PCAPainPumpLocators.drp_locklevel, value);
 		} else if (dropdown.equalsIgnoreCase("Dose Concentration")) {

@@ -12,10 +12,10 @@ And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "ADP Funding Decision" LH panel option
 Then "ADP Funding Decision" page will open
 ##
-When I enter "ADP Authorizer Name" input field OT
-And I enter "Date_ADP" input field OT
-And I enter "Document_Upload" input field OT
+When I enter "ADP Authorizer Name" input field in script
+And I enter "Date_ADP" input field in script
+And I enter "Document_Upload" input field in script
 And I click on Upload Button
-And I enter "Document_Name_for_Filter" input field OT
+And I enter "Document_Name_for_Filter" input field in script
 And I click on Apply Filter Button
 Then I Logout from Pixalere

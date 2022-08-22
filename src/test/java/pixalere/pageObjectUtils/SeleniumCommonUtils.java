@@ -34,7 +34,6 @@ import io.cucumber.core.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
-import pixalere.pageObjectUtils.LocatorUtils.CustomizedLocators;
 import pixalere.scripts.PixalereAcuteRespiratoryIllnessScripts;
 import pixalere.scripts.PixalereAdvLowerLimbAssessmentScripts;
 import pixalere.scripts.PixalereBasicLowerLimbAssessmentScripts;
@@ -74,6 +73,8 @@ public class SeleniumCommonUtils {
 	public static List<String> Complimentary_Therapies = new ArrayList<>();
 	public static List<String> nursing_intervention = new ArrayList<>();
 	// ICAT flowchart arraylist end /////
+
+	public static List<String> Activities_of_Daily_Living = new ArrayList<>();
 
 	// 60 second diabetic //
 	public static String diabetic_left_score_60;
@@ -616,6 +617,11 @@ public class SeleniumCommonUtils {
 	}
 
 	public void verify() {
+		
+			
+		
+		
+		
 		WebElement e1 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Temperature']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data1 = e1.getText();
@@ -720,6 +726,13 @@ public class SeleniumCommonUtils {
 		if (!data14.equalsIgnoreCase((PixalereCreateNewPatientAccountScripts.HeightVitalSigns).toString() + ".0")) {
 			Assert.assertTrue(false);
 		}
+		
+		WebElement e0 = driver.findElement(By.xpath(
+				"(//td[normalize-space()='Pain Present']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data0 = e0.getText();
+		if (!data0.equalsIgnoreCase(PixalereAcuteRespiratoryIllnessScripts.VitalSigns6)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement e15 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Head Circumference (cm)']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
@@ -801,6 +814,18 @@ public class SeleniumCommonUtils {
 		if (!result) {
 			Assert.assertTrue(false);
 		}
+	}
+	
+	public void verify_RecordAfterDeletion_respiratory() {
+
+		Wait_p(3);
+		String deletion = "//*[contains(text(),'Reason for Deletion: %s')]";
+		boolean result = isDisplayed(By.xpath(String.format(deletion, (PixalereScripts.varDelete_inViewer))));
+		if (!result) {
+			Assert.assertTrue(false);
+		}
+		System.out.println("Reason matched");
+
 	}
 
 	public void verify_RecordAfterDeletion() {
@@ -1183,11 +1208,43 @@ public class SeleniumCommonUtils {
 		if (data.equalsIgnoreCase(" Undo Chart Done")) {
 			String s2 = "(((//*[@id='form']//tbody//td//b[contains(text(),'%s')]//following::div)[1]))[contains(@id,'completed_div')]//button[contains(@onclick,'uncompleted')]";
 			String xpath2 = String.format(s2, pattern);
-			waitInterval(10);
+			waitInterval(5);
 			clickElement(By.xpath(xpath2));
-			waitInterval(10);
+			waitInterval(5);
 		}
 
+	}
+
+	public void call_client_caregiver_education_checklist(String pattern) {
+		String s1 = "(//*[@id='form']//div//div[contains(text(),'%s')]//following-sibling::div//div//button)[1]";
+		String xpath1 = String.format(s1, pattern);
+		WebElement e1 = driver.findElement(By.xpath(xpath1));
+		String data = e1.getText();
+		System.out.println(data);
+
+		if (data.equalsIgnoreCase(" Undo Chart Done")) {
+			String s2 = "((//*[@id='form']//div//div[contains(text(),'%s')]//following-sibling::div//div//button)[1])[contains(@onclick,'uninitiated')]";
+			String xpath2 = String.format(s2, pattern);
+			waitInterval(1);
+			clickElement(By.xpath(xpath2));
+			waitInterval(5);
+		}
+	}
+
+	public void call_client_caregiver_education_checklist_for_completed_button(String pattern) {
+		String s1 = "(//*[@id='form']//div//div[contains(text(),'%s')]//following-sibling::div//div//button)[2]";
+		String xpath1 = String.format(s1, pattern);
+		WebElement e1 = driver.findElement(By.xpath(xpath1));
+		String data = e1.getText();
+		System.out.println(data);
+
+		if (data.equalsIgnoreCase(" Undo Chart Done")) {
+			String s2 = "((//*[@id='form']//div//div[contains(text(),'%s')]//following-sibling::div//div//button)[2])[contains(@onclick,'uncompleted')]";
+			String xpath2 = String.format(s2, pattern);
+			waitInterval(1);
+			clickElement(By.xpath(xpath2));
+			waitInterval(5);
+		}
 	}
 
 	public void verify_date_of_visit() {
@@ -1195,6 +1252,32 @@ public class SeleniumCommonUtils {
 		highLightElement(By.xpath("//input[@id='visit_date']"));
 		date_of_visit = e1.getAttribute("value");
 
+	}
+
+	public void verify_Document_Upload_Details() {
+		// input text field
+		WebElement e1 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Document Name')]//following::tr//td)[1]"));
+		String data1 = e1.getText();
+		if (!data1.equalsIgnoreCase(PixalereScripts.Document_Name_for_Document_Upload1)) {
+			Assert.assertTrue(false);
+		}
+		
+		WebElement e2 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Document Name')]//following::tr//td)[2]"));
+		String data2 = e2.getText();
+		String s[] = data2.split("_");
+		if ((s[1].contains(PixalereScripts.FileUploadADP_Funding_Decision1))) {
+			Assert.assertTrue(false);
+		}
+		
+		WebElement e3 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Document Name')]//following::tr//td)[4]"));
+		String data3 = e3.getText();
+		if (!data3.contains(PixalereScripts.Document_Type_Nursing)) {
+			Assert.assertTrue(false);
+		}
+	
 	}
 
 	public void verify_client_summary() {
@@ -1206,6 +1289,175 @@ public class SeleniumCommonUtils {
 			Assert.assertTrue(false);
 		}
 		System.out.println("Client Summary Page verified................");
+	}
+
+	public void verify_ClientCaregiver_Education_Checklist() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/MMM/yyyy");
+		LocalDateTime now = LocalDateTime.now();
+		String date = dtf.format(now).toString();
+
+		WebElement e1 = driver.findElement(By.xpath(
+				"//td[normalize-space(text())='Review of Client Bill of Rights/Responsibilities']//following-sibling::td[1]"));
+		String data1 = e1.getText();
+		if (!(data1.contains(date + " - Admin"))) {
+			System.err.println(e1.toString() + " : " + data1);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e2 = driver.findElement(By.xpath(
+				"//td[normalize-space(text())='Review of Client Bill of Rights/Responsibilities']//following-sibling::td[2]"));
+		String data2 = e2.getText();
+		if (!(data2.contains(date + " - Admin"))) {
+			System.err.println(e1.toString() + " : " + data2);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e3 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Wounds']//following-sibling::td[1]"));
+		String data3 = e3.getText();
+		if (!(data3.contains(date + " - Admin"))) {
+			System.err.println(e1.toString() + " : " + data3);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e4 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Wounds']//following-sibling::td[2]"));
+		String data4 = e4.getText();
+		if (!(data4.contains(date + " - Admin"))) {
+			System.err.println(e1.toString() + " : " + data4);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e5 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Intravenous Pump']//following-sibling::td[1]"));
+		String data5 = e5.getText();
+		if (!(data5.contains(" - Admin"))) {
+			System.err.println(e5.toString() + " : " + data5);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e6 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Intravenous Pump']//following-sibling::td[2]"));
+		String data6 = e6.getText();
+		if (!(data6.contains(date + " - Admin"))) {
+			System.err.println(e1.toString() + " : " + data6);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e7 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Pain Pump']//following-sibling::td[1]"));
+		String data7 = e7.getText();
+		if (!(data7.contains(" - Admin"))) {
+			System.err.println(e7.toString() + " : " + data7);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e8 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Pain Pump']//following-sibling::td[2]"));
+		String data8 = e8.getText();
+		if (!(data8.contains(" - Admin"))) {
+			System.err.println(e8.toString() + " : " + data8);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e9 = driver.findElement(
+				By.xpath("//td[normalize-space(text())='How to trouble shoot pump']//following-sibling::td[1]"));
+		String data9 = e9.getText();
+		if (!(data9.contains(date + " - Admin"))) {
+			System.err.println(e9.toString() + " : " + data9);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e10 = driver.findElement(
+				By.xpath("//td[normalize-space(text())='How to trouble shoot pump']//following-sibling::td[2]"));
+		String data10 = e10.getText();
+		if (!(data10.contains(date + " - Admin"))) {
+			System.err.println(e10.toString() + " : " + data10);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e12 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Care of Saline lock']//following-sibling::td[1]"));
+		String data12 = e12.getText();
+		if (!(data12.contains(date + " - Admin"))) {
+			System.err.println(e12.toString() + " : " + data12);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e11 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Care of Saline lock']//following-sibling::td[2]"));
+		String data11 = e11.getText();
+		if (!(data11.contains(date + " - Admin"))) {
+			System.err.println(e11.toString() + " : " + data11);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e13 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Air in Tubing']//following-sibling::td[1]"));
+		String data13 = e13.getText();
+		if (!(data13.contains(date + " - Admin"))) {
+			System.err.println(e12.toString() + " : " + data13);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e14 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Air in Tubing']//following-sibling::td[2]"));
+		String data14 = e14.getText();
+		if (!(data14.contains(date + " - Admin"))) {
+			System.err.println(e14.toString() + " : " + data14);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e15 = driver.findElement(
+				By.xpath("//td[normalize-space(text())='Medication Reconciliation']//following-sibling::td[1]"));
+		String data15 = e15.getText();
+		if (!(data15.contains(date + " - Admin"))) {
+			System.err.println(e15.toString() + " : " + data15);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e16 = driver.findElement(
+				By.xpath("//td[normalize-space(text())='Medication Reconciliation']//following-sibling::td[2]"));
+		String data16 = e16.getText();
+		if (!(data16.contains(date + " - Admin"))) {
+			System.err.println(e16.toString() + " : " + data16);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e17 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Heparin']//following-sibling::td[1]"));
+		String data17 = e17.getText();
+		if (!(data17.contains(date + " - Admin"))) {
+			System.err.println(e17.toString() + " : " + data17);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e18 = driver
+				.findElement(By.xpath("//td[normalize-space(text())='Heparin']//following-sibling::td[2]"));
+		String data18 = e18.getText();
+		if (!(data18.contains(date + " - Admin"))) {
+			System.err.println(e18.toString() + " : " + data18);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e19 = driver.findElement(By.xpath("//td[normalize-space(text())='"
+				+ PixalereScripts.Other_Education_Client_CareGiver1 + "']//following-sibling::td[1]"));
+		String data19 = e19.getText();
+		if (!(data19.contains(date + " - Admin"))) {
+			System.err.println(e19.toString() + " : " + data19);
+			Assert.assertTrue(false);
+		}
+
+		WebElement e20 = driver.findElement(By.xpath("//td[normalize-space(text())='"
+				+ PixalereScripts.Other_Education_Client_CareGiver1 + "']//following-sibling::td[1]"));
+		String data20 = e20.getText();
+		if (!(data20.contains(date + " - Admin"))) {
+			System.err.println(e20.toString() + " : " + data20);
+			Assert.assertTrue(false);
+		}
+
+		System.out.println("Client/Caregiver Education Checklist History Page Verified............");
+
 	}
 
 	public void verify_Second_Sit_Stand() {
@@ -1627,12 +1879,6 @@ public class SeleniumCommonUtils {
 	}
 
 	public void verify_Client_Consent() {
-
-//		WebElement e1 = driver.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[8]/div/div/div/div[10]/div/div/span"));
-//		String data1 = e1.getText();
-//		if (!data1.equalsIgnoreCase(PixalereScripts.Other_Service_Consent_Obtained1)) {
-//			Assert.assertTrue(false);
-//		}
 
 		WebElement e2 = driver
 				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[8]/div/div/div/div[11]/div/div"));
@@ -2079,60 +2325,60 @@ public class SeleniumCommonUtils {
 		WebElement e1 = driver.findElement(By.xpath(
 				"//label[normalize-space()='Discussed Assistive Devices Program/application process with client/SDM and any questions addressed']//following-sibling::div//span"));
 		String data1 = e1.getText();
-		if (!(data1.contains(""))) {
+		if (!(data1.equalsIgnoreCase(PixalereScripts.SM1))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e2 = driver.findElement(By.xpath(
 				"//label[normalize-space()='Screen for ADP eligibility completed']//following-sibling::div//span"));
 		String data2 = e2.getText();
-		if (!(data2.contains(""))) {
+		if (!(data2.equalsIgnoreCase(PixalereScripts.SM2))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e3 = driver.findElement(By.xpath(
 				"//label[normalize-space()='Client appears to meet ADP eligibility']//following-sibling::div//span"));
 		String data3 = e3.getText();
-		if (!(data3.contains(""))) {
+		if (!(data3.equalsIgnoreCase(PixalereScripts.SM3))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e4 = driver.findElement(By.xpath(
 				"//label[normalize-space()='Confirmed the status of any prior funding access to ADP']//following-sibling::div//span"));
 		String data4 = e4.getText();
-		if (!(data4.contains(""))) {
+		if (!(data4.equalsIgnoreCase(PixalereScripts.SM4))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e5 = driver.findElement(By.xpath(
 				"//label[normalize-space()='Rationale to re-apply for ADP funding']//following-sibling::div//span"));
 		String data5 = e5.getText();
-		if (!(data5.contains(""))) {
+		if (!(data5.equalsIgnoreCase(PixalereScripts.SM5))) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement e7 = driver.findElement(By.xpath("Mobility Device Specifications Recommended"));
 		String data7 = e7.getText();
-		if (!(data7.contains(""))) {
-			// Assert.assertTrue(false);
+		if (!(data7.equalsIgnoreCase(PixalereScripts.SM6))) {
+			 Assert.assertTrue(false);
 		}
 
 		WebElement e8 = driver.findElement(By.xpath("Equipment Trial Arranged"));
 		String data8 = e8.getText();
-		if (!(data8.contains(""))) {
-			// Assert.assertTrue(false);
+		if (!(data8.equalsIgnoreCase(PixalereScripts.SM7))) {
+			 Assert.assertTrue(false);
 		}
 
 		WebElement e9 = driver.findElement(By.xpath("Authorizer Involved in Service"));
 		String data9 = e9.getText();
-		if (!(data9.contains(""))) {
-			// Assert.assertTrue(false);
+		if (!(data9.equalsIgnoreCase(PixalereScripts.SM8))) {
+			 Assert.assertTrue(false);
 		}
 
 		WebElement e10 = driver.findElement(By.xpath("Authorizer Services Concluded"));
 		String data10 = e10.getText();
-		if (!(data10.contains(""))) {
-			// Assert.assertTrue(false);
+		if (!(data10.equalsIgnoreCase(PixalereScripts.SM9))) {
+			 Assert.assertTrue(false);
 		}
 
 	}
@@ -2252,7 +2498,7 @@ public class SeleniumCommonUtils {
 		WebElement e1 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Regular Pain Medication']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data1 = e1.getText();
-		if (!data1.contains("")) {
+		if (!data1.equalsIgnoreCase(PixalereScripts.Regular_Pain_Medication1)) {
 			Assert.assertTrue(false);
 		}
 
@@ -2260,7 +2506,7 @@ public class SeleniumCommonUtils {
 		WebElement e2 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Breakthrough Pain Medication']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data2 = e2.getText();
-		if (!data2.contains("")) {
+		if (!data2.equalsIgnoreCase(PixalereScripts.Breakthrough_Pain_Medication1)) {
 			Assert.assertTrue(false);
 		}
 
@@ -2268,7 +2514,7 @@ public class SeleniumCommonUtils {
 		WebElement e3 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Breakthrough Frequency']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data3 = e3.getText();
-		if (!data3.contains("")) {
+		if (!data3.equalsIgnoreCase(PixalereScripts.Breakthrough_Frequency1)) {
 			Assert.assertTrue(false);
 		}
 
@@ -2284,8 +2530,10 @@ public class SeleniumCommonUtils {
 		WebElement e5 = driver.findElement(By.xpath(
 				"(//td[normalize-space()='Effects of Pain on Activities of Daily Living']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data5 = e5.getText();
-		if (!data5.contains("")) {
-			Assert.assertTrue(false);
+		for (int i = 0; i < Activities_of_Daily_Living.size(); i++) {
+			if (!data5.contains(Activities_of_Daily_Living.get(i))) {
+				Assert.assertTrue(false);
+			}
 		}
 
 		WebElement e13 = driver.findElement(By.xpath(
@@ -2671,6 +2919,80 @@ public class SeleniumCommonUtils {
 		System.out.println("INRSP Child Nursing Page verified........");
 	}
 
+	public void verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page_Nursing() {
+		String s = "//label[contains(text(),'%s')]//img";
+		String s1 = "//label[@for='%s']//img";
+		for (int i = 0; i < PixalereInHomeSafetyIdentificationToolScripts.HomeSafetyAssessment_Checkbox.size(); i++) {
+			WebElement b1 = driver.findElement(By.xpath(String.format(s,
+					PixalereInHomeSafetyIdentificationToolScripts.HomeSafetyAssessment_Checkbox.get(i))));
+			if (!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		WebElement b11 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[1]/div/label[4]/img"));
+		if (!(b11.isDisplayed())) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement b12 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[1]/div/label[6]/img"));
+		if (!(b12.isDisplayed())) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement b13 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[2]/div/label[1]/img"));
+		if (!(b13.isDisplayed())) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement b14 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[2]/div/label[4]/img"));
+		if (!(b14.isDisplayed())) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement b15 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[2]/div/label[7]/img"));
+		if (!(b15.isDisplayed())) {
+			Assert.assertTrue(false);
+		}
+
+		for (int i = 0; i < PixalereInHomeSafetyIdentificationToolScripts.Medication_Checkbox.size(); i++) {
+			WebElement b1 = driver.findElement(By
+					.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.Medication_Checkbox.get(i))));
+			if (!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+		for (int i = 0; i < PixalereInHomeSafetyIdentificationToolScripts.Other_Checkbox.size(); i++) {
+			WebElement b1 = driver.findElement(
+					By.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.Other_Checkbox.get(i))));
+			if (!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		for (int i = 0; i < PixalereInHomeSafetyIdentificationToolScripts.FollowupPlan_Checkbox.size(); i++) {
+			WebElement b1 = driver.findElement(By.xpath(
+					String.format(s, PixalereInHomeSafetyIdentificationToolScripts.FollowupPlan_Checkbox.get(i))));
+			if (!(b1.isDisplayed())) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		// Input field
+		String t1 = driver.findElement(By.xpath("//p[@class='pad5']")).getText().toString();
+		if (!(t1.equalsIgnoreCase(PixalereScripts.HomeCommentsNursing1))) {
+			Assert.assertTrue(false);
+		}
+
+		System.out.println("In-Home Safety Identification Tool Page Nursing Section verified........");
+
+	}
+
 	public void verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page() {
 
 		String s = "//label[contains(text(),'%s')]//img";
@@ -2682,35 +3004,38 @@ public class SeleniumCommonUtils {
 				Assert.assertTrue(false);
 			}
 		}
-		for (int i = 0; i < PixalereInHomeSafetyIdentificationToolScripts.TrippingFallingfieldHSI_Checkbox
-				.size(); i++) {
-			WebElement b1 = driver.findElement(By.xpath(String.format(s1,
-					PixalereInHomeSafetyIdentificationToolScripts.TrippingFallingfieldHSI_Checkbox.get(i))));
-			if (!(b1.isDisplayed())) {
-				Assert.assertTrue(false);
-			}
+		
+		WebElement b11 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[1]/div/label[4]/img"));
+		if (!(b11.isDisplayed())) {
+			Assert.assertTrue(false);
 		}
-		for (int i = 0; i < PixalereInHomeSafetyIdentificationToolScripts.FallsPrevention_Checkbox.size(); i++) {
-			WebElement b1 = driver.findElement(By.xpath(
-					String.format(s, PixalereInHomeSafetyIdentificationToolScripts.FallsPrevention_Checkbox.get(i))));
-			if (!(b1.isDisplayed())) {
-				Assert.assertTrue(false);
-			}
+
+		WebElement b12 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[1]/div/label[6]/img"));
+		if (!(b12.isDisplayed())) {
+			Assert.assertTrue(false);
 		}
-		for (int i = 0; i < PixalereInHomeSafetyIdentificationToolScripts.Fire_Checkbox.size(); i++) {
-			WebElement b1 = driver.findElement(
-					By.xpath(String.format(s1, PixalereInHomeSafetyIdentificationToolScripts.Fire_Checkbox.get(i))));
-			if (!(b1.isDisplayed())) {
-				Assert.assertTrue(false);
-			}
+
+		WebElement b13 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[2]/div/label[1]/img"));
+		if (!(b13.isDisplayed())) {
+			Assert.assertTrue(false);
 		}
-		for (int i = 0; i < PixalereInHomeSafetyIdentificationToolScripts.FollowupPlan_Checkbox.size(); i++) {
-			WebElement b1 = driver.findElement(By.xpath(
-					String.format(s, PixalereInHomeSafetyIdentificationToolScripts.FollowupPlan_Checkbox.get(i))));
-			if (!(b1.isDisplayed())) {
-				Assert.assertTrue(false);
-			}
+
+		WebElement b14 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[2]/div/label[4]/img"));
+		if (!(b14.isDisplayed())) {
+			Assert.assertTrue(false);
 		}
+
+		WebElement b15 = driver
+				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[5]/div[2]/div/label[7]/img"));
+		if (!(b15.isDisplayed())) {
+			Assert.assertTrue(false);
+		}
+
+		
 		for (int i = 0; i < PixalereInHomeSafetyIdentificationToolScripts.Medication_Checkbox.size(); i++) {
 			WebElement b1 = driver.findElement(By
 					.xpath(String.format(s, PixalereInHomeSafetyIdentificationToolScripts.Medication_Checkbox.get(i))));
@@ -4611,6 +4936,30 @@ public class SeleniumCommonUtils {
 
 		System.out.println("All Data Verified Successfully on Home_Peritoneal Flowchart Page");
 
+	}
+
+	public void var_Pain_on_Activities_of_Daily_Living_data() {
+		String s1 = "(//input[@checked='checked' and contains(@id,'adl')])[%s]/following-sibling::label";
+		for (int i = 1; i <= 10; i++) {
+			String xpath1 = String.format(s1, i);
+			WebElement e1 = driver.findElement(By.xpath(xpath1));
+			String data1 = e1.getText();
+			Activities_of_Daily_Living.add(data1);
+		}
+	}
+
+	public void verify_image_left() {
+		WebElement e1 = driver.findElement(By.xpath("//*[@id='alphap1']//img"));
+		if (!e1.isDisplayed()) {
+			Assert.assertTrue(false);
+		}
+	}
+
+	public void verify_image_right() {
+		WebElement e1 = driver.findElement(By.xpath("//*[@id='alphap4']//img"));
+		if (!e1.isDisplayed()) {
+			Assert.assertTrue(false);
+		}
 	}
 
 	/// ******* ICAT Flowchart start ////////////////////////

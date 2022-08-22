@@ -16,10 +16,10 @@ Feature: Pixalere In-Home Safety Identification Tool
     
     And I select "Clutter" checkbox for TrippingFalling field HSI
     And I select "Bathroom" checkbox for rooms for hazard
-    And I click on Save for rooms for hazard
+    And I click on Save for rooms for Home Safety
     And I select "Cords" checkbox for TrippingFalling field HSI
     And I select "Kitchen" checkbox for rooms for hazard
-    And I click on Save for rooms for hazard
+    And I click on Save for rooms for Home Safety
     
     And I select "Unsafe disposal of sharps" checkbox for Medication
     And I select "Improper storage of meds" checkbox for Medication
@@ -30,13 +30,13 @@ Feature: Pixalere In-Home Safety Identification Tool
     
     And I select "Frayed cords" checkbox for Fire
     And I select "Hallway" checkbox for rooms for hazard
-    And I click on Save for rooms for hazard
+    And I click on Save for rooms for Home Safety
     And I select "Oxygen present" checkbox for Fire
     And I select "Stairs" checkbox for rooms for hazard
-    And I click on Save for rooms for hazard
+    And I click on Save for rooms for Home Safety
     And I select "Lack of smoke detector" checkbox for Fire
     And I select "Outdoors" checkbox for rooms for hazard
-    And I click on Save for rooms for hazard
+    And I click on Save for rooms for Home Safety
     
     And I select "No safety issues identified - no action required" checkbox for FollowupPlan
     And I select "Client chooses to live at risk" checkbox for FollowupPlan

@@ -113,6 +113,7 @@ public class PixalereStringPool {
 	
 	public static final String Details_for_Taking_4_or_more_medications = "Details for Taking 4 or more medications";
 	
+	public static final String Other_Education_Client_CareGiver = "Other Education Client Caregiver Education";
 	public static final String Cough_Assist_Year = "Cough Assist Year";
 	public static final String invasive_ventilation_Year = "invasive ventilation Year";
 	public static final String Suctioning_Year = "Suctioning Year";
@@ -133,6 +134,7 @@ public class PixalereStringPool {
 	public static final String Other_Service_Consent_Obtained = "Other Service Consent Obtained";
 	public static final String Comments_Service_Consent_Obtained = "Comments Service Consent Obtained";
 
+	public static final String Document_Name_for_Document_Upload =  "Document Name for Document Upload";
 	public static final String secondareaof_concern = "2st area of concern";
 
 	public static final String PixalereTestsAdmin = "Pixalere Tests – Admin";
@@ -273,6 +275,12 @@ public class PixalereStringPool {
 	public static final String Please_document_MRP_recommendations = "Please document MRP recommendations";
 
 	public static final String Aggravating_Factors = "Aggravating Factors";
+	
+	public static final String Regular_Pain_Medication = "Regular Pain Medication";
+	
+	public static final String Breakthrough_Pain_Medication = "Breakthrough Pain Medication";
+	
+	public static final String Breakthrough_Frequency = "Breakthrough Frequency";
 
 	public static final String Comments_Pain_Profile = "Comments Pain Profile";
 
@@ -572,6 +580,8 @@ public class PixalereStringPool {
 	public static final String PRIMARY_INSURANCE_GROUP = "Primary Insurance Group #";
 
 	public static final String HomeComments = "Comments HSI";
+	
+	public static final String HomeCommentsNursing = "Comments HSI Nursing";
 
 	public static final String NAME = "Name";
 

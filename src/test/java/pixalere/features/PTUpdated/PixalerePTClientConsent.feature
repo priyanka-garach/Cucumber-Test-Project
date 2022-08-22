@@ -9,8 +9,8 @@ When I globally select "Pix ID" from Search Category dropdown
 And I search created patient with PIXID special for PTAssessement and Teaching
 And I select PT from Service Referral
 And I click "Access Chart" radio option for "Service Referral and Type" field
-And I Navigate to "Client Consent" LH panel option
-Then "Client Consent" page will open
+And I Navigate to "Consent Form" LH panel option
+Then "Consent Form" page will open
 ##
 When I click on "Service Consent Obtained" checkbox Button SM
 And I verified data for "Proposed Health Services Discussed"

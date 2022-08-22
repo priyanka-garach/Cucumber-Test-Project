@@ -18,8 +18,7 @@ import pixalere.pageObjectUtils.SeleniumCommonUtils;
 //)
 
 
-@CucumberOptions(features = { "classpath:pixalere/features/NursingForms/PixalereIntakeOutputNursing.feature" }, glue = {
-
+@CucumberOptions(features = { "classpath:pixalere/features/NursingForms/PixalereInHomeSafetyIdentificationTool.feature" }, glue = {
 		"classpath:pixalere.stepdefinitions" }, plugin = { "pretty", "json:target/cucumber.json" })
 
 public class TestRunner2 extends AbstractTestNGCucumberTests {

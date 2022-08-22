@@ -1,13 +1,11 @@
 Feature: Pixalere Teaching Agreement PT
-
 @test11
 Scenario: Pixalere Teaching Agreement PT Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
 When I globally select "Pix ID" from Search Category dropdown
-And I search created patient with PIXID special for PTAssessement and Teaching
-And I select PT from Service Referral PTAssessment for Teaching and PTAssessment special
+And I search created patient with PIXID PT
 And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "Teaching Agreement" LH panel option
 Then "Teaching Agreement" page will open

@@ -22,6 +22,8 @@ public class PixalereCarePlanScripts extends PixalereCommonUtils {
 	public static String Edit_CarePlanOutcomes;
 	public static List<String> DiabetesTeachingList = new ArrayList<String>();
 
+
+
 	public void selectRdioOptionCarePlan(String section) {
 		if (section.contains("Yes"))
 			clickElement(By.xpath("//label[@id='goals_met1_label']"));
@@ -46,16 +48,23 @@ public class PixalereCarePlanScripts extends PixalereCommonUtils {
 				
 	}
 	
-
+	public void complteed_button_click1_for_initiatied(String pattern) {
+		//convert undo to normal button
+		call_client_caregiver_education_checklist(pattern);
+				
+	}
+	
 	public void complteed_button_click2(String pattern) {
 				
 		String s1 = "((//*[@id=\"form\"]//tbody//td//b[contains(text(),'%s')]//following::div)[1])//button";
 		String xpath1 = String.format(s1, pattern);
-		waitInterval(5);
+		waitInterval(3);
 		clickElement(By.xpath(xpath1));
-		waitInterval(5);
+		waitInterval(3);
 		DiabetesTeachingList.add(pattern);
 	}
+	
+	
 
 	public void enterInputFieldAsPerKey(String inputField) {
 		switch (inputField) {

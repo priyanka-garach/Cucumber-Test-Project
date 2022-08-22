@@ -21,6 +21,7 @@ public class PixalereInHomeSafetyIdentificationToolScripts extends PixalereCommo
 	public static List<String> hazard_Checkbox = new ArrayList<>();
 	
 	public void selectCheckboxForHomeSafetyAssessment(String section) {
+	
 		if (section.contains("Client did not consent to home safety assessment")) {
 			clickElementWithJQuery(InHomeSafetyIdentificationTool.chk_Client_safety_assessment);
 			HomeSafetyAssessment_Checkbox.add(section);
@@ -31,6 +32,7 @@ public class PixalereInHomeSafetyIdentificationToolScripts extends PixalereCommo
 		}
 	}
 	public void selectCheckboxForTrippingFallingfieldHSI(String section) {
+		
 		if (section.contains("Clutter")) {
 			clickElementWithJQuery(InHomeSafetyIdentificationTool.chk_Clutter);
 			TrippingFallingfieldHSI_Checkbox.add(section);

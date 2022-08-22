@@ -11,7 +11,7 @@ And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Patient Profile -> In Home Safety Checklist" LH panel option
 Then "In Home Safety Checklist" page will open
 ##
-When I select "School Client" checkbox for HSA Not Compelted field HSI
+When I select "Client did not consent to home safety assessment" checkbox for HSA Not Compelted field HSI
 And I select "Clutter" checkbox for TrippingFalling field HSI
 And I select "Cords" checkbox for TrippingFalling field HSI
 And I select "Unsafe disposal of sharps" checkbox for HSA Not Compelted field HSI

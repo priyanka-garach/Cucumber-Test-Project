@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import pixalere.pageObjectJavaUtils.JavaUtils;
 import pixalere.pageObjectUtils.LocatorUtils.GlobalPageLocators;
 import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
+import pixalere.pageObjectUtils.LocatorUtils.SeatingMobilityLocator;
 import pixalere.pageObjectUtils.LocatorUtils.TracheostomyLocators;
 import pixalere.pageObjectUtils.PixalereCommonUtils;
 import pixalere.pageObjectUtils.PixalereStringPool;
@@ -33,7 +34,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Equipment_Source;
 	public static String Case_Coordinator;
 	public static String Primary_nurse_contact_info;
-	
+
 	public static String Weight_10;
 
 	public static String Visit_Date;
@@ -65,13 +66,74 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Aid_used;
 	public static String second_sit_stand_Test;
 	public static String Balance_Assessed_comments;
-	
-
-
-
 
 	public static String CLIENT_SUMMARY_Special_Instructions;
 	public static String pt_modified_exercise;
+	public static String Document_Name_for_Document_Upload1;
+
+	public static String SM1;
+	public static String SM2;
+	public static String SM3;
+	public static String SM4;
+	public static String SM5;
+	public static String SM6;
+	public static String SM7;
+	public static String SM8;
+	public static String SM9;
+	public static String SM10;
+	public static String SM11;
+	public static String SM12;
+	public static String SM13;
+	public static String SM14;
+	public static String SM15;
+	public static String SM16;
+	public static String FMSM1=null;
+	public static String FMSM2=null;
+	public static String FMSM3=null;
+	public static String FMSM4=null;
+	public static String FMSM5=null;
+	public static String FMSM6=null;
+	public static String FMSM7=null;
+	public static String FMSM8=null;
+	public static String FMSM9=null;
+	public static String FMSM10=null;
+	public static String FMSM11=null;
+	public static String FMSM12=null;
+	public static String FMSM13=null;
+	public static String FMSM14=null;
+	public static String FMSM15=null;
+	public static String FMSM16=null;
+	public static String FMSM17=null;
+	public static String FMSM18=null;
+	public static String FMSM19=null;
+
+	public static List<String> list_SM1 = new ArrayList<>();
+	
+	public static List<String> list_SM2 = new ArrayList<>();
+	public static List<String> list_SM3 = new ArrayList<>();
+	public static List<String> list_SM4 = new ArrayList<>();
+	public static List<String> list_SM5 = new ArrayList<>();
+	public static List<String> list_SM6 = new ArrayList<>();
+	public static List<String> list_SM7 = new ArrayList<>();
+	public static List<String> list_SM8 = new ArrayList<>();
+	public static List<String> list_SM9 = new ArrayList<>();
+	public static List<String> list_SM10 = new ArrayList<>();
+	public static List<String> list_SM11 = new ArrayList<>();
+	
+	public static List<String> list_SM12 = new ArrayList<>();
+	
+	public static List<String> list_SM13 = new ArrayList<>();
+	
+	public static List<String> list_SM14 = new ArrayList<>();
+	
+	public static List<String> list_SM15 = new ArrayList<>();
+	public static List<String> list_SM16 = new ArrayList<>();
+	public static List<String> list_SM17 = new ArrayList<>();
+	public static List<String> list_SM18 = new ArrayList<>();
+	public static List<String> list_SM19 = new ArrayList<>();
+	public static List<String> list_SM20 = new ArrayList<>();
+	public static List<String> list_SM21 = new ArrayList<>();
+	
 
 	public static String TIME_PT;
 	public static String AID_USED_TUG;
@@ -143,14 +205,14 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Aggravating_Factors_PPA1;
 	public static String Intensity1;
 	public static String Pharmacological_Intervention1;
-	
+	public static String Document_Type_Nursing;
+
 	// Pain Assessment
 	public static String day_onset;
 	public static String month_onset;
 	public static String day_last_BM;
 	public static String month_last_BM;
 	public static String drp_frequency;
-	
 
 	public static String OtherICAone1;
 	public static String OtherICA21;
@@ -377,6 +439,11 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String acceptable_pain_Ass;
 	public static String Chronic_Pain_Parameters_pain_Ass;
 	public static String See_Progress_Notes;
+	public static String HomeCommentsNursing1;
+	public static String Regular_Pain_Medication1;
+	public static String Breakthrough_Pain_Medication1;
+	public static String Breakthrough_Frequency1;
+	public static String Other_Education_Client_CareGiver1;
 
 	public static String Balance_Gait;
 	public static List<String> list_Cardiovascular_ICAN1 = new ArrayList<>();
@@ -399,8 +466,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static List<String> Type_Of_Assessment = new ArrayList<>();
 	public static List<String> MAHC_Gait_Aid_Use_MAHC = new ArrayList<>();
 	public static List<String> chk_quality_of_pain_ass = new ArrayList<>();
-	public static List<String> chk_Accompanying_Symptom_pain_ass  = new ArrayList<>();
-	public static List<String> chk_Pharmacological_Intervention_pain  = new ArrayList<>();
+	public static List<String> chk_Accompanying_Symptom_pain_ass = new ArrayList<>();
+	public static List<String> chk_Pharmacological_Intervention_pain = new ArrayList<>();
 
 	public void chk_instruct_client_field(String value) {
 		clickElement(By.xpath("//input[@id='modified_exercise']//following-sibling::label"));
@@ -410,6 +477,206 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public void getBalance_Gait() {
 		Balance_Gait = getElementText(By.xpath("//*[@id='balancegaitScore']"));
 	}
+
+/////////////////////////seating and mobility start///////////////////////////////////////
+	public void selectradioAssessmentresults(String string) {
+		SM9 = string;
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@id,'results_shared2')])[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@id,'results_shared1')])[2]"));
+	}
+
+	public void selectradiodevicegoal(String string) {
+		SM10 = string;
+
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath("((//*[contains(@id,'goal_established2')])[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@id,'goal_established1')])[2]"));
+	}
+
+	public void selectradioparticipation(String string) {
+		SM11 = string;
+
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'student_participation')])[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'student_participation')])[1]"));
+	}
+
+	public void selectradioadpeligibility(String string) {
+		SM12 = string;
+
+		if (string.equalsIgnoreCase("Client appears to meet ADP eligibility"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'client_adp_eligible')])[1]"));
+
+		if (string.equalsIgnoreCase("Client not eligible for ADP funding"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'client_adp_eligible')])[2]"));
+	}
+
+	public void selectradioaccessadp(String string) {
+		SM13 = string;
+
+		if (string.equalsIgnoreCase("No"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'prior_funding')])[2]"));
+
+		if (string.equalsIgnoreCase("Yes"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'prior_funding')])[1]"));
+	}
+
+	public void selectradiofundingaccessadp(String string) {
+		SM14 = string;
+
+		if (string.equalsIgnoreCase("None"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'prior_funding_which')])[1]"));
+
+		if (string.equalsIgnoreCase("Prior access to funding by ADP"))
+			clickElementWithJQuery(By.xpath("(//*[contains(@name,'prior_funding_which')])[2]"));
+	}
+
+	public void selectradiospecificprocedure(String string) {
+		SM15 = string;
+		if (string.equalsIgnoreCase("File to be transferred to authorizer"))
+			clickElementWithJQuery(By.xpath("//*[@id='file_procedure1']"));
+
+		if (string.equalsIgnoreCase("File to remain with therapist while authorizer involved"))
+			clickElementWithJQuery(By.xpath("//*[@id='file_procedure2']"));
+	}
+
+	public void selectclientsfunctionalmobilitygoals(String section) {
+		if (section.contains("Walker")) {
+			FMSM1 = "Walker";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_functionalmobility, FMSM1);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM1.add(FMSM1);
+		}
+		if (section.contains("Manual wheelchair")) {
+			FMSM2 = "Manual wheelchair";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_functionalmobility, FMSM2);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM2.add(FMSM2);
+		}
+		if (section.contains("Power wheelchair")) {
+			FMSM3 = "Power wheelchair";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_functionalmobility, FMSM3);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM3.add(FMSM3);
+		}
+		if (section.contains("Seating only")) {
+			FMSM4 = "Seating only";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_functionalmobility, FMSM4);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM4.add(FMSM4);
+		}
+		if (section.contains("Power scooter")) {
+			FMSM5 = "Power scooter";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_functionalmobility, FMSM5);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM5.add(FMSM5);
+		}
+	}
+
+	public void selectADPeligibility(String section) {
+		if (section.contains("Device(s) needed for ongoing")) {
+			FMSM6 = "Device(s) needed for ongoing";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_ADPeligibility, FMSM6);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM6.add(FMSM6);
+		}
+		if (section.contains("Client unable to access the front door without the recommended device")) {
+			FMSM7 = "Client unable to access the front door without the recommended device";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_ADPeligibility, FMSM7);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM7.add(FMSM7);
+		}
+		if (section.contains("The recommended device is the most basic device to meet the")) {
+			FMSM8 = "The recommended device is the most basic device to meet the";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_ADPeligibility, FMSM8);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM8.add(FMSM8);
+		}
+		if (section.contains("Client has a valid Ontario Health Card")) {
+			FMSM9 = "Client has a valid Ontario Health Card";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_ADPeligibility, FMSM9);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM9.add(FMSM9);
+		}
+		if (section.contains("Client is a permanent resident of Ontario")) {
+			FMSM10 = "Client is a permanent resident of Ontario";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_ADPeligibility, FMSM10);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM10.add(FMSM10);
+		}
+		if (section.contains("Client is expected to use the recommended device for 6 months or greater")) {
+			FMSM11 = "Client is expected to use the recommended device for 6 months or greater";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_ADPeligibility, FMSM11);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM11.add(FMSM11);
+		}
+	}
+
+	public void selectADPConfirmed(String section) {
+		if (section.contains("no longer meets basic mobility needs")) {
+			FMSM12 = "no longer meets basic mobility needs";
+			//String xpath1 =String.format(SeatingMobilityLocator.chk_ADPConfirmed, FMSM12);  
+			//clickElementWithJQuery(By.xpath(xpath1));
+			list_SM12.add(FMSM12);
+		}
+	}
+
+	public void selectADPfunding(String section) {
+		if (section.contains("Change of status")) {
+			FMSM13 = "Change of status";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_ADPfunding, FMSM13);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM13.add(FMSM13);
+		}
+		if (section.contains("Change of size")) {
+			FMSM14 = "Change of size";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_ADPfunding, FMSM14);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM14.add(FMSM14);
+		}
+		if (section.contains("Special circumstances")) {
+			FMSM15 = "Special circumstances";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_ADPfunding, FMSM15);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM15.add(FMSM15);
+		}
+	}
+
+	public void selectNameofauthorizer(String section) {
+		if (section.contains(
+				"Role and activities of ADP authorizer reviewed and client/SDM consents to involvement of ADP authorizer in service")) {
+			FMSM16 = "Role and activities of ADP authorizer reviewed and client/SDM consents to involvement of ADP authorizer in service";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_Nameofauthorizer, FMSM16);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM16.add(FMSM16);
+		}
+		if (section.contains(
+				"ADP authorizer to book visit with client/SDM to provide comprehensive mobility device assessment")) {
+			FMSM17 = "ADP authorizer to book visit with client/SDM to provide comprehensive mobility device assessment";
+			String xpath1 = String.format(SeatingMobilityLocator.chk_Nameofauthorizer, FMSM17);
+			clickElementWithJQuery(By.xpath(xpath1));
+			list_SM17.add(FMSM17);
+		}
+
+	}
+
+	public void selectASC(String section) {
+		if (section.contains("Assessment results/application status reviewed and considered in")) {
+			FMSM18 = "Assessment results/application status reviewed and considered in";
+			//String xpath1 = String.format(SeatingMobilityLocator.chk_ASC, FMSM18);
+			//clickElementWithJQuery(By.xpath(xpath1));
+			list_SM18.add(FMSM18);
+		}
+	}
+
+////////////////////////////////////seating and mobility end////////////////////////////////////////////
 
 	public void selectRdioforfieldPTCAM(String value, String section) {
 		if (section.equalsIgnoreCase("Cognitive Changes and Fluctuating Course")) {
@@ -757,26 +1024,25 @@ public class PixalereScripts extends PixalereCommonUtils {
 		selectByVisibleText(By.xpath("//select[@id='pain_score']"), value);
 		score = value;
 	}
-	
+
 	public void chk_quality_of_pain_ass(String value) {
 		String xpath1 = String.format("//label[contains(@id,'qop') and contains(text(),'%s')]", value);
 		clickElement(By.xpath(xpath1));
 		chk_quality_of_pain_ass.add(value);
 	}
-	
+
 	public void chk_Accompanying_Symptom_pain_ass(String value) {
 		String xpath1 = String.format("//label[contains(@id,'acc_symptoms') and contains(text(),'%s')]", value);
 		clickElementWithJQuery(By.xpath(xpath1));
 		chk_Accompanying_Symptom_pain_ass.add(value);
 	}
-	
+
 	public void chk_onPharmacological_Intervention_pain_ass(String value) {
 		String xpath1 = String.format("//label[contains(@id,'non_pharma_inter') and contains(text(),'%s')]", value);
 		clickElement(By.xpath(xpath1));
 		chk_Pharmacological_Intervention_pain.add(value);
 	}
-	
-	
+
 	public void drp_frequency_pain_ass(String s) {
 		drp_frequency = s;
 		selectByVisibleText(By.id("frequency"), s);
@@ -786,22 +1052,22 @@ public class PixalereScripts extends PixalereCommonUtils {
 		day_onset = "0" + s;
 		selectByVisibleText(By.id("onset_date_day"), s);
 	}
-	
+
 	public void month_one_pain_ass(String s) {
 		month_onset = s;
 		selectByVisibleText(By.id("onset_date_month"), s);
 	}
-	
+
 	public void day_one_pain_ass_last_BM(String s) {
 		day_last_BM = "0" + s;
 		selectByVisibleText(By.id("date_last_bm_day"), s);
 	}
-	
+
 	public void month_one_pain_ass_last_BM(String s) {
 		month_last_BM = s;
 		selectByVisibleText(By.id("date_last_bm_month"), s);
 	}
-	
+
 	public void selectdropdownforFIM(String value, String section) {
 		String xpath1 = "//td[normalize-space(text())='%s']//following-sibling::td//select[@id='initials']";
 		select_ByIndex(By.xpath(String.format(xpath1, section)), Integer.parseInt(value));
@@ -1080,7 +1346,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 		clickElementWithJQuery(By.xpath(xpath1));
 		MAHC_footwear__handsout_provided.add(string);
 	}
-	
+
 	public void get_MAHC_10_Fall_Risk_Score() {
 		get_MAHC_10_Fall_Risk_Score_sel();
 	}
@@ -1356,6 +1622,12 @@ public class PixalereScripts extends PixalereCommonUtils {
 		val = section;
 	}
 
+	public void drp_of_Document_Type(String section) {
+
+		selectByVisibleText(By.xpath("//select[@name='document_type']"), section);
+		Document_Type_Nursing = section;
+	}
+
 	public void selectRdioforfieldPainAssessment(String value, String section) {
 		if (section.contains("Acceptable")) {
 			acceptable_pain_Ass = value;
@@ -1371,7 +1643,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			See_Progress_Notes = value;
 			clickElement(By.xpath("(//label[contains(@id,'see_progress')])[1]"));
 		}
-			
+
 	}
 
 	public void selectRdioforfieldCAM(String value, String section) {
@@ -1914,6 +2186,27 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.xpath("//*[@name='aggra_factors']"), Aggravating_Factors1);
 			break;
 
+		case PixalereStringPool.Regular_Pain_Medication:
+			Regular_Pain_Medication1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Regular_Pain_Medication + ": " + Regular_Pain_Medication1);
+			clear(By.xpath("//*[@name='pain_meds']"));
+			sendKeys(By.xpath("//*[@name='pain_meds']"), Regular_Pain_Medication1);
+			break;
+
+		case PixalereStringPool.Breakthrough_Pain_Medication:
+			Breakthrough_Pain_Medication1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Breakthrough_Pain_Medication + ": " + Breakthrough_Pain_Medication1);
+			clear(By.xpath("//*[@name='breakthr_pain_meds']"));
+			sendKeys(By.xpath("//*[@name='breakthr_pain_meds']"), Breakthrough_Pain_Medication1);
+			break;
+
+		case PixalereStringPool.Breakthrough_Frequency:
+			Breakthrough_Frequency1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Breakthrough_Frequency + ": " + Breakthrough_Frequency1);
+			clear(By.xpath("//*[@name='breakthr_freq']"));
+			sendKeys(By.xpath("//*[@name='breakthr_freq']"), Breakthrough_Frequency1);
+			break;
+
 		case PixalereStringPool.Comments_Pain_Profile:
 			Comments_Pain_Profile1 = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.Comments_Pain_Profile + ": " + Comments_Pain_Profile1);
@@ -2399,13 +2692,13 @@ public class PixalereScripts extends PixalereCommonUtils {
 
 		case PixalereStringPool.Catheter_Size:
 			Catheter_Size = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.Catheter_Size + ": "+ Catheter_Size);
+			System.out.println(PixalereStringPool.Catheter_Size + ": " + Catheter_Size);
 			clear(By.xpath("//*[@name='genito_catheter_size']"));
 			sendKeys(By.xpath("//*[@name='genito_catheter_size']"), Catheter_Size);
 			break;
 		case PixalereStringPool.Care_Instructions:
 			Care_Instructions = JavaUtils.getRandomNumber(1);
-			System.out.println(PixalereStringPool.Care_Instructions + ": "+ Care_Instructions);
+			System.out.println(PixalereStringPool.Care_Instructions + ": " + Care_Instructions);
 			clear(By.xpath("//textarea[@id='care_instructions']"));
 			sendKeys(By.xpath("//textarea[@id='care_instructions']"), Care_Instructions);
 			break;
@@ -2418,7 +2711,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 		case PixalereStringPool.Mental_Health_Concerns:
 			Mental_Health_Concerns = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Mental_Health_Concerns + ": "+ Mental_Health_Concerns);
+			System.out.println(PixalereStringPool.Mental_Health_Concerns + ": " + Mental_Health_Concerns);
 			clear(By.xpath("//textarea[@id='mental_health_concerns']"));
 			sendKeys(By.xpath("//textarea[@id='mental_health_concerns']"), Mental_Health_Concerns);
 			break;
@@ -2440,44 +2733,42 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.Neuromuscular_Assessment_Comments_PICAT:
-			Neuromuscular_Assessment_Comments_PICAT1 =JavaUtils.getRandomString(5);
+			Neuromuscular_Assessment_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Neuromuscular_Assessment_Comments_PICAT + ": "
 					+ Neuromuscular_Assessment_Comments_PICAT1);
 			clear(By.xpath("//textarea[@id='nueromuscular_assess_comment']"));
-			sendKeys(By.xpath("//textarea[@id='nueromuscular_assess_comment']"), Neuromuscular_Assessment_Comments_PICAT1);
+			sendKeys(By.xpath("//textarea[@id='nueromuscular_assess_comment']"),
+					Neuromuscular_Assessment_Comments_PICAT1);
 			break;
 		case PixalereStringPool.Last_dental_appointment:
-			Last_dental_appointment =JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Last_dental_appointment + ": "
-					+ Last_dental_appointment);
+			Last_dental_appointment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Last_dental_appointment + ": " + Last_dental_appointment);
 			clear(By.xpath("//textarea[@name='last_dental_appointment']"));
 			sendKeys(By.xpath("//textarea[@name='last_dental_appointment']"), Last_dental_appointment);
 			break;
 		case PixalereStringPool.Oral_hygiene_practices:
-			Oral_hygiene_practices =JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Oral_hygiene_practices + ": "
-					+ Oral_hygiene_practices);
+			Oral_hygiene_practices = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Oral_hygiene_practices + ": " + Oral_hygiene_practices);
 			clear(By.xpath("//textarea[@id='oral_hygeine']"));
 			sendKeys(By.xpath("//textarea[@id='oral_hygeine']"), Oral_hygiene_practices);
 			break;
 		case PixalereStringPool.Head_Eyes_Ears_Nose_Mouth_Throat:
-			Head_Eyes_Ears_Nose_Mouth_Throat =JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Head_Eyes_Ears_Nose_Mouth_Throat + ": "
-					+ Head_Eyes_Ears_Nose_Mouth_Throat);
+			Head_Eyes_Ears_Nose_Mouth_Throat = JavaUtils.getRandomString(5);
+			System.out.println(
+					PixalereStringPool.Head_Eyes_Ears_Nose_Mouth_Throat + ": " + Head_Eyes_Ears_Nose_Mouth_Throat);
 			clear(By.xpath("//textarea[@id='head_history_comment']"));
 			sendKeys(By.xpath("//textarea[@id='head_history_comment']"), Head_Eyes_Ears_Nose_Mouth_Throat);
 			break;
 		case PixalereStringPool.Child_Behaviour:
-			Child_Behaviour =JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Child_Behaviour + ": "
-					+ Child_Behaviour);
+			Child_Behaviour = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Child_Behaviour + ": " + Child_Behaviour);
 			clear(By.xpath("//textarea[@id='child_behaviour']"));
 			sendKeys(By.xpath("//textarea[@id='child_behaviour']"), Child_Behaviour);
 			break;
 		case PixalereStringPool.Distractibility_Attention_span:
-			Distractibility_Attention_span =JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Distractibility_Attention_span + ": "
-					+ Distractibility_Attention_span);
+			Distractibility_Attention_span = JavaUtils.getRandomString(5);
+			System.out
+					.println(PixalereStringPool.Distractibility_Attention_span + ": " + Distractibility_Attention_span);
 			clear(By.xpath("//textarea[@id='child_behaviour']"));
 			sendKeys(By.xpath("//textarea[@id='child_behaviour']"), Distractibility_Attention_span);
 			break;
@@ -2491,49 +2782,43 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 		case PixalereStringPool.Nutrition_Likes:
 			Nutrition_Likes = JavaUtils.getRandomString(5);
-			System.out.println(
-					PixalereStringPool.Nutrition_Likes + ": " + Nutrition_Likes);
+			System.out.println(PixalereStringPool.Nutrition_Likes + ": " + Nutrition_Likes);
 			clear(By.xpath("//textarea[@id='likes']"));
 			sendKeys(By.xpath("//textarea[@id='likes']"), Nutrition_Likes);
 			break;
 		case PixalereStringPool.Nutrition_Dislikes:
 			Nutrition_Dislikes = JavaUtils.getRandomString(5);
-			System.out.println(
-					PixalereStringPool.Nutrition_Dislikes + ": " + Nutrition_Dislikes);
+			System.out.println(PixalereStringPool.Nutrition_Dislikes + ": " + Nutrition_Dislikes);
 			clear(By.xpath("//textarea[@id='dislikes']"));
 			sendKeys(By.xpath("//textarea[@id='dislikes']"), Nutrition_Dislikes);
 			break;
 		case PixalereStringPool.Nutrition_Sensitivies:
 			Nutrition_Sensitivies = JavaUtils.getRandomString(5);
-			System.out.println(
-					PixalereStringPool.Nutrition_Sensitivies + ": " + Nutrition_Sensitivies);
+			System.out.println(PixalereStringPool.Nutrition_Sensitivies + ": " + Nutrition_Sensitivies);
 			clear(By.xpath("//textarea[@id='intolerances']"));
 			sendKeys(By.xpath("//textarea[@id='intolerances']"), Nutrition_Sensitivies);
 			break;
 		case PixalereStringPool.Client_Care_Summary:
 			Client_Care_Summary = JavaUtils.getRandomString(5);
-			System.out.println(
-					PixalereStringPool.Client_Care_Summary + ": " + Client_Care_Summary);
+			System.out.println(PixalereStringPool.Client_Care_Summary + ": " + Client_Care_Summary);
 			clear(By.xpath("//textarea[@id='restrictions']"));
 			sendKeys(By.xpath("//textarea[@id='restrictions']"), Client_Care_Summary);
 			break;
 		case PixalereStringPool.Bedtime_routine:
 			Bedtime_routine = JavaUtils.getRandomString(5);
-			System.out.println(
-					PixalereStringPool.Bedtime_routine + ": " + Bedtime_routine);
+			System.out.println(PixalereStringPool.Bedtime_routine + ": " + Bedtime_routine);
 			clear(By.xpath("//textarea[@id='bedtime_routine']"));
 			sendKeys(By.xpath("//textarea[@id='bedtime_routine']"), Bedtime_routine);
 			break;
 		case PixalereStringPool.medical_devices:
 			medical_devices = JavaUtils.getRandomString(5);
-			System.out.println(
-					PixalereStringPool.medical_devices + ": " + medical_devices);
+			System.out.println(PixalereStringPool.medical_devices + ": " + medical_devices);
 			clear(By.xpath("//textarea[@id='sleeping_aid']"));
 			sendKeys(By.xpath("//textarea[@id='sleeping_aid']"), medical_devices);
 			break;
 
 		case PixalereStringPool.Sleep_Rest_Comments_PICAT:
-			Sleep_Rest_Comments_PICAT1 =JavaUtils.getRandomString(5);
+			Sleep_Rest_Comments_PICAT1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Sleep_Rest_Comments_PICAT + ": " + Sleep_Rest_Comments_PICAT1);
 			clear(By.xpath("//textarea[@id='rest_comment']"));
 			sendKeys(By.xpath("//textarea[@id='rest_comment']"), Sleep_Rest_Comments_PICAT1);
@@ -2942,7 +3227,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 		case PixalereStringPool.Diagnosis_History_of_Presenting_Concern:
 			Diagnosis_History_of_Presenting_Concern = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Diagnosis_History_of_Presenting_Concern + ": " + Diagnosis_History_of_Presenting_Concern);
+			System.out.println(PixalereStringPool.Diagnosis_History_of_Presenting_Concern + ": "
+					+ Diagnosis_History_of_Presenting_Concern);
 			clear(By.xpath("//textarea[@id='diagnosis_history']"));
 			sendKeys(By.xpath("//textarea[@id='diagnosis_history']"), Diagnosis_History_of_Presenting_Concern);
 			break;
@@ -2960,7 +3246,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 		case PixalereStringPool.Investigations_followup_clinically_relevant:
 			Investigations_followup_clinically_relevant = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Investigations_followup_clinically_relevant + ": " + Investigations_followup_clinically_relevant);
+			System.out.println(PixalereStringPool.Investigations_followup_clinically_relevant + ": "
+					+ Investigations_followup_clinically_relevant);
 			clear(By.xpath("//input[@id='investigation_text1']"));
 			sendKeys(By.xpath("//input[@id='investigation_text1']"), Investigations_followup_clinically_relevant);
 			break;
@@ -2971,7 +3258,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.xpath("//input[@id='followup_date1']"), Investigations_Date);
 			break;
 		case PixalereStringPool.Difficulties_report:
-			Difficulties_report =JavaUtils.getRandomString(5);
+			Difficulties_report = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Difficulties_report + ": " + Difficulties_report);
 			clear(By.xpath("//input[@id='home_adl_text']"));
 			sendKeys(By.xpath("//input[@id='home_adl_text']"), Difficulties_report);
@@ -3020,7 +3307,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 		case PixalereStringPool.Musculoskeletal_Status_comments:
 			Musculoskeletal_Status_comments = JavaUtils.getRandomString(5);
-			System.out.println(PixalereStringPool.Musculoskeletal_Status_comments + ": " + Musculoskeletal_Status_comments);
+			System.out.println(
+					PixalereStringPool.Musculoskeletal_Status_comments + ": " + Musculoskeletal_Status_comments);
 			clear(By.xpath("//textarea[@id='msk_additional_comments1']"));
 			sendKeys(By.xpath("//textarea[@id='msk_additional_comments1']"), Musculoskeletal_Status_comments);
 			break;
@@ -3029,7 +3317,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.Respiratory_comments + ": " + Respiratory_comments);
 			clear(By.xpath("//textarea[@id='resp_additional']"));
 			sendKeys(By.xpath("//textarea[@id='resp_additional']"), Respiratory_comments);
-			break;			
+			break;
 		case PixalereStringPool.Neurological_comments:
 			Neurological_comments = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Neurological_comments + ": " + Neurological_comments);
@@ -3043,27 +3331,26 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.xpath("//textarea[@id='cog_function_additional']"), Cognition_comments);
 			break;
 
-
 		case PixalereStringPool.Year_Calender_Pain_Assessment:
 			Year_Calender_Pain_Assessment = "2022";
 			System.out.println(PixalereStringPool.Year_Calender_Pain_Assessment + ": " + Year_Calender_Pain_Assessment);
 			clear(By.xpath("//*[@id='onset_date_year']"));
 			sendKeys(By.xpath("//*[@id='onset_date_year']"), Year_Calender_Pain_Assessment);
 			break;
-			
+
 		case PixalereStringPool.date_of_Last_BM:
 			date_of_Last_BM = "2022";
 			System.out.println(PixalereStringPool.date_of_Last_BM + ": " + date_of_Last_BM);
 			clear(By.xpath("//*[@id='date_last_bm_year']"));
 			sendKeys(By.xpath("//*[@id='date_last_bm_year']"), date_of_Last_BM);
 			break;
-			
+
 		case PixalereStringPool.Intensity_Pain_Assessment:
 			Intensity_Pain_Assessment = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.Intensity_Pain_Assessment + ": " + Intensity_Pain_Assessment);
 			clear(By.xpath("//*[@id='date_last_bm_year']"));
 			sendKeys(By.xpath("//*[@id='date_last_bm_year']"), Intensity_Pain_Assessment);
-			break;	
+			break;
 		case PixalereStringPool.Bed_Mobility_comment:
 			Bed_Mobility_comment = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.Bed_Mobility_comment + ": " + Bed_Mobility_comment);
@@ -3106,7 +3393,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("//textarea[@id='aid_used']"));
 			sendKeys(By.xpath("//textarea[@id='aid_used']"), Aid_used);
 			break;
-		
+
 		case PixalereStringPool.second_sit_stand_Test:
 			second_sit_stand_Test = JavaUtils.getRandomNumber(1);
 			System.out.println(PixalereStringPool.second_sit_stand_Test + ": " + second_sit_stand_Test);
@@ -3119,8 +3406,32 @@ public class PixalereScripts extends PixalereCommonUtils {
 			clear(By.xpath("//textarea[@id='balance_additional_comments2']"));
 			sendKeys(By.xpath("//textarea[@id='balance_additional_comments2']"), Balance_Assessed_comments);
 			break;
-			
-			
+
+		/// home nursing
+
+		case PixalereStringPool.HomeCommentsNursing:
+			HomeCommentsNursing1 = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.HomeCommentsNursing + ": " + HomeCommentsNursing1);
+			clear(By.xpath("//*[@name='ped_comment']"));
+			sendKeys(By.xpath("//*[@name='ped_comment']"), HomeCommentsNursing1);
+			break;
+
+		case PixalereStringPool.Other_Education_Client_CareGiver:
+			Other_Education_Client_CareGiver1 = JavaUtils.getRandomString(5);
+			System.out.println(
+					PixalereStringPool.Other_Education_Client_CareGiver + ": " + Other_Education_Client_CareGiver1);
+			clear(By.xpath("//*[@id='other_name']"));
+			sendKeys(By.xpath("//*[@id='other_name']"), Other_Education_Client_CareGiver1);
+			break;
+
+		case PixalereStringPool.Document_Name_for_Document_Upload:
+			Document_Name_for_Document_Upload1 = JavaUtils.getRandomString(5);
+			System.out.println(
+					PixalereStringPool.Document_Name_for_Document_Upload + ": " + Document_Name_for_Document_Upload1);
+			clear(By.xpath("//*[@id='name']"));
+			sendKeys(By.xpath("//*[@id='name']"), Document_Name_for_Document_Upload1);
+			break;
+
 		}
 	}
 }

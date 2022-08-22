@@ -22,7 +22,7 @@ And I click on Save My Work for cough assist Button
 And I Navigate to "Viewer -> Respiratory Flowcharts" LH panel option
 When I start verifying records in Respiratory Flowcharts Page
 And I Navigate to "Flow Sheets -> Respiratory Flow Sheet" LH panel option
-And I press on Delete Button
+And I press on Delete Button for respiratory Cough Assist
 And I enter "Reason for deleting record" input field Deletion in scripts
 And I confirm to press Delete Button
 And I check reason after deletion in viewer

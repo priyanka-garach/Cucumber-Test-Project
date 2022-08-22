@@ -5,7 +5,8 @@ Scenario: Pixalere Vital Signs Script
 Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
-When I select client name "TEST-Kirby , Jose" from Dashboard
+When I globally select "Pix ID" from Search Category dropdown
+And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Flow Sheets -> Vital Signs" LH panel option
 Then "Vital Signs" page will open

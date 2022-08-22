@@ -44,7 +44,7 @@ public class Tests_PixalereInHomeSafetyIdentificationTool extends PixalereInHome
 	public void I_select_Bathroom_checkbox_for_rooms_for_hazard(String string) {
 		selectCheckboxForhazard(string);
 	}
-	@When("I click on Save for rooms for hazard")
+	@When("I click on Save for rooms for Home Safety")
 	public void I_click_on_Save_for_rooms_for_hazard() {
 		clickOnSave();
 	}

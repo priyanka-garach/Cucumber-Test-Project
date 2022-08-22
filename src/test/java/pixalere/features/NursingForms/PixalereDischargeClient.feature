@@ -15,9 +15,4 @@ And I select "21" from Discharge Date dropdown for Discharge
 And I select "Dec" from Discharge Month dropdown for Discharge
 And I enter "2021" input field in script for Discharge
 And I click on Discharge Patient Button
-
-##
-#And I Navigate to "Viewer -> Waterlow Flowchart" LH panel option
-#Then "Waterlow Flowchart" page will open
-#Then I start verifying records in Waterlow Assessment
 And I Logout from Pixalere
