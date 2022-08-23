@@ -3310,7 +3310,71 @@ public class SeleniumCommonUtils {
 	}
 
 	public void verify_PT_Assessment_Page() {
-
+		WebElement v1 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Visit Date']/following-sibling::div"));
+		String d1 = v1.getText();
+		if (!d1.equalsIgnoreCase(PixalereScripts.ExcersizeName)) {
+			Assert.assertTrue(false);
+		}
+		
+		WebElement v2 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Referral screened for appropriateness at some time prior to initiating service.']/following-sibling::div"));
+		String d2 = v2.getText();
+		
+		WebElement v3 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Accuracy of info provided in referral confirmed in keeping with scope of service.']/following-sibling::div"));
+		String d3 = v3.getText();
+		
+		WebElement v4 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Acute Respiratory Screen (ARI) completed with negative result.']/following-sibling::div"));
+		String d4 = v4.getText();
+		
+		WebElement v5 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Service provided in client's home or treatment site as listed in LHIN referral.']/following-sibling::div"));
+		String d5 = v5.getText();
+		
+		WebElement v6 = driver.findElement(By.xpath("//div//label[contains(text(),'professional qualifications of assessor')]/following-sibling::div"));
+		String d6 = v6.getText();
+		
+		WebElement v7 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Comments']/following-sibling::div"));
+		String d7 = v7.getText();
+		
+		WebElement v8 = driver.findElement(By.xpath("//div//label[contains(text(),'Informed verbal consent for assessment obtained')]/following-sibling::div"));
+		String d8 = v8.getText();
+		
+		WebElement v9 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Student participating in service.']/following-sibling::div"));
+		String d9 = v9.getText();
+		
+		WebElement v10 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Diagnosis/History of Presenting Concern']/following-sibling::div"));
+		String d10 = v10.getText();
+		
+		WebElement v11 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Client/SDM Stated Goal']/following-sibling::div"));
+		String d11 = v11.getText();
+		
+		WebElement v12 = driver.findElement(By.xpath("//div//label[normalize-space(text())='LHIN Referral Information']/following-sibling::div"));
+		String d12 = v12.getText();
+		
+		WebElement v13 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Additional history relevant to PT service scope']/following-sibling::div"));
+		String d13 = v13.getText();
+		
+		WebElement v14 = driver.findElement(By.xpath("//div//label[contains(text(),'clinically relevant to PT scope of service identified')]/following-sibling::div"));
+		String d14 = v14.getText();
+		
+		WebElement v15 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Investigations/follow-up details']/following-sibling::div"));
+		String d15 = v15.getText();
+		
+		WebElement v16 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Additional Falls Risk Factors Identified']/following-sibling::div"));
+		String d16 = v16.getText();
+		
+		WebElement v17 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Housing']/following-sibling::div"));
+		String d17 = v17.getText();
+		
+		WebElement v18 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Living situation']/following-sibling::div"));
+		String d18 = v18.getText();
+		
+		WebElement v19 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Caregiver supports']/following-sibling::div"));
+		String d19 = v19.getText();
+		
+		WebElement v20 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Difficulties reported with ADL/IADL']/following-sibling::div"));
+		String d20 = v20.getText();
+		
+		WebElement v21 = driver.findElement(By.xpath("//div//label[normalize-space(text())='Abuse/Neglect']/following-sibling::div"));
+		String d21 = v21.getText();
 	}
 
 	public void verify_ExcersizeProgramPage() {
@@ -5388,6 +5452,16 @@ public class SeleniumCommonUtils {
 		// sel.selectByIndex(3);
 		sel.selectByVisibleText(visibleText);
 		waitForCompletePageLoad();
+	}
+	
+	public void selectBycontainsText(By locator, String text) {
+		List<WebElement> options = getWebDriver().findElements(locator);
+		for(WebElement option : options) {
+			if(option.getText().contains(text)){
+				option.click();
+				break;
+			}
+		}
 	}
 
 	public void select_ByIndex(By locator, Integer index) {

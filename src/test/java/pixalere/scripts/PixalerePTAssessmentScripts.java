@@ -53,7 +53,7 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 			clickElementWithJQuery(By.xpath("//a[@id='mskStatus_arrow']//img"));
 		}
 		else if(section.contains("Respiratory")) {
-			clickElementWithJQuery(By.xpath("//a[@id='repiratory_arrow']//img"));
+			clickElement(By.xpath("//a[@id='repiratory_arrow']//img"));
 		}
 		else if(section.contains("Neurological")) {
 			clickElementWithJQuery(By.xpath("//a[@id='neurologicalLabel_arrow']//img"));

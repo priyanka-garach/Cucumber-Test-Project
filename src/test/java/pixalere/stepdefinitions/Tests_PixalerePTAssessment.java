@@ -1,5 +1,7 @@
 package pixalere.stepdefinitions;
 
+import org.openqa.selenium.By;
+
 import io.cucumber.java.en.When;
 import pixalere.scripts.PixalerePTAssessmentScripts;
 
@@ -10,6 +12,21 @@ public class Tests_PixalerePTAssessment extends PixalerePTAssessmentScripts {
 	public void i_click_on_Assessment(String string) {
 		clickOnAssessmentTabs(string);
 	}
+	
+	@When("I click on ckeckbox for respiration")
+	public void I_click_on_ckeckbox_for_respiration() {
+		clickElement(By.id("repiratory_section"));
+		clickElement(By.id("repiratory_section"));
+	}
+	
+	@When("I click on ckeckbox for neurological")
+	public void I_click_on_ckeckbox_for_neurological() {
+		clickElement(By.id("neurologicalLabel_section"));
+		clickElement(By.id("neurologicalLabel_section"));
+	}
+	
+	
+	
 
 	@When("I click {string} radio option for initiating service")
 	public void i_click_radio_option_for_initiating_service(String string) {

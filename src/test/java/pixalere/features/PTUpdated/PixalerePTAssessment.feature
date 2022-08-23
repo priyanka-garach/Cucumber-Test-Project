@@ -138,15 +138,17 @@ And I click on "Save as Draft and Continue" Button
 And I click on "Musculoskeletal Status" Assessment
 And I enter "Date of MSK Assessment" input field in script
 And I click on "WFL - sufficient for function" radio option for MSK
-And I click on "Check All" Button
+And I click on Check All Button
 And I enter "Musculoskeletal Status comments" input field in script
 And I click on "Save as Draft and Continue" Button
 
 #And I click on "Respiratory/Neuro" tab
 And I click on "Respiratory" Assessment
+And I click on ckeckbox for respiration
 And I click on "WFL-respiration status sufficient for function" Respiratory
 And I enter "Respiratory comments" input field in script
 And I click on "Neurological" Assessment
+And I click on ckeckbox for neurological
 And I click on "WFL - sufficient for function" Neurological
 And I enter "Neurological comments" input field in script
 And I click on "Save as Draft and Continue" Button
@@ -171,7 +173,6 @@ And I click on "Yes" radio Option for Welcome Brochure
 And I click on "No" radio Option for Client Emergency
 And I select "HEP provided" checkbox for Assessment information
 And I click on Save As Draft PTAssessment
-
 
 And I Navigate to "Viewer -> Assessment" LH panel option
 Then "PT Assessment" page will open

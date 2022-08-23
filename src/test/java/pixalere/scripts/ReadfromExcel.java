@@ -22,16 +22,16 @@ public class ReadfromExcel {
 				"D:\\PIxalere\\pixalere_dp\\src\\Patients.xls", "Patients");
 		System.out.println(pt_id); */
 		
-		String pt_id = getUnusedPatientId("pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+		String pt_id = getUnusedPatientId(".\\test-data\\pt_patients_for_Automation.xls", "pt_patients_for_Automation");
 		System.out.println(pt_id);
 		
-		String ot_id = getUnusedPatientId("ot_patients_for_Automation.xls",
+		String ot_id = getUnusedPatientId(".\\test-data\\ot_patients_for_Automation.xls",
 				"ot_patients_for_Automation");
 		System.out.println(ot_id);
 
 			}
 
-	private static String getUnusedPatientId(String fileName, String sheetName) {
+	public static String getUnusedPatientId(String fileName, String sheetName) {
 		String result = "";
 		int rows = getRowCount(fileName, sheetName);
 		for (int i = 1; i <= rows; i++) {

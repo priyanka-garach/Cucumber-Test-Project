@@ -89,7 +89,8 @@ public class Tests_PixalereCreateNewPatientAccount extends PixalereCreateNewPati
 	
 	@When("I select PT from Service Referral PTAssessment for Teaching and PTAssessment special")
 	public void I_select_PT_from_Service_Referral_PTAssessment_special() {
-		select_ByIndex(By.id("encounter"), 2);
+		selectBycontainsText(By.xpath("//*[@id='encounter']//option"), "PT");
+		//select_ByIndex(By.id("encounter"), 2);
 	}
 	@When("I select PT from Service Referral")
 	public void I_select_PT_from_Service_Referral() {

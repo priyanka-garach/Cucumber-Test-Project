@@ -3623,7 +3623,7 @@ public class LocatorUtils {
 
 		public static By getRadioOptionByRespiratory(String section) {
 			radioRespiratory = section;
-			if (section.equalsIgnoreCase("WFL- sufficient for function"))
+			if (section.equalsIgnoreCase("WFL-respiration status sufficient for function"))
 				return By.xpath("//*[@id='md-radio-resp_wfl-1']//label");
 			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
 				return By.xpath("//*[@id='md-radio-resp_wfl-2']//label");
@@ -3633,7 +3633,7 @@ public class LocatorUtils {
 
 		public static By getRadioOptionByNeurological(String section) {
 			radioNeurological = section;
-			if (section.equalsIgnoreCase("WFL- sufficient for function"))
+			if (section.equalsIgnoreCase("WFL - sufficient for function"))
 				return By.xpath("//*[@id='md-radio-neuro_wfl-1']//label");
 			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
 				return By.xpath("//*[@id='md-radio-neuro_wfl-2']//label");
@@ -3643,7 +3643,7 @@ public class LocatorUtils {
 
 		public static By getRadioOptionByCognitiveFunctioning(String section) {
 			radioCognitiveFunctioning = section;
-			if (section.equalsIgnoreCase("WFL- sufficient for function"))
+			if (section.equalsIgnoreCase("WFL - sufficient for function"))
 				return By.xpath("//*[@id='md-radio-cog_wfl-1']//label");
 			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
 				return By.xpath("//*[@id='md-radio-cog_wfl-2']//label");
@@ -3653,7 +3653,7 @@ public class LocatorUtils {
 
 		public static By getRadioOptionByAffectiveFunctioning(String section) {
 			radioAffectiveFunctioning = section;
-			if (section.equalsIgnoreCase("WFL- sufficient for function"))
+			if (section.equalsIgnoreCase("WFL - sufficient for function"))
 				return By.xpath("//*[@id='md-radio-cog_function-1']//label");
 			else if (section.equalsIgnoreCase("Difficulties/risks identified"))
 				return By.xpath("//*[@id='md-radio-cog_function-2']//label");

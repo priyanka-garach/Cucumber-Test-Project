@@ -11,6 +11,7 @@ import pixalere.pageObjectUtils.LocatorUtils.LoginPageLocators;
 import pixalere.pageObjectUtils.LocatorUtils.PatientAccountsPageLocators;
 import pixalere.pageObjectUtils.LocatorUtils.PatientProfilePageLocators;
 import pixalere.pageObjectUtils.LocatorUtils.PatientVitalSignsLocators;
+import pixalere.scripts.ReadfromExcel;
 
 public class PixalereCommonUtils extends SeleniumCommonUtils {
 
@@ -146,7 +147,8 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 				isNewUser = false;
 			else {
 				PIXID = ConfigFileReader.getProperties("user.PIXID");
-				PIXID_PT_Teaching = ConfigFileReader.getProperties("user.PIXID_PT_Teaching");
+				//PIXID_PT_Teaching = ConfigFileReader.getProperties("user.PIXID_PT_Teaching");
+				PIXID_PT_Teaching = ReadfromExcel.getUnusedPatientId(".\\test-data\\pt_patients_for_Automation.xls", "pt_patients_for_Automation");
 				PixID_Nursing = ConfigFileReader.getProperties("user.PixID_Nursing");
 				PIXID_PT = ConfigFileReader.getProperties("user.PIXID_PT");
 			}

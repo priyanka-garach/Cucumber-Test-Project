@@ -28,7 +28,6 @@ And I select "Yes" radio option for Admission goals & discharge planning discuss
 
 And I enter "Siblings" input field in script
 And I enter "Significant Other Relationships Pets" input field in script
-
 And I select "Cough" checkbox for Respiratory History field
 And I select "Snoring" checkbox for Respiratory History field
 And I select "Smoking" checkbox for Respiratory History field
@@ -42,7 +41,6 @@ And I select "Grunting" checkbox for Respiratory Assessment field
 And I select "Cyanosis" checkbox for Respiratory Assessment field
 And I select "Strider" checkbox for Respiratory Assessment field
 And I enter "Respiratory Assessment Comments PICAT" input field in script
-
 And I select "Yes" radio option for Pacemaker Present field
 And I select "Fixed" radio option for Type field
 And I select "Fatigue" checkbox for Cardiovascular History field
@@ -57,15 +55,11 @@ And I select "No" radio option for Presence of Central Intravenous Line? field
 And I select "Yes" radio option for Murmurs field
 And I enter "Cardiovascular History Comments PICAT" input field in script
 And I enter "Cardiovascular Assessment Comments PICAT" input field in script
-
 And I select "Pain Management" checkbox option for Gastrointestinal History field
 And I select "Nutrition and Patient Education" checkbox option for Gastrointestinal History field
 And I select "Nausea" checkbox option for Gastrointestinal History field
 And I select "Vomiting" checkbox option for Gastrointestinal History field
-
 And I select "Yes" radio option for Recent weight changes field
-
-
 And I enter "Weight_10" input field in script
 And I select "Flat" radio option for Inspection field
 And I select "Firm" radio option for Palpation field
@@ -76,7 +70,6 @@ And I select "Constipation" checkbox for Bowel Habits field
 And I select "Diarrhea" checkbox for Bowel Habits field
 And I select "No" radio option for Enteral Tubes Present field
 And I select "No" radio option for Stoma Present field
-
 And I select "Dry" checkbox for Skin conditions field
 And I select "Cool" checkbox for Skin conditions field
 And I select "Pale" checkbox for Skin conditions field
@@ -112,7 +105,7 @@ And I select "Indwelling" checkbox for Catherization Type field
 And I enter "Catheter Size" input field in script
 And I enter "Care Instructions" input field in script
 
-And I select "Yes" radio option for Discharge present field
+#And I select "Yes" radio option for Discharge present field
 
 And I select "No" radio option for Foul odor in urine present field
 And I select "Intact" radio option for Skin integrity of perineal area field
