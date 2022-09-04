@@ -43,7 +43,6 @@ public class Tests_PixalereCarePlan extends PixalereCarePlanScripts {
 	@When("I start verifying records in Diabetes Teaching Guidelines Page")
 	public void I_start_verifying_records_in_Diabetes_Teaching_Guidelines_Page() {
 		verify_diabetes_teaching_page();
-
 	}
 
 	@When("I click on upadte button")

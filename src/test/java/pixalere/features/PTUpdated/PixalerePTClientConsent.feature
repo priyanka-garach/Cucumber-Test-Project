@@ -6,52 +6,55 @@ Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
 When I globally select "Pix ID" from Search Category dropdown
-And I search created patient with PIXID special for PTAssessement and Teaching
-And I select PT from Service Referral
+And I search created patient with PIXID special for PTConsent Form
+And I select PT from Service Referral PT for read from excel
 And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "Consent Form" LH panel option
 Then "Consent Form" page will open
 ##
-When I click on "Service Consent Obtained" checkbox Button SM
-And I verified data for "Proposed Health Services Discussed"
-And I verified data for "Risks, alternatives and benefits of service discussed"
-And I click on "Add a New Proposed Health Service" Button 
-And I click on Other checkbox for Service Consent Obtained
-And I enter "Other Service Consent Obtained" input field in script
-And I enter "Comments Service Consent Obtained" input field in script
-And I click on radio button "Yes" for Service Consent Obtained
-And I click on "Consent Obtained to Collect, Use and Release Personal Health Information:" checkbox Button SM
-And I verified data for "VHA acts as Health Information Custodian. Service Provider is the agent"
-And I click on Virtual Care Consent to Open PopUp
-And I click on "Add New Virtual Care Consent" Button
-And I click on Required for video checkbox
-And I click on radio button "Aware but not currently clinically appropriate" CC
-#And I click on radio button two "Aware and interested" CC
-And I click on radio button two "Yes" for Virtual Care Consent PT reviewed
-And I enter "Alternate Contact Name" input field in script
-And I enter "Backup Plan" input field in script
-And I enter "Comments in Virtual Care Consent" input field in script
-#And I click on Email Use For Communication Requested by Client_SDM to Open PopUp
-And I click checkbox for "Client/SDM has requested and agree to communication via Email"
-And I click on "Add New Email Address" Button
-And I enter "Email" input field in script
-And I click checkbox for "Primary E-mail Address"
-And I click on "Add New Email Address" Button
-And I click on Text Use For Communication Requested by Client_SDM Open PopUp
-And I click on checkbox for Client_Substitute Decision Maker has requested and agrees to communication via text
-#And I click checkbox for "Client"
-And I click checkbox for "With Use of Interpreter"
-#And I click checkbox for "Verbally"
-And I click on radio button "No" for Guidelines and Policies
-And I enter "Date Guidelines" input field in script
-And I click checkbox for "Lock Box Required"
-#And I enter "Lock Box Required" input field in script
-#And I enter "Date Guidelines Alternate" input field in script
-#And I click on "Save Lock box" Button
+When I click on "Service Consent Obtained" arrow Button
+And I click checkbox "As per that described by goals/care plan" for Proposed Health Services Discussed
+And I click checkbox "Other" for Proposed Health Services Discussed
+And I enter "Specify Proposed Health Services" input field in script
+And I enter "Service Consent Obtained comments" input field in script
+And I click radio "Yes" Risk for alternatives and benefits of service discussed
+And I click on "Consent Obtained to Collect, Use and Release Personal Health Information:" arrow Button
+And I click radio "Yes" for Notice of Information Practices provided to client SDM
+And I click radio "LHIN" for Your service funder
+And I tick "Other" for Family friends caregivers
+And I enter "Other comment Family friends caregivers" input field in script 
+And I tick "Other" for Medical Contacts
+And I enter "Other comment Medical Contacts" input field in script
+And I enter "Vendors" input field in script
+And I enter "Other comment Consent Obtained" input field in script
+And I click on "Virtual Care Consent" arrow Button
+And I tick "Consent to Use Electronic/Audio-Visual/Communication" for Virtual Care Consent
+And I click radio "Aware but not interested" Client is aware of the option of virtual care with telephone
+And I click checkbox "Language barriers" for Client not interested in virtual care by telephone because
+And I click checkbox "Hearing impairment" for Client not interested in virtual care by telephone because
+And I click checkbox "Other" for Client not interested in virtual care by telephone because
+And I click radio "Aware and interested" Client is aware of the option of virtual care with video
+And I click radio "Yes" regarding virtual care with video. Client SDM provided informed consent.
+And I click radio "Yes" regarding virtual care with novideo. Client SDM provided informed consent.
+And I enter "Alternate Contact Name Phone Number" input field in script
+And I enter "Back up plan" input field in script
+And I enter "Back up plan comments" input field in script
+And I click checkbox "Substitute Decision Maker" for Consent obtained from
+And I enter "SDM Name consent" input field in script
+And I click checkbox "Spouse" for Relationship
+And I click checkbox "Parent" for Relationship
+And I click checkbox "Other" for Relationship
+And I enter "Other relationship comment" input field in script
+And I click radio "Yes" I the Service Provider have completed this consent discussion with the clientSDM
+And I enter "Date client consent" input field in script
+And I click checkbox "Lock Box Required" for Lock Box Required
+And I enter "Lock Box Required comment" input field in script
+And I enter "Effective Date client consent" input field in script
+#
 And I save my work PTClient Consent
 ##
-And I Navigate to "Viewer -> Client Consent" LH panel option
-Then "Client Consent" page will open
+And I Navigate to "Viewer -> Consent Form" LH panel option
+Then "Consent Form" page will open
 When I start verifying records in Client Consent Page
 Then I Logout from Pixalere
 

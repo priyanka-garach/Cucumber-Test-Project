@@ -7,7 +7,7 @@ Given I am enter Pixalere Url
 And I login with "admin-P" User-p
 When I globally select "Pix ID" from Search Category dropdown
 And I search created patient with PIXID special for PTAssessement and Teaching
-And I select PT from Service Referral PTAssessment for Teaching and PTAssessment special
+And I select PT from Service Referral PT for read from excel
 And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "PT Assessment" LH panel option
 Then "PT Assessment" page will open
@@ -36,9 +36,7 @@ And I select "Dizziness/ lightheadedness" checkbox for Assessment Initiated
 And I select "Blood pressure out of normal range" checkbox for Assessment Initiated
 And I click on "Home Accessibility & Social Situation Assessed" Assessment
 And I click on "House" radio option for Housing
-And I select "Partner" checkbox for Home Accessibility
 And I select "Family" checkbox for Home Accessibility
-And I select "Partner/family" checkbox for Home Accessibility
 And I select "Private caregiver" checkbox for Home Accessibility
 And I enter "Difficulties report" input field in script
 And I click on "No obvious evidence of abuse/neglect" radio option for evidence

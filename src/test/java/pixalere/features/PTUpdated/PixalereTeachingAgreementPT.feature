@@ -5,7 +5,8 @@ Given I setup in Browser
 Given I am enter Pixalere Url
 And I login with "admin-P" User-p
 When I globally select "Pix ID" from Search Category dropdown
-And I search created patient with PIXID PT
+And I search created patient with PIXID special for PT_Teaching
+And I select PT from Service Referral PT for read from excel
 And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "Teaching Agreement" LH panel option
 Then "Teaching Agreement" page will open
@@ -19,7 +20,7 @@ And I select "Transfers" checkbox for Activity to be Instructed
 And I select "Transfer board" checkbox under Transfer Feild
 And I select "Stair glide transfer" checkbox under Transfer Feild
 And I select "Sit to stand lift" checkbox under Transfer Feild
-And I select "Chair to chair" checkbox under Transfer Feild
+#And I select "Chair to chair" checkbox under Transfer Feild
 And I select "Toilet seat transfer" checkbox under Transfer Feild
 And I select "Bath tub transfer" checkbox under Transfer Feild
 And I select "Lift handout provided" checkbox for Activity to be Instructed

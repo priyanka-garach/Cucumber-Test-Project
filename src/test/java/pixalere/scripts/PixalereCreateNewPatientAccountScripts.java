@@ -124,6 +124,7 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 
 	public static String Type_Of_Ventilator1;
 	public static String LEAK_HOME1;
+	public static String Minute_Ventilation1;
 
 	public static String vital_signs_drop_down;
 
@@ -667,6 +668,13 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 			System.out.println(PixalereStringPool.PRIMARY_INSURANCE_GROUP + ": " + pig);
 			if (isInsuranceBlockDisplayed)
 				sendKeys(PatientAccountsPageLocators.txt_PrimaryInsuranceGroupInput, pig);
+			break;
+			
+		case PixalereStringPool.Minute_Ventilation:
+			Minute_Ventilation1 = JavaUtils.getRandomNumber(1);
+			System.out.println(PixalereStringPool.Minute_Ventilation + ": " + Minute_Ventilation1);
+			clear(TracheostomyLocators.txt_ventiltion);
+			sendKeys(TracheostomyLocators.txt_ventiltion, Minute_Ventilation1);
 			break;
 
 		/// home child nursing

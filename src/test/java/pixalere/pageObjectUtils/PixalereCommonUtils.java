@@ -18,6 +18,8 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 	public static String CINID;
 	public static String PIXID;
 	public static String PIXID_PT_Teaching;
+	public static String PIXID_PT_TeachingAgreement;
+	public static String PIXID_PT_consentForm;
 	public static String PixID_Nursing;
 	public static String PIXID_PT;
 	public static String PIXID_OT;
@@ -148,9 +150,13 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 			else {
 				PIXID = ConfigFileReader.getProperties("user.PIXID");
 				//PIXID_PT_Teaching = ConfigFileReader.getProperties("user.PIXID_PT_Teaching");
-				PIXID_PT_Teaching = ReadfromExcel.getUnusedPatientId(".\\test-data\\pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+				//PIXID_PT_Teaching = ReadfromExcel.getUnusedPatientId(".\\test-data\\pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+				//PIXID_PT_TeachingAgreement = ReadfromExcel.getUnusedPatientId(".\\test-data\\teaching_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+				PIXID_PT_consentForm = ReadfromExcel.getUnusedPatientId(".\\test-data\\consentForm_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+	
 				PixID_Nursing = ConfigFileReader.getProperties("user.PixID_Nursing");
 				PIXID_PT = ConfigFileReader.getProperties("user.PIXID_PT");
+				
 			}
 				
 			if (isDisplayed(By.id("popup_agree")))
@@ -302,7 +308,38 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, PIXID_PT_Teaching)));
 
 	}
+	
+	public void searchPatient_pt_teaching() {
+		
+		PIXID_PT_TeachingAgreement = PIXID_PT_TeachingAgreement.replaceAll("\\s", "");
+		sendKeys(GlobalPageLocators.txt_SearchPatientInput, PIXID_PT_TeachingAgreement);
 
+		clickElement(GlobalPageLocators.btn_SearchBuutton);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, PIXID_PT_TeachingAgreement)));
+
+	}
+	
+	public void searchPatient_consentform() {
+	
+		PIXID_PT_consentForm = PIXID_PT_consentForm.replaceAll("\\s", "");
+		sendKeys(GlobalPageLocators.txt_SearchPatientInput, PIXID_PT_consentForm);
+
+		clickElement(GlobalPageLocators.btn_SearchBuutton);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, PIXID_PT_consentForm)));
+	}
+	
 	public void clickLinkWithText(String hyperLink) {
 		clickElement(CustomizedLocators.getLinkWithTextElement(hyperLink));
 	}
