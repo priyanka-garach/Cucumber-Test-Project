@@ -40,5 +40,9 @@ And I select radio "High" for Risk Level
 And I select "4" for Day Date Show Prevention
 And I select "Jun" for Month Date Show Prevention
 And I enter "2022 Show Prevention" input field in script
+#And I enter "Additional Comments Prevention Best Practices" input field in script
 And I click on Save Button Care Plan
+#
 Then I Logout from Pixalere
+
+##
