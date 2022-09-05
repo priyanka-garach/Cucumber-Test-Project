@@ -1,7 +1,6 @@
 package pixalere.pageObjectUtils;
 
 import org.openqa.selenium.By;
-import org.xhtmlrenderer.css.parser.property.PrimitivePropertyBuilders.Clear;
 
 public class LocatorUtils {
 

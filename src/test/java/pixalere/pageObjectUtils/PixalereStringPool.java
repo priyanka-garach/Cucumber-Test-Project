@@ -18,13 +18,13 @@ public class PixalereStringPool {
 	public static final String TEMP = "Tempearture";
 
 	public static final String BP = "Blood Pressure";
-	
+
 	public static final String Date_of_Visit_Tinneti = "Date of Visit Tinneti";
 
 	public static final String Comments_Tinneti = "Comments Tinneti";
-	
+
 	public static final String cam_tool_comment = "cam_tool_comment";
-	
+
 	public static final String HeartRate = "Heart Rate";
 
 	public static final String RespiRate = "Respiratory Rate";
@@ -46,7 +46,7 @@ public class PixalereStringPool {
 	public static final String Minute_Ventilation = "Minute Ventilation";
 
 	public static final String PRESSURE_HOME = "Pressure";
-	
+
 	public static final String PRESSURE_Tracheostomy = "Pressure Tracheostomy";
 
 	public static final String Volume_Tidal_Exhaled = "Volume Tidal Exhaled";
@@ -106,13 +106,13 @@ public class PixalereStringPool {
 	public static final String INSULIN_HOME = "Insulin";
 
 	public static final String PROBLEM_No_CarePlan = "Problem CP";
-	
+
 	public static final String Details_for_History_of_Fall = "Details for History of Fall";
-	
+
 	public static final String Details_for_Cogntive_impairment = "Details for Cogntive impairment";
-	
+
 	public static final String Details_for_Taking_4_or_more_medications = "Details for Taking 4 or more medications";
-	
+
 	public static final String Other_Education_Client_CareGiver = "Other Education Client Caregiver Education";
 	public static final String Cough_Assist_Year = "Cough Assist Year";
 	public static final String invasive_ventilation_Year = "invasive ventilation Year";
@@ -134,7 +134,7 @@ public class PixalereStringPool {
 	public static final String Other_Service_Consent_Obtained = "Other Service Consent Obtained";
 	public static final String Comments_Service_Consent_Obtained = "Comments Service Consent Obtained";
 
-	public static final String Document_Name_for_Document_Upload =  "Document Name for Document Upload";
+	public static final String Document_Name_for_Document_Upload = "Document Name for Document Upload";
 	public static final String secondareaof_concern = "2st area of concern";
 
 	public static final String PixalereTestsAdmin = "Pixalere Tests – Admin";
@@ -185,7 +185,7 @@ public class PixalereStringPool {
 	public static final String RepeatAST1 = "Repeat";
 
 	public static final String HoldAST2 = "Hold2";
-	
+
 	public static final String SideAST2 = "Sides2";
 
 	public static final String RepeatAST2 = "Repeat2";
@@ -275,11 +275,11 @@ public class PixalereStringPool {
 	public static final String Please_document_MRP_recommendations = "Please document MRP recommendations";
 
 	public static final String Aggravating_Factors = "Aggravating Factors";
-	
+
 	public static final String Regular_Pain_Medication = "Regular Pain Medication";
-	
+
 	public static final String Breakthrough_Pain_Medication = "Breakthrough Pain Medication";
-	
+
 	public static final String Breakthrough_Frequency = "Breakthrough Frequency";
 
 	public static final String Comments_Pain_Profile = "Comments Pain Profile";
@@ -377,6 +377,9 @@ public class PixalereStringPool {
 	public static final String ADP_Authorizer_Name = "ADP Authorizer Name";
 
 	public static final String Date_ADP = "Date_ADP";
+	public static final String From_ADP = "From_ADP";
+	public static final String To_ADP = "To_ADP";
+	public static final String uploaded_by = "uploaded_by";
 
 	public static final String Document_Name_for_Filter = "Document_Name_for_Filter";
 
@@ -394,7 +397,7 @@ public class PixalereStringPool {
 	public static final String LearnerDate = "LearnerDate";
 
 	public static final String EducationComment = "EducationComment";
-	
+
 	public static final String concerns_or_issues = "concerns or issues";
 	public static final String values_and_beliefs = "values and beliefs";
 	public static final String health_teaching = "health teaching";
@@ -460,19 +463,19 @@ public class PixalereStringPool {
 	public static final String Service_Teaching_Plan_Three = "Service Teaching Plan Three";
 
 	public static final String EMESIS = "Emesis";
-	
+
 	public static final String PO = "PO";
-	
+
 	public static final String ENTERAL = "Enteral";
-	
+
 	public static final String VOID = "Void";
-	
+
 	public static final String Drain1_Location = "Drain1_Location";
-	
+
 	public static final String Drain2_Location = "Drain2_Location";
-	
+
 	public static final String Drain3_Location = "Drain3_Location";
-	
+
 	public static final String no_of_stool = "no_of_stool";
 
 	public static final String FLUID = "Fluid";
@@ -580,7 +583,7 @@ public class PixalereStringPool {
 	public static final String PRIMARY_INSURANCE_GROUP = "Primary Insurance Group #";
 
 	public static final String HomeComments = "Comments HSI";
-	
+
 	public static final String HomeCommentsNursing = "Comments HSI Nursing";
 
 	public static final String NAME = "Name";
@@ -860,13 +863,13 @@ public class PixalereStringPool {
 	public static final String pt_teaching_agreement_comment = "Education Completed by Service Provider";
 
 	public static final String pt1_ta_comment_activity_to_be_instructed = "Activity to be Instructed PT";
-	
+
 	public static final String Equipment_Source = "Equipment Source";
-	
+
 	public static final String Case_Coordinator = "Case Coordinator";
-	
+
 	public static final String Primary_nurse_contact_info = "Primary nurse contact info";
-	
+
 	public static final String Visit_Date = "Visit Date";
 	public static final String Assessment_Initiated_Comments = "Assessment Initiated Comments";
 	public static final String Diagnosis_History_of_Presenting_Concern = "Diagnosis History of Presenting Concern";
@@ -896,8 +899,6 @@ public class PixalereStringPool {
 	public static final String second_sit_stand_Test = "30 second sit-stand Test";
 	public static final String Balance_Assessed_comments = "Balance Assessed comments";
 
-	
-	
 	public static final String Analysis_Comments = "Analysis Comments";
 	public static final String Previous_Funding_Comments = "Previous Funding Comments";
 	public static final String client_Weight = "client Weight";
@@ -905,4 +906,9 @@ public class PixalereStringPool {
 	public static final String Popliteal_fossa_heal = "Popliteal fossa-heal";
 	public static final String Rationale = "Rationale";
 	public static final String Handle_height = "Handle height";
+	public static final String Buttocks_popliteal_fossa = "Buttocks-popliteal fossa";
+	public static final String Other = "Other";
+	public static final String Any_additional_comments = "Any additional comments";
+	public static final String Comment = "Comment";
+	public static final String Activity_Comment = "Activity Comment";
 }
