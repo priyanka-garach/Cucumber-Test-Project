@@ -733,8 +733,9 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 		 * System.out.println(PixalereStringPool.TREATMENT_LOCATION+": "
 		 * +treatmentLocation); }
 		 */
+		Wait_p(2);
 		selectByVisibleText(GlobalPageLocators.txt_SearchPatientInputDropdown, value);
-
+		Wait_p(1);
 	}
 
 	public void selectOTFromSerivceReferral(String value) {

@@ -8,7 +8,7 @@ And I login with "admin-P" User-p
 When I globally select "Pix ID" from Search Category dropdown
 And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
-And I Navigate to "Prevention" LH panel option
+And I Navigate to Prevention LH panel option
 And I click on Next Button
 Then "Braden Pressure Injury Risk Assessment" page will open
 When I click on Next Button
@@ -44,5 +44,4 @@ And I enter "2022 Show Prevention" input field in script
 And I click on Save Button Care Plan
 #
 Then I Logout from Pixalere
-
 ##

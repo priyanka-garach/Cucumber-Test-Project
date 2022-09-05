@@ -10,7 +10,7 @@ import pixalere.pageObjectUtils.SeleniumCommonUtils;
 
 @RunWith(Cucumber.class)
 
-@CucumberOptions(features = { "classpath:pixalere/features/NursingForms/PixalereShowPrevention.feature" }, glue = {
+@CucumberOptions(features = { "classpath:pixalere/features/NursingForms/PixalereDischargeClient.feature" }, glue = {
 		"classpath:pixalere.stepdefinitions" }, plugin = { "pretty", "json:target/cucumber.json" })
 
 public class TestRunner2 extends AbstractTestNGCucumberTests {

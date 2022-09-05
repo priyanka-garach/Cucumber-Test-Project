@@ -68,6 +68,11 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 		navigateToAdministrationPanelOption(administrationOption);
 	}
 	
+	@When("I Navigate to Prevention LH panel option")
+	public void i_Navigate_to_Prevention_panel_option() {
+		navigateToAdministrationPanelOption("Prevention");
+	}
+	
 	@When("I Navigate-NAMD to {string} LH panel option Non-Authorizer Mobility Device Recommendation")
 	public void i_Navigate_to_LH_panel_option_NAMDR(String administrationOption) {
 		navigateToAdministrationPanelOptionNAMDR(administrationOption);
@@ -96,6 +101,11 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 	@When("I search created patient with PIXID Nursing")
 	public void i_search_created_patient_pixid_nursing() {
 		searchPatient_nursing();
+	}
+	
+	@When("I search created patient with PIXID Nursing Discharge Patient")
+	public void i_search_created_patient_pixid_nursing_Discharge_Patient() {
+		searchPatient_nursing_discharge();
 	}
 	
 	@When("I search created patient with PIXID PT")

@@ -34,7 +34,6 @@ import io.cucumber.core.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
-import pixalere.pageObjectUtils.LocatorUtils.TeachingAgreementPT;
 import pixalere.scripts.PixalereAcuteRespiratoryIllnessScripts;
 import pixalere.scripts.PixalereAdvLowerLimbAssessmentScripts;
 import pixalere.scripts.PixalereBasicLowerLimbAssessmentScripts;
@@ -87,6 +86,8 @@ public class SeleniumCommonUtils {
 
 	// MAHC-10
 	public static String MAHC_10_Fall_Risk_Score;
+	
+
 
 	/**
 	 * Return WebDriver
@@ -318,7 +319,7 @@ public class SeleniumCommonUtils {
 	}
 	
 	public void refresh_currentURL() {
-		driver.navigate().refresh();
+		driver.get(driver.getCurrentUrl());
 	}
 
 	/**
@@ -1247,6 +1248,16 @@ public class SeleniumCommonUtils {
 			waitInterval(1);
 			clickElement(By.xpath(xpath2));
 			waitInterval(5);
+		}
+	}
+	
+	public void verify_status_discharge() {
+		WebElement e1 = driver
+				.findElement(By.xpath("//*[contains(text(),'Funder Status:')]//following-sibling::span"));
+		highLightElement(By.xpath("//*[contains(text(),'Funder Status:')]//following-sibling::span"));
+		String data1 = e1.getText();
+		if(data1.contains("Discharge")) {
+			Assert.assertTrue(false);
 		}
 	}
 

@@ -10,7 +10,6 @@ public class Tests_PixalereShowPrevention extends PixalereShowPreventionScripts 
 
 	@When("I click on Next Button")
 	public void i_click_Next_Button() {
-		refresh_currentURL();
 		clickElement(By.xpath("//*[@id='nextbutton']"));
 	}
 
