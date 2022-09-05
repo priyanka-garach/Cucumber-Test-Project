@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 
-import cucumber.api.Format;
 import pixalere.pageObjectJavaUtils.JavaUtils;
 import pixalere.pageObjectUtils.LocatorUtils.GlobalPageLocators;
 import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
@@ -18,7 +19,7 @@ import pixalere.pageObjectUtils.PixalereStringPool;
 public class PixalereScripts extends PixalereCommonUtils {
 
 	public static List<String> SeatingAndMobility_Radio = new ArrayList<>();
-	
+
 	public static String Special_Delivery_Instructions;
 	public static String first_areaofconcern;
 	public static String secondareaof_concern;
@@ -77,7 +78,10 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Popliteal_fossa_heal;
 	public static String Rationale;
 	public static String Handle_height;
-	
+	public static String Buttocks_popliteal_fossa;
+	public static String Other;
+	public static String Any_additional_comments;
+
 	public static String CLIENT_SUMMARY_Special_Instructions;
 	public static String pt_modified_exercise;
 	public static String Document_Name_for_Document_Upload1;
@@ -98,25 +102,7 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String SM14;
 	public static String SM15;
 	public static String SM16;
-	public static String FMSM1=null;
-	public static String FMSM2=null;
-	public static String FMSM3=null;
-	public static String FMSM4=null;
-	public static String FMSM5=null;
-	public static String FMSM6=null;
-	public static String FMSM7=null;
-	public static String FMSM8=null;
-	public static String FMSM9=null;
-	public static String FMSM10=null;
-	public static String FMSM11=null;
-	public static String FMSM12=null;
-	public static String FMSM13=null;
-	public static String FMSM14=null;
-	public static String FMSM15=null;
-	public static String FMSM16=null;
-	public static String FMSM17=null;
-	public static String FMSM18=null;
-	public static String FMSM19=null;
+
 	
 	//Pt client consent
 	public static String Specify_Proposed_Health_Services;
@@ -135,8 +121,28 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Effective_Date_client_consent;
 	public static String Additional_Comments_Prevention_Best_Practices;
 
+	public static String FMSM1 = null;
+	public static String FMSM2 = null;
+	public static String FMSM3 = null;
+	public static String FMSM4 = null;
+	public static String FMSM5 = null;
+	public static String FMSM6 = null;
+	public static String FMSM7 = null;
+	public static String FMSM8 = null;
+	public static String FMSM9 = null;
+	public static String FMSM10 = null;
+	public static String FMSM11 = null;
+	public static String FMSM12 = null;
+	public static String FMSM13 = null;
+	public static String FMSM14 = null;
+	public static String FMSM15 = null;
+	public static String FMSM16 = null;
+	public static String FMSM17 = null;
+	public static String FMSM18 = null;
+	public static String FMSM19 = null;
+
 	public static List<String> list_SM1 = new ArrayList<>();
-	
+
 	public static List<String> list_SM2 = new ArrayList<>();
 	public static List<String> list_SM3 = new ArrayList<>();
 	public static List<String> list_SM4 = new ArrayList<>();
@@ -147,13 +153,13 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static List<String> list_SM9 = new ArrayList<>();
 	public static List<String> list_SM10 = new ArrayList<>();
 	public static List<String> list_SM11 = new ArrayList<>();
-	
+
 	public static List<String> list_SM12 = new ArrayList<>();
-	
+
 	public static List<String> list_SM13 = new ArrayList<>();
-	
+
 	public static List<String> list_SM14 = new ArrayList<>();
-	
+
 	public static List<String> list_SM15 = new ArrayList<>();
 	public static List<String> list_SM16 = new ArrayList<>();
 	public static List<String> list_SM17 = new ArrayList<>();
@@ -161,7 +167,6 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static List<String> list_SM19 = new ArrayList<>();
 	public static List<String> list_SM20 = new ArrayList<>();
 	public static List<String> list_SM21 = new ArrayList<>();
-	
 
 	public static String TIME_PT;
 	public static String AID_USED_TUG;
@@ -285,7 +290,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String ADP_Authorizer_Name1;
 	public static String Date_ADP1;
 	public static String Document_Name_for_Filter1;
-
+	public static String Comment;
+	public static String Activity_Comment;
 	public static String Source_of_Info1;
 	public static String Allergies_and_Reactions;
 	public static String Primary_Diagnosis;
@@ -498,6 +504,28 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static List<String> chk_Accompanying_Symptom_pain_ass = new ArrayList<>();
 	public static List<String> chk_Pharmacological_Intervention_pain = new ArrayList<>();
 
+	public static String name;
+	public static String client_stated_concerns_comment;
+	public static String ot_home_aceess_assessed_comment;
+	public static String ot_home_env_comment;
+	public static String ot_diagnosis_addition_comments;
+	public static String ot_stretegies_comment;
+	public static String skin_comment;
+	public static String ot_strategies_education_comment;
+	public static String medication_management_comment;
+	public static String mental_health_comment;
+	public static String routine_comment;
+	public static String adls_dressing_comment;
+	public static String ambulation_stair_comment;
+	public static String transfer_assessed_comment;
+	public static String bathroom_assessed_comment;
+	public static String VAC;
+	public static String Insurance;
+	public static String WSIB;
+	public static String income_assessed_comment;
+	public static String assess_activities_comments;
+	public static String analysis_recommendation_comment;
+
 	public void chk_instruct_client_field(String value) {
 		clickElement(By.xpath("//input[@id='modified_exercise']//following-sibling::label"));
 		pt_modified_exercise = "Yes";
@@ -651,8 +679,9 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public void selectADPConfirmed(String section) {
 		if (section.contains("no longer meets basic mobility needs")) {
 			FMSM12 = "no longer meets basic mobility needs";
-			//String xpath1 =String.format(SeatingMobilityLocator.chk_ADPConfirmed, FMSM12);  
-			//clickElementWithJQuery(By.xpath(xpath1));
+			// String xpath1 =String.format(SeatingMobilityLocator.chk_ADPConfirmed,
+			// FMSM12);
+			// clickElementWithJQuery(By.xpath(xpath1));
 			list_SM12.add(FMSM12);
 		}
 	}
@@ -699,8 +728,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public void selectASC(String section) {
 		if (section.contains("Assessment results/application status reviewed and considered in")) {
 			FMSM18 = "Assessment results/application status reviewed and considered in";
-			//String xpath1 = String.format(SeatingMobilityLocator.chk_ASC, FMSM18);
-			//clickElementWithJQuery(By.xpath(xpath1));
+			// String xpath1 = String.format(SeatingMobilityLocator.chk_ASC, FMSM18);
+			// clickElementWithJQuery(By.xpath(xpath1));
 			list_SM18.add(FMSM18);
 		}
 	}
@@ -1709,47 +1738,38 @@ public class PixalereScripts extends PixalereCommonUtils {
 	}
 
 	public void selectRadioButton_SeatingAndMobility(String s) {
-		if(s.contains("Assessment results shared with client")) {
+		if (s.contains("Assessment results shared with client")) {
 			clickElementWithJQuery(By.xpath("//*[@id='md-radio-results_shared1']//label"));
 			SeatingAndMobility_Radio.add(s);
-		}
-		else if(s.contains("Mobility device goal")) {
+		} else if (s.contains("Mobility device goal")) {
 			clickElementWithJQuery(By.xpath("//*[@id='md-radio-goal_established1']//label"));
 			SeatingAndMobility_Radio.add(s);
-		}
-		else if(s.contains("Student participation in service")) {
+		} else if (s.contains("Student participation in service")) {
 			clickElementWithJQuery(By.xpath("//*[@id='md-radio-student_participation2']//label"));
 			SeatingAndMobility_Radio.add(s);
-		}
-		else if(s.contains("Assistive Devices Program")) {
+		} else if (s.contains("Assistive Devices Program")) {
 			clickElementWithJQuery(By.xpath("//div[@id='md-radio-discussed_assistive_devices_program1']//label"));
 			SeatingAndMobility_Radio.add(s);
-		}
-		else if(s.contains("Screen for ADP")) {
+		} else if (s.contains("Screen for ADP")) {
 			clickElementWithJQuery(By.xpath("//div[@id='md-radio-eligibility_screen_completed1']//label"));
 			SeatingAndMobility_Radio.add(s);
-		}
-		else if(s.contains("Client appears to meet ADP eligibility")) {
+		} else if (s.contains("Client appears to meet ADP eligibility")) {
 			clickElementWithJQuery(By.xpath("//div[@id='md-radio-client_adp_eligible1']//label"));
 			SeatingAndMobility_Radio.add(s);
-		}
-		else if(s.contains("Confirmed the status")) {
+		} else if (s.contains("Confirmed the status")) {
 			clickElementWithJQuery(By.xpath("//div[@id='md-radio-prior_funding1']//label"));
 			SeatingAndMobility_Radio.add(s);
-		}
-		else if(s.contains("None")) {
+		} else if (s.contains("None")) {
 			clickElementWithJQuery(By.xpath("//div[@id='md-radio-prior_funding_which_1']//label"));
 			SeatingAndMobility_Radio.add(s);
-		}
-		else if(s.contains("Skin Integrity")) {
+		} else if (s.contains("Skin Integrity")) {
 			clickElementWithJQuery(By.xpath("//div[@id='md-radio-skin_integrity_assessed-1']//label"));
 			SeatingAndMobility_Radio.add(s);
-		}
-		else if(s.contains("Walker type")) {
+		} else if (s.contains("Walker type")) {
 			clickElementWithJQuery(By.xpath("//div[@class='md-radio']//label[@for='walker_type1']"));
 			SeatingAndMobility_Radio.add(s);
 		}
-		
+
 	}
 
 	public void enterInputFieldAsPerKeyfromScripts(String inputField) {
@@ -2596,24 +2616,26 @@ public class PixalereScripts extends PixalereCommonUtils {
 			break;
 
 		case PixalereStringPool.ADP_Authorizer_Name:
-			ADP_Authorizer_Name1 = JavaUtils.getRandomNumber(1);
+			ADP_Authorizer_Name1 = JavaUtils.getRandomString(5);
 			System.out.println(PixalereStringPool.ADP_Authorizer_Name + ": " + ADP_Authorizer_Name1);
 			clear(By.xpath("//*[@id='name']"));
 			sendKeys(By.xpath("//*[@id='name']"), ADP_Authorizer_Name1);
 			break;
 
 		case PixalereStringPool.Date_ADP:
-			Date_ADP1 = "05/05/2022";
+			Date_ADP1 = "08/24/2022";
 			System.out.println(PixalereStringPool.Date_ADP + ": " + Date_ADP1);
 			// clear(By.xpath("//*[@id='adp_date']"));
 			sendKeys_date(By.xpath("//*[@id='adp_date']"), Date_ADP1);
+			Actions act = new Actions(getWebDriver());
+			act.sendKeys(Keys.TAB).build().perform();
 			break;
 
 		case PixalereStringPool.Document_Name_for_Filter:
-			Document_Name_for_Filter1 = "MOHLTC_ADP_Application";
-			System.out.println(PixalereStringPool.Document_Name_for_Filter + ": " + Document_Name_for_Filter1);
+//			Document_Name_for_Filter1 = "MOHLTC_ADP_Application";
+			System.out.println(PixalereStringPool.Document_Name_for_Filter + ": " + ADP_Authorizer_Name1);
 			clear(By.xpath("(//*[@name='document'])[2]"));
-			sendKeys(By.xpath("(//*[@name='document'])[2]"), Document_Name_for_Filter1);
+			sendKeys(By.xpath("(//*[@name='document'])[2]"), ADP_Authorizer_Name1);
 			break;
 
 		////////// PICAT child nursing ////////////////
@@ -3657,8 +3679,58 @@ public class PixalereScripts extends PixalereCommonUtils {
 			sendKeys(By.xpath("(//*[@id='reassessment_date_year'])"), Show_Prevention_2022);
 			break;
 			
-			
-	
+		case PixalereStringPool.Buttocks_popliteal_fossa:
+			Buttocks_popliteal_fossa = JavaUtils.getRandomNumber(2);
+			System.out.println(PixalereStringPool.Buttocks_popliteal_fossa + ": " + Buttocks_popliteal_fossa);
+			clear(By.xpath("//*[@name='butt']"));
+			sendKeys(By.xpath("//*[@name='butt']"), Buttocks_popliteal_fossa);
+			break;
+		case PixalereStringPool.Other:
+			Other = JavaUtils.getRandomNumber(2);
+			System.out.println(PixalereStringPool.Other + ": " + Other);
+			clear(By.xpath("//*[@name='other']"));
+			sendKeys(By.xpath("//*[@name='other']"), Other);
+			break;
+		case PixalereStringPool.Any_additional_comments:
+			Any_additional_comments = JavaUtils.getRandomNumber(2);
+			System.out.println(PixalereStringPool.Any_additional_comments + ": " + Any_additional_comments);
+			clear(By.xpath("//*[@name='additional_comments']"));
+			sendKeys(By.xpath("//*[@name='additional_comments']"), Any_additional_comments);
+			break;
+		case PixalereStringPool.From_ADP:
+			Date_ADP1 = "08/22/2022";
+			System.out.println(PixalereStringPool.Date_ADP + ": " + Date_ADP1);
+			// clear(By.xpath("//*[@id='adp_date']"));
+			sendKeys_date(By.id("date_last_from"), Date_ADP1);
+			act = new Actions(getWebDriver());
+			act.sendKeys(Keys.TAB).build().perform();
+			break;
+		case PixalereStringPool.To_ADP:
+			Date_ADP1 = JavaUtils.getCurrentDateTime("MM/dd/yyyy");
+			System.out.println(PixalereStringPool.Date_ADP + ": " + Date_ADP1);
+			// clear(By.xpath("//*[@id='adp_date']"));
+			sendKeys_date(By.id("date_last_to"), Date_ADP1);
+			act = new Actions(getWebDriver());
+			act.sendKeys(Keys.TAB).build().perform();
+			break;
+		case PixalereStringPool.uploaded_by:
+			System.out.println(PixalereStringPool.ADP_Authorizer_Name + ": " + "Admin");
+			clear(By.name("uploaded_by"));
+			sendKeys(By.name("uploaded_by"), "Admin");
+			break;
+		case PixalereStringPool.Comment:
+			Comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Comment + ": " + Comment);
+			clear(By.id("cam_tool_comment"));
+			sendKeys(By.id("cam_tool_comment"), Comment);
+			break;
+		case PixalereStringPool.Activity_Comment:
+			Activity_Comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Activity_Comment + ": " + Activity_Comment);
+			clear(By.id("activity_comments"));
+			sendKeys(By.id("activity_comments"), Activity_Comment);
+			break;
+
 		}
 	}
 }

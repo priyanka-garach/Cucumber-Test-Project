@@ -1,26 +1,28 @@
 package pixalere.stepdefinitions;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
-
+import org.apache.commons.lang.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pixalere.pageObjectJavaUtils.JavaUtils;
 import pixalere.pageObjectUtils.LocatorUtils.CustomizedLocators;
 import pixalere.pageObjectUtils.LocatorUtils.OTLocators;
 import pixalere.scripts.PixalereScripts;
 
 public class Tests_PixalereStefDef extends PixalereScripts {
-	public static List<String> SeatingAndMobility_Checkbox = new ArrayList<>();
-	
+//	public static List<String> SeatingAndMobility_Checkbox = new ArrayList<>();
+
 	@When("I click {string} radio option for {string} field CAM")
 	public void i_click_radio_option_for_field_CAM(String string, String string2) {
 		selectRdioforfieldCAM(string, string2);
-	}	
+	}
 
 	@When("I click {string} radio option for {string} field Pain Assessment")
 	public void I_click_radio_option_for_field_OT(String string, String string2) {
@@ -52,6 +54,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_start_verifying_records_in_Depression_Screening_Page() {
 		verify_DepressionScreening();
 	}
+
 	@When("I select {string} from Relationship dropdown")
 	public void I_select_Parents_from_Relationship_dropdown(String string) {
 		selectRelation(string);
@@ -62,12 +65,12 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		enterInputFieldAsPerKeyfromScripts(string);
 		System.out.println();
 	}
-	
+
 	@When("I select {string} from dropdown of Document Type")
 	public void I_select_from_dropdown_of_Document_Type(String value) {
 		drp_of_Document_Type(value);
 	}
-	
+
 	@When("I verify Document Upload Details")
 	public void I_verify_Document_Upload_Details() {
 		verify_Document_Upload_Details();
@@ -89,7 +92,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_start_verifying_records_in_Client_Care_Summary_Page() {
 		verify_client_care_cn();
 	}
-	
+
 	@When("I start verifying records in PICAT Pediatric Flowchart Page")
 	public void I_start_verifying_records_in_PICAT_Pediatric_Flowchart_Page() {
 		verify_PICAT_Pediatric_Flowchart();
@@ -109,26 +112,27 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_click_on_Add_More() {
 		clickElement(By.xpath("//*[@id='addConcernDiv']"));
 	}
+
 	@When("I click on Add button for Exercise one")
 	public void i_click_on_Add_Exercise() {
 		clickElement(By.xpath("//a[@class='delete proClass']"));
 	}
-	
+
 	@When("I click on Add button for Exercise two")
 	public void i_click_on_Add_Exercise_two() {
 		clickElement(By.xpath("(//a[@class='delete proClass'])[2]"));
 	}
-	
+
 	@When("I click on Add button for Exercise three")
 	public void i_click_on_Add_Exercise_three() {
 		clickElement(By.xpath("(//a[@class='delete proClass'])[3]"));
 	}
-	
+
 	@When("I click on Add button for Exercise four")
 	public void i_click_on_Add_Exercise_four() {
 		clickElement(By.xpath("(//a[@class='delete proClass'])[4]"));
 	}
-	
+
 	@When("I click on Add button for Exercise five")
 	public void i_click_on_Add_Exercise_five() {
 		clickElement(By.xpath("(//a[@class='delete proClass'])[5]"));
@@ -169,7 +173,18 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I click {string} field OT")
 	public void i_click_field(String string) {
 		clickElement(By.xpath("//span[contains(text(),'Activity to be Instructed')]//parent::div//a//img"));
+	}
 
+	@When("I expand {string} field OT")
+	public void i_expand_field(String string) {
+		clickElement(By.xpath(String.format("//*[normalize-space(text())='%s']//preceding-sibling::*//a", string)));
+	}
+
+	@When("I expand {string} checkbox field OT")
+	public void i_expand_checkbox_field(String string) {
+		clickElement(By.xpath(String.format(
+				"//*[@id='%s-prepop']//ancestor::div[contains(@class,'caption')]//preceding-sibling::*//a",
+				string.toLowerCase())));
 	}
 
 	@When("I select {string} checkbox for Activity to be Instructed field")
@@ -177,7 +192,27 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		String xpath1 = String
 				.format("//input[contains(@id,'activity')]//following-sibling::label[contains(text(),'%s')]", string);
 		clickElement(By.xpath(xpath1));
+	}
 
+	@When("I select {string} checkbox for Consent to be Instructed field")
+	public void i_select_checkbox_for_Consent_to_be_Instructed_field(String string) {
+		String xpath1 = String
+				.format("//input[contains(@id,'consent')]//following-sibling::label[contains(text(),'%s')]", string);
+		clickElement(By.xpath(xpath1));
+	}
+
+	@When("I select {string} checkbox for Transfer to be Instructed field")
+	public void i_select_checkbox_for_Transfer_to_be_Instructed_field(String string) {
+		String xpath1 = String
+				.format("//input[contains(@id,'transfers')]//following-sibling::label[contains(text(),'%s')]", string);
+		clickElement(By.xpath(xpath1));
+	}
+
+	@When("I select {string} checkbox for Resources to be Instructed field")
+	public void i_select_checkbox_for_Resources_to_be_Instructed_field(String string) {
+		String xpath1 = String
+				.format("//input[contains(@id,'resources')]//following-sibling::label[contains(text(),'%s')]", string);
+		clickElement(By.xpath(xpath1));
 	}
 
 	@When("I select {string} checkbox field OT")
@@ -255,7 +290,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_click_radio_option_PT(String value1, String value2) {
 		selectRdioforfieldPT(value1, value2);
 	}
-	
+
 	@When("I get Balance_Gait score")
 	public void I_get_Balance_Gait_score() {
 		getBalance_Gait();
@@ -374,12 +409,12 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_verify_record_after_add_button() {
 		verify_RecordAfterAdd_ExcersizeProgram();
 	}
-	
+
 	@When("I start verifying records in PT Assessment Page")
 	public void I_start_verifying_records_in_PT_Assessment_Page() {
 		verify_PT_Assessment_Page();
 	}
-	
+
 	@When("I start verifying records in Exercise Program Page")
 	public void I_start_verifying_records_in_Exercise_Program_Page() {
 		verify_ExcersizeProgramPage();
@@ -406,22 +441,22 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		verify_Tracheostomy_and_Ventilator_Record_Page();
 	}
 
-
 	@When("I click on Save My Work In-Home Safety Identification Tool Button HSI")
 	public void I_click_on_Save_My_Work_In_Home_Safety_Identification_Tool_Button_HSI() {
 		clickElement(By.xpath("//*[@id='saveEntries']"));
 		clickElement(By.xpath("//*[@id='confirm']"));
 	}
+
 	@When("I start verifying records in In-Home Safety Identification Tool Flowchart Record Page")
 	public void i_start_verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page() {
 		verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page();
 	}
-	
+
 	@When("I start verifying records in In-Home Safety Identification Tool Flowchart Record Page Nursing")
 	public void i_start_verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page_Nursing() {
 		verifying_records_in_In_Home_Safety_Identification_Tool_Flowchart_Record_Page_Nursing();
 	}
-	
+
 	@When("I click {string} radio option for Cough Assist field")
 	public void I_click_radio_option_for_Cough_Assist_field(String string) {
 		clickElement(By.xpath("(//input[contains(@id,'cough_assist')]//following-sibling::label)[1]"));
@@ -481,10 +516,12 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_select_from_childs_current_pain_score_field_dropdown_OT(String s) {
 		selectdropdownforINRS(s);
 	}
+
 	@When("I select {string} from childs current pain score")
 	public void I_select_from_childs_current_pain_score(String s) {
 		selectdropdownforINRS(s);
 	}
+
 	@When("I select {string} from Type of Assessment")
 	public void I_select_Initial_from_Type_of_Assessment(String string) {
 		selectCheckboxForTypeOfAssessment(string);
@@ -513,7 +550,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		clickElementWithJQuery(By.xpath("//div[@id='right_2']"));
 		clickElementWithJQuery(By.xpath("//div[@id='right_10']"));
 	}
-	
+
 	@When("I read left foot score")
 	public void I_read_left_foot_score() {
 		readingscore();
@@ -523,17 +560,17 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_read_right_foot_score() {
 		readingscore();
 	}
-	
+
 	@When("I read Left Foot Image Score")
 	public void I_read_Left_Foot_Image_Score() {
 		readingscore();
 	}
-	
+
 	@When("I read Right Foot Image Score")
 	public void I_read_Right_Foot_Image_Score() {
 		readingscore();
 	}
-	
+
 	@When("I start verifying records in Sensory Assessment Flowchart Page")
 	public void I_start_verifying_records_in_Sensory_Assessment_Flowchart_Page() {
 		verify_Sensory_assess_flowchart();
@@ -556,16 +593,15 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 
 	@When("I select {string} checkbox for Quality of Pain field")
 	public void I_select_checkbox_for_Quality_of_Pain_field(String string1) {
-			
+
 		chk_quality_of_pain_ass(string1);
 	}
-	
+
 	@When("I select {string} from Dropdown Frequency field")
 	public void Drp_ferquency(String s1) {
 		drp_frequency_pain_ass(s1);
 	}
-	
-	
+
 	@When("I select Day as {string} from calendar Pain Assesment")
 	public void Day_one(String s1) {
 		day_one_pain_ass(s1);
@@ -575,7 +611,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void Month_one(String s1) {
 		month_one_pain_ass(s1);
 	}
-	
+
 	@When("I select Day as {string} from calendar Pain Assesment last BM")
 	public void Day_one_last_BM(String s1) {
 		day_one_pain_ass_last_BM(s1);
@@ -594,7 +630,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I select {string} checkbox for Non-Pharmacological Intervention field")
 	public void I_select_checkbox_for_NonPharmacological_Intervention_field(String string1) {
 		chk_onPharmacological_Intervention_pain_ass(string1);
-		
+
 	}
 
 	@When("I select {string} from Dropdown Frequency field OT")
@@ -643,7 +679,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 
 	@When("I select {string} checkbox for Impaired Functional Mobility field MACH")
 	public void i_select_checkbox_for_Impaired_Functional_Mobility_field_MACH(String string) {
-		chk_Impaired_Functional_Mobility_handOuts(string);	
+		chk_Impaired_Functional_Mobility_handOuts(string);
 	}
 
 	@When("I select {string} checkbox for Pain affecting level of function field MACH")
@@ -654,14 +690,14 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I select {string} checkbox for Gait Aid Use field MACH")
 	public void i_select_checkbox_for_Gait_Aid_Use_field_MACH(String string) {
 		chk_Gait_Aid_Use_field_handOuts(string);
-		
+
 	}
 
 	@When("I select {string} checkbox for FootFootwear Concerns field MACH")
 	public void i_select_checkbox_for_FootFootwear_Concerns_field_MACH(String string) {
 		chk_FootFootwear_Concerns_field_MACH(string);
 	}
-	
+
 	@When("I get MAHC-10 Fall Risk Score")
 	public void I_get_MAHC_10_Fall_Risk_Score() {
 		get_MAHC_10_Fall_Risk_Score();
@@ -682,8 +718,6 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_verified_Psychosocial_Assessment() {
 		var_Psychosocial_Assessment();
 	}
-
-
 
 //////////////////////////ICAT START//////////////////////////////
 	@When("I select {string} from Primary Diagnosis dropdown OT")
@@ -765,7 +799,6 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I select {string} radio option for home self-monitoring OT")
 	public void i_select_radio_option_for_home_self_monitoring_OT(String string) {
 		selctradiohomeselfmonitoring(string);
-// Write code here that turns the phrase above into concrete actions
 
 	}
 
@@ -817,18 +850,18 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_verified_Neurological_Assessment() {
 		var_Neurological_Assessment_data();
 	}
-	
+
 	@When("I verify checkboxe data for Effects of Pain on Activities of Daily Living")
 	public void i_verified_Effects_of_Pain_on_Activities_of_Daily_Living() {
 		var_Pain_on_Activities_of_Daily_Living_data();
 	}
-	
+
 	@When("I verify click on blueman image left")
 	public void I_click_on_blueman_image_left() {
 		verify_image_left();
-		
+
 	}
-	
+
 	@When("I verify click on blueman image right")
 	public void I_click_on_blueman_image_right() {
 		verify_image_right();
@@ -900,11 +933,11 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	}
 //////////ICAT STOP///////////
 
-
 	/* Seating and Mobility *///////////////////
 
 	@When("I click on {string} checkbox Button SM")
-	public void i_click_on_checkbox_Button_SM(String string) {
+	public void i_click_on_checkbox_Button_SM(String string) throws InterruptedException {
+		Thread.sleep(5000);
 		clickElement(By.xpath(String.format("//label[normalize-space(text())='%s']", string)));
 	}
 
@@ -932,12 +965,21 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	@When("I click checkbox for {string}")
 	public void i_click_checkbox_for(String string) {
 		clickElementWithJQuery(By.xpath(String.format("//label[contains(text(),'%s')]", string)));
-		SeatingAndMobility_Checkbox.add(string);	
+//		SeatingAndMobility_Checkbox.add(string);	
+		checkboxData.add(string);
 	}
+
+	@When("I click checkbox for {string} at {string}")
+	public void i_click_checkbox_for(String string, String index) {
+		clickElementWithJQuery(By.xpath(String.format("(//label[contains(text(),'%s')])[" + index + "]", string)));
+//		SeatingAndMobility_Checkbox.add(string);	
+	}
+
 	@When("I click on checkbox for Client_Substitute Decision Maker has requested and agrees to communication via text")
 	public void I_click_on_checkbox_for_Client_Substitute_Decision_Maker_has_requested_and_agrees_to_communication_via_text() {
 		clickElementWithJQuery(By.xpath("//label[@for='agrees_to_text']"));
 	}
+
 	@When("I click on Other checkbox for Service Consent Obtained")
 	public void I_click_on_Other_checkbox_for_Service_Consent_Obtained() {
 		clickElementWithJQuery(By.xpath("//*[contains(@id,'other_label')][1]"));
@@ -979,15 +1021,18 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_click_on_Virtual_Care_Consent_to_Open_PopUp() {
 		clickElement(By.xpath("(//div[@class='titl-crt'])[4]"));
 	}
+
 	@When("I click on Email Use For Communication Requested by Client_SDM to Open PopUp")
 	public void I_click_on_Email_Use_For_Communication_Requested_by_Client_SDM_to_Open_PopUp() {
 		clickElementWithJQuery(By.xpath("//*[@id='ClientConsentForm']/div/div/div[2]/div[4]/div[1]/div[3]/span"));
 	}
+
 	@When("I click on Text Use For Communication Requested by Client_SDM Open PopUp")
 	public void I_click_on_Text_Use_For_Communication_Requested_by_Client_SDM_to_Open_PopUp() {
 		clickElementWithJQuery(By.xpath("//*[@id='ClientConsentForm']/div/div/div[2]/div[5]/div[1]/div[3]/span"));
-		
+
 	}
+
 	@When("I click on Required for video checkbox")
 	public void i_click_on_Required_for_video_checkbox() {
 		clickElement(By.xpath("//*[@for='e_consent']"));
@@ -1002,20 +1047,23 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void i_click_on_radio_button_CC(String string) {
 		clickElement(By.xpath("//label[@id='e_consent_tel_label3']//span[contains(@class,'box')]"));
 	}
-	
+
 	@When("I click on radio button two {string} CC")
 	public void i_click_on_radio_button_two_CC(String string) {
 		clickElement(By.xpath("(//*[@id='md-radio-e_consent_video_1'])"));
 	}
+
 	@When("I click on radio button {string} for Service Consent Obtained")
 	public void I_click_on_radio_button_Yes_for_Service_Consent_Obtained(String section) {
 		clickElement(CustomizedLocators.getRadioOptionBy_Service_Consent_Obtained(section));
 	}
+
 	@When("I click on radio button two {string} for Virtual Care Consent PT reviewed")
 	public void I_click_on_radio_button_Yes_for_Virtual_Care_Consent_PT_reviewed(String section) {
 		Wait_p(2);
 		clickElement(CustomizedLocators.getRadioOptionBy_Virtual_Care_Consent_PT_reviewed(section));
 	}
+
 	@When("I click on radio button {string} for Guidelines and Policies")
 	public void I_click_on_radio_button_Yes_for_Guidelines_and_Policies(String section) {
 		clickElement(CustomizedLocators.getRadioOptionBy_Guidelines_and_Policies(section));
@@ -1045,11 +1093,17 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		clickElement(By.xpath("//*[@name='apply_filter']"));
 	}
 
+	@When("I Verified searched record")
+	public void I_Verified_searched_record() {
+		Assert.assertTrue(isDisplayed(
+				By.xpath(String.format("(//td[contains(text(),'%s')])[1]", PixalereScripts.ADP_Authorizer_Name1))));
+	}
+
 	@When("I start verifying records in Care Plan Nursing Adult Page")
 	public void I_start_verifying_records_in_Care_Plan_Nursing_Adult_Page() {
 		verify_Care_Plan_Nursing();
 	}
-	
+
 	@When("I enter {string} input field Deletion in scripts")
 	public void i_enter_input_field_delete_n_scripts(String inputField) {
 		Wait_p(2);
@@ -1061,55 +1115,489 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 	public void I_click_on_Save_Button_for_page_Care_Plan_Nursing_Adult() {
 		clickElement(By.id("save_careplan"));
 	}
-	
+
 	@When("I check reason after deletion in viewer")
 	public void I_check_reason_after_deletion_in_viewer() {
 		Wait_p(3);
 		verify_RecordAfterDeletion();
 	}
-	
+
 	@When("I check reason after deletion in viewer for respiratory")
 	public void I_check_reason_after_deletion_in_viewer_for_respiratory() {
 		Wait_p(3);
 		verify_RecordAfterDeletion_respiratory();
 	}
-	
+
 	@When("I confirm to press Delete Button")
-	public void i_click_MedRAT_Page_del_button()
-	{
+	public void i_click_MedRAT_Page_del_button() {
 		Wait_p(3);
 		clickElementWithJQuery(By.xpath("//button[contains(text(),'Delete this charting')]"));
 	}
-	
+
 	@When("I press on Delete Button")
 	public void i_press_delete_in_MedRAT_Page() {
-		clickElementWithJQuery(By.xpath("((//td[normalize-space()='Data Correction']/following::tbody//tr[1]//td)[last()])//button"));
+		clickElementWithJQuery(
+				By.xpath("((//td[normalize-space()='Data Correction']/following::tbody//tr[1]//td)[last()])//button"));
 	}
-	
+
 	@When("I press on Delete Button for respiratory suctioning")
 	public void i_press_delete_in_delete_suctioning_Page() {
 		Wait_p(2);
 		clickElementWithJQuery(By.xpath("(//td[contains(text(),'Data Correction')])[1]//following::td[3]//button"));
 	}
-	
+
 	@When("I press on Delete Button for respiratory Non-invasive ventilation")
 	public void i_press_delete_in_delete_Non_invasive_ventilation_Page() {
 		Wait_p(2);
 		clickElement(By.xpath("(//td[contains(text(),'Data Correction')])[2]//following::td[6]//button"));
 	}
-	
+
 	@When("I press on Delete Button for respiratory Cough Assist")
 	public void i_press_delete_in_delete_Cough_Assist_Page() {
 		Wait_p(2);
 		clickElementWithJQuery(By.xpath("(//td[contains(text(),'Data Correction')])[3]//following::td[6]//button"));
 	}
-	
-	
+
 	@When("I press on Delete Button for Document Upload")
 	public void i_press_delete_for_Document_Upload() {
-		clickElementWithJQuery(By.xpath("(//td[contains(text(),'Document Name')]//following::tr//td)[6]//a[@value='Delete']"));
+		clickElementWithJQuery(
+				By.xpath("(//td[contains(text(),'Document Name')]//following::tr//td)[6]//a[@value='Delete']"));
 	}
 
-	
+	@When("I save my work for above Analysis Device Recommended")
+	public void i_save_my_work_for_above_Analysis_Device_Recommended() {
+		clickElementWithJQuery(By.id("saveEntries"));
+		System.out.println("Work Saved");
+	}
 
+	@When("I save my work for above ADP Eligibility Screened")
+	public void i_save_my_work_for_above_ADP_Eligibility_Screened() {
+		clickElementWithJQuery(By.id("saveEntriesAE"));
+		System.out.println("Work Saved");
+	}
+
+	@When("I save my work for above Previous Funding by ADP Confirmed")
+	public void i_save_my_work_for_above_Previous_Funding_by_ADP_Confirmed() {
+		clickElementWithJQuery(By.id("saveEntriesPF"));
+		System.out.println("Work Saved");
+	}
+
+	@When("I save my work for above Mobility Device Specifications Recommended")
+	public void i_save_my_work_for_above_Mobility_Device_Specifications_Recommended() {
+		clickElementWithJQuery(By.id("saveEntriesD"));
+		System.out.println("Work Saved");
+	}
+
+	@When("I save my work for above Equipment Trial Arranged")
+	public void i_save_my_work_for_above_Equipment_Trial_Arranged() {
+		clickElementWithJQuery(By.id("saveEntriesET"));
+		System.out.println("Work Saved");
+	}
+
+	@When("I save my work for above Authorizer Involved in Service")
+	public void i_save_my_work_for_above_Authorizer_Involved_in_Service() {
+		clickElementWithJQuery(By.id("saveEntriesAI"));
+		System.out.println("Work Saved");
+	}
+
+	@When("I save my work for above Authorizer Services Concluded")
+	public void i_save_my_work_for_above_Authorizer_Services_Concluded() {
+		clickElementWithJQuery(By.id("saveEntriesAS"));
+		System.out.println("Work Saved");
+	}
+
+	@When("I select {string} radio button for SDM Consent Obtained Question1 field")
+	public void i_select_radio_button_for_SDM_Consent_Obtained_Question1_field(String string) {
+		clickElementWithJQuery(By.id("sdm_for_activities1_label"));
+	}
+
+	@When("I select {string} radio button for SDM Consent Obtained Question2 field")
+	public void i_select_radio_button_for_SDM_Consent_Obtained_Question2_field(String string) {
+		clickElementWithJQuery(By.id("sdm_discussed_client1_label"));
+	}
+
+	@When("I select {string} radio button for SDM Consent Obtained Question3 field")
+	public void i_select_radio_button_for_SDM_Consent_Obtained_Question3_field(String string) {
+		clickElementWithJQuery(By.id("sdm_discussed_psw1_label"));
+	}
+
+	@When("I select {string} radio button for Learner Question1 field")
+	public void i_select_radio_button_for_Learner_Question1_field(String string) {
+		clickElementWithJQuery(By.id("learner_edu_rec1_label"));
+	}
+
+	@When("I select {string} radio button for Learner Question2 field")
+	public void i_select_radio_button_for_Learner_Question2_field(String string) {
+		clickElementWithJQuery(By.id("learner_for_list_act1_label"));
+	}
+
+	@When("I select {string} radio button for Learner Question3 field")
+	public void i_select_radio_button_for_Learner_Question3_field(String string) {
+		clickElementWithJQuery(By.xpath("//label[@for='the_inst1']"));
+	}
+
+	@When("I enter learner name")
+	public void I_enter_learner_name() {
+		PixalereScripts.name = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.id("learner_name1"), PixalereScripts.name);
+	}
+
+	@And("I select Learner dropdown")
+	public void I_select_Learner_dropdown() {
+		selectByVisibleText(By.id("learner1"), "Learner");
+	}
+
+	@And("I select Employed By dropdown")
+	public void I_select_Employed_By_dropdown() {
+		selectByVisibleText(By.id("employed_by1"), "Employed By");
+	}
+
+	@And("I select Date")
+	public void I_select_Date() {
+		sendKeys(By.id("learner_date1"), "08/28/2022");
+	}
+
+	@When("I select {string} radio button for Acknowledge1")
+	public void i_select_radio_button_for_Acknowledge1(String string) {
+		clickElementWithJQuery(By.id("educator_ack_11_label"));
+	}
+
+	@When("I select {string} radio button for Acknowledge2")
+	public void i_select_radio_button_for_Acknowledge2(String string) {
+		clickElementWithJQuery(By.xpath("//label[@for='educator_ack_21']"));
+	}
+
+	@When("I expand all")
+	public void i_expand_all() {
+		clickElementWithJQuery(By.xpath("//label[normalize-space()='Expand All/Collapse All']"));
+	}
+
+	@When("I enter visit date")
+	public void i_enter_visit_date() {
+		sendKeys(By.id("educator_date"), JavaUtils.getCurrentDate("MM/dd/yyyy"));
+	}
+
+	@When("I select {string} in {string} radio assessment initiated field")
+	public void i_select_in_radio_assessment_initiated_field(String string, String string2) {
+		if (string.equalsIgnoreCase("yes"))
+			clickElementWithJQuery(By.xpath(String.format(
+					"//*[text()='%s']//following-sibling::div//input[@value='2']//following-sibling::label", string2)));
+		else
+			clickElementWithJQuery(By.xpath(String.format(
+					"//*[text()='%s']//following-sibling::div//input[@value='1']//following-sibling::label", string2)));
+	}
+
+	@When("I select {string} in {string} radio")
+	public void i_select_Acute_Respiratory_Screen(String string, String string2) {
+		clickElementWithJQuery(By.xpath(String.format(
+				"//*[contains(text(),'%s')]//..//following-sibling::*//label[normalize-space()='" + string + "']",
+				string2)));
+	}
+
+	@When("I enter comment for client stated concerns")
+	public void i_enter_comment_for_client_stated_concerns() {
+		PixalereScripts.client_stated_concerns_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.id("ot_client_caregiver_comment"), PixalereScripts.client_stated_concerns_comment);
+	}
+
+	@When("I select {string} in Home Accessibility Assessed")
+	public void i_select_in_Home_Accessibility_Assessed(String string) {
+		clickElementWithJQuery(By.xpath(String.format("//label[normalize-space()='%s']", string)));
+	}
+
+	@When("I enter additional comments in Home Accessibility Assessed")
+	public void i_enter_additional_comments_in_Home_Accessibility_Assessed() {
+		PixalereScripts.ot_home_aceess_assessed_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.id("ot_home_aceess_assessed_comment"), PixalereScripts.ot_home_aceess_assessed_comment);
+	}
+
+	@When("I select WFL in Home Accessibility Assessed")
+	public void i_select_WFL_in_Home_Accessibility_Assessed() {
+		clickElementWithJQuery(By.xpath("(//label[contains(@class,'ot_wfl_rado_label')])[1]"));
+	}
+
+	@When("I select ESS")
+	public void i_select_ESS() {
+		clickElementWithJQuery(By.xpath("(//label[contains(@id,'ot_home_env_safety_scan1_label')])[1]"));
+	}
+
+	@When("I select Home Accessibility Assessed NURD for Equipment")
+	public void i_select_Home_Accessibility_Assessed_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver().findElements(By.xpath("//label[contains(@class,'home_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I enter optional additional comments in Home Accessibility Assessed")
+	public void i_enter_optional_additional_comments_in_Home_Accessibility_Assessed() {
+		PixalereScripts.ot_home_env_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("//*[contains(@id,'ot_home_env_comment')]"), PixalereScripts.ot_home_env_comment);
+	}
+
+	@When("I enter Diagnosis corrections")
+	public void i_enter_Diagnosis_corrections() {
+		PixalereScripts.ot_diagnosis_addition_comments = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("//*[contains(@id,'ot_diagnosis_addition_comments')]"),
+				PixalereScripts.ot_diagnosis_addition_comments);
+	}
+
+	@When("I select WFL in Physical Health Components Assessed")
+	public void i_select_WFL_in_Physical_Health_Components_Assessed() {
+		clickElementWithJQuery(By.xpath("(//*[contains(@class,'ot_physical_health_comp_label')])[1]"));
+	}
+
+	@When("I select Physical Health Components Assessed NURD for Equipment")
+	public void i_select_Physical_Health_Components_Assessed_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver()
+				.findElements(By.xpath("//label[contains(@class,'physical_health_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I select additional comments for Physical Health Components Assessed")
+	public void i_select_additional_comments_for_Physical_Health_Components_Assessed() {
+		PixalereScripts.ot_stretegies_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.id("ot_stretegies_comment"), PixalereScripts.ot_stretegies_comment);
+	}
+
+	@When("I select WFL in Skin Integrity Assessed")
+	public void i_select_WFL_in_Skin_Integrity_Assessed() {
+		clickElementWithJQuery(By.xpath("(//*[contains(@class,'skin_integrity_assessed')])[1]"));
+	}
+
+	@When("I select Skin Integrity Assessed NURD for Equipment")
+	public void i_select_Skin_Integrity_Assessed_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver()
+				.findElements(By.xpath("//label[contains(@class,'skinIntigrity_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I select additional comments for Skin Integrity Assessed")
+	public void i_select_additional_comments_for_Skin_Integrity_Assessed() {
+		PixalereScripts.skin_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("(//*[contains(@name,'skin_comment')])[1]"), PixalereScripts.skin_comment);
+	}
+
+	@When("I select WFL in Cognition Assessed")
+	public void i_select_WFL_in_Cognition_Assessed() {
+		clickElementWithJQuery(By.xpath("(//*[contains(@class,'ot_cognition_assessed_master_label')])[1]"));
+	}
+
+	@When("I select Cognition Assessed NURD for Equipment")
+	public void i_select_Cognition_Assessed_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver()
+				.findElements(By.xpath("//label[contains(@class,'congnition_assessment_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I select additional comments for Cognition Assessed")
+	public void i_select_additional_comments_for_Cognition_Assessed() {
+		PixalereScripts.ot_strategies_education_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.id("ot_strategies_education_comment"), PixalereScripts.ot_strategies_education_comment);
+	}
+
+	@When("I select WFL in Medication Management Discussed")
+	public void i_select_WFL_in_Medication_Management_Discussed() {
+		clickElementWithJQuery(By.xpath(
+				"(//input[@name='medication_management']//following-sibling::label[contains(@class,'medication_management_label')])[1]"));
+	}
+
+	@When("I select Medication Management Discussed NURD for Equipment")
+	public void i_select_Medication_Management_Discussed_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver()
+				.findElements(By.xpath("//label[contains(@class,'medication_management_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I select additional comments for Medication Management Discussed")
+	public void i_select_additional_comments_for_Medication_Management_Discussed() {
+		PixalereScripts.medication_management_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("//*[contains(@id,'medication_management_comment')]"),
+				PixalereScripts.medication_management_comment);
+	}
+
+	@When("I select WFL in Behavioural Health Assessed")
+	public void i_select_WFL_in_Behavioural_Health_Assessed() {
+		clickElementWithJQuery(By.xpath("(//label[contains(@class,'mental_health_label')])[1]"));
+	}
+
+	@When("I select No evidence of abuse")
+	public void i_select_No_evidence_of_abuse() {
+		clickElementWithJQuery(
+				By.xpath("(//*[contains(@name,'mental_health_rado_abuse')]//following-sibling::label)[1]"));
+	}
+
+	@When("I select No evidence of acute suicidal risk")
+	public void i_select_No_evidence_of_acute_suicidal_risk() {
+		clickElementWithJQuery(By.xpath("(//*[@name='mental_health_rado']//following-sibling::label)[1]"));
+	}
+
+	@When("I enter additional comment in Behavioural Health Assessed")
+	public void i_enter_additional_comment_in_Behavioural_Health_Assessed() {
+		PixalereScripts.mental_health_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("//textarea[contains(@id,'mental_health')]"), PixalereScripts.mental_health_comment);
+	}
+
+	@When("I select WFL in Routines and IADLs Assessed")
+	public void i_select_WFL_in_Routines_and_IADLs_Assessed() {
+		clickElementWithJQuery(By.xpath("(//label[contains(@class,'ot_iadl_wfl_label')])[1]"));
+	}
+
+	@When("I select Routines and IADLs Assessed NURD for Equipment")
+	public void i_select_Routines_and_IADLs_Assessed_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver()
+				.findElements(By.xpath("//label[contains(@class,'routine_and_iadl_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I select additional comments for Routines and IADLs Assessed")
+	public void i_select_additional_comments_for_Routines_and_IADLs_Assessed() {
+		PixalereScripts.routine_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("//textarea[contains(@id,'routine_comment')]"), PixalereScripts.routine_comment);
+	}
+
+	@When("I select WFL in ADLs")
+	public void i_select_WFL_in_ADLs() {
+		clickElementWithJQuery(By.xpath("(//label[contains(@class,'ot_adls_dressing_label')])[1]"));
+	}
+
+	@When("I select ADLs NURD for Equipment")
+	public void i_select_ADLs_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver()
+				.findElements(By.xpath("//label[contains(@class,'dresing_grooming_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I select additional comments for ADLs")
+	public void i_select_additional_comments_for_ADLs() {
+		PixalereScripts.adls_dressing_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("//textarea[contains(@id,'adls_dressing_comment')]"), PixalereScripts.adls_dressing_comment);
+	}
+
+	@When("I select WFL in Ambulation and Stair Use Assessed")
+	public void i_select_WFL_in_Ambulation_and_Stair_Use_Assessed() {
+		clickElementWithJQuery(By.xpath("(//label[contains(@class,'ambulation_stair_label')])[1]"));
+	}
+
+	@When("I select Ambulation and Stair Use Assessed NURD for Equipment")
+	public void i_select_Ambulation_and_Stair_Use_Assessed_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver()
+				.findElements(By.xpath("//label[contains(@class,'ambulation_stair_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I select additional comments for Ambulation and Stair Use Assessed")
+	public void i_select_additional_comments_for_Ambulation_and_Stair_Use_Assessed() {
+		PixalereScripts.ambulation_stair_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("//textarea[contains(@id,'ambulation_stair_comment')]"),
+				PixalereScripts.ambulation_stair_comment);
+	}
+
+	@When("I select WFL in Transfers")
+	public void i_select_WFL_in_Transfers() {
+		clickElementWithJQuery(By.xpath("(//label[contains(@class,'transfer_assessed_label')])[1]"));
+	}
+
+	@When("I select Transfers NURD for Equipment")
+	public void i_select_Transfers_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver()
+				.findElements(By.xpath("//label[contains(@class,'transfer_assessed_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I select additional comments for Transfers")
+	public void i_select_additional_comments_for_Transfers() {
+		PixalereScripts.transfer_assessed_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("//textarea[contains(@id,'transfer_assessed_comment')]"),
+				PixalereScripts.transfer_assessed_comment);
+	}
+
+	@When("I select WFL in Bathroom ADLs")
+	public void i_select_WFL_in_Bathroom_ADLs() {
+		clickElementWithJQuery(By.xpath("(//label[contains(@class,'bathroom_assessed_label')])[1]"));
+	}
+
+	@When("I select Bathroom ADLs NURD for Equipment")
+	public void i_select_Bathroom_ADLs_NURD_for_Equipment() {
+		List<WebElement> list = getWebDriver()
+				.findElements(By.xpath("//label[contains(@class,'bathroom_assessed_nurd_label')]"));
+		for (WebElement ele : list) {
+			clickElementWithJQuery(ele);
+		}
+	}
+
+	@When("I select additional comments for Bathroom ADLs")
+	public void i_select_additional_comments_for_Bathroom_ADLs() {
+		PixalereScripts.bathroom_assessed_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.xpath("//textarea[contains(@id,'bathroom_assessed_comment')]"),
+				PixalereScripts.bathroom_assessed_comment);
+	}
+
+	@When("I enter VAC number")
+	public void i_enter_VAC_number() {
+		PixalereScripts.VAC = RandomStringUtils.randomNumeric(5);
+		sendKeys(By.xpath("//*[contains(text(),'VAC')]//following-sibling::input"), PixalereScripts.VAC);
+	}
+
+	@When("I enter Insurance number")
+	public void i_enter_Insurance_number() {
+		PixalereScripts.Insurance = RandomStringUtils.randomNumeric(5);
+		sendKeys(By.xpath("//*[contains(text(),'Insurance')]//following-sibling::input"), PixalereScripts.Insurance);
+	}
+
+	@When("I enter WSIB number")
+	public void i_enter_WSIB_number() {
+		PixalereScripts.WSIB = RandomStringUtils.randomNumeric(5);
+		sendKeys(By.xpath("//*[contains(text(),'WSIB')]//following-sibling::input"), PixalereScripts.WSIB);
+	}
+
+	@When("I enter comment in Supplementary Funding Availability Noted")
+	public void i_enter_comment_in_Supplementary_Funding_Availability_Noted() {
+		PixalereScripts.income_assessed_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.id("income_assessed_comment"), PixalereScripts.income_assessed_comment);
+	}
+
+	@When("I enter additional comment in Assessment Activities Completed")
+	public void i_enter_additional_comment_in_Assessment_Activities_Completed() {
+		PixalereScripts.assess_activities_comments = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.id("assess_activities_comments"), PixalereScripts.assess_activities_comments);
+	}
+
+	@When("I enter additional comment in Analysis and Recommendations")
+	public void i_enter_additional_comment_in_Analysis_and_Recommendations() {
+		PixalereScripts.analysis_recommendation_comment = RandomStringUtils.randomAlphabetic(5);
+		sendKeys(By.id("analysis_recommendation_comment"), PixalereScripts.analysis_recommendation_comment);
+	}
+
+	@When("I save OT Assessment")
+	public void i_save_OT_Assessment() {
+		clickElementWithJQuery(By.id("saveEntries"));
+	}
+
+	@When("I select {string} checkbox in OT Assessment")
+	public void i_select_checkbox(String field) {
+		clickElementWithJQuery(By.xpath("//label[contains(text(),'" + field + "')]"));
+	}
+
+	@When("I start verifying records in OT Assessment Page")
+	public void i_start_verifying_records_in_OT_Assessment_Page() {
+		verifyOT_Assessment_Page();
+		System.out.println("Data verified");
+	}
 }

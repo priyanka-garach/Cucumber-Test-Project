@@ -686,8 +686,6 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 			sendKeys(AdvLimbLocator.txt_comment_hsi, HomeComments1);
 			break;
 
-		
-
 		}
 		if (!isWait)
 			waitInterval(1);
@@ -742,7 +740,8 @@ public class PixalereCreateNewPatientAccountScripts extends PixalereCommonUtils 
 		// String xpath1 =
 		// String.format(GlobalPageLocators.select_from_ServiceReferreal, value);
 		// clickElementWithJQuery(By.xpath(xpath1));
-		select_ByIndex(By.id("encounter"), 2);
+//		select_ByIndex(By.id("encounter"), 2);
+		selectBycontainsText(By.xpath("//*[@id='encounter']//option"), "OT");
 		// selectByVisibleText(By.xpath(String.format(GlobalPageLocators.select_from_ServiceReferreal,
 		// value)), value);
 		System.out.println();

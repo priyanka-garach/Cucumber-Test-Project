@@ -1,5 +1,7 @@
 package pixalere.pageObjectUtils;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
@@ -29,6 +31,8 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 	public static String focusChar;
 	public static boolean isDermNumber = false;
 	public static boolean isOstomyImage = false;
+	public static List<String> checkboxData;
+	public static List<String> radioData;
 
 	/**
 	 * Hit Browser Url.
@@ -94,7 +98,7 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 	 */
 	public void logOut() {
 		clickLinkWithText(PixalereStringPool.LOGOUT);
-		
+
 //		waitUntilElementIsDisplayed(LoginPageLocators.ele_LoginPopup);
 //		waitForCompletePageLoad();
 //		waitInterval(2);
@@ -150,17 +154,28 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 				isNewUser = false;
 			else {
 				PIXID = ConfigFileReader.getProperties("user.PIXID");
+
 				//PIXID_PT_Teaching = ConfigFileReader.getProperties("user.PIXID_PT_Teaching");
 				//PIXID_PT_Teaching = ReadfromExcel.getUnusedPatientId(".\\test-data\\pt_patients_for_Automation.xls", "pt_patients_for_Automation");
 				//PIXID_PT_TeachingAgreement = ReadfromExcel.getUnusedPatientId(".\\test-data\\teaching_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
 				PIXID_PT_consentForm = ReadfromExcel.getUnusedPatientId(".\\test-data\\consentForm_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
-				
 				PixID_Nursing = ConfigFileReader.getProperties("user.PixID_Nursing");
 				PixID_Nursing_discharge = ConfigFileReader.getProperties("user.PixID_Nursing_discharge");
 				PIXID_PT = ConfigFileReader.getProperties("user.PIXID_PT");
 				
+				String module = ConfigFileReader.getProperties("app.module");
+				// PIXID_PT_Teaching = ConfigFileReader.getProperties("user.PIXID_PT_Teaching");
+				if (module.equalsIgnoreCase("pt")) {
+					PIXID_PT_Teaching = ReadfromExcel.getUnusedPatientId(".\\test-data\\pt_patients_for_Automation.xls",
+							"pt_patients_for_Automation");
+				} else if (module.equalsIgnoreCase("ot")) {
+					PIXID_OT = ReadfromExcel.getUnusedPatientId(".\\test-data\\ot_patients_for_Automation.xls",
+							"ot_patients_for_Automation");
+				}
+				PIXID_PT = ConfigFileReader.getProperties("user.PIXID_PT");
+				PixID_Nursing = ConfigFileReader.getProperties("user.PixID_Nursing");
 			}
-				
+
 			if (isDisplayed(By.id("popup_agree")))
 				clickElement(By.id("popup_agree"));
 		}
@@ -213,9 +228,9 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 			clickElement(CustomizedLocators.getAdministrationLHPanelOption(option));
 		}
 	}
-	
+
 	public void navigateToAdministrationPanelOptionNAMDR(String administrationOption) {
-		//clickLinkWithText(administrationOption);
+		// clickLinkWithText(administrationOption);
 		clickElement(By.xpath("//a[@id='adpmobilityChecklist']"));
 	}
 
@@ -236,7 +251,7 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 		sendKeys(GlobalPageLocators.txt_SearchPatientInput, CINID);
 		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, CINID)));
 	}
-	
+
 	public void searchPatient_nursing() {
 		PixID_Nursing = PixID_Nursing.replaceAll("\\s", "");
 		sendKeys(GlobalPageLocators.txt_SearchPatientInput, PixID_Nursing);
@@ -264,7 +279,7 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 		}
 		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, PixID_Nursing_discharge)));
 	}
-	
+
 	public void searchPatient_pt() {
 		PIXID_PT = PIXID_PT.replaceAll("\\s", "");
 		sendKeys(GlobalPageLocators.txt_SearchPatientInput, PIXID_PT);
@@ -279,19 +294,19 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, PIXID_PT)));
 
 	}
+
 	public void searchPatient_ot() {
 		PIXID_OT = PIXID_OT.replaceAll("\\s", "");
 		sendKeys(GlobalPageLocators.txt_SearchPatientInput, PIXID_OT);
-		
+
 		clickElement(GlobalPageLocators.btn_SearchBuutton);
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, PIXID_OT)));
-		
+
 	}
 
 	public void searchPatient_p() {
@@ -308,7 +323,7 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 		clickElement(By.xpath(String.format(GlobalPageLocators.lnk_SearchedPatientLink, PIXID)));
 
 	}
-	
+
 	public void searchPatient_pp() {
 		PIXID_PT_Teaching = PIXID_PT_Teaching.replaceAll("\\s", "");
 		sendKeys(GlobalPageLocators.txt_SearchPatientInput, PIXID_PT_Teaching);

@@ -1,5 +1,7 @@
 package pixalere.stepdefinitions;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
 
 import dataProviders.ConfigFileReader;
@@ -75,6 +77,7 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 	
 	@When("I Navigate-NAMD to {string} LH panel option Non-Authorizer Mobility Device Recommendation")
 	public void i_Navigate_to_LH_panel_option_NAMDR(String administrationOption) {
+		checkboxData = new ArrayList<String>();
 		navigateToAdministrationPanelOptionNAMDR(administrationOption);
 	}
 
@@ -97,7 +100,7 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 	public void i_search_created_patient_pixid() {
 		searchPatient_p();
 	}
-	
+
 	@When("I search created patient with PIXID Nursing")
 	public void i_search_created_patient_pixid_nursing() {
 		searchPatient_nursing();
@@ -112,11 +115,12 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 	public void i_search_created_patient_pixid_pt() {
 		searchPatient_pt();
 	}
+
 	@When("I search created patient with PIXID OT")
 	public void i_search_created_patient_pixid_ot() {
 		searchPatient_ot();
 	}
-	
+
 	@When("I search created patient with PIXID special for PTAssessement and Teaching")
 	public void i_search_created_patient_pixid_for_PTAssessement_and_Teaching() {
 		searchPatient_pp();
@@ -135,7 +139,7 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 	@When("I search created patient with PIXID special")
 	public void i_search_created_patient_pixid_special() {
 		searchPatient_pp();
-		
+
 	}
 
 	@When("I click on {string} hyper link")
