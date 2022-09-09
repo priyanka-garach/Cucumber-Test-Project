@@ -8,7 +8,7 @@ And I login with "admin-P" User-p
 When I globally select "Pix ID" from Search Category dropdown
 And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
-And I Navigate to "Flow Sheets -> Vital Signs" LH panel option
+And I Navigate to "Flow Sheets -> Vital Signs Record" LH panel option
 Then "Vital Signs" page will open
 ##
 When I enter "Tempearture" input field
@@ -31,8 +31,8 @@ And I enter "Abdominal Girth" input field
 And I click "Alert" radio option for Alert Status field
 And I click on Save My Work Vital Signs Button
 #Then Patient details should get verified
-And I Navigate to "Viewer -> Vital Signs Flowchart" LH panel option
-Then "Vital Signs Flowchart" page will open
+And I Navigate to "Viewer -> Vital Signs Record" LH panel option
+Then "Vital Signs Record" page will open
 When I start verifying records in Vital Page
 Then I Logout from Pixalere
 

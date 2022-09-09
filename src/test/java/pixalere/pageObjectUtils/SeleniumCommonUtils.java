@@ -38,6 +38,7 @@ import pixalere.scripts.PixalereAcuteRespiratoryIllnessScripts;
 import pixalere.scripts.PixalereAdvLowerLimbAssessmentScripts;
 import pixalere.scripts.PixalereBasicLowerLimbAssessmentScripts;
 import pixalere.scripts.PixalereCarePlanScripts;
+import pixalere.scripts.PixalereClinetConsentScripts;
 import pixalere.scripts.PixalereCreateNewPatientAccountScripts;
 import pixalere.scripts.PixalereFallRiskNursingScripts;
 import pixalere.scripts.PixalereHomePeritonealScripts;
@@ -45,6 +46,7 @@ import pixalere.scripts.PixalereInHomeSafetyIdentificationToolScripts;
 import pixalere.scripts.PixalereIntakeOutputScripts;
 import pixalere.scripts.PixalereIntakeOutputScriptsNursing;
 import pixalere.scripts.PixalereMedRATScripts;
+import pixalere.scripts.PixalerePTAssessmentScripts;
 import pixalere.scripts.PixalereScripts;
 import pixalere.scripts.PixalereTeachingAgreementScript;
 import pixalere.scripts.PixalereUpperLimbAssessmentScripts;
@@ -313,6 +315,10 @@ public class SeleniumCommonUtils {
 		highLightElement(e);
 		e.sendKeys(value);
 		waitForCompletePageLoad();
+	}
+
+	public void refresh_currentURL() {
+		driver.get(driver.getCurrentUrl());
 	}
 
 	/**
@@ -1186,7 +1192,7 @@ public class SeleniumCommonUtils {
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("d/MMM/yyyy");
 			LocalDateTime now = LocalDateTime.now();
 			String date = dtf.format(now).toString();
-			if (!(data1.contains(date + " - Admin"))) {
+			if (!(data1.contains(date))) {
 				System.err.println(e1.toString() + " : " + data1);
 				Assert.assertTrue(false);
 			}
@@ -1204,9 +1210,9 @@ public class SeleniumCommonUtils {
 		if (data.equalsIgnoreCase(" Undo Chart Done")) {
 			String s2 = "(((//*[@id='form']//tbody//td//b[contains(text(),'%s')]//following::div)[1]))[contains(@id,'completed_div')]//button[contains(@onclick,'uncompleted')]";
 			String xpath2 = String.format(s2, pattern);
-			waitInterval(5);
+			waitInterval(10);
 			clickElement(By.xpath(xpath2));
-			waitInterval(5);
+			waitInterval(10);
 		}
 
 	}
@@ -1240,6 +1246,15 @@ public class SeleniumCommonUtils {
 			waitInterval(1);
 			clickElement(By.xpath(xpath2));
 			waitInterval(5);
+		}
+	}
+
+	public void verify_status_discharge() {
+		WebElement e1 = driver.findElement(By.xpath("//*[contains(text(),'Funder Status:')]//following-sibling::span"));
+		highLightElement(By.xpath("//*[contains(text(),'Funder Status:')]//following-sibling::span"));
+		String data1 = e1.getText();
+		if (data1.contains("Discharge")) {
+			Assert.assertTrue(false);
 		}
 	}
 
@@ -1292,7 +1307,7 @@ public class SeleniumCommonUtils {
 		WebElement e1 = driver.findElement(By.xpath(
 				"//td[normalize-space(text())='Review of Client Bill of Rights/Responsibilities']//following-sibling::td[1]"));
 		String data1 = e1.getText();
-		if (!(data1.contains(date + " - Admin"))) {
+		if (!(data1.contains(date))) {
 			System.err.println(e1.toString() + " : " + data1);
 			Assert.assertTrue(false);
 		}
@@ -1873,42 +1888,176 @@ public class SeleniumCommonUtils {
 
 	public void verify_Client_Consent() {
 
-		WebElement e2 = driver
-				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[8]/div/div/div/div[11]/div/div"));
+		WebElement e1 = driver.findElement(
+				By.xpath("//label[normalize-space(text())='Lock Box Required']//following-sibling::div//span"));
+		String data1 = e1.getText();
+		if (!(data1.contains(PixalereScripts.Lock_Box_Required_comment))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e2 = driver.findElement(
+				By.xpath("//label[normalize-space(text())='Effective as of Date']//following-sibling::div//span"));
 		String data2 = e2.getText();
-		if (!data2.equalsIgnoreCase(PixalereScripts.Comments_Service_Consent_Obtained1)) {
+		if (!(data2.equalsIgnoreCase(PixalereScripts.Effective_Date_client_consent))) {
 			Assert.assertTrue(false);
 		}
 
-		WebElement e3 = driver
-				.findElement(By.xpath("//*[@id='container-fluid']/div[5]/div/div[8]/div/div/div/div[12]/div/div"));
+		WebElement e3 = driver.findElement(By.xpath(
+				"//label[normalize-space(text())='Proposed Health Services Discussed']//following-sibling::div//span"));
 		String data3 = e3.getText();
-		if (!data3.equalsIgnoreCase(LocatorUtils.radioService_Consent_Obtained)) {
+		if (!(data3.contains(PixalereScripts.Specify_Proposed_Health_Services))) {
 			Assert.assertTrue(false);
 		}
 
-		WebElement e4 = driver
-				.findElement(By.xpath("//*[@id=\"container-fluid\"]/div[5]/div/div[8]/div/div/div/div[37]/div/div"));
+		WebElement e4 = driver.findElement(By.xpath(
+				"//label[normalize-space(text())='Proposed Health Services Discussed']//following-sibling::div//span"));
 		String data4 = e4.getText();
-		if (!data4.equalsIgnoreCase(PixalereScripts.Alternate_Contact_Name1)) {
-			Assert.assertTrue(false);
+		for (int i = 0; i < PixalereClinetConsentScripts.chk_Proposed_Health_Services_Discussed.size(); i++) {
+			if (!data4.contains(PixalereClinetConsentScripts.chk_Proposed_Health_Services_Discussed.get(i))) {
+				Assert.assertTrue(false);
+			}
 		}
 
 		WebElement e5 = driver
-				.findElement(By.xpath("//*[@id=\"container-fluid\"]/div[5]/div/div[8]/div/div/div/div[38]/div/div"));
+				.findElement(By.xpath("//label[normalize-space(text())='Comments']//following-sibling::div//span"));
 		String data5 = e5.getText();
-		if (!data5.equalsIgnoreCase(PixalereScripts.Backup_Plan1)) {
+		if (!(data5.equalsIgnoreCase(PixalereScripts.Service_Consent_Obtained_comments))) {
 			Assert.assertTrue(false);
 		}
 
-		WebElement e7 = driver
-				.findElement(By.xpath("//*[@id=\"container-fluid\"]/div[5]/div/div[8]/div/div/div/div[39]/div/div"));
+		WebElement e6 = driver.findElement(By.xpath(
+				"//label[contains(text(),'Risks of not receiving service discussed')]//following-sibling::div//span"));
+		String data6 = e6.getText();
+		if (!(data6.equalsIgnoreCase(PixalereClinetConsentScripts.Risk_for_alternatives_and_benefits))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e7 = driver.findElement(By.xpath(
+				"//label[contains(text(),'Notice of Information Practices provided')]//following-sibling::div//span"));
 		String data7 = e7.getText();
-		if (!data7.equalsIgnoreCase(PixalereScripts.Comments_in_Virtual_Care_Consent1)) {
+		if (!(data7.equalsIgnoreCase(
+				PixalereClinetConsentScripts.Notice_of_Information_Practices_provided_to_clientSDM))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e8 = driver.findElement(
+				By.xpath("//label[normalize-space(text())='Your service funder']//following-sibling::div//span"));
+		String data8 = e8.getText();
+		if (!(data8.equalsIgnoreCase(PixalereClinetConsentScripts.Your_service_funder))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e9 = driver.findElement(
+				By.xpath("//label[normalize-space(text())='Family/friends/caregivers']//following-sibling::div//span"));
+		String data9 = e9.getText();
+		if (!(data9.contains(PixalereScripts.Other_comment_Family_friends_caregivers))) {
+			Assert.assertTrue(false);
+		}
+		if (!(data9.contains(PixalereClinetConsentScripts.chk_or_Family_friends_caregivers))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e10 = driver.findElement(
+				By.xpath("//label[normalize-space(text())='Medical Contact']//following-sibling::div//span"));
+		String data10 = e10.getText();
+		if (!(data10.contains(PixalereScripts.Other_comment_Family_friends_caregivers))) {
+			Assert.assertTrue(false);
+		}
+		if (!(data10.contains(PixalereClinetConsentScripts.chk_for_Medical_Contacts))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e11 = driver
+				.findElement(By.xpath("//label[contains(text(),'Vendor')]//following-sibling::div//span"));
+		String data11 = e11.getText();
+		if (!(data11.equalsIgnoreCase(PixalereScripts.Consent_vendors))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e12 = driver
+				.findElement(By.xpath("//label[contains(text(),'Other')]//following-sibling::div//span"));
+		String data12 = e12.getText();
+		if (!(data12.equalsIgnoreCase(PixalereScripts.Other_comment_Consent_Obtained))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e13 = driver.findElement(By.xpath(
+				"//label[contains(text(),'Consent to Use Electronic/Audio-Visual/Communication')]//following-sibling::div//span"));
+		String data13 = e13.getText();
+		if (!(data13.equalsIgnoreCase(PixalereClinetConsentScripts.chk_to_use_electronic))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e14 = driver.findElement(By.xpath(
+				"(//label[contains(text(),'Client is aware of the option of virtual care with ')]//following-sibling::div//span)[1]"));
+		String data14 = e14.getText();
+		if (!(data14.equalsIgnoreCase(PixalereClinetConsentScripts.virtual_care_with_telephone))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e15 = driver.findElement(By.xpath(
+				"(//label[contains(text(),'Client is aware of the option of virtual care with ')]//following-sibling::div//span)[2]"));
+		String data15 = e15.getText();
+		if (!(data15.equalsIgnoreCase(PixalereClinetConsentScripts.virtual_care_with_video))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e18 = driver.findElement(By.xpath(
+				"//label[normalize-space(text())='Alternate Contact Name/Phone Number']//following-sibling::div//span"));
+		String data18 = e18.getText();
+		if (!(data18.equalsIgnoreCase(PixalereScripts.Alternate_Contact_Name_Phone_Number))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e19 = driver
+				.findElement(By.xpath("//label[normalize-space(text())='Back up plan']//following-sibling::div//span"));
+		String data19 = e19.getText();
+		if (!(data19.equalsIgnoreCase(PixalereScripts.Back_up_plan))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e20 = driver.findElement(
+				By.xpath("//label[normalize-space(text())='Additional comments']//following-sibling::div//span"));
+		String data20 = e20.getText();
+		if (!(data20.equalsIgnoreCase(PixalereScripts.Back_up_plan_comments))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e21 = driver
+				.findElement(By.xpath("//label[normalize-space(text())='SDM Name']//following-sibling::div//span"));
+		String data21 = e21.getText();
+		if (!(data21.equalsIgnoreCase(PixalereScripts.SDM_Name_consent))) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement e22 = driver
+				.findElement(By.xpath("//label[normalize-space(text())='Relationship']//following-sibling::div//span"));
+		String data22 = e22.getText();
+		for (int i = 0; i < PixalereClinetConsentScripts.chk_realtionship.size(); i++) {
+			if (!data22.contains(PixalereClinetConsentScripts.chk_realtionship.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		WebElement e24 = driver.findElement(
+				By.xpath("//label[normalize-space(text())='Consent obtained from']//following-sibling::div//span"));
+		String data24 = e24.getText();
+		for (int i = 0; i < PixalereClinetConsentScripts.chk_Consent_obtained_from.size(); i++) {
+			if (!data24.contains(PixalereClinetConsentScripts.chk_Consent_obtained_from.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		WebElement e25 = driver.findElement(By.xpath(
+				"//label[contains(text(),'have completed this consent discussion with the client/SDM as per')]//following-sibling::div//span"));
+		String data25 = e25.getText();
+		if (!(data25.equalsIgnoreCase(
+				PixalereClinetConsentScripts.the_Service_Provider_have_completed_this_consent_discussion_with_the_clientSDM))) {
 			Assert.assertTrue(false);
 		}
 
 		System.out.println("Client Consent Page verified................");
+
 	}
 
 	public void verify_Joint_Movement() {
@@ -2477,6 +2626,7 @@ public class SeleniumCommonUtils {
 		WebElement e9 = driver.findElement(By.xpath(
 				"//*[contains(text(),'Client Emergency Response Level (ERL) assessment completed.')]//following-sibling::*//span"));
 		String data9 = e9.getText();
+
 		if (!(data9.equalsIgnoreCase("Yes"))) {
 			Assert.assertTrue(false);
 		}
@@ -2534,7 +2684,8 @@ public class SeleniumCommonUtils {
 		Assert.assertTrue(
 				isDisplayed(By.xpath("//span[normalize-space()='" + PixalereScripts.transfer_assessed_comment + "']")));
 		Assert.assertTrue(
-				isDisplayed(By.xpath("//span[normalize-space()='" + PixalereScripts.bathroom_assessed_comment + "']")));
+				isDisplayed(By.xpath("//span[normalize-space()='" + PixalereScripts.bathroom_assessed_comment + "']"))); 
+		
 	}
 
 	public void verify_Pain_Assessment_Flowchart_Page() {
@@ -2585,6 +2736,14 @@ public class SeleniumCommonUtils {
 				"(//td[contains(text(),'Frequency')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String data7 = e7.getText();
 		if (!(data7.equalsIgnoreCase(PixalereScripts.drp_frequency))) {
+			Assert.assertTrue(false);
+		}
+
+		// Radio Button verify
+		WebElement e17 = driver.findElement(By.xpath(
+				"(//td[normalize-space()='Intensity']//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
+		String data17 = e17.getText();
+		if (!(data17.equalsIgnoreCase(PixalereScripts.Intensity_Pain_Assessment))) {
 			Assert.assertTrue(false);
 		}
 
@@ -3396,32 +3555,32 @@ public class SeleniumCommonUtils {
 		WebElement v1 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Activity')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String d1 = v1.getText();
-		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
-			if (!d1.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
+		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox1.size() - 1; i++) {
+			if (!d1.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox1.get(i))) {
 				Assert.assertTrue(false);
 			}
 		}
 		WebElement v2 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Transfers')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String d2 = v2.getText();
-		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
-			if (!d2.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
+		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox2.size(); i++) {
+			if (!d2.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox2.get(i))) {
 				Assert.assertTrue(false);
 			}
 		}
 		WebElement v3 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Resources')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String d3 = v3.getText();
-		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
-			if (!d3.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
+		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox3.size(); i++) {
+			if (!d3.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox3.get(i))) {
 				Assert.assertTrue(false);
 			}
 		}
 		WebElement v4 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Consent Obtained')]//following-sibling::td//td[contains(@class,'flowchart_data')])[last()]"));
 		String d4 = v4.getText();
-		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.size(); i++) {
-			if (!d4.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox.get(i))) {
+		for (int i = 0; i < PixalereTeachingAgreementScript.TeachingAgreement_Checkbox4.size(); i++) {
+			if (!d4.contains(PixalereTeachingAgreementScript.TeachingAgreement_Checkbox4.get(i))) {
 				Assert.assertTrue(false);
 			}
 		}
@@ -3429,14 +3588,42 @@ public class SeleniumCommonUtils {
 		WebElement v5 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Comments')]//following-sibling::td//td[contains(@class,'flowchart_data')])[2]"));
 		String d5 = v5.getText();
-		if (d5.equalsIgnoreCase(PixalereScripts.pt_teaching_agreement_comment1)) {
+		if (!d5.equalsIgnoreCase(PixalereScripts.pt_teaching_agreement_comment1)) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement v6 = driver.findElement(By.xpath(
 				"(//td[contains(text(),'Comments')]//following-sibling::td//td[contains(@class,'flowchart_data')])[1]"));
 		String d6 = v6.getText();
-		if (d6.equalsIgnoreCase(PixalereScripts.pt_teaching_agreement_comment0)) {
+		if (!d6.equalsIgnoreCase(PixalereScripts.Activity_to_be_Instructed1)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v7 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Name')]//following-sibling::td//td[contains(@class,'flowchart_data')])"));
+		String d7 = v7.getText();
+		if (!d7.equalsIgnoreCase(PixalereScripts.LearnerName1)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v8 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Learner')]//following-sibling::td//td[contains(@class,'flowchart_data')])"));
+		String d8 = v8.getText();
+		if (!d8.equalsIgnoreCase(LocatorUtils.radioleraner)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v9 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Employed By')]//following-sibling::td//td[contains(@class,'flowchart_data')])[1]"));
+		String d9 = v9.getText();
+		if (!d9.equalsIgnoreCase(PixalereTeachingAgreementScript.employee_selection)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v10 = driver.findElement(By.xpath(
+				"(//td[contains(text(),'Date')]//following-sibling::td//td[contains(@class,'flowchart_data')])"));
+		String d10 = v10.getText();
+		if (!d10.equalsIgnoreCase(PixalereScripts.LearnerDate1)) {
 			Assert.assertTrue(false);
 		}
 
@@ -3466,89 +3653,603 @@ public class SeleniumCommonUtils {
 		WebElement v1 = driver
 				.findElement(By.xpath("//div//label[normalize-space(text())='Visit Date']/following-sibling::div"));
 		String d1 = v1.getText();
-		if (!d1.equalsIgnoreCase(PixalereScripts.ExcersizeName)) {
+		if (!d1.equalsIgnoreCase(PixalereScripts.Visit_Date)) {
 			Assert.assertTrue(false);
 		}
 
 		WebElement v2 = driver.findElement(By.xpath(
 				"//div//label[normalize-space(text())='Referral screened for appropriateness at some time prior to initiating service.']/following-sibling::div"));
 		String d2 = v2.getText();
+		if (!d2.equalsIgnoreCase(LocatorUtils.radioInitiating_service)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v3 = driver.findElement(By.xpath(
 				"//div//label[normalize-space(text())='Accuracy of info provided in referral confirmed in keeping with scope of service.']/following-sibling::div"));
 		String d3 = v3.getText();
+		if (!d3.equalsIgnoreCase(LocatorUtils.radioScope_of_service)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v4 = driver.findElement(By.xpath(
 				"//div//label[normalize-space(text())='Acute Respiratory Screen (ARI) completed with negative result.']/following-sibling::div"));
 		String d4 = v4.getText();
+		if (!d4.equalsIgnoreCase(LocatorUtils.radioAcute_Respiratory_Screen)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v5 = driver.findElement(By.xpath(
-				"//div//label[normalize-space(text())='Service provided in client's home or treatment site as listed in LHIN referral.']/following-sibling::div"));
+				"//div//label[contains(text(),'home or treatment site as listed in LHIN referral.')]/following-sibling::div"));
 		String d5 = v5.getText();
+		if (!d5.equalsIgnoreCase(LocatorUtils.radioLHIN_referral)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v6 = driver.findElement(By.xpath(
 				"//div//label[contains(text(),'professional qualifications of assessor')]/following-sibling::div"));
 		String d6 = v6.getText();
+		if (!d6.equalsIgnoreCase(LocatorUtils.radioScope_of_practice)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v7 = driver
 				.findElement(By.xpath("//div//label[normalize-space(text())='Comments']/following-sibling::div"));
 		String d7 = v7.getText();
+		if (!d7.equalsIgnoreCase(PixalereScripts.Assessment_Initiated_Comments)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v8 = driver.findElement(By.xpath(
 				"//div//label[contains(text(),'Informed verbal consent for assessment obtained')]/following-sibling::div"));
 		String d8 = v8.getText();
+		if (!d8.equalsIgnoreCase(LocatorUtils.radioVerbal_consent)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v9 = driver.findElement(By.xpath(
 				"//div//label[normalize-space(text())='Student participating in service.']/following-sibling::div"));
 		String d9 = v9.getText();
+		if (!d9.equalsIgnoreCase(LocatorUtils.radioStudent_participating)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v10 = driver.findElement(By.xpath(
-				"//div//label[normalize-space(text())='Diagnosis/History of Presenting Concern']/following-sibling::div"));
+				"//div//label[contains(text(),'Diagnosis/History of Presenting Concern')]/following-sibling::div"));
 		String d10 = v10.getText();
+		if (!d10.equalsIgnoreCase(PixalereScripts.Diagnosis_History_of_Presenting_Concern)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v11 = driver.findElement(
 				By.xpath("//div//label[normalize-space(text())='Client/SDM Stated Goal']/following-sibling::div"));
 		String d11 = v11.getText();
+		if (!d11.equalsIgnoreCase(PixalereScripts.Client_SDM_Stated_Goal)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v12 = driver.findElement(
 				By.xpath("//div//label[normalize-space(text())='LHIN Referral Information']/following-sibling::div"));
 		String d12 = v12.getText();
+		if (!d12.equalsIgnoreCase("Lung Cancer")) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v13 = driver.findElement(By.xpath(
 				"//div//label[normalize-space(text())='Additional history relevant to PT service scope']/following-sibling::div"));
 		String d13 = v13.getText();
+		if (!d13.equalsIgnoreCase(PixalereScripts.Past_Medical_History)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v14 = driver.findElement(By.xpath(
 				"//div//label[contains(text(),'clinically relevant to PT scope of service identified')]/following-sibling::div"));
 		String d14 = v14.getText();
 
+		if (!d14.equalsIgnoreCase("Yes")) {
+			Assert.assertTrue(false);
+		}
+
 		WebElement v15 = driver.findElement(By.xpath(
 				"//div//label[normalize-space(text())='Investigations/follow-up details']/following-sibling::div"));
 		String d15 = v15.getText();
+		if (!d15.contains(PixalereScripts.Investigations_followup_clinically_relevant)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v16 = driver.findElement(By.xpath(
 				"//div//label[normalize-space(text())='Additional Falls Risk Factors Identified']/following-sibling::div"));
 		String d16 = v16.getText();
+		for (int i = 0; i < PixalerePTAssessmentScripts.AssessmentInitiated.size(); i++) {
+			if (!d16.contains(PixalerePTAssessmentScripts.AssessmentInitiated.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
 
 		WebElement v17 = driver
 				.findElement(By.xpath("//div//label[normalize-space(text())='Housing']/following-sibling::div"));
 		String d17 = v17.getText();
+		if (!d17.equalsIgnoreCase(LocatorUtils.radioHousing)) {
+			Assert.assertTrue(false);
+		}
 
 		WebElement v18 = driver.findElement(
 				By.xpath("//div//label[normalize-space(text())='Living situation']/following-sibling::div"));
 		String d18 = v18.getText();
+		for (int i = 0; i < PixalerePTAssessmentScripts.HomeAccessibility.size(); i++) {
+			if (!d18.contains(PixalerePTAssessmentScripts.HomeAccessibility.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
 
 		WebElement v19 = driver.findElement(
 				By.xpath("//div//label[normalize-space(text())='Caregiver supports']/following-sibling::div"));
 		String d19 = v19.getText();
+		for (int i = 0; i < PixalerePTAssessmentScripts.HomeAccessibility1.size(); i++) {
+			if (!d19.contains(PixalerePTAssessmentScripts.HomeAccessibility1.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
 
-		WebElement v20 = driver.findElement(By.xpath(
-				"//div//label[normalize-space(text())='Difficulties reported with ADL/IADL']/following-sibling::div"));
-		String d20 = v20.getText();
+WebElement v20 = driver.findElement(By.xpath(
+		"//div//label[normalize-space(text())='Difficulties reported with ADL/IADL']/following-sibling::div"));
+String d20 = v20.getText();
+		if (!d20.equalsIgnoreCase(PixalereScripts.Difficulties_report)) {
+			Assert.assertTrue(false);
+		}
+
 
 		WebElement v21 = driver
 				.findElement(By.xpath("//div//label[normalize-space(text())='Abuse/Neglect']/following-sibling::div"));
 		String d21 = v21.getText();
+		if (!d21.equalsIgnoreCase(LocatorUtils.radioEvidence)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v22 = driver.findElement(
+				By.xpath("//*[normalize-space(text())='Functional Accessibility of Home']/following::div[1]//div"));
+		String d22 = v22.getText();
+		if (!d22.equalsIgnoreCase(LocatorUtils.radioFunctionalAccessibility)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v23 = driver.findElement(By
+				.xpath("//*[normalize-space(text())='WFL- independent or managing with current supports/assistance']"));
+		String d23 = v23.getText();
+		if (!d23.equalsIgnoreCase(LocatorUtils.radioMedicationUse)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v24 = driver.findElement(By.xpath(
+				"//div//label[normalize-space(text())='Medications relevant to PT scope of practice']/following-sibling::div"));
+		String d24 = v24.getText();
+		if (!d24.equalsIgnoreCase(PixalereScripts.PT_scope_of_practice)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v25 = driver.findElement(By.xpath("//*[normalize-space(text())='Difficulties/risks identified']"));
+		String d25 = v25.getText();
+		if (!d25.equalsIgnoreCase(LocatorUtils.radioPostureAssessed)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v26 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Additional comments']/following-sibling::div"));
+		String d26 = v26.getText();
+		if (!d26.equalsIgnoreCase(PixalereScripts.Posture_Assessed_comment)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v27 = driver
+				.findElement(By.xpath("(//*[normalize-space(text())='Difficulties/risks identified'])[2]"));
+		String d27 = v27.getText();
+		if (!d27.equalsIgnoreCase(LocatorUtils.radioEdema)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v28 = driver
+				.findElement(By.xpath("//div//label[contains(text(),'Location')]/following-sibling::div"));
+		String d28 = v28.getText();
+		if (!d28.equalsIgnoreCase(PixalereScripts.Edema_Location)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v29 = driver.findElement(By.xpath("(//*[contains(text(),'Moderate')])"));
+		String d29 = v29.getText();
+		for (int i = 0; i < PixalerePTAssessmentScripts.Edema.size(); i++) {
+			if (!d29.contains(PixalerePTAssessmentScripts.Edema.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		WebElement v30 = driver
+				.findElement(By.xpath("(//*[normalize-space(text())='Difficulties/risks identified'])[3]"));
+		String d30 = v30.getText();
+		if (!d30.equalsIgnoreCase(LocatorUtils.radioSkinIntegrity)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v31 = driver.findElement(By.xpath("//*[contains(text(),'Incision')]"));
+		String d31 = v31.getText();
+		for (int i = 1; i < PixalerePTAssessmentScripts.SkinIntegrity.size(); i++) {
+			if (!d31.contains(PixalerePTAssessmentScripts.SkinIntegrity.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		// Pain Tab starts
+
+		clickElement(By.xpath("//button[normalize-space(text())='Pain']"));
+
+		WebElement v32 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Date of Pain Assessment']/following-sibling::div"));
+		String d32 = v32.getText();
+		if (!d32.equalsIgnoreCase(PixalereScripts.Pain_Date)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v33 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='Pain Assessed']/following-sibling::div"));
+		String d33 = v33.getText();
+		if (!d33.contains(LocatorUtils.radioPainAssessment)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v34 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='Duration']/following-sibling::div"));
+		String d34 = v34.getText();
+		if (!d34.equalsIgnoreCase(LocatorUtils.radioDuration)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v35 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='Frequency']/following-sibling::div"));
+		String d35 = v35.getText();
+		if (!d35.equalsIgnoreCase(LocatorUtils.radioFrequency)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v36 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='Quality']/following-sibling::div"));
+		String d36 = v36.getText();
+		for (int i = 0; i < PixalerePTAssessmentScripts.Quality.size(); i++) {
+			if (!d36.contains(PixalerePTAssessmentScripts.Quality.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		WebElement v37 = driver.findElement(By.xpath(
+				"//div//label[normalize-space(text())='Effects of pain on activities on daily living']/following-sibling::div"));
+		String d37 = v37.getText();
+		for (int i = 0; i < PixalerePTAssessmentScripts.PainFactors.size(); i++) {
+			if (!d37.contains(PixalerePTAssessmentScripts.PainFactors.get(i))) {
+			}
+		}
+
+		WebElement v38 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Palliating Factors']/following-sibling::div"));
+		String d38 = v38.getText();
+		if (!d38.equalsIgnoreCase("Yes")) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v39 = driver
+				.findElement(By.xpath("(//div//label[contains(text(),'List')]/following-sibling::div)[1]"));
+		String d39 = v39.getText();
+		if (!d39.equalsIgnoreCase(PixalereScripts.Palliating_Factors_List)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v40 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Aggravating Factors']/following-sibling::div"));
+		String d40 = v40.getText();
+		if (!d40.equalsIgnoreCase("Yes")) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v41 = driver
+				.findElement(By.xpath("(//div//label[contains(text(),'List')]/following-sibling::div)[2]"));
+		String d41 = v41.getText();
+		if (!d41.equalsIgnoreCase(PixalereScripts.Aggravating_Factors_List)) {
+			Assert.assertTrue(false);
+		}
+
+		// Mobility Tab starts
+		clickElement(By.xpath("//button[normalize-space(text())='Mobility']"));
+
+		WebElement v42 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='Bed Mobility']/following-sibling::div"));
+		String d42 = v42.getText();
+		if (!d42.equalsIgnoreCase(LocatorUtils.radioBedMobility)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v43 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comments')]/following-sibling::div)[1]"));
+		String d43 = v43.getText();
+		if (!d43.equalsIgnoreCase(PixalereScripts.Bed_Mobility_comment)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v44 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Chair Repositioning']/following-sibling::div"));
+		String d44 = v44.getText();
+		if (!d44.equalsIgnoreCase(LocatorUtils.radioChairRipositioning)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v45 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comments')]/following-sibling::div)[2]"));
+		String d45 = v45.getText();
+		if (!d45.equalsIgnoreCase(PixalereScripts.Chair_Repositioning_comment)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v46 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='Transfers']/following-sibling::div"));
+		String d46 = v46.getText();
+		if (!d46.equalsIgnoreCase(LocatorUtils.radioTransfers)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v47 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comments')]/following-sibling::div)[3]"));
+		String d47 = v47.getText();
+		if (!d47.equalsIgnoreCase(PixalereScripts.Transfers_comment)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v48 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Weight Bearing Status']/following-sibling::div"));
+		String d48 = v48.getText();
+		if (!d48.equalsIgnoreCase(LocatorUtils.radioWeightBearingStatus)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v49 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comments')]/following-sibling::div)[4]"));
+		String d49 = v49.getText();
+		if (!d49.equalsIgnoreCase(PixalereScripts.Weight_Bearing_Status_comment)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v50 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='Ambulation']/following-sibling::div"));
+		String d50 = v50.getText();
+		if (!d50.equalsIgnoreCase(LocatorUtils.radioAmbulation)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v51 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comments')]/following-sibling::div)[5]"));
+		String d51 = v51.getText();
+		if (!d51.equalsIgnoreCase(PixalereScripts.Ambulation_comment)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v52 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='TUG Time']/following-sibling::div"));
+		String d52 = v52.getText();
+		if (!d52.contains(PixalereScripts.TUG_Time)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v53 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='Aid Used']/following-sibling::div"));
+		String d53 = v53.getText();
+		if (!d53.equalsIgnoreCase(PixalereScripts.Aid_used)) {
+			Assert.assertTrue(false);
+		}
+
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+		LocalDateTime now = LocalDateTime.now();
+		String date = dtf.format(now).toString();
+
+		WebElement v54 = driver.findElement(By
+				.xpath("//div//label[normalize-space(text())='Date of Stair Use Assessment:']/following-sibling::div"));
+		String d54 = v54.getText();
+		if (!d54.equalsIgnoreCase(date)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v55 = driver.findElement(
+				By.xpath("(//*[normalize-space(text())='WFL – independent or managing with current supports'])[4]"));
+		String d55 = v55.getText();
+		if (!d55.equalsIgnoreCase(LocatorUtils.radioStairUseAssessed)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v56 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Sitting Balance']/following-sibling::div"));
+		String d56 = v56.getText();
+		if (!d56.equalsIgnoreCase(LocatorUtils.radioSittingBalance)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v57 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Standing balance']/following-sibling::div"));
+		String d57 = v57.getText();
+		if (!d57.equalsIgnoreCase(LocatorUtils.radioStandingBalance)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v58 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Date of Sit Stand Visit:']/following-sibling::div"));
+		String d58 = v58.getText();
+		if (!d58.equalsIgnoreCase(date)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v59 = driver.findElement(By.xpath(
+				"//div//label[normalize-space(text())='Standardized Balance Assessment:']/following-sibling::div"));
+		String d59 = v59.getText();
+		for (int i = 0; i < PixalerePTAssessmentScripts.Mobility1.size(); i++) {
+			if (!d59.contains(PixalerePTAssessmentScripts.Mobility1.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		WebElement v60 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comments')]/following-sibling::div)[6]"));
+		String d60 = v60.getText();
+		if (!d60.equalsIgnoreCase(PixalereScripts.Balance_Assessed_comments)) {
+			Assert.assertTrue(false);
+		}
+
+		// MSK Tab starts
+		clickElement(By.xpath("//button[normalize-space(text())='MSK']"));
+
+		WebElement v61 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Date of MSK Assessment']/following-sibling::div"));
+		String d61 = v61.getText();
+		if (!d61.equalsIgnoreCase(PixalereScripts.Date_of_MSK_Assessment)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v62 = driver.findElement(By.xpath("(//*[normalize-space(text())='WFL - sufficient for function'])"));
+		String d62 = v62.getText();
+		if (!d62.equalsIgnoreCase(LocatorUtils.radioMSK)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v63 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comment')]/following-sibling::div)"));
+		String d63 = v63.getText();
+		if (!d63.equalsIgnoreCase(PixalereScripts.Musculoskeletal_Status_comments)) {
+			Assert.assertTrue(false);
+		}
+
+		// Respiratory-Neuro Tab starts
+		clickElement(By.xpath("//button[normalize-space(text())='Respiratory/Neuro']"));
+
+		WebElement v64 = driver.findElement(
+				By.xpath("(//*[normalize-space(text())='WFL-respiration status sufficient for function'])"));
+		String d64 = v64.getText();
+		if (!d64.equalsIgnoreCase(LocatorUtils.radioRespiratory)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v65 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comment')]/following-sibling::div)[1]"));
+		String d65 = v65.getText();
+		if (!d65.equalsIgnoreCase(PixalereScripts.Respiratory_comments)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v67 = driver.findElement(By.xpath("(//*[normalize-space(text())='WFL - sufficient for function'])"));
+		String d67 = v67.getText();
+		if (!d67.equalsIgnoreCase(LocatorUtils.radioNeurological)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v66 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comment')]/following-sibling::div)[2]"));
+		String d66 = v66.getText();
+		if (!d66.equalsIgnoreCase(PixalereScripts.Neurological_comments)) {
+			Assert.assertTrue(false);
+		}
+
+		// Cognition Tab starts
+		clickElement(By.xpath("//button[normalize-space(text())='Cognition']"));
+
+		WebElement v68 = driver
+				.findElement(By.xpath("(//*[normalize-space(text())='WFL - sufficient for function'])[1]"));
+		String d68 = v68.getText();
+		if (!d68.equalsIgnoreCase(LocatorUtils.radioCognitiveFunctioning)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v69 = driver
+				.findElement(By.xpath("(//*[normalize-space(text())='WFL - sufficient for function'])[2]"));
+		String d69 = v69.getText();
+		if (!d69.equalsIgnoreCase(LocatorUtils.radioAffectiveFunctioning)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v70 = driver
+				.findElement(By.xpath("//div//label[normalize-space(text())='Suicidal risk']/following-sibling::div"));
+		String d70 = v70.getText();
+		if (!d70.equalsIgnoreCase(LocatorUtils.radioCognition)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v71 = driver.findElement(
+				By.xpath("(//div//label[contains(text(),'Any additional comment')]/following-sibling::div)"));
+		String d71 = v71.getText();
+		if (!d71.equalsIgnoreCase(PixalereScripts.Cognition_comments)) {
+			Assert.assertTrue(false);
+		}
+
+		// Analysis and Recommendations Tab starts
+		clickElement(By.xpath("//button[normalize-space(text())='Analysis and Recommendations']"));
+
+		WebElement v72 = driver.findElement(By.xpath(
+				"//div//label[normalize-space(text())='Estimated Stage of Change regarding PT services']/following-sibling::div"));
+		String d72 = v72.getText();
+		if (!d72.equalsIgnoreCase(LocatorUtils.radioPTService)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v73 = driver.findElement(By.xpath(
+				"//div//label[normalize-space(text())='Assessment information obtained from']/following-sibling::div"));
+		String d73 = v73.getText();
+		for (int i = 0; i < PixalerePTAssessmentScripts.AssessmentInformation.size() - 2; i++) {
+			if (!d73.contains(PixalerePTAssessmentScripts.AssessmentInformation.get(i))) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		WebElement v74 = driver.findElement(By.xpath(
+				"//div//label[contains(text(),'One or more MAHC factors were not assessed for this client')]/following-sibling::div"));
+		String d74 = v74.getText();
+		if (!d74.equalsIgnoreCase("Yes")) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v75 = driver.findElement(
+				By.xpath("//div//label[normalize-space(text())='Findings Analyzed']/following-sibling::div"));
+		String d75 = v75.getText();
+		if (!d75.equalsIgnoreCase(LocatorUtils.radioClientEmergency)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v76 = driver.findElement(By.xpath(
+				"//div//label[contains(text(),'Care Plan documented in report or in other First')]/following-sibling::div"));
+		String d76 = v76.getText();
+		if (!d76.equalsIgnoreCase(LocatorUtils.radioAssessmentresults)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v77 = driver.findElement(By
+				.xpath("//div//label[contains(text(),'Changing the conversation completed.')]/following-sibling::div"));
+		String d77 = v77.getText();
+		if (!d77.equalsIgnoreCase(LocatorUtils.radioConversationcompleted)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v78 = driver.findElement(By.xpath(
+				"//div//label[contains(text(),'Welcome Brochure and Notice of Information Practices')]/following-sibling::div"));
+		String d78 = v78.getText();
+		if (!d78.equalsIgnoreCase(LocatorUtils.radioWelcomeBrochure)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v79 = driver.findElement(
+				By.xpath("//div//label[contains(text(),'Client Emergency Response Level')]/following-sibling::div"));
+		String d79 = v79.getText();
+		if (!d79.equalsIgnoreCase(LocatorUtils.radioClientEmergency)) {
+			Assert.assertTrue(false);
+		}
+
+		WebElement v80 = driver.findElement(By.xpath(
+				"//div//label[contains(text(),'Other activities completed at first visit with')]/following-sibling::div"));
+		String d80 = v80.getText();
+		if (!d80.contains((PixalerePTAssessmentScripts.AssessmentInformation)
+				.get((PixalerePTAssessmentScripts.AssessmentInformation).size() - 1))) {
+			Assert.assertTrue(false);
+		}
+
+		System.out.println("PT verified successfully............");
+
 	}
 
 	public void verify_ExcersizeProgramPage() {

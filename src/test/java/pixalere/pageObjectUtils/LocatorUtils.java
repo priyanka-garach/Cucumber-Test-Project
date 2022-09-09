@@ -9,6 +9,7 @@ public class LocatorUtils {
 	public static String radioPSW_providing;
 	public static String radioalternatives_and_benefits;
 	public static String radioEducation_received;
+	public static String radioleraner;
 	public static String radioservice_provider;
 	public static String radiomodification_plan;
 	public static String radioGuidelines_and_Policies;
@@ -787,6 +788,16 @@ public class LocatorUtils {
 		public static By chk_ASC = By.xpath("//label[contains(@id,'authorizer_concluded_options1_label')])");
 	}
 ////////////////////seating mobility end///////////////////////////
+	
+	public static class ClienConsentLocator{
+		public static String chk_proposedHealth = "//label[contains(text(),'%s')]";
+		public static By chk_consent_contacts  = By.xpath("//label[contains(@id,'consent_contacts_other_label')]");
+		public static By chk_for_Medical_Contacts = By.xpath("//label[contains(@id,'consent_medical_contacts')]");
+		public static By chk_for_Consent_to_use_electronic = By.xpath("//label[contains(text(),'Consent to Use Electronic/Audio-Visual/Communication')]");
+		public static String chk_consent_obtained_from = "//*[normalize-space(text())='Consent obtained from']//following::div//label[contains(text(),'%s')]";
+		public static String chk_is_not_inetrested_telephone = "//*[contains(@for,'e_consent_tel_not') and contains(text(),'%s')]";
+		public static String chk_relationship = "//*[contains(@for,'relationship') and contains(text(),'%s')]";
+	}
 
 	public static class PTLocators {
 		public static By txt_num = By.id("number");
@@ -2429,6 +2440,7 @@ public class LocatorUtils {
 
 		public static By getRadioOptionByEducation_received(String section) {
 			radioEducation_received = section;
+			radioleraner = section;
 			if (section.equalsIgnoreCase("Yes"))
 				return By.xpath("//*[@id='md-radio-learner_edu_rec1']");
 			else if (section.equalsIgnoreCase("No"))

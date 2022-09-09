@@ -10,7 +10,7 @@ And I search created patient with PIXID PT
 And I select "PT" from Service Referral PT
 And I click "Access Chart" radio option for "Service Referral and Type" field
 And I Navigate to "Exercise Program" LH panel option
-Then "PT Exercise Handouts" page will open
+Then "PT Exercise Program" page will open
 ##
 When I select "Ankle - Sitting Exercises" from Exercise handout dropdown
 And I enter "Hold" input field in script
@@ -40,6 +40,6 @@ And I enter "Additional Excersize comments" input field in script
 And I click on Save My Work Time up and Go Button
 #Then Exercise Program should get verified
 And I Navigate to "Viewer -> Exercise Program" LH panel option
-Then "PT Exercise Handouts" page will open
+Then "PT Exercise Program" page will open
 When I start verifying records in Exercise Program Page
 Then I Logout from Pixalere

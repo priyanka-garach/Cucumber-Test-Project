@@ -906,9 +906,43 @@ public class PixalereStringPool {
 	public static final String Popliteal_fossa_heal = "Popliteal fossa-heal";
 	public static final String Rationale = "Rationale";
 	public static final String Handle_height = "Handle height";
+	
+	//Client Consent PT
+	public static final String Specify_Proposed_Health_Services = "Specify Proposed Health Services";
+	public static final String Service_Consent_Obtained_comments = "Service Consent Obtained comments";
+	public static final String Other_comment_Family_friends_caregivers = "Other comment Family friends caregivers";
+	public static final String Other_comment_Medical_Contacts = "Other comment Medical Contacts";
+	public static final String Other_comment_Consent_Obtained = "Other comment Consent Obtained";
+	public static final String Consent_vendors = "Vendors";
+	public static final String Alternate_Contact_Name_Phone_Number = "Alternate Contact Name Phone Number";
+	public static final String Back_up_plan = "Back up plan";
+	public static final String Back_up_plan_comments = "Back up plan comments";
+	public static final String SDM_Name_consent = "SDM Name consent";
+	public static final String Other_relationship_comment = "Other relationship comment";
+	public static final String Date_client_consent = "Date client consent";
+	public static final String Lock_Box_Required_comment = "Lock Box Required comment";
+	public static final String Effective_Date_client_consent = "Effective Date client consent";
+	
+	//Mobility Assessment
+	public static final String Calf_Muscle_Pump_Comment = "Calf Muscle Pump Comment";
+	public static final String Mobility_Aids_Comment = "Mobility Aids Comment";
+	public static final String Gait_Pattern = "Gait Pattern";
+	public static final String Gait_Pattern_Comments = "Gait Pattern Comments";
+	public static final String Walking_Distance = "Walking Distance";
+	public static final String Walking_Endurance = "Walking Endurance";
+	public static final String Indoor_Footwear_comment = "Indoor Footwear comment";
+	public static final String Outdoor_Footwear_comment = "Outdoor Footwear comment";
+	public static final String Orthotics_comment = "Orthotics comment";
+	public static final String Mobility_Assessment_comment = "Mobility Assessment comment";
+	
+	//Show Prevention
+	public static final String Additional_Comments_Prevention_Best_Practices = "Additional Comments Prevention Best Practices";
+	public static final String Show_Prevention_2022 = "2022 Show Prevention";
+
 	public static final String Buttocks_popliteal_fossa = "Buttocks-popliteal fossa";
 	public static final String Other = "Other";
 	public static final String Any_additional_comments = "Any additional comments";
 	public static final String Comment = "Comment";
 	public static final String Activity_Comment = "Activity Comment";
+
 }

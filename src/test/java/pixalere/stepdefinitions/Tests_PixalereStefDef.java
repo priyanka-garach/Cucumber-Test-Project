@@ -982,7 +982,7 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 
 	@When("I click on Other checkbox for Service Consent Obtained")
 	public void I_click_on_Other_checkbox_for_Service_Consent_Obtained() {
-		clickElementWithJQuery(By.xpath("//*[@id='proposed_health_services_21_other_label']"));
+		clickElementWithJQuery(By.xpath("//*[contains(@id,'other_label')][1]"));
 	}
 
 	@When("I start verifying records in Non-Authorizer Mobility Device Recommendation Page")

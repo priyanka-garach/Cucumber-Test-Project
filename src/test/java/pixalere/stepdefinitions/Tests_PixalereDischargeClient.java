@@ -27,4 +27,9 @@ public class Tests_PixalereDischargeClient extends PixalereDischargeClientScript
 		clickonDischarge();
 	}
 	
+	@When("I verify of status of discharge from patient information")
+	public void status_of_discharge() {
+		verify_status_discharge();
+	}
+	
 }

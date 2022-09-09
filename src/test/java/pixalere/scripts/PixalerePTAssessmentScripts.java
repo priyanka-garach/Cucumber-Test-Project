@@ -13,6 +13,7 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 
 	public static List<String> AssessmentInitiated = new ArrayList<>();
 	public static List<String> HomeAccessibility = new ArrayList<>();
+	public static List<String> HomeAccessibility1 = new ArrayList<>();
 	public static List<String> PostureAssessed = new ArrayList<>();
 	public static List<String> Edema = new ArrayList<>();
 	public static List<String> SkinIntegrity = new ArrayList<>();
@@ -20,6 +21,7 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 	public static List<String> PainFactors = new ArrayList<>();
 	public static List<String> AssessmentInformation = new ArrayList<>();
 	public static List<String> Mobility = new ArrayList<>();
+	public static List<String> Mobility1 = new ArrayList<>();
 	
 	public void clickOnAssessmentTabs(String section) {
 		if(section.contains("Assessment Initiated")) {
@@ -177,7 +179,7 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 	public void selectAssessmentInitiatedCheckbox(String section) {
 		if(section.contains("Investigations/follow-up clinically relevant")) {
 			clickElementWithJQuery(PTAssessment.chk_Investigations);
-			AssessmentInitiated.add(section);
+			//AssessmentInitiated.add(section);
 		}
 		else if(section.contains("Activities avoided for fear of falling")) {
 			clickElementWithJQuery(PTAssessment.chk_Activity_avoided);
@@ -217,7 +219,7 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 		}
 		else if(section.contains("Private caregiver")) {
 			clickElementWithJQuery(PTAssessment.chk_Private_caregiver);
-			HomeAccessibility.add(section);
+			HomeAccessibility1.add(section);
 		}
 		
 	}
@@ -428,7 +430,7 @@ public class PixalerePTAssessmentScripts extends PixalereCommonUtils {
 		}
 		else if(section.contains("30 second sit-stand Test")) {
 			clickElementWithJQuery(PTAssessment.chk_30_second_sit_stand_Test);
-			Mobility.add(section);
+			Mobility1.add(section);
 		}
 	}
 }

@@ -21,8 +21,6 @@ And  I click on "Initiated" for "Pain Pump"
 And  I click on "Completed" for "Pain Pump"
 And  I click on "Initiated" for "How to trouble shoot pump"
 And  I click on "Completed" for "How to trouble shoot pump"
-#And I enter "Medication Name1" input field
-#And I enter "Medication Name2" input field
 When I click on "Initiated" for "Care of Saline lock" 
 And  I click on "Completed" for "Care of Saline lock"
 When I click on "Initiated" for "Air in Tubing" 
