@@ -526,6 +526,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String assess_activities_comments;
 	public static String analysis_recommendation_comment;
 
+	public static String activity;
+
 	public void chk_instruct_client_field(String value) {
 		clickElement(By.xpath("//input[@id='modified_exercise']//following-sibling::label"));
 		pt_modified_exercise = "Yes";
