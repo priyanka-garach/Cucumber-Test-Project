@@ -69,12 +69,12 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 	public void i_Navigate_to_LH_panel_option(String administrationOption) {
 		navigateToAdministrationPanelOption(administrationOption);
 	}
-	
+
 	@When("I Navigate to Prevention LH panel option")
 	public void i_Navigate_to_Prevention_panel_option() {
 		navigateToAdministrationPanelOption("Prevention");
 	}
-	
+
 	@When("I Navigate-NAMD to {string} LH panel option Non-Authorizer Mobility Device Recommendation")
 	public void i_Navigate_to_LH_panel_option_NAMDR(String administrationOption) {
 		checkboxData = new ArrayList<String>();
@@ -103,14 +103,14 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 
 	@When("I search created patient with PIXID Nursing")
 	public void i_search_created_patient_pixid_nursing() {
-		searchPatient_nursing();
+		searchPatient_p();
 	}
-	
+
 	@When("I search created patient with PIXID Nursing Discharge Patient")
 	public void i_search_created_patient_pixid_nursing_Discharge_Patient() {
 		searchPatient_nursing_discharge();
 	}
-	
+
 	@When("I search created patient with PIXID PT")
 	public void i_search_created_patient_pixid_pt() {
 		searchPatient_pt();
@@ -125,17 +125,17 @@ public class Tests_PixalereCommonStepDefinition extends PixalereCommonUtils {
 	public void i_search_created_patient_pixid_for_PTAssessement_and_Teaching() {
 		searchPatient_pp();
 	}
-	
+
 	@When("I search created patient with PIXID special for PTConsent Form")
 	public void i_search_created_patient_pixid_for_PTConsent_Form() {
 		searchPatient_consentform();
 	}
-	
+
 	@When("I search created patient with PIXID special for PT_Teaching")
 	public void i_search_created_patient_pixid_for_PT_Teaching_agreement() {
 		searchPatient_pt_teaching();
 	}
-	
+
 	@When("I search created patient with PIXID special")
 	public void i_search_created_patient_pixid_special() {
 		searchPatient_pp();

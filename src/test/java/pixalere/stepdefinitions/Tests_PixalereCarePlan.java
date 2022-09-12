@@ -1,10 +1,14 @@
 package pixalere.stepdefinitions;
 
+import org.apache.commons.lang.RandomStringUtils;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 import io.cucumber.java.en.When;
+import io.cucumber.java.en.And;
 import pixalere.pageObjectUtils.LocatorUtils.CarePlanLocators;
 import pixalere.scripts.PixalereCarePlanScripts;
+import pixalere.scripts.PixalereScripts;
 
 public class Tests_PixalereCarePlan extends PixalereCarePlanScripts {
 
@@ -28,10 +32,13 @@ public class Tests_PixalereCarePlan extends PixalereCarePlanScripts {
 		clickElement(By.xpath("//button[@id='saveEntries']"));
 	}
 
-	@When("I click on Save My Work Daily Schedule Button")
-	public void i_click_on_Save_My_Work_Daily_Schedule_Button() {
-		clickElement(By.xpath("//*[@id='saveEntries']"));
-		clickElement(By.xpath("//*[@id='confirm']"));
+	@When("I enter Time Activity")
+	public void I_enter_Time_Activity() {
+		getWebDriver().switchTo().frame("activity_ifr");
+		PixalereScripts.activity = RandomStringUtils.randomAlphabetic(5);
+		clear(By.id("tinymce"));
+		sendKeys(By.id("tinymce"), PixalereScripts.activity);
+		getWebDriver().switchTo().defaultContent();
 	}
 
 	@When("I click on {string} Completed Button on Diabetes Teaching Guidelines Page")
@@ -61,5 +68,16 @@ public class Tests_PixalereCarePlan extends PixalereCarePlanScripts {
 	@When("I start verifying records in Prevention Care Plan")
 	public void i_start_verifying_records_in_Prevention_Care_Plan() {
 		verify_carePlan();
+	}
+
+	@When("I click on Save My Work Daily Schedule Button")
+	public void i_click_on_Save_My_Work_Daily_Schedule_Button() {
+		clickElement(By.xpath("//*[@id='saveEntries']"));
+		clickElement(By.xpath("//*[@id='confirm']"));
+	}
+
+	@And("I verify daily schedule")
+	public void I_verify_daily_schedule() {
+		Assert.assertTrue(isDisplayed(By.xpath("//*[text()='" + PixalereScripts.activity + "']")));
 	}
 }
