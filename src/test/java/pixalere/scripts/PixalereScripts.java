@@ -479,6 +479,18 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Breakthrough_Frequency1;
 	public static String Other_Education_Client_CareGiver1;
 	public static String Show_Prevention_2022;
+	
+	public static String Client_Portion_Discussed_comment;
+	public static String Reason_for_client_vendor_selection_comment;
+	public static String Vendor_comment;
+	public static String Representative_name_comment;
+	public static String Phone_number_comment;
+	public static String Equipment_Trial_Arranged_comment;
+	public static String Delivered_equipment_specifications_comment;
+	public static String Education_and_Training_on_Device_Use_Provided_comment_one;
+	public static String Education_and_Training_on_Device_Use_Provided_comment_two;
+	public static String ADP_Application_Submitted_comment;
+	public static String Previous_Funding_Comments_PT;
 
 	public static String Balance_Gait;
 	public static List<String> list_Cardiovascular_ICAN1 = new ArrayList<>();
@@ -525,6 +537,22 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String income_assessed_comment;
 	public static String assess_activities_comments;
 	public static String analysis_recommendation_comment;
+	
+	public static String Stated_Mobility_Concerns_Discussed;
+	public static String Home_Access_Environment_comment;
+	public static String Equipment_in_place_comments;
+	public static String Physical_Health_Components_Diagnons_comment;
+	public static String Physical_Health_Component_additional_comment;
+	public static String Cognition_comment;
+	public static String Mental_Behavioural_Health_comment;
+	public static String Community_Transportation_comment;
+	public static String Ambulation_comment_PT;
+	public static String Supplementary_Funding_Availability_comment;
+	public static String Falls_comment;
+	
+	public static String Analysis_and_Recommendation_Provided_comment;
+	public static String Trial_model_recommended_comment;
+	public static String ADP_Eligibility_Screened_comment;
 
 	public void chk_instruct_client_field(String value) {
 		clickElement(By.xpath("//input[@id='modified_exercise']//following-sibling::label"));
@@ -3729,6 +3757,177 @@ public class PixalereScripts extends PixalereCommonUtils {
 			System.out.println(PixalereStringPool.Activity_Comment + ": " + Activity_Comment);
 			clear(By.id("activity_comments"));
 			sendKeys(By.id("activity_comments"), Activity_Comment);
+			break;
+			
+		// PT Seating Mobility
+		case PixalereStringPool.Stated_Mobility_Concerns_Discussed:
+			Stated_Mobility_Concerns_Discussed = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Stated_Mobility_Concerns_Discussed + ": " + Stated_Mobility_Concerns_Discussed);
+			clear(By.name("mobility_concerns_comments"));
+			sendKeys(By.name("mobility_concerns_comments"), Stated_Mobility_Concerns_Discussed);
+			break;
+			
+		case PixalereStringPool.Home_Access_Environment_comment:
+			Home_Access_Environment_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Home_Access_Environment_comment + ": " + Home_Access_Environment_comment);
+			clear(By.id("home_comments"));
+			sendKeys(By.id("home_comments"), Home_Access_Environment_comment);
+			break;
+			
+			
+		case PixalereStringPool.Equipment_in_place_comments:
+			Equipment_in_place_comments = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Equipment_in_place_comments + ": " + Equipment_in_place_comments);
+			clear(By.id("accessibility_txt"));
+			sendKeys(By.id("accessibility_txt"), Equipment_in_place_comments);
+			break;
+			
+		case PixalereStringPool.Physical_Health_Components_Diagnons_comment:
+			Physical_Health_Components_Diagnons_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Physical_Health_Components_Diagnons_comment + ": " + Physical_Health_Components_Diagnons_comment);
+			clear(By.id("ot_diagnosis_addition_comments"));
+			sendKeys(By.id("ot_diagnosis_addition_comments"), Physical_Health_Components_Diagnons_comment);
+			break;
+			
+		case PixalereStringPool.Cognition_comment:
+			Cognition_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Cognition_comment + ": " + Cognition_comment);
+			clear(By.id("ot_cognition_addition_comments"));
+			sendKeys(By.id("ot_cognition_addition_comments"), Cognition_comment);
+			break;
+			
+		case PixalereStringPool.Mental_Behavioural_Health_comment:
+			Mental_Behavioural_Health_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Mental_Behavioural_Health_comment + ": " + Mental_Behavioural_Health_comment);
+			clear(By.id("ot_behave_addition_comments"));
+			sendKeys(By.id("ot_behave_addition_comments"), Mental_Behavioural_Health_comment);
+			break;
+			
+		case PixalereStringPool.Community_Transportation_comment:
+			Community_Transportation_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Community_Transportation_comment + ": " + Community_Transportation_comment);
+			clear(By.id("ot_community_addition_comments"));
+			sendKeys(By.id("ot_community_addition_comments"), Community_Transportation_comment);
+			break;
+			
+		case PixalereStringPool.Supplementary_Funding_Availability_comment:
+			Supplementary_Funding_Availability_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Supplementary_Funding_Availability_comment + ": " + Supplementary_Funding_Availability_comment);
+			clear(By.id("income_assessed_comment"));
+			sendKeys(By.id("income_assessed_comment"), Supplementary_Funding_Availability_comment);
+			break;
+			
+		case PixalereStringPool.Falls_comment:
+			Falls_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Falls_comment + ": " + Falls_comment);
+			clear(By.id("falls_section_comments"));
+			sendKeys(By.id("falls_section_comments"), Falls_comment);
+			break;
+			
+		case PixalereStringPool.Ambulation_comment_PT:
+			Ambulation_comment_PT = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Ambulation_comment_PT + ": " + Ambulation_comment_PT);
+			clear(By.xpath("(//*[contains(@id,'additional_comments')])[1]"));
+			sendKeys(By.xpath("(//*[contains(@id,'additional_comments')])[1]"), Ambulation_comment_PT);
+			break;
+			
+		case PixalereStringPool.Analysis_and_Recommendation_Provided_comment:
+			Analysis_and_Recommendation_Provided_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Analysis_and_Recommendation_Provided_comment + ": " + Analysis_and_Recommendation_Provided_comment);
+			clear(By.id("model_details"));
+			sendKeys(By.id("model_details"), Analysis_and_Recommendation_Provided_comment);
+			break;
+			
+		case PixalereStringPool.Trial_model_recommended_comment:
+			Trial_model_recommended_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Trial_model_recommended_comment + ": " + Trial_model_recommended_comment);
+			clear(By.name("scooter_trial_recommended"));
+			sendKeys(By.name("scooter_trial_recommended"), Trial_model_recommended_comment);
+			break;
+			
+		case PixalereStringPool.ADP_Eligibility_Screened_comment:
+			ADP_Eligibility_Screened_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.ADP_Eligibility_Screened_comment + ": " + ADP_Eligibility_Screened_comment);
+			clear(By.id("adp_additional_comments"));
+			sendKeys(By.id("adp_additional_comments"), ADP_Eligibility_Screened_comment);
+			break;
+			
+		case PixalereStringPool.Previous_Funding_Comments_PT:
+			Previous_Funding_Comments_PT = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Previous_Funding_Comments_PT + ": " + Previous_Funding_Comments_PT);
+			clear(By.id("prior_funding_section_comments"));
+			sendKeys(By.id("prior_funding_section_comments"), Previous_Funding_Comments_PT);
+			break;
+			
+		case PixalereStringPool.Client_Portion_Discussed_comment:
+			Client_Portion_Discussed_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Client_Portion_Discussed_comment + ": " + Client_Portion_Discussed_comment);
+			clear(By.id("client_portion_add_comments"));
+			sendKeys(By.id("client_portion_add_comments"), Client_Portion_Discussed_comment);
+			break;
+			
+		case PixalereStringPool.Reason_for_client_vendor_selection_comment:
+			Reason_for_client_vendor_selection_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Reason_for_client_vendor_selection_comment + ": " + Reason_for_client_vendor_selection_comment);
+			clear(By.id("vendor_selection_reason"));
+			sendKeys(By.id("vendor_selection_reason"), Reason_for_client_vendor_selection_comment);
+			break;
+			
+		case PixalereStringPool.Vendor_comment:
+			Vendor_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Vendor_comment + ": " + Vendor_comment);
+			clear(By.id("vendor"));
+			sendKeys(By.id("vendor"), Vendor_comment);
+			break;
+			
+		case PixalereStringPool.Representative_name_comment:
+			Representative_name_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Representative_name_comment + ": " + Representative_name_comment);
+			clear(By.id("rep_name"));
+			sendKeys(By.id("rep_name"), Representative_name_comment);
+			break;
+			
+		case PixalereStringPool.Phone_number_comment:
+			Phone_number_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Phone_number_comment + ": " + Phone_number_comment);
+			clear(By.id("phone_number"));
+			sendKeys(By.id("phone_number"), Phone_number_comment);
+			break;
+			
+		case PixalereStringPool.Equipment_Trial_Arranged_comment:
+			Equipment_Trial_Arranged_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Equipment_Trial_Arranged_comment + ": " + Equipment_Trial_Arranged_comment);
+			clear(By.id("equip_ordered_comments"));
+			sendKeys(By.id("equip_ordered_comments"), Equipment_Trial_Arranged_comment);
+			break;
+			
+		case PixalereStringPool.Delivered_equipment_specifications_comment:
+			Delivered_equipment_specifications_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Delivered_equipment_specifications_comment + ": " + Delivered_equipment_specifications_comment);
+			clear(By.id("equip_specification"));
+			sendKeys(By.id("equip_specification"), Delivered_equipment_specifications_comment);
+			break;
+			
+			
+		case PixalereStringPool.Education_and_Training_on_Device_Use_Provided_comment_one:
+			Education_and_Training_on_Device_Use_Provided_comment_one = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Education_and_Training_on_Device_Use_Provided_comment_one + ": " + Education_and_Training_on_Device_Use_Provided_comment_one);
+			clear(By.id("recomm_comments"));
+			sendKeys(By.id("recomm_comments"), Education_and_Training_on_Device_Use_Provided_comment_one);
+			break;
+			
+		case PixalereStringPool.Education_and_Training_on_Device_Use_Provided_comment_two:
+			Education_and_Training_on_Device_Use_Provided_comment_two = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.Education_and_Training_on_Device_Use_Provided_comment_two + ": " + Education_and_Training_on_Device_Use_Provided_comment_two);
+			clear(By.xpath("(//*[@name='additional_comments'])[2]"));
+			sendKeys(By.xpath("(//*[@name='additional_comments'])[2]"), Education_and_Training_on_Device_Use_Provided_comment_two);
+			break;
+			
+		case PixalereStringPool.ADP_Application_Submitted_comment:
+			ADP_Application_Submitted_comment = JavaUtils.getRandomString(5);
+			System.out.println(PixalereStringPool.ADP_Application_Submitted_comment + ": " + ADP_Application_Submitted_comment);
+			clear(By.xpath("(//*[@name='additional_comments'])[3]"));
+			sendKeys(By.xpath("(//*[@name='additional_comments'])[3]"), ADP_Application_Submitted_comment);
 			break;
 
 		}

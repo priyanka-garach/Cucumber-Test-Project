@@ -157,8 +157,8 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 
 				//PIXID_PT_Teaching = ConfigFileReader.getProperties("user.PIXID_PT_Teaching");
 				//PIXID_PT_Teaching = ReadfromExcel.getUnusedPatientId(".\\test-data\\pt_patients_for_Automation.xls", "pt_patients_for_Automation");
-				PIXID_PT_TeachingAgreement = ReadfromExcel.getUnusedPatientId(".\\test-data\\teaching_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
-				PIXID_PT_consentForm = ReadfromExcel.getUnusedPatientId(".\\test-data\\consentForm_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+				//PIXID_PT_TeachingAgreement = ReadfromExcel.getUnusedPatientId(".\\test-data\\teaching_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+				//PIXID_PT_consentForm = ReadfromExcel.getUnusedPatientId(".\\test-data\\consentForm_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
 				PixID_Nursing = ConfigFileReader.getProperties("user.PixID_Nursing");
 				PixID_Nursing_discharge = ConfigFileReader.getProperties("user.PixID_Nursing_discharge");
 				PIXID_PT = ConfigFileReader.getProperties("user.PIXID_PT");
@@ -172,6 +172,19 @@ public class PixalereCommonUtils extends SeleniumCommonUtils {
 					PIXID_OT = ReadfromExcel.getUnusedPatientId(".\\test-data\\ot_patients_for_Automation.xls",
 							"ot_patients_for_Automation");
 				}
+				
+				else if (module.equalsIgnoreCase("ptconsentForm")) {
+					PIXID_PT_consentForm = ReadfromExcel.getUnusedPatientId(".\\test-data\\consentForm_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+				}
+				
+				else if (module.equalsIgnoreCase("ptteachingAgreement")) {
+					PIXID_PT_TeachingAgreement = ReadfromExcel.getUnusedPatientId(".\\test-data\\teaching_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+				}
+				
+				else if (module.equalsIgnoreCase("ptsm")) {
+					PIXID_PT_consentForm = ReadfromExcel.getUnusedPatientId(".\\test-data\\sm_pt_patients_for_Automation.xls", "pt_patients_for_Automation");
+				}
+				
 				PIXID_PT = ConfigFileReader.getProperties("user.PIXID_PT");
 				PixID_Nursing = ConfigFileReader.getProperties("user.PixID_Nursing");
 			}

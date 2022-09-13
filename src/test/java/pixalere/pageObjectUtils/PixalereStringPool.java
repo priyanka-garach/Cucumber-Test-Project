@@ -944,5 +944,41 @@ public class PixalereStringPool {
 	public static final String Any_additional_comments = "Any additional comments";
 	public static final String Comment = "Comment";
 	public static final String Activity_Comment = "Activity Comment";
-
+	
+	//PT Seating Mobility
+	public static final String Stated_Mobility_Concerns_Discussed = "Stated Mobility Concerns Discussed";
+	public static final String Home_Access_Environment_comment = "Home Access Environment comment";
+	public static final String Equipment_in_place_comments = "Equipment in place comments";
+	public static final String Physical_Health_Components_Diagnons_comment = "Physical Health Components Diagnons comment";
+	public static final String Physical_Health_Component_additional_comment = "Physical Health Component additional comment";
+	public static final String Cognition_comment = "Cognition comment";
+	public static final String Mental_Behavioural_Health_comment = "Mental Behavioural Health comment";
+	public static final String Community_Transportation_comment = "Community Transportation comment";
+	public static final String ODSP_OW_Number = "ODSP/OW Number";
+	public static final String VAC_Number = "VAC Number";
+	public static final String WSIB_Number = "WSIB Number";
+	public static final String Supplementary_Funding_Availability_comment = "Supplementary Funding Availability comment";
+	public static final String Falls_comment = "Falls comment";
+	public static final String Limitations_of_current_mobility_devices = "Limitations of current mobility devices";
+	public static final String Declinedunable_to_demonstrate_comment = "Declined/unable to demonstrate comment";
+	public static final String Ambulation_comment_PT = "Ambulation comment PT";
+	public static final String Analysis_and_Recommendation_Provided_comment = "Analysis and Recommendation Provided comment";
+	public static final String Trial_model_recommended_comment = "Trial model recommended comment";
+	public static final String Proposed_Health_Services_Discussed_comment = "Proposed Health Services Discussed comment";
+	public static final String ADP_Eligibility_Screened_comment = "ADP Eligibility Screened comment";
+	public static final String Client_Portion_Discussed_comment = "Client Portion Discussed comment";
+	public static final String Reason_for_client_vendor_selection_comment = "Reason for client vendor selection comment";
+	public static final String Vendor_comment = "Vendor comment";
+	public static final String Representative_name_comment = "Representative name comment";
+	public static final String Phone_number_comment = "Phone number comment";
+	public static final String Equipment_Trial_Arranged_comment = "Equipment Trial Arranged comment";
+	public static final String Delivered_equipment_specifications_comment = "Delivered equipment specifications comment";
+	public static final String Education_and_Training_on_Device_Use_Provided_comment_one = "Education and Training on Device Use Provided comment one";
+	public static final String Education_and_Training_on_Device_Use_Provided_comment_two = "Education and Training on Device Use Provided comment two";
+	public static final String ADP_Application_Submitted_comment = "ADP Application Submitted comment";
+	public static final String Previous_Funding_Comments_PT = "Previous Funding Comments PT";
+	
+	
+	
 }
+	

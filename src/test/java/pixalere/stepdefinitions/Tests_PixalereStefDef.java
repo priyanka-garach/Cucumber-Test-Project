@@ -65,7 +65,12 @@ public class Tests_PixalereStefDef extends PixalereScripts {
 		enterInputFieldAsPerKeyfromScripts(string);
 		System.out.println();
 	}
-
+	
+	@When("I click on Save As Draft")
+	public void i_click_on_Save_As_Draft(String string) {
+		clickElement(By.id("draft"));
+	}
+	
 	@When("I select {string} from dropdown of Document Type")
 	public void I_select_from_dropdown_of_Document_Type(String value) {
 		drp_of_Document_Type(value);
