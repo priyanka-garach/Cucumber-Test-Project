@@ -554,6 +554,8 @@ public class PixalereScripts extends PixalereCommonUtils {
 	public static String Trial_model_recommended_comment;
 	public static String ADP_Eligibility_Screened_comment;
 
+	public static String activity;
+
 	public void chk_instruct_client_field(String value) {
 		clickElement(By.xpath("//input[@id='modified_exercise']//following-sibling::label"));
 		pt_modified_exercise = "Yes";

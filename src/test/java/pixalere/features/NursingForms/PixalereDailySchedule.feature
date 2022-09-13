@@ -9,10 +9,8 @@ When I globally select "Pix ID" from Search Category dropdown
 And I search created patient with PIXID Nursing
 And I click "General Visit" radio option for "Service Referral and Type" field
 And I Navigate to "Patient Profile -> Daily Schedule" LH panel option
-#Then "Daily Schedule" page will open
-##
+When I enter Time Activity
 When I click on Save My Work Daily Schedule Button
-#Then Daily Schedule details should get verified
 And I Navigate to "Viewer -> Daily Schedule" LH panel option
-#Then "Daily Schedule" page will open
+And I verify daily schedule
 Then I Logout from Pixalere
